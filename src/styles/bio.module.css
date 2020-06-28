@@ -1,0 +1,111 @@
+.control {
+  margin: 2rem auto;
+  max-width: 90vw;
+  width: 540px;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+}
+
+.legend {
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  padding: 0;
+  text-align: center;
+}
+
+.options {
+  align-items: center;
+  display: grid;
+  gap: min(6vw, 2rem);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.option {
+  cursor: pointer;
+  height: calc((min(540px, 90vw) - 10rem) / 6 + 1rem);
+  position: relative;
+}
+
+.input {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.text {
+  color: var(--text-muted);
+  display: none;
+  position: absolute;
+  top: 90%;
+}
+
+.option:first-of-type .text,
+.option:last-of-type .text {
+  display: block;
+}
+
+.option:first-of-type .text {
+  left: 0;
+}
+
+.option:last-of-type .text {
+  right: 0;
+}
+
+@media (min-width: 450px) {
+  .text {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.label {
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.label::before,
+.label::after {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 0;
+  left: 50%;
+  padding-bottom: calc(min(100%, 1.5rem) - 4px);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 1.5rem);
+}
+
+.label::before {
+  border: 2px solid var(--pink);
+  transition: 200ms background linear;
+}
+
+.label::after {
+  background: var(--pink);
+  opacity: 0;
+  transition: 200ms opacity linear;
+}
+
+:hover + .label::before,
+:focus + .label::before {
+  background: var(--blue);
+}
+
+:checked + .label::after {
+  opacity: 1;
+}
+
+.bio {
+  margin: 3rem auto;
+  max-width: 54ch;
+}
