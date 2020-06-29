@@ -173,7 +173,7 @@ export function Bio() {
       <span role="img" aria-label="cycle">
         🔄
       </span>{' '}
-      load another Jason fact
+      see another fact
     </a>,
     <section className={styles.container}>
       <figure className={styles.image}>

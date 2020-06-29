@@ -1,5 +1,5 @@
 .heading {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin: 0;
   text-align: center;
 }
@@ -16,17 +16,12 @@
 }
 
 .container {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr 400px;
   margin: 0 auto;
   max-width: 900px;
 }
 
 .image {
-  grid-column: 2 / 3;
-  grid-row-start: 1;
-  margin: 0;
+  margin: 0 0 4rem;
   padding: 0;
 }
 
@@ -50,9 +45,26 @@
   text-decoration: none;
 }
 
-.bioWrapper {
-  grid-column: 1 / 2;
-  grid-row-start: 1;
+@media (min-width: 800px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 400px;
+  }
+
+  .image {
+    grid-column: 2 / 3;
+    grid-row-start: 1;
+    margin-bottom: 0;
+  }
+
+  .bioWrapper {
+    grid-column: 1 / 2;
+    grid-row-start: 1;
+  }
 }
 
 .control {

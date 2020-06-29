@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'gatsby-image';
 import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
+import TweetEmbed from '@jlengstorf/react-tweet-embed';
 import styles from '../styles/teaching.module.css';
 
 const platforms = [
@@ -9,9 +10,10 @@ const platforms = [
     label: 'Learn With Jason',
     link: 'https://www.learnwithjason.dev',
     description: `
-      I regularly pair program with brilliant people from around the community
-      to learn something new in 90 minutes. Shows are live and interactive, so 
-      make sure to check the calendar and join in the fun!
+      Jason hosts <em>Learn With Jason</em> twice a week and pair programs with
+      brilliant people from community to learn something new in 90 minutes.
+      Shows are live and interactive, so 
+      <a href="https://www.learnwithjason.dev/schedule">mark your calendar</a> and join the fun!
     `,
     image: 'learnwithjason',
   },
@@ -20,20 +22,20 @@ const platforms = [
     label: 'egghead',
     link: 'https://jason.af/egghead',
     description: `
-      I’ve created dozens of video lessons on egghead. These videos have no
-      fluff, cutting straight to the code and delivering tons of practical 
-      knowledge in just a few minutes each.
+      Jason has created dozens of video lessons on egghead. These videos skip
+      the chatter, instead diving straight into the code and delivering tons of
+      practical knowledge a few minutes at a time.
     `,
     image: 'egghead',
   },
   {
     id: 'frontendmasters',
-    label: 'frontendmasters',
+    label: 'Frontend Masters',
     link: 'https://jason.af/frontendmasters',
     description: `
-      I’ve given several workshops with Frontend Masters, a long-form workshop
-      format where I go deep on a topic for a full day. These workshops are 
-      deep-dives into the why and how of various technologies.
+      Jason has taught several workshops with Frontend Masters, a long-form
+      workshop format focused on deep dives into a topic for a full day. These
+      workshops are packed with the “why” & “how” behind the topic.
     `,
     image: 'frontendmasters',
   },
@@ -58,21 +60,36 @@ function Platform({ label, link, description, image }) {
           <Image fluid={fluid} alt="Camera" />
         </a>
       )}
-      <h2 className={styles.heading}>
+      <h2 className={styles.name}>
         <a href={link}>{label}</a>
       </h2>
-      <p>{description}</p>
+      <p dangerouslySetInnerHTML={{ __html: description }} />
       <a href={link}>check it out &rarr;</a>
     </div>
   );
 }
 
 export function Teaching() {
-  return (
+  return [
+    <div className={styles.intro}>
+      <h2 className={styles.heading}>
+        Jason makes learning fun and approachable.
+      </h2>
+      <p className={styles.lede}>
+        Jason has been teaching developers of all skill levels how to code for
+        over a decade. He specializes in live coding, simplifying complex topics
+        into relatable analogies and demos, and shoehorning corgi references
+        into every project.
+      </p>
+    </div>,
     <section className={styles.container}>
       {platforms.map(platform => (
         <Platform key={platform.id} {...platform} />
       ))}
-    </section>
-  );
+    </section>,
+    <div className={styles.tweets}>
+      <TweetEmbed url="https://twitter.com/sarah_edo/status/1195038019343896576" />
+      <TweetEmbed url="https://twitter.com/techieEliot/status/1252954917632868353" />
+    </div>,
+  ];
 }

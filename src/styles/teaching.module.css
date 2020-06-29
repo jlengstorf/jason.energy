@@ -1,13 +1,56 @@
 .container {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
   margin: 3rem auto;
   max-width: 90vw;
   width: 900px;
 }
 
-.heading a {
+.intro {
+  margin: 0 auto;
+  max-width: 90vw;
+  width: 900px;
+}
+
+.heading {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.lede {
+}
+
+.platform {
+  margin-top: 3rem;
+}
+
+.name {
+  margin: 0;
+}
+
+.name a {
   color: inherit;
   text-decoration: none;
+}
+
+.tweets {
+  margin: 3rem auto;
+  max-width: 90vw;
+  width: 900px;
+}
+
+@media (min-width: 800px) {
+  .container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .name {
+    margin-top: 1rem;
+  }
+
+  .tweets {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
