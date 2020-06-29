@@ -1,4 +1,29 @@
 .header {
-  padding: 2rem;
-  text-align: center;
+  background: var(--black);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header::after {
+  background-image: linear-gradient(
+    to right,
+    var(--pink) 0%,
+    var(--yellow) 50%,
+    var(--blue) 100%
+  );
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.home {
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
 }

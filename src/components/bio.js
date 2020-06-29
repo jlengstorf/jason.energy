@@ -1,23 +1,42 @@
-/** @jsx h */
 /* eslint-disable jsx-a11y/label-has-for */
-import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/bio.module.css';
+import useSound from 'use-sound';
+
+const headlines = [
+  'Jason Lengstorf believes anything can be a sandwich if you try hard enough.',
+  'Jason Lengstorf is (probably) wearing pajama pants right now.',
+  'Jason Lengstorf knows there’s nothing better in life than melted cheese.',
+];
 
 function LengthChooser({ length, setLength }) {
-  const handleChange = ({ target }) => setLength(target.value);
+  const [playPop] = useSound(
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/pop.mp3',
+    {
+      volume: 0.5,
+    },
+  );
+  const [playClick] = useSound(
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/click.mp3',
+    {
+      volume: 0.5,
+    },
+  );
+  const handleChange = ({ target }) => {
+    playClick();
+    setLength(target.value);
+  };
 
   return (
     <form className={styles.control}>
       <fieldset className={styles.fieldset}>
-        <legend className={styles.legend}>
-          Choose how much bio you can manage:
-        </legend>
+        <legend className={styles.legend}>Adjust bio length:</legend>
         <div className={styles.options}>
           {['shortest', 'shorter', 'short', 'long', 'longer', 'longest'].map(
             l => {
+              /* eslint-disable jsx-a11y/no-static-element-interactions */
               return (
-                <div className={styles.option}>
+                <div className={styles.option} onMouseEnter={playPop}>
                   <input
                     className={styles.input}
                     type="radio"
@@ -126,9 +145,54 @@ function BioText({ length }) {
 
 export function Bio() {
   const [length, setLength] = useState('short');
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+  const [playBoop] = useSound(
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/oop.mp3',
+    {
+      volume: 0.5,
+    },
+  );
+
+  function cycleHeadline(event) {
+    playBoop();
+
+    event && event.preventDefault();
+    const index = headlineIndex + 1;
+    setHeadlineIndex(index < headlines.length ? index : 0);
+  }
+
+  useEffect(() => {
+    const index = Math.floor(Math.random() * headlines.length);
+
+    setHeadlineIndex(index);
+  }, []);
 
   return [
-    <LengthChooser length={length} setLength={setLength} />,
-    <BioText length={length} />,
+    <h1 className={styles.heading}>{headlines[headlineIndex]}</h1>,
+    <a href="#cycle-headline" onClick={cycleHeadline} className={styles.cycle}>
+      <span role="img" aria-label="cycle">
+        🔄
+      </span>{' '}
+      load another Jason fact
+    </a>,
+    <section className={styles.container}>
+      <figure className={styles.image}>
+        <img
+          src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_800,h_800,c_fill/v1593397602/jason.af/jason-lengstorf-hat.jpg"
+          alt="Jason Lengstorf"
+        />
+        <figcaption>
+          This shot captures Jason’s most common expression: Resting Murder
+          Face™
+          <span className={styles.credit}>
+            Photo: <a href="https://www.marisamorby.com">Marisa Morby</a>
+          </span>
+        </figcaption>
+      </figure>
+      <div className={styles.bioWrapper}>
+        <LengthChooser length={length} setLength={setLength} />
+        <BioText length={length} />
+      </div>
+    </section>,
   ];
 }

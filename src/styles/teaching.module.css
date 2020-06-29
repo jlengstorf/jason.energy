@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3rem auto;
+  max-width: 90vw;
+  width: 900px;
+}
+
+.heading a {
+  color: inherit;
+  text-decoration: none;
+}

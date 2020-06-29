@@ -1,7 +1,6 @@
-/** @jsx h */
-import { h } from 'preact';
+import React from 'react';
 import styles from '../styles/footer.module.css';
 
-export function Footer({ children }) {
+export function Footer() {
   return <footer className={styles.footer}>powered by boops</footer>;
 }

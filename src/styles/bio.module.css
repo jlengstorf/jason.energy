@@ -1,7 +1,64 @@
+.heading {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+.cycle {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  margin: 0.5rem 0 3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 400px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.image {
+  grid-column: 2 / 3;
+  grid-row-start: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.image img {
+  width: 100%;
+}
+
+.image figcaption {
+  color: var(--text-muted);
+}
+
+.credit {
+  display: block;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+}
+
+.credit a {
+  text-decoration: none;
+}
+
+.bioWrapper {
+  grid-column: 1 / 2;
+  grid-row-start: 1;
+}
+
 .control {
-  margin: 2rem auto;
+  margin: 1rem auto 2rem;
   max-width: 90vw;
-  width: 540px;
+  width: 300px;
 }
 
 .fieldset {
@@ -10,10 +67,14 @@
 }
 
 .legend {
-  font-weight: 700;
-  margin: 0 0 0.25rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin: 0;
   padding: 0;
-  text-align: center;
+  text-transform: lowercase;
 }
 
 .options {
@@ -25,7 +86,7 @@
 
 .option {
   cursor: pointer;
-  height: calc((min(540px, 90vw) - 10rem) / 6 + 1rem);
+  height: calc((min(300px, 90vw) - 10rem) / 6 + 1rem);
   position: relative;
 }
 
@@ -40,30 +101,32 @@
 }
 
 .text {
+  clip: rect(1px, 1px, 1px, 1px);
   color: var(--text-muted);
-  display: none;
+  height: 1px;
+  overflow: hidden;
   position: absolute;
-  top: 90%;
+  top: 75%;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .option:first-of-type .text,
 .option:last-of-type .text {
-  display: block;
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  width: 60px;
 }
 
 .option:first-of-type .text {
   left: 0;
+  text-align: left;
 }
 
 .option:last-of-type .text {
   right: 0;
-}
-
-@media (min-width: 450px) {
-  .text {
-    text-align: center;
-    width: 100%;
-  }
+  text-align: right;
 }
 
 .label {
@@ -78,16 +141,17 @@
   display: block;
   height: 0;
   left: 50%;
-  padding-bottom: calc(min(100%, 1.5rem) - 4px);
+  padding-bottom: calc(min(100%, 1rem) - 4px);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: min(100%, 1.5rem);
+  width: min(100%, 1rem);
 }
 
 .label::before {
   border: 2px solid var(--pink);
   transition: 200ms background linear;
+  z-index: 10;
 }
 
 .label::after {
@@ -96,16 +160,12 @@
   transition: 200ms opacity linear;
 }
 
+:checked + .label::before,
 :hover + .label::before,
 :focus + .label::before {
-  background: var(--blue);
+  border-color: var(--text-pink);
 }
 
 :checked + .label::after {
   opacity: 1;
-}
-
-.bio {
-  margin: 3rem auto;
-  max-width: 54ch;
 }

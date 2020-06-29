@@ -1,6 +1,6 @@
 .block {
   background: var(--white);
-  padding: 3rem 5vw;
+  padding: 5rem 5vw;
 }
 
 .block.pink {

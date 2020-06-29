@@ -1,7 +1,10 @@
-/** @jsx h */
-import { h } from 'preact';
+import React from 'react';
 import styles from '../styles/block.module.css';
 
-export function Block({ color, children }) {
-  return <div className={`${styles.block} ${styles[color]}`}>{children}</div>;
+export function Block({ color, children, id }) {
+  return (
+    <div id={id} className={`${styles.block} ${styles[color]}`}>
+      {children}
+    </div>
+  );
 }

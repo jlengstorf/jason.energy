@@ -1,5 +1,4 @@
-/** @jsx h */
-import { h } from 'preact';
+import React from 'react';
 
 export function Main({ children }) {
   return <main>{children}</main>;
