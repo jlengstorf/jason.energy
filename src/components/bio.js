@@ -1,7 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { useState, useEffect } from 'react';
+import { useSfx } from '../hooks/use-sfx';
+import { Photos } from './photos';
 import styles from '../styles/bio.module.css';
-import useSound from 'use-sound';
+import Twitter from '../assets/twitter.svg';
+import Dribbble from '../assets/dribbble.svg';
+import GitHub from '../assets/github.svg';
 
 const headlines = [
   'Jason Lengstorf believes anything can be a sandwich if you try hard enough.',
@@ -10,18 +14,8 @@ const headlines = [
 ];
 
 function LengthChooser({ length, setLength }) {
-  const [playPop] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/pop.mp3',
-    {
-      volume: 0.5,
-    },
-  );
-  const [playClick] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/click.mp3',
-    {
-      volume: 0.5,
-    },
-  );
+  const { playPop, playClick } = useSfx();
+
   const handleChange = ({ target }) => {
     playClick();
     setLength(target.value);
@@ -146,12 +140,7 @@ function BioText({ length }) {
 export function Bio() {
   const [length, setLength] = useState('short');
   const [headlineIndex, setHeadlineIndex] = useState(0);
-  const [playBoop] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/oop.mp3',
-    {
-      volume: 0.5,
-    },
-  );
+  const { playBoop } = useSfx();
 
   function cycleHeadline(event) {
     playBoop();
@@ -176,23 +165,39 @@ export function Bio() {
       see another fact
     </a>,
     <section className={styles.container}>
-      <figure className={styles.image}>
-        <img
-          src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_800,h_800,c_fill/v1593397602/jason.af/jason-lengstorf-hat.jpg"
-          alt="Jason Lengstorf"
-        />
-        <figcaption>
-          This shot captures Jason’s most common expression: Resting Murder
-          Face™
-          <span className={styles.credit}>
-            Photo: <a href="https://www.marisamorby.com">Marisa Morby</a>
-          </span>
-        </figcaption>
-      </figure>
       <div className={styles.bioWrapper}>
         <LengthChooser length={length} setLength={setLength} />
         <BioText length={length} />
+        <div className={styles.social}>
+          <h3 className={styles.connect}>Connect With Jason:</h3>
+          <ul className={styles.profiles}>
+            {[
+              {
+                id: 'twitter',
+                icon: Twitter,
+                link: 'https://twitter.com/jlengstorf',
+              },
+              {
+                id: 'github',
+                icon: GitHub,
+                link: 'https://github.com/jlengstorf',
+              },
+              {
+                id: 'dribbble',
+                icon: Dribbble,
+                link: 'https://dribbble.com/jlengstorf',
+              },
+            ].map(profile => (
+              <li className={styles.profile}>
+                <a href={profile.link} className={styles.link}>
+                  <profile.icon className={styles.icon} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+      <Photos className={styles.imageContainer} />
     </section>,
   ];
 }

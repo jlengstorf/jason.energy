@@ -84,7 +84,7 @@
 .navItem {
   align-items: center;
   background: transparent;
-  border-radius: 0.5rem;
+  border-radius: 14px;
   color: var(--black);
   display: grid;
   font-weight: 600;

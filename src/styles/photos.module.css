@@ -1,0 +1,79 @@
+.image {
+  margin: 0 0 3rem;
+  padding: 0;
+}
+
+.image img {
+  width: 100%;
+}
+
+.image figcaption {
+  color: var(--text-muted);
+  margin: 1rem 0 0;
+}
+
+.links {
+  display: flex;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 200;
+  justify-content: space-between;
+  letter-spacing: 0.15em;
+  margin-top: 0.5rem;
+  text-transform: lowercase;
+}
+
+.credit {
+  display: block;
+}
+
+.fullSize,
+.credit a {
+  text-decoration: none;
+}
+
+.morePhotos {
+  margin-bottom: 4rem;
+}
+
+.photoHeading {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.thumbnails {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 50px);
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.thumbLink {
+  display: block;
+  height: 50px;
+}
+
+.thumbnail {
+  opacity: 1;
+  transition: 200ms opacity linear;
+}
+
+.thumbnail.active {
+  opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+  .morePhotos {
+    margin-bottom: 0;
+  }
+}

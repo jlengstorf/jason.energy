@@ -1,7 +1,7 @@
 .container {
   margin: 3rem auto;
-  max-width: 90vw;
-  width: 900px;
+  max-width: 1400px;
+  width: 90vw;
 }
 
 .intro {
@@ -16,19 +16,51 @@
 }
 
 .lede {
+  font-size: 1.25rem;
+  text-align: center;
 }
 
 .platform {
   margin-top: 3rem;
 }
 
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--blue-dark);
+  border-radius: 14px;
+  margin-top: -8rem;
+  padding: 8rem 3rem 2rem;
+}
+
 .name {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.25rem;
   margin: 0;
 }
 
 .name a {
   color: inherit;
+  font-weight: inherit;
   text-decoration: none;
+}
+
+.description {
+  color: var(--text-muted);
+  margin: 2rem 0;
+}
+
+.link {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .tweets {
@@ -44,13 +76,23 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .name {
-    margin-top: 1rem;
+  .card {
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .tweets {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .card {
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }

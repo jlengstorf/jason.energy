@@ -56,15 +56,22 @@ function Platform({ label, link, description, image }) {
   return (
     <div className={styles.platform}>
       {fluid && (
-        <a href={link}>
+        <a href={link} className={styles.logo}>
           <Image fluid={fluid} alt="Camera" />
         </a>
       )}
-      <h2 className={styles.name}>
-        <a href={link}>{label}</a>
-      </h2>
-      <p dangerouslySetInnerHTML={{ __html: description }} />
-      <a href={link}>check it out &rarr;</a>
+      <div className={styles.card}>
+        <h2 className={styles.name}>
+          <a href={link}>{label}</a>
+        </h2>
+        <p
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
+        <a className={styles.link} href={link}>
+          check it out &rarr;
+        </a>
+      </div>
     </div>
   );
 }

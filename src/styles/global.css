@@ -1,12 +1,14 @@
 :root {
   --white: white;
   --text: #403c4a;
-  --text-muted: #6b6971;
+  --text-muted: #78757f;
   --text-pink: #c10b7e;
   --yellow: #ffe742;
   --pink: #ff87d4;
   --blue: #87fffb;
+  --blue-dark: #63ddd9;
   --black: #171321;
+  --gray-light: #d4d0e0;
 }
 
 *,
@@ -47,7 +49,12 @@ h6 {
 
 a {
   color: var(--text-pink);
-  font-weight: 600;
+  font-weight: 500;
+}
+
+strong,
+b {
+  font-weight: 500;
 }
 
 .visually-hidden {

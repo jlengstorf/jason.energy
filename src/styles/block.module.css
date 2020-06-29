@@ -1,5 +1,6 @@
 .block {
   background: var(--white);
+  border-bottom: 1px solid var(--gray-light);
   padding: 5rem 5vw;
 }
 
@@ -9,6 +10,7 @@
 
 .block.blue {
   background: var(--blue);
+  border-color: var(--blue-dark);
 }
 
 .block.yellow {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-// import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import styles from '../styles/exploding-nav.module.css';
-import useSound from 'use-sound';
+import { useSfx } from '../hooks/use-sfx';
 
 const navItems = [
   {
@@ -38,30 +37,7 @@ const navItems = [
 
 export function ExplodingNav() {
   const [state, setState] = useState('closed');
-  const [playPowerUp] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/power-up.mp3',
-    {
-      volume: 0.5,
-    },
-  );
-  const [playPowerDown] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395253/jason.af/sfx/power-down.mp3',
-    {
-      volume: 0.5,
-    },
-  );
-  const [playPop] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/pop.mp3',
-    {
-      volume: 0.5,
-    },
-  );
-  const [playClick] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/v1593395252/jason.af/sfx/click.mp3',
-    {
-      volume: 0.5,
-    },
-  );
+  const { playPowerUp, playPowerDown, playPop, playClick } = useSfx();
 
   const toggleOpen = () => {
     const toggle = document.querySelector(`.${styles.toggle}`);
