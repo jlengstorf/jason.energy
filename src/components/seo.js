@@ -5,7 +5,7 @@ export function SEO({
   title = 'A Very Jason Lengstorf Website — Powered By Boops!',
   description = 'Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor.',
   url = 'https://jason.af/',
-  image = 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1593579116/jason.af/gfqy4avi1a37wbliyf85.jpg',
+  image = 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg',
 }) {
   return (
     <Helmet defer={false}>
