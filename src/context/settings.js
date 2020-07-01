@@ -3,21 +3,21 @@ import React, { createContext, useState, useContext } from 'react';
 const SettingsContext = createContext();
 
 export const SettingsProvider = ({ children }) => {
-  const [sound, setSoundEnabled] = useState(true);
+  const [soundEnabled, setSoundEnabled] = useState(true);
 
   const toggleSound = () => {
-    setSoundEnabled(!sound);
+    setSoundEnabled(!soundEnabled);
   };
 
   return (
-    <SettingsContext.Provider value={{ sound, toggleSound }}>
+    <SettingsContext.Provider value={{ soundEnabled, toggleSound }}>
       {children}
     </SettingsContext.Provider>
   );
 };
 
 export const useSettings = () => {
-  const { sound, toggleSound } = useContext(SettingsContext);
+  const { soundEnabled, toggleSound } = useContext(SettingsContext);
 
-  return { sound, toggleSound };
+  return { soundEnabled, toggleSound };
 };

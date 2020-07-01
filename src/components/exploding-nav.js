@@ -82,7 +82,7 @@ export function ExplodingNav() {
           src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
           alt=""
         />
-        <span className="visually-hidden">Show Nav</span>
+        <span className="visually-hidden">Show Navigation</span>
       </button>
       <nav className={styles.nav}>
         {navItems.map((item, index) => (

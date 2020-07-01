@@ -3,6 +3,7 @@ import Image from 'gatsby-image';
 import { getFixedImageObject } from 'gatsby-transformer-cloudinary';
 import styles from '../styles/photos.module.css';
 import { useSfx } from '../hooks/use-sfx';
+import { Button } from './button';
 
 const photos = [
   {
@@ -65,7 +66,7 @@ const photos = [
 
 function Thumb({ photo, handleClick, isCurrent }) {
   const [fixed, setFixed] = useState(false);
-  const { playPop } = useSfx();
+  const { playClick, playPop } = useSfx();
 
   useEffect(() => {
     getFixedImageObject({
@@ -80,24 +81,18 @@ function Thumb({ photo, handleClick, isCurrent }) {
 
   return fixed ? (
     <li className={styles.thumb}>
-      <a
+      <Button
         className={styles.thumbLink}
-        href="#show-photo"
-        onMouseDown={handleClick}
-        onClick={e => e.preventDefault()}
-        onKeyDown={event => {
-          if (event.key !== 'Enter') return;
-          handleClick(event);
-        }}
-        onFocus={playPop}
-        onMouseEnter={playPop}
+        hoverSound={playPop}
+        clickSound={playClick}
+        handleClick={handleClick}
       >
         <Image
           className={`${styles.thumbnail} ${isCurrent ? styles.active : ''}`}
           fixed={fixed}
           alt={photo.alt}
         />
-      </a>
+      </Button>
     </li>
   ) : null;
 }
@@ -105,7 +100,6 @@ function Thumb({ photo, handleClick, isCurrent }) {
 export function Photos({ className }) {
   const [currentImage, setCurrentImage] = useState(photos[0]);
   const [fixed, setFixed] = useState(false);
-  const { playClick } = useSfx();
 
   useEffect(() => {
     getFixedImageObject({
@@ -151,10 +145,7 @@ export function Photos({ className }) {
               key={`photo-${index}`}
               photo={photo}
               isCurrent={currentImage.publicId === photo.publicId}
-              handleClick={event => {
-                playClick();
-                event.preventDefault();
-                event.stopPropagation();
+              handleClick={() => {
                 setCurrentImage(photo);
               }}
             />
