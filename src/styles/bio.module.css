@@ -31,7 +31,7 @@
   padding: 0;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .heading {
     font-size: 1.75rem;
   }
@@ -203,6 +203,7 @@
 .link:focus,
 .link:hover {
   background: var(--text-pink);
+  outline: none;
   transition-delay: 0ms;
 }
 

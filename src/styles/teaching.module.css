@@ -1,5 +1,5 @@
 .container {
-  margin: 3rem auto;
+  margin: 0 auto 3rem;
   max-width: 1400px;
   width: 90vw;
 }
@@ -17,11 +17,12 @@
 
 .lede {
   font-size: 1.25rem;
+  margin-bottom: 0;
   text-align: center;
 }
 
 .platform {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .logo {
@@ -35,7 +36,7 @@
   border: 1px solid var(--blue-dark);
   border-radius: 14px;
   margin-top: -8rem;
-  padding: 8rem 3rem 2rem;
+  padding: 8rem 2rem 2rem;
 }
 
 .name {
@@ -74,6 +75,10 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .platform {
+    margin-top: 0;
   }
 
   .card {

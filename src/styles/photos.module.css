@@ -1,6 +1,15 @@
 .image {
-  margin: 0 0 3rem;
+  margin: 3rem auto;
+  max-width: 90vw;
   padding: 0;
+  width: 400px;
+}
+
+.image > div {
+  height: 0 !important;
+  max-width: 100% !important;
+  max-width: 100% !important;
+  padding-bottom: 100% !important;
 }
 
 .image img {
@@ -63,6 +72,12 @@
   height: 50px;
 }
 
+.thumbLink:focus,
+.thumbLink:hover {
+  outline: 2px solid var(--text-pink);
+  outline-offset: 0.25rem;
+}
+
 .thumbnail {
   opacity: 1;
   transition: 200ms opacity linear;
@@ -72,7 +87,11 @@
   opacity: 0.5;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
+  .image {
+    margin-top: 0;
+  }
+
   .morePhotos {
     margin-bottom: 0;
   }

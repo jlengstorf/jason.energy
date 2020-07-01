@@ -7,6 +7,7 @@ import { useSfx } from '../hooks/use-sfx';
 const photos = [
   {
     publicId: 'jason.af/jason-lengstorf-tokyo',
+    alt: 'Jason Lengstorf smiling and raising an eyebrow in a park.',
     caption: 'This is Jason’s most common profile photo.',
     credit: 'paint with stars',
     creditLink: 'https://paintwithstars.com/',
@@ -15,6 +16,8 @@ const photos = [
   },
   {
     publicId: 'jason.af/jason-lengstorf-hat',
+    alt:
+      'Jason Lengstorf wearing a hat and staring at the camera with a death glare.',
     caption: 'Jason is afflicted with Resting Murder Face™.',
     credit: 'Marisa Morby',
     creditLink: 'https://www.marisamorby.com',
@@ -23,6 +26,7 @@ const photos = [
   },
   {
     publicId: 'jason.af/jason-lengstorf-web-unleashed',
+    alt: 'Jason Lengstorf smiling and holding his arms up high.',
     caption: '“I love hugs thiiiiiiiis much!”',
     credit: 'Web Unleashed',
     creditLink: 'https://fitc.ca/event/webu19/',
@@ -31,6 +35,8 @@ const photos = [
   },
   {
     publicId: 'jason.af/jason-lengstorf-bridge',
+    alt:
+      'Jason Lengstorf crossing his arms and smiling in front of a concrete wall.',
     caption: 'Smiling on bridges is one of Jason’s favorite hobbies.',
     credit: 'paint with stars',
     creditLink: 'https://paintwithstars.com/',
@@ -39,6 +45,7 @@ const photos = [
   },
   {
     publicId: 'jason.af/jason-lengstorf-web-unleashed-keynote',
+    alt: 'Jason Lengstorf on stage giving a keynote presentation.',
     caption: 'Jason on stage at Web Unleashed 2019.',
     credit: 'Web Unleashed',
     creditLink: 'https://fitc.ca/event/webu19/',
@@ -47,6 +54,7 @@ const photos = [
   },
   {
     publicId: 'jason.af/jason-lengstorf-piggyback',
+    alt: 'Jason Lengstorf giving Marisa Morby a piggyback ride.',
     caption: 'Piggyback rides!',
     credit: 'La Boutique de la Luz',
     creditLink: 'https://www.laboutiquedelaluz.com/',
@@ -76,6 +84,7 @@ function Thumb({ photo, handleClick, isCurrent }) {
         className={styles.thumbLink}
         href="#show-photo"
         onMouseDown={handleClick}
+        onClick={e => e.preventDefault()}
         onKeyDown={event => {
           if (event.key !== 'Enter') return;
           handleClick(event);
@@ -113,7 +122,7 @@ export function Photos({ className }) {
     <div className={className}>
       <figure className={styles.image}>
         {fixed && (
-          <Image fixed={fixed} src={currentImage.url} alt="Jason Lengstorf" />
+          <Image fixed={fixed} src={currentImage.url} alt={currentImage.alt} />
         )}
         <figcaption>
           {currentImage.caption}

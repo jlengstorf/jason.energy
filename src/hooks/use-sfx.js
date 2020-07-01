@@ -1,6 +1,10 @@
 import useSound from 'use-sound';
+import { useSettings } from '../context/settings';
 
 export function useSfx() {
+  const { sound } = useSettings();
+  const ifEnabled = fn => (sound ? fn() : null);
+
   const [playBoop] = useSound(
     'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/oop.mp3',
     {
@@ -37,10 +41,10 @@ export function useSfx() {
   );
 
   return {
-    playBoop,
-    playClick,
-    playPop,
-    playPowerUp,
-    playPowerDown,
+    playBoop: () => ifEnabled(playBoop),
+    playClick: () => ifEnabled(playClick),
+    playPop: () => ifEnabled(playPop),
+    playPowerUp: () => ifEnabled(playPowerUp),
+    playPowerDown: () => ifEnabled(playPowerDown),
   };
 }

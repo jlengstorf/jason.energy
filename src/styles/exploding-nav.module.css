@@ -22,6 +22,26 @@
   width: 110px;
 }
 
+.toggle::before {
+  background-image: url('https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593477791/jason.af/click-my-head.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: block;
+  height: 43px;
+  opacity: 0;
+  position: absolute;
+  right: 85px;
+  top: 90px;
+  transition: 200ms opacity linear;
+  width: 112px;
+}
+
+.toggle.firstRun::before {
+  opacity: 1;
+}
+
 .toggle::after {
   content: '';
   background-image: url('https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/dome-top.png');

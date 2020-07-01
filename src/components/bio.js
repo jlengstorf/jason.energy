@@ -140,7 +140,7 @@ function BioText({ length }) {
 export function Bio() {
   const [length, setLength] = useState('short');
   const [headlineIndex, setHeadlineIndex] = useState(0);
-  const { playBoop } = useSfx();
+  const { playBoop, playPop, playClick } = useSfx();
 
   function cycleHeadline(event) {
     playBoop();
@@ -155,6 +155,12 @@ export function Bio() {
 
     setHeadlineIndex(index);
   }, []);
+
+  function handleClick(event) {
+    playClick();
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
   return [
     <h1 className={styles.heading}>{headlines[headlineIndex]}</h1>,
@@ -189,7 +195,17 @@ export function Bio() {
               },
             ].map(profile => (
               <li className={styles.profile}>
-                <a href={profile.link} className={styles.link}>
+                <a
+                  href={profile.link}
+                  className={styles.link}
+                  onMouseDown={handleClick}
+                  onKeyDown={event => {
+                    if (event.key !== 'Enter') return;
+                    handleClick(event);
+                  }}
+                  onFocus={playPop}
+                  onMouseEnter={playPop}
+                >
                   <profile.icon className={styles.icon} />
                 </a>
               </li>

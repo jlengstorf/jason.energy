@@ -4,6 +4,11 @@ import { useSfx } from '../hooks/use-sfx';
 
 const navItems = [
   {
+    id: 'bio',
+    label: 'About Jason',
+    icon: 'camera',
+  },
+  {
     id: 'teaching',
     label: 'Teaching',
     icon: 'terminal',
@@ -13,29 +18,25 @@ const navItems = [
     label: 'Writing',
     icon: 'writing',
   },
-  {
-    id: 'art',
-    label: 'Art',
-    icon: 'astronaut',
-  },
+  // {
+  //   id: 'art',
+  //   label: 'Art',
+  //   icon: 'astronaut',
+  // },
   {
     id: 'connect',
     label: 'Connect',
     icon: 'rubber-corgi',
   },
-  {
-    id: 'gear',
-    label: 'What I Use',
-    icon: 'tv',
-  },
-  {
-    id: 'bio',
-    label: 'Bio / Press Kit',
-    icon: 'camera',
-  },
+  // {
+  //   id: 'gear',
+  //   label: 'What I Use',
+  //   icon: 'tv',
+  // },
 ];
 
 export function ExplodingNav() {
+  const [firstRun, setFirstRun] = useState(true);
   const [state, setState] = useState('closed');
   const { playPowerUp, playPowerDown, playPop, playClick } = useSfx();
 
@@ -45,6 +46,11 @@ export function ExplodingNav() {
       playPowerUp();
       setState('open');
       toggle.classList.add(styles.active);
+
+      if (firstRun) {
+        toggle.classList.remove(styles.firstRun);
+        setFirstRun(false);
+      }
     } else {
       playPowerDown();
       setState('closed');
@@ -66,7 +72,10 @@ export function ExplodingNav() {
   };
 
   return (
-    <div className={styles.toggle} style={{ '--navCount': navItems.length }}>
+    <div
+      className={`${styles.toggle} ${styles.firstRun}`}
+      style={{ '--navCount': navItems.length }}
+    >
       <button className={styles.button} onClick={toggleOpen}>
         <img
           className={styles.face}

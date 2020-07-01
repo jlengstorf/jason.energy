@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { ExplodingNav } from './exploding-nav';
+import { Settings } from './settings';
 import styles from '../styles/header.module.css';
 
 export function Header() {
@@ -10,6 +11,7 @@ export function Header() {
         Jason Lengstorf
       </Link>
       <ExplodingNav />
+      <Settings />
     </header>
   );
 }

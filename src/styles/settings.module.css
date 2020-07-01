@@ -1,0 +1,47 @@
+.settings {
+  position: absolute;
+  top: 5px;
+  right: min(2vw, 50px);
+  width: 50px;
+  z-index: 900;
+}
+
+.button {
+  background: var(--black);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  transition: 200ms all linear;
+  width: 49px;
+}
+
+.button:focus,
+.button:hover {
+  background: var(--pink);
+  border-color: var(--text-pink);
+}
+
+.gear,
+.sound {
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.panel {
+  background: var(--black);
+  background-blend-mode: multiply;
+  border-radius: 0 0 calc(25px + 0.25rem) calc(25px + 0.25rem);
+  display: none;
+  padding: 0.25rem;
+  position: absolute;
+  top: 50px;
+  right: -0.25rem;
+  width: calc(50px + 0.5rem);
+}
+
+.panel.open {
+  display: block;
+}
