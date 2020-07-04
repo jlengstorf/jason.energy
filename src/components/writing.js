@@ -67,15 +67,30 @@ export function Writing() {
         {featuredPosts.map((post, index) => (
           <div className={styles.post} key={`featured-post-${index}`}>
             <p className={styles.site}>
-              <img src={sites[post.site].icon} alt={sites[post.site].name} />
+              <img
+                src={`https://res.cloudinary.com/jlengstorf/image/fetch/w_32,h_32,c_fill,g_face,q_auto,f_auto/${
+                  sites[post.site].icon
+                }`}
+                alt={sites[post.site].name}
+                loading="lazy"
+                height={16}
+                width={16}
+              />
               {sites[post.site].name}
             </p>
             {index < columns && (
               <a href={post.url} className={styles.imageLink}>
                 <img
-                  src={post.image}
+                  src={
+                    post.image.match(/^https:\/\/res.cloudinary/)
+                      ? post.image
+                      : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_255,c_fill,g_face,q_auto,f_auto/${post.image}`
+                  }
                   alt={post.title}
                   className={styles.image}
+                  loading="lazy"
+                  width={250}
+                  height={125}
                 />
               </a>
             )}
