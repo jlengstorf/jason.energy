@@ -9,6 +9,7 @@ import '../styles/global.css';
 export function Layout({ children }) {
   return [
     <Helmet>
+      <html lang="en" />
       <link rel="stylesheet" href="https://use.typekit.net/ufz6qjq.css" />
       <link
         rel="apple-touch-icon"

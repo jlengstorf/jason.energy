@@ -43,7 +43,7 @@
 }
 
 .label {
-  color: var(--text-muted);
+  color: var(--text);
   font-size: 0.75rem;
   font-variant: small-caps;
   font-weight: 400;

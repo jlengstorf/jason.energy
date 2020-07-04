@@ -154,16 +154,19 @@ export function Bio() {
                 id: 'twitter',
                 icon: Twitter,
                 link: 'https://twitter.com/jlengstorf',
+                label: 'Twitter',
               },
               {
                 id: 'github',
                 icon: GitHub,
                 link: 'https://github.com/jlengstorf',
+                label: 'GitHub',
               },
               {
                 id: 'dribbble',
                 icon: Dribbble,
                 link: 'https://dribbble.com/jlengstorf',
+                label: 'Dribbble',
               },
             ].map(profile => (
               <li className={styles.profile}>
@@ -179,6 +182,7 @@ export function Bio() {
                   onMouseEnter={playPop}
                 >
                   <profile.icon className={styles.icon} />
+                  <span className="visually-hidden">{profile.label}</span>
                 </a>
               </li>
             ))}

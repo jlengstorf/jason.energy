@@ -36,7 +36,9 @@ export function Form() {
         email: data.get('email'),
       }),
     }).then(res => {
-      console.log(res);
+      if (res.status === 200 && res.redirected === true) {
+        window.location.href = res.url;
+      }
     });
   };
 

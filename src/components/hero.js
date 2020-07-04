@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx';
 import styles from '../styles/hero.module.css';
 
 const taglines = [
-  {
-    rotation: '-11deg',
-    size: '8.3vw',
-    'size-lg': '64.5px',
-    text: `
-      <span class="love">love</span>s pajama pants
-    `,
-  },
   {
     rotation: '20deg',
     size: '9.3vw',
@@ -20,19 +12,27 @@ const taglines = [
     `,
   },
   {
-    rotation: '-3deg',
-    size: '4.7vw',
-    'size-lg': '37px',
-    text: `
-      would <span class="love">love</span> a sandwich, thanks
-    `,
-  },
-  {
     rotation: '-9deg',
     size: '8.3vw',
     'size-lg': '64.5px',
     text: `
       <span class="love">love</span>s melted cheese
+    `,
+  },
+  {
+    rotation: '-3deg',
+    size: '4.7vw',
+    'size-lg': '38.5px',
+    text: `
+      would <span class="love">love</span> a sandwich, thanks
+    `,
+  },
+  {
+    rotation: '-11deg',
+    size: '8.3vw',
+    'size-lg': '64.5px',
+    text: `
+      <span class="love">love</span>s pajama pants
     `,
   },
 ];
@@ -82,12 +82,6 @@ export function Hero() {
     const index = taglineIndex + 1;
     setTaglineIndex(index < taglines.length ? index : 0);
   }
-
-  useEffect(() => {
-    const index = Math.floor(Math.random() * taglines.length);
-
-    setTaglineIndex(index);
-  }, []);
 
   return [
     <h1 className={styles.hero}>
