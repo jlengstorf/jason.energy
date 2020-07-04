@@ -25,7 +25,7 @@ export default [
     description:
       'Make sure your content stands out in social media timelines by automatically generating social media sharing cards for your blog posts.',
     image:
-      'https://res.cloudinary.com/jlengstorf/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:232129,g_south_west,x_480,y_254,l_text:lwj-title.otf_64_line_spacing_-10:Automatically%20Generate%20Social%20Images%20for%20Blog%20Posts%0A/w_760,c_fit,co_rgb:232129,g_north_west,x_480,y_445,l_text:lwj-tagline.otf_48:%2523images%20%2523seo%20%2523social-sharing%20%2523cloudinary/lwj/blog-post-card',
+      'https://res.cloudinary.com/jlengstorf/image/upload/w_1280,h_640,c_fill,g_north,q_auto,f_auto/w_760,c_fit,co_rgb:232129,g_south_west,x_480,y_254,l_text:lwj-title.otf_64_line_spacing_-10:Automatically%20Generate%20Social%20Images%20for%20Blog%20Posts%0A/w_760,c_fit,co_rgb:232129,g_north_west,x_480,y_445,l_text:lwj-tagline.otf_48:%2523images%20%2523seo%20%2523social-sharing%20%2523cloudinary/lwj/blog-post-card',
     url: 'https://www.learnwithjason.dev/blog/auto-generate-social-image/',
     featured: true,
     site: 'learnwithjason',

@@ -10,6 +10,10 @@ export function Layout({ children }) {
   return [
     <Helmet>
       <html lang="en" />
+      <link rel="preconnect" href="https://syndication.twitter.com" />
+      <link rel="preconnect" href="https://pbs.twimg.com" />
+      <link rel="preconnect" href="https://res.cloudinary.com" />
+      <link rel="preconnect" href="https://platform.twitter.com" />
       <link rel="stylesheet" href="https://use.typekit.net/ufz6qjq.css" />
       <link
         rel="apple-touch-icon"
