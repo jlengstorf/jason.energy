@@ -1,0 +1,72 @@
+.writing {
+  margin: 0 auto;
+  max-width: 1150px;
+}
+
+.overview {
+  font-size: 1.25rem;
+  margin: 0 auto 3rem;
+  max-width: 90vw;
+  text-align: center;
+  width: 900px;
+}
+
+.post {
+  margin: 3rem 0 0;
+}
+
+.site {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin: 0 0 1rem;
+  text-transform: lowercase;
+}
+
+.site img {
+  margin-right: 0.5rem;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.image {
+  width: 100%;
+}
+
+.title {
+  margin: 0.5rem 0;
+}
+
+.title a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+}
+
+.link {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  margin: 0.5rem 0 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 500px) {
+  .posts {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, 250px);
+    row-gap: 4rem;
+    justify-content: center;
+  }
+
+  .post {
+    margin: 0;
+  }
+}

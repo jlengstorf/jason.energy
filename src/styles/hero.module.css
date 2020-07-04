@@ -1,0 +1,92 @@
+.hero {
+  height: 390px;
+  margin: 0 auto;
+  max-height: 46vw;
+  max-width: 700px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90vw;
+}
+
+.firstLine {
+  display: block;
+  font-size: 25.4vw;
+  line-height: 0.95;
+}
+
+.box {
+  background: var(--black);
+  color: var(--yellow);
+  display: block;
+  font-size: 13.2vw;
+  line-height: 1;
+  padding: 0 0.5rem 1rem;
+}
+
+.tagline {
+  display: block;
+  font-size: var(--size, 7.42vw);
+}
+
+:global(.love) {
+  background: url('https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593755650/jason.af/love.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+  display: inline-block;
+  height: 1.2em;
+  margin: 0 -3px;
+  position: relative;
+  top: -7px;
+  transform: scale(1.1) rotate(var(--rotation, -11deg)) translateY(0.1em);
+  transform-origin: center;
+  width: 1.6em;
+}
+
+.cycle {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  width: 30px;
+}
+
+.cycle.active {
+  animation-duration: 500ms;
+  animation-name: spin;
+  animation-iteration-count: 1;
+}
+
+.cycle img {
+  width: 100%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-1turn);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@media (min-width: 775px) {
+  .firstLine {
+    font-size: 197px;
+  }
+
+  .box {
+    font-size: 102.5px;
+  }
+
+  .tagline {
+    font-size: var(--size-lg, 57.5px);
+  }
+}

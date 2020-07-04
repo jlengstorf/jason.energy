@@ -6,6 +6,7 @@
 
 .block.pink {
   background: var(--pink);
+  border-color: var(--text-pink);
 }
 
 .block.blue {
@@ -15,4 +16,5 @@
 
 .block.yellow {
   background: var(--yellow);
+  border-color: var(--yellow-dark);
 }

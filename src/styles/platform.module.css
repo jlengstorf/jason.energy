@@ -1,0 +1,62 @@
+.platform {
+  margin-top: 2rem;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--blue-dark);
+  border-radius: 14px;
+  margin-top: -8rem;
+  padding: 8rem 2rem 2rem;
+}
+
+.name {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.name a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.description {
+  color: var(--text-muted);
+  margin: 2rem 0;
+}
+
+.link {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  .platform {
+    margin-top: 0;
+  }
+
+  .card {
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card {
+    padding-bottom: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

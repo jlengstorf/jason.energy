@@ -107,7 +107,7 @@
   border-radius: 14px;
   color: var(--black);
   display: grid;
-  font-weight: 600;
+  font-weight: 500;
   gap: 1rem;
   grid-template-columns: 1fr 75px;
   height: 0;

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'gatsby-image';
-import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
+import React from 'react';
 import TweetEmbed from '@jlengstorf/react-tweet-embed';
 import styles from '../styles/teaching.module.css';
+import { Intro } from './intro';
+import { Platform } from './platform';
 
 const platforms = [
   {
@@ -41,54 +41,16 @@ const platforms = [
   },
 ];
 
-function Platform({ label, link, description, image }) {
-  const [fluid, setFluid] = useState(false);
-
-  useEffect(() => {
-    getFluidImageObject({
-      public_id: `jason.af/${image}`,
-      cloudName: 'jlengstorf',
-      originalHeight: 420,
-      originalWidth: 420,
-    }).then(setFluid);
-  }, [image]);
-
-  return (
-    <div className={styles.platform}>
-      {fluid && (
-        <a href={link} className={styles.logo}>
-          <Image fluid={fluid} alt="Camera" />
-        </a>
-      )}
-      <div className={styles.card}>
-        <h2 className={styles.name}>
-          <a href={link}>{label}</a>
-        </h2>
-        <p
-          className={styles.description}
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
-        <a className={styles.link} href={link}>
-          check it out &rarr;
-        </a>
-      </div>
-    </div>
-  );
-}
-
 export function Teaching() {
   return [
-    <div className={styles.intro}>
-      <h2 className={styles.heading}>
-        Jason makes learning fun and approachable.
-      </h2>
-      <p className={styles.lede}>
+    <Intro headline="Jason makes learning fun & approachable.">
+      <p>
         Jason has been teaching developers of all skill levels how to code for
         over a decade. He specializes in live coding, simplifying complex topics
         into relatable analogies and demos, and shoehorning corgi references
         into every project.
       </p>
-    </div>,
+    </Intro>,
     <section className={styles.container}>
       {platforms.map(platform => (
         <Platform key={platform.id} {...platform} />

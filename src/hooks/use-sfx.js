@@ -44,9 +44,18 @@ export function useSfx() {
     },
   );
 
+  const [playHooray] = useSound(
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/hooray.mp3',
+    {
+      soundEnabled,
+      volume: 0.5,
+    },
+  );
+
   return {
     playBoop,
     playClick,
+    playHooray,
     playPop,
     playPowerUp,
     playPowerDown,

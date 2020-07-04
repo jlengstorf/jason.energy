@@ -1,17 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx';
 import { Photos } from './photos';
 import styles from '../styles/bio.module.css';
 import Twitter from '../assets/twitter.svg';
 import Dribbble from '../assets/dribbble.svg';
 import GitHub from '../assets/github.svg';
-
-const headlines = [
-  'Jason Lengstorf believes anything can be a sandwich if you try hard enough.',
-  'Jason Lengstorf is (probably) wearing pajama pants right now.',
-  'Jason Lengstorf knows there’s nothing better in life than melted cheese.',
-];
 
 function LengthChooser({ length, setLength }) {
   const { playPop, playClick } = useSfx();
@@ -139,22 +133,7 @@ function BioText({ length }) {
 
 export function Bio() {
   const [length, setLength] = useState('short');
-  const [headlineIndex, setHeadlineIndex] = useState(0);
-  const { playBoop, playPop, playClick } = useSfx();
-
-  function cycleHeadline(event) {
-    playBoop();
-
-    event && event.preventDefault();
-    const index = headlineIndex + 1;
-    setHeadlineIndex(index < headlines.length ? index : 0);
-  }
-
-  useEffect(() => {
-    const index = Math.floor(Math.random() * headlines.length);
-
-    setHeadlineIndex(index);
-  }, []);
+  const { playPop, playClick } = useSfx();
 
   function handleClick(event) {
     playClick();
@@ -162,14 +141,7 @@ export function Bio() {
     event.stopPropagation();
   }
 
-  return [
-    <h1 className={styles.heading}>{headlines[headlineIndex]}</h1>,
-    <a href="#cycle-headline" onClick={cycleHeadline} className={styles.cycle}>
-      <span role="img" aria-label="cycle">
-        🔄
-      </span>{' '}
-      see another fact
-    </a>,
+  return (
     <section className={styles.container}>
       <div className={styles.bioWrapper}>
         <LengthChooser length={length} setLength={setLength} />
@@ -214,6 +186,6 @@ export function Bio() {
         </div>
       </div>
       <Photos className={styles.imageContainer} />
-    </section>,
-  ];
+    </section>
+  );
 }

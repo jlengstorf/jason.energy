@@ -24,6 +24,11 @@ const navItems = [
   //   icon: 'astronaut',
   // },
   {
+    id: 'newsletter',
+    label: 'Newsletter',
+    icon: 'newsletter',
+  },
+  {
     id: 'connect',
     label: 'Connect',
     icon: 'rubber-corgi',

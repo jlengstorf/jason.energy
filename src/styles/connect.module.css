@@ -1,0 +1,16 @@
+.connect {
+}
+
+.platforms {
+  margin: 0 auto 3rem;
+  max-width: 1400px;
+  width: 90vw;
+}
+
+@media (min-width: 800px) {
+  .platforms {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

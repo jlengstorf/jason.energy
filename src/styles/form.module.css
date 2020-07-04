@@ -1,0 +1,88 @@
+.newsletter {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 90vw;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.imageWrapper {
+  margin: 0 auto;
+  max-width: 140px;
+  width: 100%;
+}
+
+.form {
+  margin: 2rem auto 0;
+  max-width: 460px;
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    align-items: top;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 140px 1fr;
+  }
+
+  .imageWrapper {
+    margin-top: 2rem;
+  }
+
+  .form {
+    margin-top: 0;
+  }
+}
+
+.label,
+.input {
+  display: block;
+}
+
+.label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  text-transform: lowercase;
+}
+
+.input {
+  border: 1px solid var(--text-muted);
+  border-radius: 7px;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.button {
+  background: var(--pink);
+  border: 0;
+  border-radius: 7px;
+  color: var(--black);
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: 200ms background linear;
+  padding: 0.5rem 1.5rem;
+}
+
+.button:focus,
+.button:hover {
+  background: var(--text-pink);
+}
+
+.privacy {
+  background: var(--yellow);
+  font-size: 0.875rem;
+  font-style: italic;
+  margin: 1rem 0 0;
+}
