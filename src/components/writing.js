@@ -84,7 +84,7 @@ export function Writing() {
                   src={
                     post.image.match(/^https:\/\/res.cloudinary/)
                       ? post.image
-                      : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_255,c_fill,g_face,q_auto,f_auto/${post.image}`
+                      : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
                   }
                   alt={post.title}
                   className={styles.image}
