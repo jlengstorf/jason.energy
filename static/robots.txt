@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /success/
+Disallow: /confirmed/
 
 Sitemap: https://www.jason.af/sitemap.txt
