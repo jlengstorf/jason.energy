@@ -71,10 +71,18 @@ export function ExplodingNav() {
 
     const target = document.getElementById(id);
     const top = target.offsetTop - 60;
-    window.scrollTo({
-      top,
-      behavior: 'smooth',
-    });
+    const supportsNativeSmoothScroll =
+      'scrollBehavior' in document.documentElement.style;
+
+    if (supportsNativeSmoothScroll) {
+      window.scrollTo({
+        top,
+        behavior: 'smooth',
+      });
+    } else {
+      const element = document.scrollingElement || document.documentElement;
+      element.scrollTop = top;
+    }
 
     target.tabIndex = -1;
     target.focus({ preventScroll: true });
