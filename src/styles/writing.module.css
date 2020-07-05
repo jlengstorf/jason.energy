@@ -13,6 +13,7 @@
 
 .post {
   margin: 3rem 0 0;
+  position: relative;
 }
 
 .site {
@@ -39,18 +40,45 @@
   margin: 0.5rem 0;
 }
 
-.title a {
+.titleLink {
   color: var(--black);
   text-decoration: none;
 }
 
+.titleLink:focus {
+  outline: none;
+}
+
+.titleLink::after {
+  background: transparent;
+  bottom: 0;
+  content: '';
+  cursor: pointer;
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.titleLink:focus::after,
+.titleLink:hover::after {
+  outline: 2px solid var(--text-pink);
+  outline-offset: 0.5rem;
+}
+
 .description {
   margin: 0.5rem 0 0;
+  position: relative;
+  z-index: 20;
 }
 
 .link {
+  color: var(--text-pink);
   display: block;
   font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.2em;
   margin: 0.5rem 0 0;
   text-decoration: none;

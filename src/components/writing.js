@@ -73,28 +73,28 @@ export function Writing() {
               {sites[post.site].name}
             </p>
             {index < columns && (
-              <a href={post.url} className={styles.imageLink}>
-                <img
-                  src={
-                    post.image.match(/^https:\/\/res.cloudinary/)
-                      ? post.image
-                      : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
-                  }
-                  alt={post.title}
-                  className={styles.image}
-                  loading="lazy"
-                  width={250}
-                  height={125}
-                />
-              </a>
+              <img
+                src={
+                  post.image.match(/^https:\/\/res.cloudinary/)
+                    ? post.image
+                    : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
+                }
+                alt=""
+                className={styles.image}
+                loading="lazy"
+                width={250}
+                height={125}
+              />
             )}
             <h3 className={styles.title}>
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url} className={styles.titleLink}>
+                {post.title}
+              </a>
             </h3>
             <p className={styles.description}>{post.description}</p>
-            <a href={post.url} className={styles.link}>
+            <span aria-hidden="true" className={styles.link}>
               Read this post &rarr;
-            </a>
+            </span>
           </div>
         ))}
       </div>
