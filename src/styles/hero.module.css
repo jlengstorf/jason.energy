@@ -3,7 +3,7 @@
   margin: 0 auto;
   max-height: 54vw;
   max-width: 700px;
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
   text-transform: uppercase;
   width: 90vw;
