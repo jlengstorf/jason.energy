@@ -135,12 +135,6 @@ export function Bio() {
   const [length, setLength] = useState('short');
   const { playPop, playClick } = useSfx();
 
-  function handleClick(event) {
-    playClick();
-    event.preventDefault();
-    event.stopPropagation();
-  }
-
   return (
     <section className={styles.container}>
       <div className={styles.bioWrapper}>
@@ -173,10 +167,14 @@ export function Bio() {
                 <a
                   href={profile.link}
                   className={styles.link}
-                  onMouseDown={handleClick}
+                  onMouseDown={event => {
+                    playClick();
+                    event.stopPropagation();
+                  }}
                   onKeyDown={event => {
                     if (event.key !== 'Enter') return;
-                    handleClick(event);
+                    playClick();
+                    event.stopPropagation();
                   }}
                   onFocus={playPop}
                   onMouseEnter={playPop}
