@@ -92,3 +92,13 @@
     font-size: var(--size-lg, 57.5px);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    color: var(--yellow);
+  }
+  .box {
+    background: var(--yellow);
+    color: var(--black);
+  }
+}

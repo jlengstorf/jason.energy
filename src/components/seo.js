@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 export function SEO({
@@ -7,6 +7,12 @@ export function SEO({
   url = 'https://jason.af/',
   image = 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg',
 }) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }, []);
+
   return (
     <Helmet defer={false}>
       <title>{title}</title>
@@ -19,6 +25,10 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
 
+      <meta
+        name="twitter:widgets:theme"
+        content={darkMode ? 'dark' : 'light'}
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@jlengstorf" />
       <meta name="twitter:title" content={title} />

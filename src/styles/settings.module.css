@@ -31,7 +31,7 @@
 }
 
 .panel {
-  background: var(--black);
+  background: var(--background);
   background-blend-mode: multiply;
   border-radius: 0 0 calc(25px + 0.25rem) calc(25px + 0.25rem);
   display: none;

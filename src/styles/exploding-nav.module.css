@@ -105,7 +105,7 @@
   align-items: center;
   background: transparent;
   border-radius: 14px;
-  color: var(--black);
+  color: var(--foreground);
   display: grid;
   font-weight: 500;
   gap: 1rem;
@@ -151,4 +151,17 @@
   outline: 0;
   transition: 200ms background linear;
   transition-delay: 0ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  .active .navItem {
+    background: rgba(23, 19, 33, 0.9);
+  }
+  .active .navItem:active,
+  .active .navItem:focus,
+  .active .navItem:hover {
+    background: var(--pink);
+    border-color: var(--yellow);
+    color: var(--black);
+  }
 }
