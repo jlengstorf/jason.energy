@@ -15,6 +15,16 @@
     'Segoe UI Symbol';
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #171321;
+    --black: white;
+    --text: #403c4a;
+    --yellow: #ddc62c;
+    --yellow-dark: #ffe742;
+  }
+}
+
 *,
 *::before,
 *::after {
