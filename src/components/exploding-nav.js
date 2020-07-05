@@ -67,6 +67,7 @@ export function ExplodingNav() {
     event.preventDefault();
     event.stopPropagation();
     playClick();
+    toggleOpen();
 
     const target = document.getElementById(id);
     const top = target.offsetTop - 60;
@@ -74,6 +75,10 @@ export function ExplodingNav() {
       top,
       behavior: 'smooth',
     });
+
+    target.tabIndex = -1;
+    target.focus({ preventScroll: true });
+    delete target.tabIndex;
   };
 
   return (
