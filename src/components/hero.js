@@ -4,12 +4,27 @@ import styles from '../styles/hero.module.css';
 
 const taglines = [
   {
+    size: '8.1vw',
+    'size-lg': '64px',
+    text: `
+      has a lot of ideas
+    `,
+  },
+  {
     rotation: '11deg',
     scale: '0.99',
     size: '9.1vw',
     'size-lg': '70px',
     text: `
-      believes in us <span class="love">love</span>
+      believes in us <span class="love"></span>
+    `,
+    top: '0.1em',
+  },
+  {
+    size: '8.9vw',
+    'size-lg': '72px',
+    text: `
+      is an okay cook
     `,
   },
   {
@@ -19,6 +34,16 @@ const taglines = [
     text: `
       <span class="love">love</span>s melted cheese
     `,
+  },
+  {
+    rotation: '33deg',
+    scale: 1.1,
+    size: '5.6vw',
+    'size-lg': '44px',
+    text: `
+      thinks you belong here <span class="love"></span>
+    `,
+    top: '0.1em',
   },
   {
     scale: '1.3',
@@ -92,10 +117,11 @@ export function Hero() {
       <span
         className={styles.tagline}
         style={{
-          '--rotation': tagline['rotation'],
-          '--scale': tagline.scale,
-          '--size': tagline.size,
-          '--size-lg': tagline['size-lg'],
+          '--top': tagline.top || '-7px',
+          '--rotation': tagline['rotation'] || '0deg',
+          '--scale': tagline.scale || 1.1,
+          '--size': tagline.size || '8.1vw',
+          '--size-lg': tagline['size-lg'] || '44px',
         }}
         dangerouslySetInnerHTML={{ __html: tagline.text }}
       />

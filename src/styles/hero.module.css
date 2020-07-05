@@ -37,9 +37,9 @@
   color: transparent;
   display: inline-block;
   height: 1.2em;
-  margin: 0 -3px;
+  margin: -0.1em -3px;
   position: relative;
-  top: -7px;
+  top: var(--top, -0.05em);
   transform: scale(var(--scale, 1.1)) rotate(var(--rotation, -11deg))
     translateY(0.1em);
   transform-origin: center;
