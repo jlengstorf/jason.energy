@@ -6,21 +6,22 @@ const taglines = [
   {
     rotation: '11deg',
     scale: '0.99',
-    size: '9.3vw',
-    'size-lg': '72px',
+    size: '9.1vw',
+    'size-lg': '70px',
     text: `
       believes in us <span class="love">love</span>
     `,
   },
   {
     rotation: '-9deg',
-    size: '8.3vw',
+    size: '8.1vw',
     'size-lg': '64.5px',
     text: `
       <span class="love">love</span>s melted cheese
     `,
   },
   {
+    scale: '1.3',
     rotation: '-3deg',
     size: '4.7vw',
     'size-lg': '38.5px',
