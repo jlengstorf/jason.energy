@@ -47,22 +47,16 @@ export function Writing() {
 
   return (
     <section className={styles.writing}>
-      <Intro headline="Jason shares stories about code and not-code.">
+      <Intro headline="Jason shares stories about code (and not-code).">
         <p>
-          Jason believes in the power of stories to help us share lessons
-          learned in a way that feels less like telling others how to live their
-          lives and more like people laughing and learning together through
-          shared experience.
+          Jason believes in the power of stories. He writes about code at{' '}
+          <a href="https://www.learnwithjason.dev/blog">learnwithjason.dev</a>{' '}
+          shares his stories and experiences at{' '}
+          <a href="https://www.lengstorf.com/blog/">lengstorf.com</a>, and
+          contributes to various sites around the web. These are a few pieces
+          he’s proud of:
         </p>
       </Intro>
-      <p className={styles.overview}>
-        Jason has two blogs: a{' '}
-        <a href="https://www.learnwithjason.dev/blog">code blog</a> for
-        tutorials and a{' '}
-        <a href="https://www.lengstorf.com/blog/">personal blog</a> for
-        anecdotes and stories. He also writes guest posts on various sites
-        around the web. These are a few of his favorites:
-      </p>
       <div className={styles.posts}>
         {featuredPosts.map((post, index) => (
           <div className={styles.post} key={`featured-post-${index}`}>
