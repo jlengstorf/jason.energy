@@ -4,7 +4,8 @@ import styles from '../styles/hero.module.css';
 
 const taglines = [
   {
-    rotation: '20deg',
+    rotation: '11deg',
+    scale: '0.99',
     size: '9.3vw',
     'size-lg': '72px',
     text: `
@@ -91,6 +92,7 @@ export function Hero() {
         className={styles.tagline}
         style={{
           '--rotation': tagline['rotation'],
+          '--scale': tagline.scale,
           '--size': tagline.size,
           '--size-lg': tagline['size-lg'],
         }}

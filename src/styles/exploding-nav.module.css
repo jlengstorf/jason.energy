@@ -2,7 +2,7 @@
   cursor: pointer;
   height: 110px;
   position: absolute;
-  right: min(calc(var(--navCount) * 2vw), 100px);
+  right: 40px;
   top: -25px;
   transition: 200ms top ease-out;
   width: 135px;
@@ -97,7 +97,7 @@
   position: absolute;
   top: 110px;
   visibility: hidden;
-  width: min(90vw, 220px);
+  width: 220px;
   z-index: 1;
 }
 

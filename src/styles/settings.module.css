@@ -1,7 +1,7 @@
 .settings {
   position: absolute;
   top: 5px;
-  right: min(2vw, 50px);
+  right: 10px;
   width: 50px;
   z-index: 900;
 }

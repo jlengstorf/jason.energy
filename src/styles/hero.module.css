@@ -1,8 +1,9 @@
 .hero {
   height: 390px;
   margin: 0 auto;
-  max-height: 46vw;
+  max-height: 54vw;
   max-width: 700px;
+  overflow-x: hidden;
   text-align: center;
   text-transform: uppercase;
   width: 90vw;
@@ -39,7 +40,8 @@
   margin: 0 -3px;
   position: relative;
   top: -7px;
-  transform: scale(1.1) rotate(var(--rotation, -11deg)) translateY(0.1em);
+  transform: scale(var(--scale, 1.1)) rotate(var(--rotation, -11deg))
+    translateY(0.1em);
   transform-origin: center;
   width: 1.6em;
 }

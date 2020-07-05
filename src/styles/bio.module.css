@@ -72,13 +72,13 @@
 .options {
   align-items: center;
   display: grid;
-  gap: min(6vw, 2rem);
+  gap: 2rem;
   grid-template-columns: repeat(6, 1fr);
 }
 
 .option {
   cursor: pointer;
-  height: calc((min(300px, 90vw) - 10rem) / 6 + 1rem);
+  height: calc((300px - 10rem) / 6 + 1rem);
   position: relative;
 }
 
@@ -135,11 +135,11 @@
   display: block;
   height: 0;
   left: 50%;
-  padding-bottom: calc(min(100%, 1rem) - 2px);
+  padding-bottom: calc(1rem - 2px);
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: min(100%, 1rem);
+  width: 1rem;
 }
 
 .label::before {
