@@ -25,7 +25,7 @@ export function Platform({
     <div className={styles.platform}>
       {fluid && (
         <a href={link} className={styles.logo}>
-          <Image fluid={fluid} alt="Camera" />
+          <Image fluid={fluid} alt={label} />
         </a>
       )}
       <div className={styles.card}>
