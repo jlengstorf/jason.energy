@@ -71,66 +71,68 @@ function BioText() {
   };
 
   return (
-    <p className={styles.bio}>
-      <strong>Jason Lengstorf</strong>{' '}
-      <span style={{ display: getVisibility('shorter') }}>
-        works{' '}
-        <span style={{ display: getVisibility('long') }}>
-          as a principal developer experience engineer
-        </span>{' '}
-        at{' '}
-        <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">
-          Netlify
-        </a>
-        <span style={{ display: getVisibility('longer') }}>
-          , where he works to improve the experience of building
-        </span>{' '}
-        and{' '}
-        <span style={{ display: getVisibility('longer') }}>
-          deploying to the modern web. He also{' '}
-        </span>
-        hosts{' '}
-        <a href="https://www.learnwithjason.dev/">
-          <em>Learn With Jason</em>
-        </a>
-        <span style={{ display: getVisibility('long') }}>
-          , a live-streamed video show where he pair programs to learn something
-          new in 90 minutes
-        </span>
-        . He{' '}
-        <span style={{ display: getVisibility('short') }}>
-          spends a lot of time
-          <span style={{ display: getVisibility('longest') }}>
-            {' '}
-            writing to share what he’s learned in tech as well as stories about
-            how he used to suck, listened to people who taught him valuable
-            lessons, and made changes that helped him suck less. This frequently
-            boils down to
+    bioLength && (
+      <p className={styles.bio}>
+        <strong>Jason Lengstorf</strong>{' '}
+        <span style={{ display: getVisibility('shorter') }}>
+          works{' '}
+          <span style={{ display: getVisibility('long') }}>
+            as a principal developer experience engineer
           </span>{' '}
-          telling people that the formula for success and happiness is to lift
-          each other up
-          <span style={{ display: getVisibility('longest') }}>
-            {' '}
-            at every opportunity
+          at{' '}
+          <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">
+            Netlify
+          </a>
+          <span style={{ display: getVisibility('longer') }}>
+            , where he works to improve the experience of building
           </span>{' '}
-          and share what we learn
-          <span style={{ display: getVisibility('longest') }}>
-            , even when it feels like something that’s been shared before or
-            that “everybody already knows”
+          and{' '}
+          <span style={{ display: getVisibility('longer') }}>
+            deploying to the modern web. He also{' '}
           </span>
-          . He
+          hosts{' '}
+          <a href="https://www.learnwithjason.dev/">
+            <em>Learn With Jason</em>
+          </a>
+          <span style={{ display: getVisibility('long') }}>
+            , a live-streamed video show where he pair programs to learn
+            something new in 90 minutes
+          </span>
+          . He{' '}
+          <span style={{ display: getVisibility('short') }}>
+            spends a lot of time
+            <span style={{ display: getVisibility('longest') }}>
+              {' '}
+              writing to share what he’s learned in tech as well as stories
+              about how he used to suck, listened to people who taught him
+              valuable lessons, and made changes that helped him suck less. This
+              frequently boils down to
+            </span>{' '}
+            telling people that the formula for success and happiness is to lift
+            each other up
+            <span style={{ display: getVisibility('longest') }}>
+              {' '}
+              at every opportunity
+            </span>{' '}
+            and share what we learn
+            <span style={{ display: getVisibility('longest') }}>
+              , even when it feels like something that’s been shared before or
+              that “everybody already knows”
+            </span>
+            . He
+          </span>
+        </span>{' '}
+        is trying his very best
+        <span style={{ display: getVisibility('shorter') }}>
+          {' '}
+          to follow his own advice
         </span>
-      </span>{' '}
-      is trying his very best
-      <span style={{ display: getVisibility('shorter') }}>
-        {' '}
-        to follow his own advice
-      </span>
-      .{' '}
-      <span style={{ display: getVisibility('short') }}>
-        He lives in Portland, Oregon.
-      </span>
-    </p>
+        .{' '}
+        <span style={{ display: getVisibility('short') }}>
+          He lives in Portland, Oregon.
+        </span>
+      </p>
+    )
   );
 }
 
