@@ -8,12 +8,15 @@ import { Hero } from '../components/hero';
 import { Form } from '../components/form';
 import { Connect } from '../components/connect';
 import { Writing } from '../components/writing';
+import { useBoop } from '../hooks/use-boop';
 
 export default function Home() {
+  const { addBoop } = useBoop();
+
   return [
     <SEO />,
     <Layout>
-      <Block color="yellow">
+      <Block color="yellow" onClick={addBoop}>
         <Hero />
       </Block>
       <Block id="bio">

@@ -2,6 +2,7 @@
   background: var(--background);
   border-bottom: 1px solid var(--gray-light);
   padding: 5rem 5vw;
+  position: relative;
 }
 
 .block.pink {
@@ -19,19 +20,17 @@
   border-color: var(--yellow-dark);
 }
 
-@media (prefers-color-scheme: dark) {
-  .block.yellow {
-    background: var(--background);
-    border-color: var(--yellow);
-  }
+:global(.dark) .block.yellow {
+  background: var(--background);
+  border-color: var(--yellow);
+}
 
-  .block.blue {
-    background: var(--blue-dark);
-    border-color: var(--blue);
-  }
+:global(.dark) .block.blue {
+  background: var(--blue-dark);
+  border-color: var(--blue);
+}
 
-  .block.pink {
-    background: var(--pink-dark);
-    border-color: var(--pink);
-  }
+:global(.dark) .block.pink {
+  background: var(--pink-dark);
+  border-color: var(--pink);
 }

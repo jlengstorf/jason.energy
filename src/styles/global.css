@@ -6,6 +6,7 @@
   --yellow: #ffe742;
   --yellow-dark: #ddc62c;
   --pink: #ff87d4;
+  --pink-dark: #c10b7e;
   --blue: #87fffb;
   --blue-dark: #63ddd9;
   --black: #171321;
@@ -17,15 +18,13 @@
   --foreground: var(--black);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --blue-dark: #0d314a;
-    --pink-dark: #6d114c;
-    --text: #b1acb9;
-    --text-muted: #aba7b5;
-    --background: var(--black);
-    --foreground: var(--white);
-  }
+.dark {
+  --blue-dark: #0d314a;
+  --pink-dark: #6d114c;
+  --text: #b1acb9;
+  --text-muted: #aba7b5;
+  --background: var(--black);
+  --foreground: var(--white);
 }
 
 *,

@@ -153,15 +153,14 @@
   transition-delay: 0ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  .active .navItem {
-    background: rgba(23, 19, 33, 0.9);
-  }
-  .active .navItem:active,
-  .active .navItem:focus,
-  .active .navItem:hover {
-    background: var(--pink);
-    border-color: var(--yellow);
-    color: var(--black);
-  }
+:global(.dark) .active .navItem {
+  background: rgba(23, 19, 33, 0.9);
+}
+
+:global(.dark) .active .navItem:active,
+:global(.dark) .active .navItem:focus,
+:global(.dark) .active .navItem:hover {
+  background: var(--pink);
+  border-color: var(--yellow);
+  color: var(--black);
 }

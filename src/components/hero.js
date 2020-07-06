@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx';
+import { BoopDrop } from './boop-drop';
 import styles from '../styles/hero.module.css';
 
 const taglines = [
@@ -104,7 +105,7 @@ const CycleTagline = ({ clickHandler }) => {
 export function Hero() {
   const { playBoop } = useSfx();
   const [taglineIndex, setTaglineIndex] = useState(0);
-  const tagline = taglines[taglineIndex]; //[Math.floor(Math.random() * taglines.length)];
+  const tagline = taglines[taglineIndex];
 
   function cycleTagline() {
     playBoop();
@@ -114,6 +115,7 @@ export function Hero() {
   }
 
   return [
+    <BoopDrop className={styles.boops} />,
     <h1 className={styles.hero}>
       <span className={styles.firstLine}>Jason</span>
       <span className={styles.box}>Lengstorf</span>
