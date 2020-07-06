@@ -62,9 +62,15 @@
   width: 100%;
 }
 
+.input:focus {
+  background: var(--blue);
+  border-color: var(--foreground);
+  outline: none;
+}
+
 .button {
   background: var(--pink);
-  border: 0;
+  border: 2px solid transparent;
   border-radius: 7px;
   color: var(--black);
   font-family: var(--font-family);
@@ -78,10 +84,11 @@
 .button:focus,
 .button:hover {
   background: var(--text-pink);
+  border-color: var(--foreground);
+  outline: none;
 }
 
 .privacy {
-  background: var(--yellow);
   font-size: 0.875rem;
   font-style: italic;
   margin: 1rem 0 0;

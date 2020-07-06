@@ -160,6 +160,11 @@
   border-color: var(--text-pink);
 }
 
+:focus + .label::before {
+  outline: 2px solid var(--pink);
+  outline-offset: 0.125rem;
+}
+
 :checked + .label::after {
   opacity: 1;
 }

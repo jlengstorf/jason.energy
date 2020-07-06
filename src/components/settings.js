@@ -5,7 +5,7 @@ import { useSettings } from '../context/settings';
 import { Button } from './button';
 
 export function Settings() {
-  const { soundEnabled, toggleSound } = useSettings();
+  const { darkMode, toggleDarkMode, soundEnabled, toggleSound } = useSettings();
   const { playClick, playPop, playBoop } = useSfx();
 
   function toggleSettings() {
@@ -16,7 +16,7 @@ export function Settings() {
   return (
     <div className={styles.settings}>
       <Button
-        className={styles.button}
+        className={`${styles.button} ${styles.toggle}`}
         hoverSound={playPop}
         clickSound={playClick}
         handleClick={toggleSettings}
@@ -29,6 +29,26 @@ export function Settings() {
         <span className="visually-hidden">Show Settings</span>
       </Button>
       <div className={styles.panel}>
+        <Button
+          className={styles.button}
+          hoverSound={playPop}
+          clickSound={playClick}
+          handleClick={toggleDarkMode}
+          forceSoundEnabled={true}
+        >
+          <img
+            className={styles.sound}
+            src={
+              darkMode
+                ? 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/dark-mode.png'
+                : 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533576/jason.af/light-mode.png'
+            }
+            alt=""
+          />
+          <span className="visually-hidden">
+            Switch to {darkMode ? 'light' : 'dark'} mode
+          </span>
+        </Button>
         <Button
           className={styles.button}
           hoverSound={playPop}

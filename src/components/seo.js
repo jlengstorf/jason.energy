@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useSettings } from '../context/settings';
 
 export function SEO({
   title = 'A Very Jason Lengstorf Website — Powered By Boops!',
@@ -7,6 +8,8 @@ export function SEO({
   url = 'https://jason.af/',
   image = 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg',
 }) {
+  const { darkMode } = useSettings();
+
   return (
     <Helmet defer={false}>
       <title>{title}</title>
@@ -19,11 +22,18 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
 
+      <meta
+        name="twitter:widgets:theme"
+        content={darkMode ? 'dark' : 'light'}
+      />
+      <meta name="twitter:dnt" content="on" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@jlengstorf" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      <body className={darkMode ? 'dark' : 'light'} />
     </Helmet>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx';
+import { BoopDrop } from './boop-drop';
 import styles from '../styles/hero.module.css';
 
 const taglines = [
@@ -18,7 +19,7 @@ const taglines = [
     text: `
       believes in us <span class="love"></span>
     `,
-    top: '0.1em',
+    top: '0',
   },
   {
     size: '8.9vw',
@@ -29,6 +30,7 @@ const taglines = [
   },
   {
     rotation: '-9deg',
+    scale: '1',
     size: '8.1vw',
     'size-lg': '64.5px',
     text: `
@@ -36,14 +38,14 @@ const taglines = [
     `,
   },
   {
-    rotation: '33deg',
-    scale: 1.1,
+    rotation: '18deg',
+    scale: 1.05,
     size: '5.6vw',
     'size-lg': '44px',
     text: `
       thinks you belong here <span class="love"></span>
     `,
-    top: '0.1em',
+    top: '0.025em',
   },
   {
     scale: '1.3',
@@ -53,9 +55,11 @@ const taglines = [
     text: `
       would <span class="love">love</span> a sandwich, thanks
     `,
+    top: '-0.1em',
   },
   {
     rotation: '-11deg',
+    scale: '0.99',
     size: '8.3vw',
     'size-lg': '64.5px',
     text: `
@@ -101,7 +105,7 @@ const CycleTagline = ({ clickHandler }) => {
 export function Hero() {
   const { playBoop } = useSfx();
   const [taglineIndex, setTaglineIndex] = useState(0);
-  const tagline = taglines[taglineIndex]; //[Math.floor(Math.random() * taglines.length)];
+  const tagline = taglines[taglineIndex];
 
   function cycleTagline() {
     playBoop();
@@ -111,6 +115,7 @@ export function Hero() {
   }
 
   return [
+    <BoopDrop className={styles.boops} />,
     <h1 className={styles.hero}>
       <span className={styles.firstLine}>Jason</span>
       <span className={styles.box}>Lengstorf</span>

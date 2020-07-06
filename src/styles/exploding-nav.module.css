@@ -105,7 +105,7 @@
   align-items: center;
   background: transparent;
   border-radius: 14px;
-  color: var(--black);
+  color: var(--foreground);
   display: grid;
   font-weight: 500;
   gap: 1rem;
@@ -151,4 +151,16 @@
   outline: 0;
   transition: 200ms background linear;
   transition-delay: 0ms;
+}
+
+:global(.dark) .active .navItem {
+  background: rgba(23, 19, 33, 0.9);
+}
+
+:global(.dark) .active .navItem:active,
+:global(.dark) .active .navItem:focus,
+:global(.dark) .active .navItem:hover {
+  background: var(--pink);
+  border-color: var(--yellow);
+  color: var(--black);
 }

@@ -5,7 +5,7 @@ export function useSfx() {
   const { soundEnabled } = useSettings();
 
   const [playBoop] = useSound(
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/oop.mp3',
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/boop.mp3',
     {
       soundEnabled,
       volume: 0.5,

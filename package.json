@@ -22,6 +22,7 @@
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-transformer-cloudinary": "^0.3.5",
+    "matter-js": "^0.14.2",
     "netlify-plugin-gatsby-cache": "^0.3.2",
     "node-fetch": "^2.6.0",
     "preact": "^10.4.5",

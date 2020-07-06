@@ -41,7 +41,7 @@
 }
 
 .titleLink {
-  color: var(--black);
+  color: var(--foreground);
   text-decoration: none;
 }
 

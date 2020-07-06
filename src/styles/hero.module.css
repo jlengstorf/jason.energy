@@ -4,9 +4,16 @@
   max-height: 54vw;
   max-width: 700px;
   overflow: hidden;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
   width: 90vw;
+  z-index: 1;
+}
+
+.boops {
+  mix-blend-mode: overlay;
+  z-index: 10;
 }
 
 .firstLine {
@@ -54,9 +61,11 @@
   font-weight: 200;
   letter-spacing: 0.2em;
   margin: 0 auto;
+  position: relative;
   text-align: center;
   text-decoration: none;
   width: 30px;
+  z-index: 20;
 }
 
 .cycle.active {
@@ -91,4 +100,13 @@
   .tagline {
     font-size: var(--size-lg, 57.5px);
   }
+}
+
+:global(.dark) .hero {
+  color: var(--yellow);
+}
+
+:global(.dark) .box {
+  background: var(--yellow);
+  color: var(--black);
 }

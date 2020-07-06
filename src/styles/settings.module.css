@@ -12,9 +12,16 @@
   border-radius: 50%;
   cursor: pointer;
   display: block;
+  margin-top: 0.5rem;
   padding: 5px;
   transition: 200ms all linear;
   width: 49px;
+}
+
+.toggle {
+  margin-top: 0;
+  position: relative;
+  z-index: 100;
 }
 
 .button:focus,
@@ -31,13 +38,13 @@
 }
 
 .panel {
-  background: var(--black);
+  background: var(--background);
   background-blend-mode: multiply;
-  border-radius: 0 0 calc(25px + 0.25rem) calc(25px + 0.25rem);
+  border-radius: calc(25px + 0.25rem) calc(25px + 0.25rem);
   display: none;
-  padding: 0.25rem;
+  padding: calc(50px + 1rem) 0.25rem 0.25rem;
   position: absolute;
-  top: 50px;
+  top: -0.25rem;
   right: -0.25rem;
   width: calc(50px + 0.5rem);
 }
