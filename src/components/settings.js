@@ -34,13 +34,12 @@ export function Settings() {
           hoverSound={playPop}
           clickSound={playClick}
           handleClick={toggleDarkMode}
-          forceSoundEnabled={true}
         >
           <img
             className={styles.sound}
             src={
               darkMode
-                ? 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/dark-mode.png'
+                ? 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593999628/jason.af/dark-mode.png'
                 : 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533576/jason.af/light-mode.png'
             }
             alt=""

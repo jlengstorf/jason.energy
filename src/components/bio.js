@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
-import React, { useState } from 'react';
+import React from 'react';
+import { useSettings } from '../context/settings';
 import { useSfx } from '../hooks/use-sfx';
 import { Photos } from './photos';
 import styles from '../styles/bio.module.css';
@@ -7,12 +8,13 @@ import Twitter from '../assets/twitter.svg';
 import Dribbble from '../assets/dribbble.svg';
 import GitHub from '../assets/github.svg';
 
-function LengthChooser({ length, setLength }) {
+function LengthChooser() {
+  const { bioLength, updateBioLength } = useSettings();
   const { playPop, playClick } = useSfx();
 
   const handleChange = ({ target }) => {
     playClick();
-    setLength(target.value);
+    updateBioLength(target.value);
   };
 
   return (
@@ -31,7 +33,7 @@ function LengthChooser({ length, setLength }) {
                     id={`length-${l}`}
                     name="length"
                     value={l}
-                    checked={length === l}
+                    checked={bioLength === l}
                     onChange={handleChange}
                   />
                   <label
@@ -51,7 +53,8 @@ function LengthChooser({ length, setLength }) {
   );
 }
 
-function BioText({ length }) {
+function BioText() {
+  const { bioLength } = useSettings();
   const getVisibility = group => {
     const mappings = {
       shortest: [],
@@ -62,7 +65,7 @@ function BioText({ length }) {
       longest: ['shorter', 'short', 'long', 'longer', 'longest'],
     };
 
-    const visibility = mappings[length];
+    const visibility = mappings[bioLength];
 
     return visibility.includes(group) ? 'inline' : 'none';
   };
@@ -132,14 +135,13 @@ function BioText({ length }) {
 }
 
 export function Bio() {
-  const [length, setLength] = useState('short');
   const { playPop, playClick } = useSfx();
 
   return (
     <section className={styles.container}>
       <div className={styles.bioWrapper}>
-        <LengthChooser length={length} setLength={setLength} />
-        <BioText length={length} />
+        <LengthChooser />
+        <BioText />
         <div className={styles.social}>
           <h3 className={styles.connect}>Connect With Jason:</h3>
           <ul className={styles.profiles}>
