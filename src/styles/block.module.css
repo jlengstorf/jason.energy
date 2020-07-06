@@ -2,6 +2,7 @@
   background: var(--background);
   border-bottom: 1px solid var(--gray-light);
   padding: 5rem 5vw;
+  transition: 200ms background linear;
   position: relative;
 }
 
