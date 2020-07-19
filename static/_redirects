@@ -7,6 +7,9 @@
 /frontendmasters                https://frontendmasters.com/teachers/jason-lengstorf/
 /fem                            https://frontendmasters.com/teachers/jason-lengstorf/
 
+# workshop stuff
+/fem/img/*                      https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/fem-workshop/serverless/:splat   200!
+
 # social links
 /twitter                        https://twitter.com/jlengstorf
 /twitch                         https://www.twitch.tv/jlengstorf
