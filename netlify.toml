@@ -1,4 +1,4 @@
 [build]
-  command = "npm run breadbox && npm run build"
+  command = "npm run breadbox && npm run build && ./bin/killemall.sh"
   publish = "public"
   functions = "functions"
