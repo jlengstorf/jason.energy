@@ -8,6 +8,7 @@
     "postinstall": "patch-package",
     "prebuild": "postcss src/styles/ --dir public/styles/",
     "build": "toast incremental",
+    "postbuild": "killall node",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "breadbox": "breadbox --dest public/web_modules"
