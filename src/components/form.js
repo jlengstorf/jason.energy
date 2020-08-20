@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'gatsby-image';
 import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
-import { useSfx } from '../hooks/use-sfx';
-import { Button } from './button';
+import { useSfx } from '../hooks/use-sfx.js';
+import { Button } from './button.js';
 import styles from '../styles/form.module.css';
-import { Intro } from './intro';
+import { Intro } from './intro.js';
 
 export function Form() {
   const [image, setImage] = useState(false);

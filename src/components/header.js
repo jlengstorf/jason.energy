@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
-import { ExplodingNav } from './exploding-nav';
-import { Settings } from './settings';
+import { ExplodingNav } from './exploding-nav.js';
+import { Settings } from './settings.js';
 import styles from '../styles/header.module.css';
 
 export function Header() {
@@ -13,9 +12,9 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <Link to="/" rel="home" className={styles.home}>
+      <a href="/" rel="home" className={styles.home}>
         Jason Lengstorf
-      </Link>
+      </a>
       {isHome && [<ExplodingNav />, <Settings />]}
     </header>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '../styles/settings.module.css';
-import { useSfx } from '../hooks/use-sfx';
-import { useSettings } from '../context/settings';
-import { Button } from './button';
+import { useSfx } from '../hooks/use-sfx.js';
+import { useSettings } from '../context/settings.js';
+import { Button } from './button.js';
 
 export function Settings() {
   const { darkMode, toggleDarkMode, soundEnabled, toggleSound } = useSettings();

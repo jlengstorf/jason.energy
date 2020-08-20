@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useSettings } from '../context/settings';
+import { useSettings } from '../context/settings.js';
 
 export function SEO({
   title = 'A Very Jason Lengstorf Website — Powered By Boops!',

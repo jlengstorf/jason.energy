@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useSfx } from '../hooks/use-sfx';
-import { BoopDrop } from './boop-drop';
+import { useSfx } from '../hooks/use-sfx.js';
+import { BoopDrop } from './boop-drop.js';
 import styles from '../styles/hero.module.css';
 
 const taglines = [

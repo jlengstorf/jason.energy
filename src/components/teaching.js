@@ -1,8 +1,8 @@
 import React from 'react';
 import TweetEmbed from '@jlengstorf/react-tweet-embed';
 import styles from '../styles/teaching.module.css';
-import { Intro } from './intro';
-import { Platform } from './platform';
+import { Intro } from './intro.js';
+import { Platform } from './platform.js';
 
 const platforms = [
   {

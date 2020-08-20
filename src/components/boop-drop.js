@@ -1,5 +1,5 @@
 import React from 'react';
-import { useBoop } from '../hooks/use-boop';
+import { useBoop } from '../hooks/use-boop.js';
 
 export function BoopDrop({ className }) {
   const { boopRef } = useBoop();

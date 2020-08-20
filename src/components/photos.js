@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Image from 'gatsby-image';
 import { getFixedImageObject } from 'gatsby-transformer-cloudinary';
 import styles from '../styles/photos.module.css';
-import { useSfx } from '../hooks/use-sfx';
-import { Button } from './button';
+import { useSfx } from '../hooks/use-sfx.js';
+import { Button } from './button.js';
 
 const photos = [
   {

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/writing.module.css';
-import { Intro } from './intro';
+import { Intro } from './intro.js';
 
-import writing from '../../data/writing';
+// import writing from '../../data/writing';
+const writing = [];
 
 const sites = {
   lengstorf: {

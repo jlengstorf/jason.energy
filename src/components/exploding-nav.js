@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../styles/exploding-nav.module.css';
-import { useSfx } from '../hooks/use-sfx';
+import { useSfx } from '../hooks/use-sfx.js';
 
 const navItems = [
   {

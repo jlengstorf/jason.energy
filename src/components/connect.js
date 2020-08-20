@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/connect.module.css';
-import { Intro } from './intro';
-import { Platform } from './platform';
+import { Intro } from './intro.js';
+import { Platform } from './platform.js';
 
 const platforms = [
   {
