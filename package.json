@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package",
-    "prebuild": "postcss src/styles/ --dir public/styles/",
+    "prebuild": "postcss src/styles/*.css --dir public/styles/",
     "build": "toast incremental",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
@@ -16,7 +16,6 @@
     "@jlengstorf/react-tweet-embed": "^1.0.1",
     "@sector/breadbox": "0.0.4",
     "babel-plugin-inline-react-svg": "^1.1.1",
-    "babel-plugin-transform-postcss": "^0.3.0",
     "gatsby-image": "^2.4.12",
     "gatsby-transformer-cloudinary": "^0.3.5",
     "globby": "^11.0.1",

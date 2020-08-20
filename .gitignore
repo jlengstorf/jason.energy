@@ -70,3 +70,6 @@ yarn-error.log
 
 # Local Netlify folder
 .netlify
+
+# YEAH TOAST!
+src/styles/*.json
