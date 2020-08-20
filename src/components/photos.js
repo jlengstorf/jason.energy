@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import Image from 'gatsby-image';
 import { getFixedImageObject } from 'gatsby-transformer-cloudinary';
-import styles from '../styles/photos.module.css';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/photos.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 const photos = [
   {
@@ -113,45 +123,55 @@ export function Photos({ className }) {
   }, [currentImage]);
 
   return (
-    <div className={className}>
-      <figure className={styles.image}>
-        {fixed && (
-          <Image fixed={fixed} src={currentImage.url} alt={currentImage.alt} />
-        )}
-        <figcaption>
-          {currentImage.caption}
-          <div className={styles.links}>
-            <a
-              className={styles.fullSize}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://res.cloudinary.com/jlengstorf/image/upload/${currentImage.publicId}.jpg`}
-            >
-              open full size
-            </a>
-            <span className={styles.credit}>
-              Photo: <a href={currentImage.creditLink}>{currentImage.credit}</a>
-            </span>
-          </div>
-        </figcaption>
-      </figure>
-      <div className={styles.morePhotos}>
-        <h3 className={styles.photoHeading}>
-          You can use any of these photos with credit:
-        </h3>
-        <ul className={styles.thumbnails}>
-          {photos.map((photo, index) => (
-            <Thumb
-              key={`photo-${index}`}
-              photo={photo}
-              isCurrent={currentImage.publicId === photo.publicId}
-              handleClick={() => {
-                setCurrentImage(photo);
-              }}
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="/styles/photos.module.css" />
+      </Helmet>
+      <div className={className}>
+        <figure className={styles.image}>
+          {fixed && (
+            <Image
+              fixed={fixed}
+              src={currentImage.url}
+              alt={currentImage.alt}
             />
-          ))}
-        </ul>
+          )}
+          <figcaption>
+            {currentImage.caption}
+            <div className={styles.links}>
+              <a
+                className={styles.fullSize}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://res.cloudinary.com/jlengstorf/image/upload/${currentImage.publicId}.jpg`}
+              >
+                open full size
+              </a>
+              <span className={styles.credit}>
+                Photo:{' '}
+                <a href={currentImage.creditLink}>{currentImage.credit}</a>
+              </span>
+            </div>
+          </figcaption>
+        </figure>
+        <div className={styles.morePhotos}>
+          <h3 className={styles.photoHeading}>
+            You can use any of these photos with credit:
+          </h3>
+          <ul className={styles.thumbnails}>
+            {photos.map((photo, index) => (
+              <Thumb
+                key={`photo-${index}`}
+                photo={photo}
+                isCurrent={currentImage.publicId === photo.publicId}
+                handleClick={() => {
+                  setCurrentImage(photo);
+                }}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

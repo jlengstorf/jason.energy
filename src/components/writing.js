@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/writing.module.css';
+import { Helmet } from 'react-helmet';
 import { Intro } from './intro.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/writing.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 // import writing from '../../data/writing';
 const writing = [];
@@ -47,58 +57,63 @@ export function Writing() {
   }, []);
 
   return (
-    <section className={styles.writing}>
-      <Intro headline="Jason shares stories about code (and not-code).">
-        <p>
-          Jason believes in the power of stories. He writes about code at{' '}
-          <a href="https://www.learnwithjason.dev/blog">learnwithjason.dev</a>{' '}
-          shares his stories and experiences at{' '}
-          <a href="https://www.lengstorf.com/blog/">lengstorf.com</a>, and
-          contributes to various sites around the web. These are a few pieces
-          he’s proud of:
-        </p>
-      </Intro>
-      <div className={styles.posts}>
-        {featuredPosts.map((post, index) => (
-          <div className={styles.post} key={`featured-post-${index}`}>
-            <p className={styles.site}>
-              <img
-                src={`https://res.cloudinary.com/jlengstorf/image/fetch/w_32,h_32,c_fill,g_face,q_auto,f_auto/${
-                  sites[post.site].icon
-                }`}
-                alt={sites[post.site].name}
-                loading="lazy"
-                height={16}
-                width={16}
-              />
-              {sites[post.site].name}
-            </p>
-            {index < columns && (
-              <img
-                src={
-                  post.image.match(/^https:\/\/res.cloudinary/)
-                    ? post.image
-                    : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
-                }
-                alt=""
-                className={styles.image}
-                loading="lazy"
-                width={250}
-                height={125}
-              />
-            )}
-            <h3 className={styles.title}>
-              <a href={post.url} className={styles.titleLink}>
-                {post.title}
-              </a>
-            </h3>
-            <p className={styles.description}>{post.description}</p>
-            <span aria-hidden="true" className={styles.link}>
-              Read this post &rarr;
-            </span>
-          </div>
-        ))}
-      </div>
-    </section>
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="/styles/writing.module.css" />
+      </Helmet>
+      <section className={styles.writing}>
+        <Intro headline="Jason shares stories about code (and not-code).">
+          <p>
+            Jason believes in the power of stories. He writes about code at{' '}
+            <a href="https://www.learnwithjason.dev/blog">learnwithjason.dev</a>{' '}
+            shares his stories and experiences at{' '}
+            <a href="https://www.lengstorf.com/blog/">lengstorf.com</a>, and
+            contributes to various sites around the web. These are a few pieces
+            he’s proud of:
+          </p>
+        </Intro>
+        <div className={styles.posts}>
+          {featuredPosts.map((post, index) => (
+            <div className={styles.post} key={`featured-post-${index}`}>
+              <p className={styles.site}>
+                <img
+                  src={`https://res.cloudinary.com/jlengstorf/image/fetch/w_32,h_32,c_fill,g_face,q_auto,f_auto/${
+                    sites[post.site].icon
+                  }`}
+                  alt={sites[post.site].name}
+                  loading="lazy"
+                  height={16}
+                  width={16}
+                />
+                {sites[post.site].name}
+              </p>
+              {index < columns && (
+                <img
+                  src={
+                    post.image.match(/^https:\/\/res.cloudinary/)
+                      ? post.image
+                      : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
+                  }
+                  alt=""
+                  className={styles.image}
+                  loading="lazy"
+                  width={250}
+                  height={125}
+                />
+              )}
+              <h3 className={styles.title}>
+                <a href={post.url} className={styles.titleLink}>
+                  {post.title}
+                </a>
+              </h3>
+              <p className={styles.description}>{post.description}</p>
+              <span aria-hidden="true" className={styles.link}>
+                Read this post &rarr;
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

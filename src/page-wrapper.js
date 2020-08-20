@@ -1,5 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
+import { useEffect } from 'preact/hooks';
+import { Buffer } from 'buffer';
 import { SettingsProvider } from './context/settings.js';
 
 console.log(
@@ -27,5 +29,8 @@ console.log(
 );
 
 export default ({ children }) => {
+  useEffect(() => {
+    window.Buffer = Buffer;
+  }, []);
   return <SettingsProvider>{children}</SettingsProvider>;
 };

@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-// import so PostCSS does its thing
-import _styles from '../styles/block.module.css';
-
-// this, because my life is a nightmare
+// this is how we import styles, because my life is a nightmare
 const styles = preval`
   const fs = require('fs');
   const path = require('path');

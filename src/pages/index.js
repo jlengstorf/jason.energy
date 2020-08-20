@@ -8,10 +8,11 @@ import { Hero } from '../components/hero.js';
 import { Form } from '../components/form.js';
 import { Connect } from '../components/connect.js';
 import { Writing } from '../components/writing.js';
-import { useBoop } from '../hooks/use-boop.js';
+// import { useBoop } from '../hooks/use-boop.js';
 
 export default function Home() {
-  const { addBoop } = useBoop();
+  // const { addBoop } = useBoop();
+  const addBoop = () => {};
 
   return [
     <SEO />,

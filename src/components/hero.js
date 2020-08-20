@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useSfx } from '../hooks/use-sfx.js';
-import { BoopDrop } from './boop-drop.js';
-import styles from '../styles/hero.module.css';
+// import { BoopDrop } from './boop-drop.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/hero.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 const taglines = [
   {
@@ -115,7 +125,10 @@ export function Hero() {
   }
 
   return [
-    <BoopDrop className={styles.boops} />,
+    <Helmet>
+      <link rel="stylesheet" href="/styles/hero.module.css" />
+    </Helmet>,
+    // <BoopDrop className={styles.boops} />,
     <h1 className={styles.hero}>
       <span className={styles.firstLine}>Jason</span>
       <span className={styles.box}>Lengstorf</span>

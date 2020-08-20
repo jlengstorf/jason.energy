@@ -1,8 +1,18 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import TweetEmbed from '@jlengstorf/react-tweet-embed';
-import styles from '../styles/teaching.module.css';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/teaching.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 const platforms = [
   {
@@ -43,6 +53,9 @@ const platforms = [
 
 export function Teaching() {
   return [
+    <Helmet>
+      <link rel="stylesheet" href="/styles/teaching.module.css" />
+    </Helmet>,
     <Intro headline="Jason makes learning fun & approachable.">
       <p>
         Jason has been teaching developers of all skill levels how to code for

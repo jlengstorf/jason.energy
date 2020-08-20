@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
-import styles from '../styles/exploding-nav.module.css';
+import { Helmet } from 'react-helmet';
 import { useSfx } from '../hooks/use-sfx.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/exploding-nav.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 const navItems = [
   {
@@ -90,43 +100,48 @@ export function ExplodingNav() {
   };
 
   return (
-    <div
-      className={`${styles.toggle} ${styles.firstRun}`}
-      style={{ '--navCount': navItems.length }}
-    >
-      <button className={styles.button} onClick={toggleOpen}>
-        <img
-          className={styles.face}
-          src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
-          alt=""
-        />
-        <span className="visually-hidden">Show Navigation</span>
-      </button>
-      <nav className={styles.nav}>
-        {navItems.map((item, index) => (
-          <a
-            className={styles.navItem}
-            key={`nav-${item.id}`}
-            href={`/#${item.id}`}
-            style={{
-              '--offset': index,
-            }}
-            onFocus={playPop}
-            onClick={event => event.preventDefault()}
-            onMouseEnter={playPop}
-            onMouseDown={handleClick(item.id)}
-            onKeyDown={event =>
-              event.key === 'Enter' && handleClick(item.id)(event)
-            }
-          >
-            {item.label}
-            <img
-              src={`https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/${item.icon}.png`}
-              alt=""
-            />
-          </a>
-        ))}
-      </nav>
-    </div>
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="/styles/exploding-nav.module.css" />
+      </Helmet>
+      <div
+        className={`${styles.toggle} ${styles.firstRun}`}
+        style={{ '--navCount': navItems.length }}
+      >
+        <button className={styles.button} onClick={toggleOpen}>
+          <img
+            className={styles.face}
+            src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
+            alt=""
+          />
+          <span className="visually-hidden">Show Navigation</span>
+        </button>
+        <nav className={styles.nav}>
+          {navItems.map((item, index) => (
+            <a
+              className={styles.navItem}
+              key={`nav-${item.id}`}
+              href={`/#${item.id}`}
+              style={{
+                '--offset': index,
+              }}
+              onFocus={playPop}
+              onClick={event => event.preventDefault()}
+              onMouseEnter={playPop}
+              onMouseDown={handleClick(item.id)}
+              onKeyDown={event =>
+                event.key === 'Enter' && handleClick(item.id)(event)
+              }
+            >
+              {item.label}
+              <img
+                src={`https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/${item.icon}.png`}
+                alt=""
+              />
+            </a>
+          ))}
+        </nav>
+      </div>
+    </>
   );
 }

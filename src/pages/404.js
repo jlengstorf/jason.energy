@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Image from 'gatsby-image';
 import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { SEO } from '../components/seo.js';
-import styles from '../styles/404.module.css';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/404.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 export default () => {
   const [fluid, setFluid] = useState(false);
@@ -19,6 +29,9 @@ export default () => {
   }, []);
 
   return [
+    <Helmet>
+      <link rel="stylesheet" href="/styles/block.module.css" />
+    </Helmet>,
     <SEO
       title="Page Not Found"
       description="This page does not exist."
