@@ -1,17 +1,18 @@
 import React from 'react';
-import { SEO } from '../components/seo';
-import { Layout } from '../components/layout';
-import { Block } from '../components/block';
-import { Bio } from '../components/bio';
-import { Teaching } from '../components/teaching';
-import { Hero } from '../components/hero';
-import { Form } from '../components/form';
-import { Connect } from '../components/connect';
-import { Writing } from '../components/writing';
-import { useBoop } from '../hooks/use-boop';
+import { SEO } from '../components/seo.js';
+import { Layout } from '../components/layout.js';
+import { Block } from '../components/block.js';
+import { Bio } from '../components/bio.js';
+import { Teaching } from '../components/teaching.js';
+import { Hero } from '../components/hero.js';
+import { Form } from '../components/form.js';
+import { Connect } from '../components/connect.js';
+import { Writing } from '../components/writing.js';
+// import { useBoop } from '../hooks/use-boop.js';
 
 export default function Home() {
-  const { addBoop } = useBoop();
+  // const { addBoop } = useBoop();
+  const addBoop = () => {};
 
   return [
     <SEO />,

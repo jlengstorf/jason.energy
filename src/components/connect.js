@@ -1,7 +1,17 @@
 import React from 'react';
-import styles from '../styles/connect.module.css';
-import { Intro } from './intro';
-import { Platform } from './platform';
+import { Helmet } from 'react-helmet';
+import { Intro } from './intro.js';
+import { Platform } from './platform.js';
+
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/connect.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
 
 const platforms = [
   {
@@ -40,18 +50,23 @@ const platforms = [
 
 export function Connect() {
   return (
-    <section className={styles.connect}>
-      <Intro headline="Connect with Jason.">
-        <p>
-          If you want to catch up with Jason, he’s most active on these
-          platforms.
-        </p>
-      </Intro>
-      <div className={styles.platforms}>
-        {platforms.map(platform => (
-          <Platform key={platform.id} {...platform} />
-        ))}
-      </div>
-    </section>
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="/styles/connect.module.css" />
+      </Helmet>
+      <section className={styles.connect}>
+        <Intro headline="Connect with Jason.">
+          <p>
+            If you want to catch up with Jason, he’s most active on these
+            platforms.
+          </p>
+        </Intro>
+        <div className={styles.platforms}>
+          {platforms.map(platform => (
+            <Platform key={platform.id} {...platform} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

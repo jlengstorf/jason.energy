@@ -69,6 +69,10 @@ b {
   font-weight: 500;
 }
 
+img {
+  max-width: 100%;
+}
+
 .visually-hidden {
   position: absolute !important;
   height: 1px;

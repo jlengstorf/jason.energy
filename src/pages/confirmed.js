@@ -1,9 +1,8 @@
 import React from 'react';
-import { SEO } from '../components/seo';
-import { Layout } from '../components/layout';
-import { Block } from '../components/block';
-import { Intro } from '../components/intro';
-import { Link } from 'gatsby';
+import { SEO } from '../components/seo.js';
+import { Layout } from '../components/layout.js';
+import { Block } from '../components/block.js';
+import { Intro } from '../components/intro.js';
 
 export default function Success() {
   return [
@@ -24,7 +23,7 @@ export default function Success() {
             .
           </p>
           <p>
-            <Link to="/">&larr; back to the home page</Link>
+            <a href="/">&larr; back to the home page</a>
           </p>
         </Intro>
       </Block>

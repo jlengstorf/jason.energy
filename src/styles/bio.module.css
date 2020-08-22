@@ -196,7 +196,7 @@
 }
 
 .link {
-  background: var(--pink);
+  background: var(--text-pink);
   border-radius: 50%;
   display: block;
   height: 60px;

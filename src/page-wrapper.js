@@ -1,5 +1,7 @@
-import React from 'react';
-import { SettingsProvider } from './src/context/settings';
+/** @jsx h */
+import { h } from 'preact';
+import { useEffect } from 'preact/hooks';
+import { SettingsProvider } from './context/settings.js';
 
 console.log(
   '%c HERE ARE SOME BOOPS FOR YOU',
@@ -25,6 +27,6 @@ console.log(
   `,
 );
 
-export const wrapRootElement = ({ element }) => (
-  <SettingsProvider>{element}</SettingsProvider>
-);
+export default ({ children }) => {
+  return <SettingsProvider>{children}</SettingsProvider>;
+};

@@ -1,10 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Header } from './header';
-import { Main } from './main';
-import { Footer } from './footer';
-
-import '../styles/global.css';
+import { Header } from './header.js';
+import { Main } from './main.js';
+import { Footer } from './footer.js';
 
 export function Layout({ children }) {
   return [
@@ -15,6 +13,7 @@ export function Layout({ children }) {
       <link rel="preconnect" href="https://res.cloudinary.com" />
       <link rel="preconnect" href="https://platform.twitter.com" />
       <link rel="stylesheet" href="https://use.typekit.net/ufz6qjq.css" />
+      <link rel="stylesheet" href="/styles/global.css" />
       <link
         rel="apple-touch-icon"
         sizes="152x152"
