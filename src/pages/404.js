@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import Image from 'gatsby-image';
-import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { SEO } from '../components/seo.js';
+import { Image } from '../components/image.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -17,17 +16,6 @@ const styles = preval`
 `;
 
 export default () => {
-  const [fluid, setFluid] = useState(false);
-
-  useEffect(() => {
-    getFluidImageObject({
-      public_id: 'jason.af/404.png',
-      cloudName: 'jlengstorf',
-      originalHeight: 600,
-      originalWidth: 1200,
-    }).then(setFluid);
-  }, []);
-
   return [
     <Helmet>
       <link rel="stylesheet" href="/styles/block.module.css" />
@@ -41,7 +29,12 @@ export default () => {
     <Layout>
       <Block color="yellow">
         <div className={styles.container}>
-          {fluid && <Image fluid={fluid} alt="A drawing of a dumpster fire." />}
+          <Image
+            publicId="jason.af/404.png"
+            alt="A drawing of a dumpster fire."
+            width={1200}
+            height={600}
+          />
           <h1>404 — Page Not Found</h1>
           <p>This is a one-page website. How did you get here?</p>
           <a href="/">&larr; back to safety</a>

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import Image from 'gatsby-image';
-import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
+import { Image } from './image.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -20,28 +19,21 @@ export function Platform({
   image,
   linkText = 'Check it out &rarr;',
 }) {
-  const [fluid, setFluid] = useState(false);
-
-  useEffect(() => {
-    getFluidImageObject({
-      public_id: `jason.af/${image}`,
-      cloudName: 'jlengstorf',
-      originalHeight: 420,
-      originalWidth: 420,
-    }).then(setFluid);
-  }, [image]);
-
   return (
     <>
       <Helmet>
         <link rel="stylesheet" href="/styles/platform.module.css" />
       </Helmet>
       <div className={styles.platform}>
-        {fluid && (
-          <a href={link} className={styles.logo}>
-            <Image fluid={fluid} alt={label} />
-          </a>
-        )}
+        <a href={link} className={styles.logo}>
+          <Image
+            publicId={`jason.af/${image}`}
+            alt={label}
+            width={400}
+            height={400}
+            transformations={['c_fill']}
+          />
+        </a>
         <div className={styles.card}>
           <h2 className={styles.name}>
             <a href={link}>{label}</a>

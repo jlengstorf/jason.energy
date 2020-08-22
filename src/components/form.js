@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Image from 'gatsby-image';
-import { getFluidImageObject } from 'gatsby-transformer-cloudinary';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Intro } from './intro.js';
+import { Image } from './image.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -17,18 +16,8 @@ const styles = preval`
 `;
 
 export function Form() {
-  const [image, setImage] = useState(false);
   const [sending, setSending] = useState(false);
   const { playPop, playHooray } = useSfx();
-
-  useEffect(() => {
-    getFluidImageObject({
-      public_id: 'jason.af/opt-in',
-      cloudName: 'jlengstorf',
-      originalHeight: 296,
-      originalWidth: 280,
-    }).then(setImage);
-  }, []);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -67,12 +56,12 @@ export function Form() {
         </Intro>
         <div className={styles.wrapper}>
           <div className={styles.imageWrapper}>
-            {image && (
-              <Image
-                fluid={image}
-                alt="Illustration of a letter with a heart on the top flap."
-              />
-            )}
+            <Image
+              publicId="jason.af/opt-in"
+              alt="Illustration of a letter with a heart on the top flap."
+              width={280}
+              height={296}
+            />
           </div>
           <form
             action="/api/subscribe"

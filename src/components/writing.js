@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Intro } from './intro.js';
+import writing from '../data/writing.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -11,9 +12,6 @@ const styles = preval`
 
   module.exports = JSON.parse(styleJSON);
 `;
-
-// import writing from '../../data/writing';
-const writing = [];
 
 const sites = {
   lengstorf: {
