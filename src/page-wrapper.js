@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h } from 'preact';
-import { useEffect } from 'preact/hooks';
 import { SettingsProvider } from './context/settings.js';
 
 console.log(

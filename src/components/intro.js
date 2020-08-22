@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -13,9 +12,6 @@ const styles = preval`
 
 export function Intro({ headline, children }) {
   return [
-    <Helmet>
-      <link rel="stylesheet" href="/styles/intro.module.css" />
-    </Helmet>,
     <div className={styles.intro}>
       <h2 className={styles.headline}>{headline}</h2>
       <div className={styles.lede}>{children}</div>

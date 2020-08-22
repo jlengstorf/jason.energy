@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package",
-    "prebuild": "postcss src/styles/*.css --dir public/styles/",
+    "prebuild": "postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles &&  cat .cache/styles/*.css > public/styles/global.css",
     "build": "toast incremental",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
@@ -16,6 +16,7 @@
     "@jlengstorf/react-tweet-embed": "^1.0.1",
     "@sector/breadbox": "0.0.4",
     "matter-js": "^0.14.2",
+    "netlify-plugin-inline-source": "^1.0.4",
     "node-fetch": "^2.6.0",
     "patch-package": "^6.2.2",
     "postcss": "^7.0.32",

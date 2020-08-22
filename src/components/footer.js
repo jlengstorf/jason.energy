@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -12,12 +11,5 @@ const styles = preval`
 `;
 
 export function Footer() {
-  return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/styles/footer.module.css" />
-      </Helmet>
-      <footer className={styles.footer}>powered by boops</footer>
-    </>
-  );
+  return <footer className={styles.footer}>powered by boops</footer>;
 }
