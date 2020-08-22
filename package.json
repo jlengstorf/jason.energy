@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package",
-    "prebuild": "postcss src/styles/*.css --dir .cache/styles/ && cat .cache/styles/*.css > public/styles/global.css",
+    "prebuild": "postcss src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles &&  cat .cache/styles/*.css > public/styles/global.css",
     "build": "toast incremental",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
