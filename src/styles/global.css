@@ -11,7 +11,7 @@
   --blue-dark: #63ddd9;
   --black: #171321;
   --gray-light: #d4d0e0;
-  --font-family: Mallory, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  --font-family: jwf, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   --background: var(--white);
@@ -35,7 +35,6 @@
 
 html,
 body {
-  color: var(--text);
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 1.45;
@@ -45,6 +44,10 @@ body {
 body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+.outer {
+  color: var(--text);
 }
 
 h1,
@@ -61,12 +64,12 @@ h6 {
 
 a {
   color: var(--text-pink);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 strong,
 b {
-  font-weight: 500;
+  font-weight: 900;
 }
 
 img {
