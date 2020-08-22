@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Intro } from './intro.js';
@@ -41,72 +40,67 @@ export function Form() {
   };
 
   return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/styles/form.module.css" />
-      </Helmet>
-      <section className={styles.newsletter}>
-        <Intro headline="Get booped on the brain.">
-          <p>
-            Jason believes in lifelong learning and continuous improvement. In
-            his newsletter, he shares his experience — both technical and
-            otherwise — in hopes of connecting with more lifelong learners and
-            building a community of practice.
-          </p>
-        </Intro>
-        <div className={styles.wrapper}>
-          <div className={styles.imageWrapper}>
-            <Image
-              publicId="jason.af/opt-in"
-              alt="Illustration of a letter with a heart on the top flap."
-              width={280}
-              height={296}
-            />
-          </div>
-          <form
-            action="/api/subscribe"
-            method="POST"
-            className={styles.form}
-            onSubmit={handleSubmit}
-          >
-            <label htmlFor="firstName" className={styles.label}>
-              First Name
-              <input
-                className={styles.input}
-                type="text"
-                name="firstName"
-                id="firstName"
-                required
-                disabled={sending}
-              />
-            </label>
-            <label htmlFor="email" className={styles.label}>
-              Email
-              <input
-                className={styles.input}
-                type="email"
-                name="email"
-                id="email"
-                required
-                disabled={sending}
-              />
-            </label>
-            <Button
-              className={styles.button}
-              hoverSound={playPop}
-              handleClick={() => {}}
-              disabled={sending}
-            >
-              {sending ? 'Sending...' : 'Join'}
-            </Button>
-            <p className={styles.privacy}>
-              <strong>Privacy notice:</strong> I will never sell or share your
-              personal information with anyone (because I’m not a jerk).
-              Unsubscribe at any time with one click.
-            </p>
-          </form>
+    <section className={styles.newsletter}>
+      <Intro headline="Get booped on the brain.">
+        <p>
+          Jason believes in lifelong learning and continuous improvement. In his
+          newsletter, he shares his experience — both technical and otherwise —
+          in hopes of connecting with more lifelong learners and building a
+          community of practice.
+        </p>
+      </Intro>
+      <div className={styles.wrapper}>
+        <div className={styles.imageWrapper}>
+          <Image
+            publicId="jason.af/opt-in"
+            alt="Illustration of a letter with a heart on the top flap."
+            width={280}
+            height={296}
+          />
         </div>
-      </section>
-    </>
+        <form
+          action="/api/subscribe"
+          method="POST"
+          className={styles.form}
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="firstName" className={styles.label}>
+            First Name
+            <input
+              className={styles.input}
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+              disabled={sending}
+            />
+          </label>
+          <label htmlFor="email" className={styles.label}>
+            Email
+            <input
+              className={styles.input}
+              type="email"
+              name="email"
+              id="email"
+              required
+              disabled={sending}
+            />
+          </label>
+          <Button
+            className={styles.button}
+            hoverSound={playPop}
+            handleClick={() => {}}
+            disabled={sending}
+          >
+            {sending ? 'Sending...' : 'Join'}
+          </Button>
+          <p className={styles.privacy}>
+            <strong>Privacy notice:</strong> I will never sell or share your
+            personal information with anyone (because I’m not a jerk).
+            Unsubscribe at any time with one click.
+          </p>
+        </form>
+      </div>
+    </section>
   );
 }

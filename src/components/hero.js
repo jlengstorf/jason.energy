@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { useSfx } from '../hooks/use-sfx.js';
 // import { BoopDrop } from './boop-drop.js';
 
@@ -125,9 +124,6 @@ export function Hero() {
   }
 
   return [
-    <Helmet>
-      <link rel="stylesheet" href="/styles/hero.module.css" />
-    </Helmet>,
     // <BoopDrop className={styles.boops} />,
     <h1 className={styles.hero}>
       <span className={styles.firstLine}>Jason</span>

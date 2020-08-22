@@ -1,6 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import TweetEmbed from '@jlengstorf/react-tweet-embed';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
 
@@ -53,9 +51,6 @@ const platforms = [
 
 export function Teaching() {
   return [
-    <Helmet>
-      <link rel="stylesheet" href="/styles/teaching.module.css" />
-    </Helmet>,
     <Intro headline="Jason makes learning fun & approachable.">
       <p>
         Jason has been teaching developers of all skill levels how to code for
@@ -69,9 +64,5 @@ export function Teaching() {
         <Platform key={platform.id} {...platform} />
       ))}
     </section>,
-    <div className={styles.tweets}>
-      <TweetEmbed url="https://twitter.com/sarah_edo/status/1195038019343896576" />
-      <TweetEmbed url="https://twitter.com/techieEliot/status/1252954917632868353" />
-    </div>,
   ];
 }

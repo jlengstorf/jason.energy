@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
 
@@ -50,23 +49,18 @@ const platforms = [
 
 export function Connect() {
   return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/styles/connect.module.css" />
-      </Helmet>
-      <section className={styles.connect}>
-        <Intro headline="Connect with Jason.">
-          <p>
-            If you want to catch up with Jason, he’s most active on these
-            platforms.
-          </p>
-        </Intro>
-        <div className={styles.platforms}>
-          {platforms.map(platform => (
-            <Platform key={platform.id} {...platform} />
-          ))}
-        </div>
-      </section>
-    </>
+    <section className={styles.connect}>
+      <Intro headline="Connect with Jason.">
+        <p>
+          If you want to catch up with Jason, he’s most active on these
+          platforms.
+        </p>
+      </Intro>
+      <div className={styles.platforms}>
+        {platforms.map(platform => (
+          <Platform key={platform.id} {...platform} />
+        ))}
+      </div>
+    </section>
   );
 }

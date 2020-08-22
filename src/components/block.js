@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -13,13 +12,8 @@ const styles = preval`
 
 export function Block({ color, children, id, ...props }) {
   return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/styles/block.module.css" />
-      </Helmet>
-      <div id={id} className={`${styles.block} ${styles[color]}`} {...props}>
-        {children}
-      </div>
-    </>
+    <div id={id} className={`${styles.block} ${styles[color]}`} {...props}>
+      {children}
+    </div>
   );
 }

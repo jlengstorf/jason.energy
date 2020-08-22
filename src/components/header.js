@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { ExplodingNav } from './exploding-nav.js';
 import { Settings } from './settings.js';
 
@@ -21,16 +20,11 @@ export function Header() {
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <link rel="stylesheet" href="/styles/header.module.css" />
-      </Helmet>
-      <header className={styles.header}>
-        <a href="/" rel="home" className={styles.home}>
-          Jason Lengstorf
-        </a>
-        {isHome && [<ExplodingNav />, <Settings />]}
-      </header>
-    </>
+    <header className={styles.header}>
+      <a href="/" rel="home" className={styles.home}>
+        Jason Lengstorf
+      </a>
+      {isHome && [<ExplodingNav />, <Settings />]}
+    </header>
   );
 }

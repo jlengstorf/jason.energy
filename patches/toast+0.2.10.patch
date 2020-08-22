@@ -1,0 +1,12 @@
+diff --git a/node_modules/toast/src/page-renderer-pre.js b/node_modules/toast/src/page-renderer-pre.js
+index d34eca5..7d87086 100644
+--- a/node_modules/toast/src/page-renderer-pre.js
++++ b/node_modules/toast/src/page-renderer-pre.js
+@@ -23,6 +23,7 @@ window.dataPath = ${dataPath && `"${dataPath}"`};
+   ${helmet.title.toString()}
+   ${helmet.meta.toString()}
+   ${helmet.link.toString()}
++  <link rel="stylesheet" inline href="/styles/global.css" />
+   </head>
+   <body ${helmet.bodyAttributes.toString()}>
+     <div id="toast-page-section">${appHtml}</div>
