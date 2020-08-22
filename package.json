@@ -13,7 +13,6 @@
     "breadbox": "breadbox --dest public/web_modules"
   },
   "dependencies": {
-    "@jlengstorf/react-tweet-embed": "^1.0.1",
     "@sector/breadbox": "0.0.4",
     "matter-js": "^0.14.2",
     "netlify-plugin-inline-source": "^1.0.4",
