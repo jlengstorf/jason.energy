@@ -1,5 +1,18 @@
+diff --git a/node_modules/toast/src/commands/incremental.js b/node_modules/toast/src/commands/incremental.js
+index e425910..8f6fa7d 100644
+--- a/node_modules/toast/src/commands/incremental.js
++++ b/node_modules/toast/src/commands/incremental.js
+@@ -236,7 +236,7 @@ class IncrementalCommand extends Command {
+         )
+       );
+ 
+-    const staticFiles = await globby(["static/**/*.*"]);
++    const staticFiles = await globby(["static/**/*"]);
+     beeline.addContext({ numStaticFiles: staticFiles.length });
+     await Promise.all(
+       staticFiles.map(async (filepath) => {
 diff --git a/node_modules/toast/src/page-renderer-pre.js b/node_modules/toast/src/page-renderer-pre.js
-index d34eca5..63ef8e2 100644
+index d34eca5..2bb09ed 100644
 --- a/node_modules/toast/src/page-renderer-pre.js
 +++ b/node_modules/toast/src/page-renderer-pre.js
 @@ -18,11 +18,41 @@ window.componentPath = "${componentPath}";
@@ -13,13 +26,13 @@ index d34eca5..63ef8e2 100644
 +  <link rel="preconnect" href="https://res.cloudinary.com" />
 +
 +  <meta name="viewport" content="width=device-width, initial-scale=1">
-+  
++  <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
++
    ${helmet.meta.toString()}
    ${helmet.link.toString()}
 +
 +  <link rel="stylesheet" inline href="/styles/global.css" />
 +
-+  <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
 +  <link rel="canonical" href="https://www.jason.af/" />
 +  <meta name="description" content="Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor." />
 +  <meta name="image" content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg" />
