@@ -5,3 +5,6 @@
 
 [[plugins]]
   package = "netlify-plugin-inline-source"
+
+[[plugins]]
+  package = "netlify-plugin-deploy-preview-commenting"
