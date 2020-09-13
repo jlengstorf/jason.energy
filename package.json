@@ -16,7 +16,7 @@
     "@sector/breadbox": "0.0.4",
     "matter-js": "^0.14.2",
     "netlify-plugin-inline-source": "^1.0.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "patch-package": "^6.2.2",
     "postcss": "^7.0.32",
     "postcss-cli": "^7.1.1",
