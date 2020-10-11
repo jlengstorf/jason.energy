@@ -1,6 +1,10 @@
 /** @jsx h */
-import { h } from 'preact';
+import { Fragment, h } from 'preact';
+import { MDXProvider } from '@mdx-js/preact';
 import { SettingsProvider } from './context/settings.js';
+import { PostWrapper } from './components/post-wrapper.js';
+import { PostImage } from './components/post-image.js';
+import { PostTweetBox } from './components/post-tweet-box.js';
 
 console.log(
   '%c HERE ARE SOME BOOPS FOR YOU',
@@ -26,6 +30,19 @@ console.log(
   `,
 );
 
-export default ({ children }) => {
-  return <SettingsProvider>{children}</SettingsProvider>;
+export default ({ children, type = 'page', ...meta }) => {
+  const Component = type === 'post' ? PostWrapper : Fragment;
+
+  return (
+    <SettingsProvider>
+      <MDXProvider
+        components={{
+          PostImage,
+          PostTweetBox,
+        }}
+      >
+        <Component {...meta}>{children}</Component>
+      </MDXProvider>
+    </SettingsProvider>
+  );
 };

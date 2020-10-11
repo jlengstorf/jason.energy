@@ -3,6 +3,11 @@
   publish = "public"
   functions = "functions"
 
+[dev]
+  command = "npm run build && npm run serve"
+  targetPort = 5000
+  framework = "#custom"
+
 [[plugins]]
   package = "netlify-plugin-inline-source"
 
