@@ -1,0 +1,62 @@
+.figure {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.figure p {
+  margin: 0;
+}
+
+.figure img {
+  border: 1px solid var(--blue-dark);
+  height: auto;
+  width: 100%;
+}
+
+.left,
+.right {
+  max-width: 300px;
+  margin: 1rem auto;
+}
+
+@media (min-width: 600px) {
+  .figure {
+    margin: 2rem -5vw;
+    width: calc(100% + 10vw);
+  }
+
+  .right {
+    float: right;
+    margin-left: 2rem;
+    margin-right: -5vw;
+  }
+
+  .left {
+    float: left;
+    margin-left: -5vw;
+    margin-right: 2rem;
+  }
+}
+
+.noBorder img {
+  border: none;
+}
+
+.caption {
+  font-size: 0.875rem;
+  line-height: 1.2;
+  margin-top: 0.125rem;
+}
+
+.attribution {
+  display: block;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+}
+
+.attributionLink {
+  margin-left: 0.25rem;
+}

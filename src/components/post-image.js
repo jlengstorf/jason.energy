@@ -1,6 +1,16 @@
 /** @jsx h */
 import {h} from 'preact';
 
+// this is how we import styles, because my life is a nightmare
+const styles = preval`
+  const fs = require('fs');
+  const path = require('path');
+  const parsedStylePath = path.resolve(__dirname, '../styles/post-image.module.css.json');
+  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+
+  module.exports = JSON.parse(styleJSON);
+`;
+
 export function PostImage ({
   align = 'center',
   border = true,
@@ -15,22 +25,22 @@ export function PostImage ({
     <figure
       className={
         className ||
-        `figure figure--${align} ${border ? '' : 'figure--no-border'}`
+        `${styles.figure} ${styles[align]} ${border ? '' : styles.noBorder}`
       }
     >
       {children}
       {(caption || credit) && (
-        <figcaption className="figure__caption">
+        <figcaption className={styles.caption}>
           {caption && <span dangerouslySetInnerHTML={{ __html: caption }} />}
           {credit && (
-            <small className="figure__attribution">
+            <small className={styles.attribution}>
               {creditType}:
               {creditLink ? (
-                <a className="figure__attribution-link" href={creditLink}>
+                <a className={styles.attributionLink} href={creditLink}>
                   {credit}
                 </a>
               ) : (
-                <span className="figure__attribution-link">{credit}</span>
+                <span className={styles.attributionLink}>{credit}</span>
               )}
             </small>
           )}

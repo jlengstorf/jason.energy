@@ -9,13 +9,14 @@ import { PostPreviews } from '../components/post-previews.js';
 export default function Posts({ posts }) {
   return [
     <SEO
-      title="Please check your email."
-      description="You’re almost there — please check your email to finish signing up!"
+      title={`${posts.length} posts about how Jason Lengstorf stopped being such a doofus`}
+      description="Jason writes about building strong teams, healthier working lives, effective habits, & more. Learn actionable strategies written from real experience."
     />,
     <Layout>
       <Block color="yellow">
-        <Intro headline="I write stuff."></Intro>
-        Wanna read it?
+        <Intro headline="I write stuff." post>
+          <p>Wanna read it?</p>
+        </Intro>
       </Block>
       <Block color="white">
         <section id="previews">

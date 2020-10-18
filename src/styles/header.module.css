@@ -1,7 +1,7 @@
 .header {
   background: var(--black);
   padding: 1rem 2rem;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
 }
@@ -25,5 +25,6 @@
 .home {
   color: var(--white);
   font-weight: 400;
+  position: sticky;
   text-decoration: none;
 }

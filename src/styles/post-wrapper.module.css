@@ -1,5 +1,134 @@
+.header {
+  align-items: center;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem 50vw 1rem 5vw;
+  position: relative;
+}
+
+.headline {
+  font-size: 3.5rem;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.lede {
+  position: relative;
+  z-index: 10;
+  font-size: 1.375rem;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 65vw;
+  background: var(--background);
+  display: block;
+  z-index: 5;
+  mix-blend-mode: multiply;
+  transform: skew(-15deg, 0deg);
+  transform-origin: top left;
+}
+
 .post-wrapper {
+  font-size: clamp(16px, 3vw, 20px);
   margin: 0 auto;
-  max-width: 550px;
+  max-width: min(90vw, 54ch);
   width: 90vw;
+}
+
+.post-wrapper h2,
+.post-wrapper h3,
+.post-wrapper h4,
+.post-wrapper h5,
+.post-wrapper h6 {
+  color: var(--text-emphasized);
+}
+
+.post-wrapper p {
+  position: relative;
+}
+
+.post-wrapper strong {
+  color: var(--text-emphasized);
+}
+
+.post-wrapper sup[id^='fnref'] {
+  position: absolute;
+  top: 0.5rem;
+  right: -2vw;
+}
+
+.post-wrapper sup[id^='fnref'] a {
+  background: var(--foreground);
+  border-radius: 50%;
+  color: var(--background);
+  display: block;
+  font-size: 0.875rem;
+  font-variant: tabular-nums;
+  font-weight: 900;
+  height: 1.5em;
+  line-height: 1;
+  padding: 3px 0.25em;
+  text-align: center;
+  text-decoration: none;
+  width: 1.5em;
+}
+
+.post-wrapper sup[id^='fnref'] a:focus,
+.post-wrapper sup[id^='fnref'] a:target,
+.post-wrapper sup[id^='fnref'] a:hover {
+  background: var(--yellow);
+}
+
+.post-wrapper :global(.footnotes) {
+  background: red;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+.post-wrapper :global(.footnotes) hr {
+  display: none;
+}
+
+.post-wrapper :global(.footnotes) ol {
+  display: block;
+  margin: 0 auto;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.post-wrapper :global(.footnotes) li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 1s linear;
+}
+
+.post-wrapper :global(.footnotes) li:target {
+  position: relative;
+  height: fit-content;
 }

@@ -22,10 +22,12 @@ export function PostWrapper({ children, title, description, image, slug }) {
   return [
     <SEO title={title} description={description} image={image} url={url} />,
     <Layout>
+      <header className={styles.header}>
+        <h1 className={styles.headline}>{title}</h1>
+        <p className={styles.lede}>{description}</p>
+        <img className={styles.image} src={image} alt={title} />
+      </header>
       <Block color="white">
-        <Intro headline={title}>
-          <p>{description}</p>
-        </Intro>
         <div className={styles['post-wrapper']}>{children}</div>
       </Block>
     </Layout>,

@@ -4,6 +4,8 @@ const vm = require('vm');
 const globby = require('globby');
 const mdx = require('@mdx-js/mdx');
 const cloudinary = require('rehype-local-image-to-cloudinary');
+const numberedFootnotes = require('remark-numbered-footnotes');
+const identifyFootnoteContainers = require('rehype-identity-footnote-containers');
 const { transformComponentForNode } = require('toast/src/transforms');
 const upload = require('rehype-local-image-to-cloudinary/upload');
 const getImageUrl = require('rehype-local-image-to-cloudinary/build-url');
@@ -19,6 +21,9 @@ exports.sourceData = async ({ createPage, withCache }) => {
     let compiled;
     try {
       compiled = await mdx(file, {
+        remarkPlugins: [
+          numberedFootnotes,
+        ],
         rehypePlugins: [
           [
             cloudinary,
@@ -27,6 +32,7 @@ exports.sourceData = async ({ createPage, withCache }) => {
               uploadFolder: 'jason.af',
             },
           ],
+          identifyFootnoteContainers,
         ],
       });
     } catch (error) {

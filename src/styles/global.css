@@ -1,6 +1,7 @@
 :root {
   --white: white;
   --text: #403c4a;
+  --text-emphasized: #201d29;
   --text-muted: #78757f;
   --text-pink: #c10b7e;
   --yellow: #ffe742;
@@ -22,6 +23,7 @@
   --blue-dark: #0d314a;
   --pink-dark: #6d114c;
   --text: #b1acb9;
+  --text-emphasized: #d4d0da;
   --text-muted: #aba7b5;
   --background: var(--black);
   --foreground: var(--white);
@@ -39,6 +41,10 @@ body {
   font-weight: 400;
   line-height: 1.45;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -83,4 +89,13 @@ img {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap; /* added line */
+}
+
+a[href^='#']::before {
+  display: block;
+  content: ' ';
+  margin-top: -285px;
+  height: 285px;
+  visibility: hidden;
+  pointer-events: none;
 }

@@ -77,8 +77,10 @@
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(auto-fit, 250px);
-    row-gap: 4rem;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 1150px;
+    row-gap: 4rem;
   }
 
   .post {
