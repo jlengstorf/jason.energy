@@ -1,17 +1,20 @@
 .header {
   align-items: center;
-  background: var(--background);
+  background: var(--black);
+  border-bottom: 2px solid var(--pink-dark);
   display: flex;
   flex-direction: column;
   height: 60vh;
   justify-content: center;
   margin: 0;
+  min-height: 400px;
   padding: 2rem 50vw 1rem 5vw;
   position: relative;
 }
 
 .headline {
-  font-size: 3.5rem;
+  color: var(--white);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
   margin: 0;
   position: relative;
   z-index: 10;
@@ -28,9 +31,11 @@
 }
 
 .lede {
+  color: var(--gray-medium);
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  margin: 1rem 0 0;
   position: relative;
   z-index: 10;
-  font-size: 1.375rem;
 }
 
 .header::after {
@@ -40,7 +45,7 @@
   top: 0;
   height: 100%;
   width: 65vw;
-  background: var(--background);
+  background: var(--black);
   display: block;
   z-index: 5;
   mix-blend-mode: multiply;
@@ -90,21 +95,43 @@
   padding: 3px 0.25em;
   text-align: center;
   text-decoration: none;
+  transition: 200ms background linear;
   width: 1.5em;
+}
+
+.post-wrapper sup[id^='fnref']:nth-of-type(2) {
+  margin-top: 2rem;
+}
+
+.post-wrapper sup[id^='fnref']:nth-of-type(3) {
+  margin-top: 4rem;
 }
 
 .post-wrapper sup[id^='fnref'] a:focus,
 .post-wrapper sup[id^='fnref'] a:target,
 .post-wrapper sup[id^='fnref'] a:hover {
-  background: var(--yellow);
+  background: var(--footnote-hover);
 }
 
 .post-wrapper :global(.footnotes) {
-  background: red;
   bottom: 0;
   left: 0;
   position: fixed;
   width: 100vw;
+  z-index: 1000;
+}
+
+.post-wrapper :global(.footnotes::after) {
+  background-color: var(--background);
+  border-top: 2px solid var(--pink-dark);
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: 0.95;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .post-wrapper :global(.footnotes) hr {
@@ -115,20 +142,42 @@
   display: block;
   margin: 0 auto;
   max-height: 50vh;
+  max-width: min(90vw, 54ch);
   overflow-y: scroll;
+  padding: 0;
+  position: relative;
+  width: 90vw;
+  z-index: 10;
 }
 
 .post-wrapper :global(.footnotes) li {
+  font-size: 1rem;
+  height: 0;
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
   position: absolute;
   top: 0;
-  left: 0;
-  height: 0;
-  width: 100%;
-  overflow: hidden;
   transition: height 1s linear;
+  width: 100%;
+}
+
+.post-wrapper :global(.footnotes) p {
+  position: static;
 }
 
 .post-wrapper :global(.footnotes) li:target {
-  position: relative;
   height: fit-content;
+  padding: 2.5rem 0 2rem;
+  position: relative;
+}
+
+:global(.footnote-backref) {
+  font-size: 0.875rem;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 0.5rem;
 }

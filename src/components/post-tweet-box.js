@@ -35,8 +35,8 @@ export function PostTweetBox({ quote, retweetId = false }) {
   return (
     <div className={styles['tweet-box']}>
       <p>{quote}</p>
-      <p>
-        Wow, what a tweetable quote! <a href={url}>Tweet this!</a>
+      <p className={styles['tweet-link']}>
+        <a href={url}>Tweet this</a>
       </p>
     </div>
   );

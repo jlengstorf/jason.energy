@@ -1,3 +1,19 @@
 .tweet-box {
-  border: 1px solid red;
+  border: 2px solid var(--blue);
+  border-left: 0;
+  border-right: 0;
+  font-size: 1.5rem;
+  margin: 3rem -5vw;
+  padding: 1rem 5vw;
+}
+
+.tweet-link {
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+}
+
+.tweet-link a {
+  text-decoration: none;
 }

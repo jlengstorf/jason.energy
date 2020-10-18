@@ -10,6 +10,7 @@
 
 .figure img {
   border: 1px solid var(--blue-dark);
+  display: block;
   height: auto;
   width: 100%;
 }
@@ -24,6 +25,11 @@
   .figure {
     margin: 2rem -5vw;
     width: calc(100% + 10vw);
+  }
+
+  .left,
+  .right {
+    margin-top: 0;
   }
 
   .right {
