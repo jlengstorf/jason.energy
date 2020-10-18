@@ -11,8 +11,14 @@ const styles = preval`
 `;
 
 export function Block({ color, children, id, ...props }) {
+  const extraClass = props.className ?? '';
+
   return (
-    <div id={id} className={`${styles.block} ${styles[color]}`} {...props}>
+    <div
+      {...props}
+      id={id}
+      className={`${styles.block} ${styles[color]} ${extraClass}`}
+    >
       {children}
     </div>
   );

@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'preact/hooks';
 import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
+import { Form } from '../components/form.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -33,17 +34,37 @@ export function PostWrapper({ children, title, description, image, slug }) {
   }, [ref]);
 
   return [
-    <SEO title={title} description={description} image={image} url={url} />,
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      url={url}
+      post
+    />,
     <Layout>
       <header className={styles.header}>
         <h1 className={styles.headline}>{title}</h1>
         <p className={styles.lede}>{description}</p>
         <img className={styles.image} src={image} alt={title} />
       </header>
-      <Block color="white">
+      <Block color="white" className={styles['post-block']}>
         <div className={styles['post-wrapper']} ref={ref}>
           {children}
         </div>
+      </Block>
+      <Block id="newsletter" color="yellow">
+        <Form title="Do more of what matters.">
+          <p>
+            I’ve spent a lot of my life doing things the hard way. I write about
+            the experiences, experiments, and strategies that have helped me
+            live a happier, more fulfilling life where I’m able to do more of
+            what matters to me — and less of what doesn’t.
+          </p>
+          <p>
+            Join my newsletter and I’ll share those stories directly to your
+            inbox.
+          </p>
+        </Form>
       </Block>
     </Layout>,
   ];

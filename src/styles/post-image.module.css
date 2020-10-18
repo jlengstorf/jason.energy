@@ -8,11 +8,16 @@
   margin: 0;
 }
 
+.figure iframe,
 .figure img {
   border: 1px solid var(--blue-dark);
   display: block;
   height: auto;
   width: 100%;
+}
+
+.figure iframe {
+  height: calc(min(90vw, 54ch + 10vw) * 9 / 16);
 }
 
 .left,
@@ -52,7 +57,7 @@
 .caption {
   font-size: 0.875rem;
   line-height: 1.2;
-  margin-top: 0.125rem;
+  margin-top: 0.75rem;
 }
 
 .attribution {

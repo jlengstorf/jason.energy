@@ -4,11 +4,11 @@
   border-bottom: 2px solid var(--pink-dark);
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: min-content;
   justify-content: center;
   margin: 0;
-  min-height: 400px;
-  padding: 2rem 50vw 1rem 5vw;
+  min-height: max(400px, 60vh);
+  padding: 2rem 20vw 1rem 5vw;
   position: relative;
 }
 
@@ -44,13 +44,28 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 65vw;
+  width: 90vw;
   background: var(--black);
   display: block;
   z-index: 5;
   mix-blend-mode: multiply;
-  transform: skew(-15deg, 0deg);
+  transform: skew(-2deg, 0deg);
   transform-origin: top left;
+}
+
+@media (min-width: 900px) {
+  .header {
+    padding-right: 50vw;
+  }
+
+  .header::after {
+    transform: skew(-15deg, 0deg);
+    width: 65vw;
+  }
+}
+
+.post-block {
+  padding-top: 2rem;
 }
 
 .post-wrapper {
@@ -72,8 +87,21 @@
   position: relative;
 }
 
+.post-wrapper > :first-child {
+  margin-top: 0;
+}
+
+:global(.has-footnote) {
+  padding-right: 2rem;
+}
+
 .post-wrapper strong {
   color: var(--text-emphasized);
+}
+
+.post-wrapper a {
+  font-style: inherit;
+  font-weight: inherit;
 }
 
 .post-wrapper sup[id^='fnref'] {
@@ -167,7 +195,7 @@
 }
 
 .post-wrapper :global(.footnotes) li:target {
-  height: fit-content;
+  height: min-content;
   padding: 2.5rem 0 2rem;
   position: relative;
 }

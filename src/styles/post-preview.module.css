@@ -1,5 +1,6 @@
 .post {
-  margin: 3rem 0 0;
+  margin: 3rem auto 0;
+  max-width: 250px;
   position: relative;
 }
 

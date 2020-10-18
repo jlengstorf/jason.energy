@@ -7,6 +7,7 @@ export function SEO({
   description = 'Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor.',
   url = 'https://jason.af/',
   image = 'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg',
+  post = false,
 }) {
   const { darkMode } = useSettings();
 
@@ -17,7 +18,7 @@ export function SEO({
       <meta name="description" content={description} />
       <meta name="image" content={image} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={post ? 'article' : 'website'} />
       <meta property="og:url" content={url} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

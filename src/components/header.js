@@ -24,7 +24,8 @@ export function Header() {
       <a href="/" rel="home" className={styles.home}>
         Jason Lengstorf
       </a>
-      {isHome && [<ExplodingNav />, <Settings />]}
+      {isHome && <ExplodingNav />}
+      <Settings />
     </header>
   );
 }
