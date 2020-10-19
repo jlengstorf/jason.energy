@@ -93,12 +93,3 @@ img {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap; /* added line */
 }
-
-a[href^='#']::before {
-  display: block;
-  content: ' ';
-  margin-top: -285px;
-  height: 285px;
-  visibility: hidden;
-  pointer-events: none;
-}

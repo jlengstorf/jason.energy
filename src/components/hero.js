@@ -12,7 +12,7 @@ const styles = preval`
   module.exports = JSON.parse(styleJSON);
 `;
 
-const taglines = [
+export const taglines = [
   {
     size: '8.1vw',
     'size-lg': '64px',

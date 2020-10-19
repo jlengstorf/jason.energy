@@ -4,7 +4,15 @@
   border-right: 0;
   font-size: 1.5rem;
   margin: 3rem -5vw;
-  padding: 1rem 5vw;
+  padding: 2.5rem 5vw 2rem;
+}
+
+.tweet-box p {
+  margin: 1rem 0 0;
+}
+
+.tweet-box p:first-of-type {
+  margin: 0;
 }
 
 .tweet-link {
