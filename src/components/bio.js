@@ -149,7 +149,7 @@ export function Bio() {
         <LengthChooser />
         <BioText />
         <div className={styles.social}>
-          <h3 className={styles.connect}>Connect With Jason:</h3>
+          <h2 className={styles.connect}>Connect With Jason:</h2>
           <ul className={styles.profiles}>
             {[
               {

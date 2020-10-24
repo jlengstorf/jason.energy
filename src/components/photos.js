@@ -72,7 +72,7 @@ const photos = [
   },
 ];
 
-function Thumb({ photo, handleClick, isCurrent }) {
+function Thumb({ photo, handleClick }) {
   const { playClick, playPop } = useSfx();
 
   return (
@@ -126,9 +126,9 @@ export function Photos({ className }) {
         </figcaption>
       </figure>
       <div className={styles.morePhotos}>
-        <h3 className={styles.photoHeading}>
+        <h2 className={styles.photoHeading}>
           You can use any of these photos with credit:
-        </h3>
+        </h2>
         <ul className={styles.thumbnails}>
           {photos.map((photo, index) => (
             <Thumb
