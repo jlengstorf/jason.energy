@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 import { useRef, useEffect } from 'preact/hooks';
+import getShareImage from '@jlengstorf/get-share-image';
 import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
@@ -21,6 +22,19 @@ export function PostWrapper({ children, title, description, image, slug }) {
   const url = new URL('https://www.jason.af/');
   url.pathname = `/${slug}`;
 
+  const ogImage = getShareImage({
+    title: title.toUpperCase(),
+    cloudName: 'jlengstorf',
+    imagePublicID: 'jason.af/og',
+    titleFont: 'jwf.otf',
+    titleExtraConfig: '_line_spacing_-25',
+    titleFontSize: 75,
+    textColor: '171321',
+    textLeftOffset: 354,
+    textAreaWidth: 920,
+    titleBottomOffset: 185,
+  });
+
   useEffect(() => {
     if (!ref.current) {
       return;
@@ -37,7 +51,7 @@ export function PostWrapper({ children, title, description, image, slug }) {
     <SEO
       title={title}
       description={description}
-      image={image}
+      image={ogImage}
       url={url}
       post
     />,
