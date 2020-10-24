@@ -1,5 +1,7 @@
-import { Engine, Render, Runner, World, Bodies } from 'matter-js';
-import { useEffect, useRef } from 'react';
+import * as Matter from 'matter-js';
+import { useEffect, useRef } from 'preact/hooks';
+
+const { Engine, Render, Runner, World, Bodies } = Matter.default;
 
 const engine = Engine.create();
 const runner = Runner.create();
@@ -32,6 +34,11 @@ export function useBoop() {
 
   useEffect(() => {
     const canvas = ref.current;
+
+    if (!canvas) {
+      return;
+    }
+
     const height = ref.current.clientHeight;
     const width = ref.current.clientWidth;
 
@@ -84,10 +91,6 @@ export function useBoop() {
 
   const boopImage =
     'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_90/v1585764654/lwj/store/boop.png';
-
-  useEffect(() => {
-    createBoop(boopImage);
-  }, []);
 
   const addBoop = () => createBoop(boopImage);
 

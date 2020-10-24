@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+/** @jsx h */
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
-// import { BoopDrop } from './boop-drop.js';
+import { useBoop } from '../hooks/use-boop.js';
+import { BoopDrop } from './boop-drop.js';
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -112,11 +115,17 @@ const CycleTagline = ({ clickHandler }) => {
 };
 
 export function Hero() {
+  const { addBoop } = useBoop();
   const { playBoop } = useSfx();
   const [taglineIndex, setTaglineIndex] = useState(0);
   const tagline = taglines[taglineIndex];
 
+  useEffect(() => {
+    addBoop();
+  }, []);
+
   function cycleTagline() {
+    addBoop();
     playBoop();
 
     const index = taglineIndex + 1;
@@ -124,7 +133,7 @@ export function Hero() {
   }
 
   return [
-    // <BoopDrop className={styles.boops} />,
+    <BoopDrop className={styles.boops} />,
     <h1 className={styles.hero}>
       <span className={styles.firstLine}>Jason</span>
       <span className={styles.box}>Lengstorf</span>
