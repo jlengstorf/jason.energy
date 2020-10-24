@@ -1,5 +1,5 @@
 .header {
-  align-items: center;
+  align-items: flex-start;
   background: var(--black);
   border-bottom: 2px solid var(--pink-dark);
   display: flex;
@@ -80,6 +80,7 @@
 .post-wrapper h4,
 .post-wrapper h5,
 .post-wrapper h6 {
+  clear: both;
   color: var(--text-emphasized);
 }
 
@@ -93,10 +94,15 @@
 
 :global(.has-footnote) {
   padding-right: 2rem;
+  position: relative;
 }
 
 .post-wrapper strong {
   color: var(--text-emphasized);
+}
+
+.post-wrapper a strong {
+  color: inherit;
 }
 
 .post-wrapper a {
@@ -208,4 +214,14 @@
   right: 0;
   text-decoration: none;
   top: 0.5rem;
+}
+
+:global(.footnote-image) {
+  float: right;
+  margin: 1rem 0 0 2rem;
+  max-width: 30%;
+}
+
+:global(.footnote-image) p {
+  margin: 0;
 }
