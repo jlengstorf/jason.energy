@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { Bio } from '../components/bio.js';
@@ -14,6 +15,7 @@ export default function Home() {
   const addBoop = () => {};
 
   return [
+    <SEO />,
     <Layout>
       <Block color="yellow" onClick={addBoop}>
         <Hero />

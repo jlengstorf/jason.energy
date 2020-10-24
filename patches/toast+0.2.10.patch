@@ -12,10 +12,10 @@ index e425910..8f6fa7d 100644
      await Promise.all(
        staticFiles.map(async (filepath) => {
 diff --git a/node_modules/toast/src/page-renderer-pre.js b/node_modules/toast/src/page-renderer-pre.js
-index d34eca5..2bb09ed 100644
+index d34eca5..6242efa 100644
 --- a/node_modules/toast/src/page-renderer-pre.js
 +++ b/node_modules/toast/src/page-renderer-pre.js
-@@ -18,11 +18,41 @@ window.componentPath = "${componentPath}";
+@@ -18,11 +18,25 @@ window.componentPath = "${componentPath}";
  window.wrapperComponentPath = "${pageWrapperPath}";
  window.dataPath = ${dataPath && `"${dataPath}"`};
  </script>
@@ -32,22 +32,6 @@ index d34eca5..2bb09ed 100644
    ${helmet.link.toString()}
 +
 +  <link rel="stylesheet" inline href="/styles/global.css" />
-+
-+  <link rel="canonical" href="https://www.jason.af/" />
-+  <meta name="description" content="Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor." />
-+  <meta name="image" content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg" />
-+
-+  <meta property="og:type" content="website" />
-+  <meta property="og:url" content="https://www.jason.af/" />
-+  <meta property="og:description" content="Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor." />
-+  <meta property="og:image" content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg" />
-+
-+  <meta name="twitter:dnt" content="on" />
-+  <meta name="twitter:card" content="summary_large_image" />
-+  <meta name="twitter:creator" content="@jlengstorf" />
-+  <meta name="twitter:title" content="A Very Jason Lengstorf Website — Powered By Boops!" />
-+  <meta name="twitter:description" content="Jason Lengstorf is a web developer, educator, and the host of Learn With Jason. It is rumored that he gives the best hugs. Jason started that rumor." />
-+  <meta name="twitter:image" content="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,g_auto/v1593579116/jason.af/og-image.jpg" />
 +
 +  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
 +  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

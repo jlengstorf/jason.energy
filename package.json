@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "jason.af",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "the boopiest place on Earth",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -10,24 +10,33 @@
     "build": "toast incremental",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "breadbox": "breadbox --dest public/web_modules"
+    "breadbox": "breadbox --dest public/web_modules",
+    "serve": "serve public"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.18",
+    "@mdx-js/preact": "^1.6.18",
     "@sector/breadbox": "0.0.4",
+    "globby": "^11.0.1",
     "matter-js": "^0.14.2",
+    "netlify-plugin-deploy-preview-commenting": "0.0.1-alpha.0",
     "netlify-plugin-inline-source": "^1.0.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "patch-package": "^6.2.2",
-    "postcss": "^7.0.32",
-    "postcss-cli": "^7.1.1",
-    "postcss-modules": "^3.2.1",
-    "preact": "^10.4.5",
+    "postcss": "^7.0.35",
+    "postcss-cli": "^7.1.2",
+    "postcss-modules": "^3.2.2",
+    "preact": "^10.5.4",
     "react-helmet": "^6.1.0",
+    "rehype-identity-footnote-containers": "^1.0.0",
+    "rehype-local-image-to-cloudinary": "^1.0.3",
+    "remark-numbered-footnotes": "^2.0.0",
     "toast": "^0.2.10",
     "use-sound": "^1.0.2"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "^2.1.2",
+    "serve": "^11.3.2"
   },
   "snowpack": {
     "exclude": [

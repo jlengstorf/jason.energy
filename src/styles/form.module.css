@@ -44,13 +44,12 @@
 
 .label {
   color: var(--text);
-  font-size: 0.75rem;
-  font-variant: small-caps;
+  font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
   margin-top: 1rem;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .input {

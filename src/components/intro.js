@@ -10,10 +10,19 @@ const styles = preval`
   module.exports = JSON.parse(styleJSON);
 `;
 
-export function Intro({ headline, children }) {
+const Heading = ({ children, className, post }) =>
+  post ? (
+    <h1 className={className}>{children}</h1>
+  ) : (
+    <h2 className={className}>{children}</h2>
+  );
+
+export function Intro({ headline, children, post = false }) {
   return [
     <div className={styles.intro}>
-      <h2 className={styles.headline}>{headline}</h2>
+      <Heading className={styles.headline} post={post}>
+        {headline}
+      </Heading>
       <div className={styles.lede}>{children}</div>
     </div>,
   ];

@@ -14,7 +14,7 @@ const styles = preval`
   module.exports = JSON.parse(styleJSON);
 `;
 
-export function Form() {
+export function Form({ title = 'Get booped on the brain.', children }) {
   const [sending, setSending] = useState(false);
   const { playPop, playHooray } = useSfx();
 
@@ -41,13 +41,15 @@ export function Form() {
 
   return (
     <section className={styles.newsletter}>
-      <Intro headline="Get booped on the brain.">
-        <p>
-          Jason believes in lifelong learning and continuous improvement. In his
-          newsletter, he shares his experience — both technical and otherwise —
-          in hopes of connecting with more lifelong learners and building a
-          community of practice.
-        </p>
+      <Intro headline={title}>
+        {children || (
+          <p>
+            Jason believes in lifelong learning and continuous improvement. In
+            his newsletter, he shares his experience — both technical and
+            otherwise — in hopes of connecting with more lifelong learners and
+            building a community of practice.
+          </p>
+        )}
       </Intro>
       <div className={styles.wrapper}>
         <div className={styles.imageWrapper}>

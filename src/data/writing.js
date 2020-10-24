@@ -6,9 +6,9 @@ export default [
       'Yak shaving, meta-work, and why they might just be the most important part of making meaningful progress.',
     image:
       'https://lengstorf.com/static/c6714c17aba9d5097ce7bd267a38f603/ec6c5/yak-shaving.jpg',
-    url: 'https://lengstorf.com/yak-shaving/',
+    url: '/yak-shaving',
     featured: true,
-    site: 'lengstorf',
+    site: 'jasonaf',
   },
   {
     title: 'Intention vs. Drift — Let’s Learn Design Systems, Part 1',
@@ -59,9 +59,9 @@ export default [
       'The “right” or “wrong” decision depends on who you are. How can you be more sure you’re making the right decision for you? Know what you’re optimizing for!',
     image:
       'https://lengstorf.com/static/a5edc218274a42d9429031d9e21f6673/ec6c5/map.jpg',
-    url: 'https://lengstorf.com/what-are-you-optimizing-for/',
+    url: '/what-are-you-optimizing-for',
     featured: true,
-    site: 'lengstorf',
+    site: 'jasonaf',
   },
   {
     title: 'Create a Custom Back-End for Jamstack Apps with Strapi',
@@ -212,9 +212,9 @@ export default [
       'How can we design systems that are friendly to beginners, but accessible to experts? There’s no one-size-fits-all solution — we need layers of abstraction.',
     image:
       'https://lengstorf.com/static/a78f9d00b94e0f9de6f8ae1e55764311/ec6c5/layers.jpg',
-    url: 'https://lengstorf.com/progressive-disclosure-of-complexity/',
+    url: '/progressive-disclosure-of-complexity',
     featured: true,
-    site: 'lengstorf',
+    site: 'jasonaf',
   },
   {
     title: 'Gatsby 101: Features, Benefits, and Trade-Offs',
@@ -233,8 +233,8 @@ export default [
       'The best chefs rely on mise en place to guarantee every meal comes out right. It’s also a killer productivity hack. Here’s how you can start using it today.',
     image:
       'https://lengstorf.com/static/8428dca65c50d08fdbc59e71cfeb5556/ec6c5/egg-nog-mise-en-place.jpg',
-    url: 'https://lengstorf.com/mise-en-place/',
+    url: '/mise-en-place',
     featured: true,
-    site: 'lengstorf',
+    site: 'jasonaf',
   },
 ];

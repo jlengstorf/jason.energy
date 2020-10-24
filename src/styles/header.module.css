@@ -1,7 +1,9 @@
 .header {
   background: var(--black);
+  display: flex;
+  gap: 1.5rem;
   padding: 1rem 2rem;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
 }
@@ -25,5 +27,11 @@
 .home {
   color: var(--white);
   font-weight: 400;
+  position: sticky;
+  text-decoration: none;
+}
+
+.nav a {
+  color: var(--white);
   text-decoration: none;
 }
