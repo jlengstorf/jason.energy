@@ -176,12 +176,11 @@
 .connect {
   color: var(--text-muted);
   font-size: 0.75rem;
-  font-variant: small-caps;
   font-weight: 400;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
   text-align: center;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .profiles {

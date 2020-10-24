@@ -23,13 +23,12 @@
 
 .links {
   display: flex;
-  font-size: 0.75rem;
-  font-variant: small-caps;
+  font-size: 0.625rem;
   font-weight: 200;
   justify-content: space-between;
   letter-spacing: 0.15em;
   margin-top: 0.5rem;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .credit {
@@ -47,14 +46,13 @@
 
 .photoHeading {
   color: var(--text-muted);
-  font-size: 0.75rem;
-  font-variant: small-caps;
+  font-size: 0.625rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
   margin-top: 0;
   text-align: center;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 .thumbnails {
