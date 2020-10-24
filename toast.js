@@ -21,9 +21,7 @@ exports.sourceData = async ({ createPage, withCache }) => {
     let compiled;
     try {
       compiled = await mdx(file, {
-        remarkPlugins: [
-          numberedFootnotes,
-        ],
+        remarkPlugins: [numberedFootnotes],
         rehypePlugins: [
           [
             cloudinary,
