@@ -13,6 +13,10 @@ const styles = preval`
 `;
 
 const sites = {
+  jasonaf: {
+    name: 'jason.af',
+    icon: 'https://www.jason.af/favicon-32x32.png',
+  },
   lengstorf: {
     name: 'lengstorf.com',
     icon: 'https://lengstorf.com/favicon-32x32.png',

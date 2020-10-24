@@ -21,17 +21,19 @@ export function Writing() {
     <section className={styles.writing}>
       <Intro headline="Jason shares stories about code (and not-code).">
         <p>
-          Jason believes in the power of stories. He writes about code at{' '}
-          <a href="https://www.learnwithjason.dev/blog">learnwithjason.dev</a>{' '}
-          shares his stories and experiences at{' '}
-          <a href="https://www.lengstorf.com/blog/">lengstorf.com</a>, and
-          contributes to various sites around the web. These are a few pieces
-          he’s proud of:
+          Jason believes in the power of stories. He shares his stories and
+          experiences <a href="/posts">on his blog</a> and writes about code at{' '}
+          <a href="https://www.learnwithjason.dev/blog">learnwithjason.dev</a>.
+          He’s also a regular contributor to other publications. These are a few
+          pieces he’s proud of:
         </p>
       </Intro>
       <div className={styles.posts}>
         <PostPreviews posts={featuredPosts} />
       </div>
+      <a href="/posts" className={styles.button}>
+        see all posts{' '}
+      </a>
     </section>
   );
 }
