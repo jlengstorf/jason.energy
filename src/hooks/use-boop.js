@@ -1,5 +1,5 @@
 import * as Matter from 'matter-js';
-import { useEffect, useRef } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 const { Engine, Render, Runner, World, Bodies } = Matter.default;
 
@@ -31,6 +31,7 @@ function createBoop(url) {
 
 export function useBoop() {
   const ref = useRef();
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const canvas = ref.current;
@@ -92,7 +93,10 @@ export function useBoop() {
   const boopImage =
     'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_90/v1585764654/lwj/store/boop.png';
 
-  const addBoop = () => createBoop(boopImage);
+  const addBoop = () => {
+    createBoop(boopImage);
+    setCount(count + 1);
+  };
 
-  return { boopRef: ref, addBoop };
+  return { boopRef: ref, addBoop, count };
 }

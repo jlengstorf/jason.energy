@@ -1,9 +1,10 @@
-/** @jsx h */
-import { h } from 'preact';
+import React from 'react';
 import { useEffect, useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { useBoop } from '../hooks/use-boop.js';
 import { BoopDrop } from './boop-drop.js';
+
+const MAXIMUM_BOOPS = 100;
 
 // this is how we import styles, because my life is a nightmare
 const styles = preval`
@@ -115,8 +116,8 @@ const CycleTagline = ({ clickHandler }) => {
 };
 
 export function Hero() {
-  const { addBoop } = useBoop();
-  const { playBoop } = useSfx();
+  const { addBoop, count } = useBoop();
+  const { playAirhorn, playBoop } = useSfx();
   const [taglineIndex, setTaglineIndex] = useState(0);
   const tagline = taglines[taglineIndex];
 
@@ -126,7 +127,11 @@ export function Hero() {
 
   function cycleTagline() {
     addBoop();
-    playBoop();
+    if (count < MAXIMUM_BOOPS) {
+      playBoop();
+    } else {
+      playAirhorn();
+    }
 
     const index = taglineIndex + 1;
     setTaglineIndex(index < taglines.length ? index : 0);
@@ -134,20 +139,35 @@ export function Hero() {
 
   return [
     <BoopDrop className={styles.boops} />,
-    <h1 className={styles.hero}>
-      <span className={styles.firstLine}>Jason</span>
-      <span className={styles.box}>Lengstorf</span>
-      <span
-        className={styles.tagline}
-        style={{
-          '--top': tagline.top || '-7px',
-          '--rotation': tagline['rotation'] || '0deg',
-          '--scale': tagline.scale || 1.1,
-          '--size': tagline.size || '8.1vw',
-          '--size-lg': tagline['size-lg'] || '44px',
-        }}
-        dangerouslySetInnerHTML={{ __html: tagline.text }}
-      />
+    <h1
+      className={`${styles.hero} ${
+        count >= MAXIMUM_BOOPS ? styles.maxBoops : ''
+      }`}
+    >
+      {count < MAXIMUM_BOOPS ? (
+        <>
+          <span className={styles.firstLine}>Jason</span>
+          <span className={styles.box}>Lengstorf</span>
+          <span
+            className={styles.tagline}
+            style={{
+              '--top': tagline.top || '-7px',
+              '--rotation': tagline['rotation'] || '0deg',
+              '--scale': tagline.scale || 1.1,
+              '--size': tagline.size || '8.1vw',
+              '--size-lg': tagline['size-lg'] || '44px',
+            }}
+            dangerouslySetInnerHTML={{ __html: tagline.text }}
+          />
+        </>
+      ) : (
+        <>
+          <span className={`${styles.firstLine} ${styles.maxBoops}`}>
+            Maximum
+          </span>
+          <span className={`${styles.box} ${styles.maxBoops}`}>Boops!</span>
+        </>
+      )}
     </h1>,
     <CycleTagline clickHandler={cycleTagline} />,
   ];

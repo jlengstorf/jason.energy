@@ -28,6 +28,15 @@ export function useSfx() {
     },
   );
 
+  const [playAirhorn] = useSound(
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/airhorn.mp3',
+    {
+      soundEnabled,
+      volume: 0.5,
+      interrupt: true,
+    },
+  );
+
   const [playPowerUp] = useSound(
     'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/power-up.mp3',
     {
@@ -53,6 +62,7 @@ export function useSfx() {
   );
 
   return {
+    playAirhorn,
     playBoop,
     playClick,
     playHooray,
