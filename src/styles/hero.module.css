@@ -11,6 +11,12 @@
   z-index: 1;
 }
 
+.hero.maxBoops {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .boops {
   mix-blend-mode: overlay;
   z-index: 10;
@@ -22,6 +28,10 @@
   line-height: 0.95;
 }
 
+.firstLine.maxBoops {
+  font-size: clamp(20px, 15.5vw, 120px);
+}
+
 .box {
   background: var(--black);
   color: var(--yellow);
@@ -30,6 +40,10 @@
   line-height: 1;
   padding: 0 0.5rem 1rem;
   transition: 200ms background linear;
+}
+
+.box.maxBoops {
+  font-size: clamp(40px, 21.5vw, 170px);
 }
 
 .tagline {
