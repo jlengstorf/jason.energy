@@ -2,16 +2,7 @@ import React, { useState } from 'react';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Image } from './image.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/photos.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/photos.module.js';
 
 const photos = [
   {

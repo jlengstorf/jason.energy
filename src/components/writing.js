@@ -3,15 +3,7 @@ import { Intro } from './intro.js';
 import { PostPreviews } from './post-previews.js';
 import writing from '../data/writing.js';
 
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/writing.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/writing.module.js';
 
 export function Writing() {
   // TODO pull this dynamically

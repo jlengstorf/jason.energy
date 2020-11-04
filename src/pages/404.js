@@ -4,16 +4,7 @@ import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { SEO } from '../components/seo.js';
 import { Image } from '../components/image.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/404.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/404.module.js';
 
 export default () => {
   return [

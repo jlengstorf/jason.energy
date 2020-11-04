@@ -72,4 +72,4 @@ yarn-error.log
 .netlify
 
 # YEAH TOAST!
-src/styles/*.json
+src/styles/*.js

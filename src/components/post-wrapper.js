@@ -7,15 +7,7 @@ import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { Form } from '../components/form.js';
 
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/post-wrapper.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/post-wrapper.module.js';
 
 export function PostWrapper({ children, title, description, image, slug }) {
   const ref = useRef();
