@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Intro } from './intro.js';
 import { PostPreviews } from './post-previews.js';
 import writing from '../data/writing.js';

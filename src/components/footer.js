@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import styles from '../styles/footer.module.js';
 
 export function Footer() {

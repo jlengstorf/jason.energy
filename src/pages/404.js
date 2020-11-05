@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Helmet } from 'react-helmet';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';

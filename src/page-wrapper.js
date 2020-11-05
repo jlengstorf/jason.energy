@@ -1,5 +1,6 @@
 /** @jsx h */
 import { Fragment, h } from 'preact';
+import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/preact';
 import { SettingsProvider } from './context/settings.js';
 import { PostWrapper } from './components/post-wrapper.js';
@@ -35,6 +36,37 @@ export default ({ children, type = 'page', ...meta }) => {
 
   return (
     <SettingsProvider>
+      <Helmet>
+        <html lang="en" />
+
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
+        <link rel="stylesheet" inline href="/styles/global.css" />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff87d4" />
+        <meta name="msapplication-TileColor" content="#ffe742" />
+        <meta name="theme-color" content="#ffe742" />
+      </Helmet>
       <MDXProvider
         components={{
           PostImage,

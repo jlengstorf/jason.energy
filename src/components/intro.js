@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import styles from '../styles/intro.module.js';
 
 const Heading = ({ children, className, post }) =>

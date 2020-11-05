@@ -1,0 +1,14 @@
+diff --git a/node_modules/@toastdotdev/mdx/remark-pluck-meta.js b/node_modules/@toastdotdev/mdx/remark-pluck-meta.js
+index bd9e138..b1cac7a 100644
+--- a/node_modules/@toastdotdev/mdx/remark-pluck-meta.js
++++ b/node_modules/@toastdotdev/mdx/remark-pluck-meta.js
+@@ -9,7 +9,8 @@ export default function remarkPluckMeta({ exportNames }) {
+       const re = new RegExp(`^export const ${exportName} = `);
+       visit(tree, "export", (ast) => {
+         if (ast.value.startsWith(`export const ${exportName} = `)) {
+-          const obj = ast.value.replace(re, "").replace(/;\s*$/, "");
++          const step = ast.value.replace(re, "").replace(/;\s*$/, "");
++          const obj = step.replace(/\s*?`\s*?/g, '"').replace(/\n/g, '');
+           file.data.exports[exportName] = json5.parse(obj);
+         }
+       });

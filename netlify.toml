@@ -4,7 +4,7 @@
   functions = "functions"
 
 [dev]
-  command = "npm run build && npm run serve"
+  command = "npm run build"
   targetPort = 5000
   framework = "#custom"
 

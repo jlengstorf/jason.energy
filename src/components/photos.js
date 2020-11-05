@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Image } from './image.js';

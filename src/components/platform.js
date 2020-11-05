@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Image } from './image.js';
 
 import styles from '../styles/platform.module.js';

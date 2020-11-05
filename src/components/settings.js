@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { useSfx } from '../hooks/use-sfx.js';
 import { useSettings } from '../context/settings.js';
 import { Button } from './button.js';

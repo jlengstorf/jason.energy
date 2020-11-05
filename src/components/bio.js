@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-for */
-import React from 'react';
+import { h } from 'preact';
 import { useSettings } from '../context/settings.js';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Photos } from './photos.js';

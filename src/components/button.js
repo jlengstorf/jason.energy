@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 
 export function Button({
   children,

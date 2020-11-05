@@ -1,4 +1,4 @@
-import React from 'react';
+import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { useBoop } from '../hooks/use-boop.js';

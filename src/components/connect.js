@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
 import styles from '../styles/connect.module.js';

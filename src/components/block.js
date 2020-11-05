@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import styles from '../styles/block.module.js';
 
 export function Block({ color, children, id, ...props }) {

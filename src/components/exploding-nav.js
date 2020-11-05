@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import styles from '../styles/exploding-nav.module.js';
 

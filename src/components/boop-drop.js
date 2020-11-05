@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { useBoop } from '../hooks/use-boop.js';
 
 export function BoopDrop({ className }) {
