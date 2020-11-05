@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useState, useContext } from 'react';
+import { h, createContext } from 'preact';
+import { useEffect, useState, useContext } from 'preact/hooks';
 
 const SettingsContext = createContext();
 

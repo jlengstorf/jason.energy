@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
 import { ExplodingNav } from './exploding-nav.js';
 import { Settings } from './settings.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/header.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/header.module.js';
 
 export function Header() {
   const [isHome, setIsHome] = useState(false);

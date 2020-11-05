@@ -1,16 +1,7 @@
-import React from 'react';
+import { h } from 'preact';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/connect.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/connect.module.js';
 
 const platforms = [
   {

@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
+import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Intro } from './intro.js';
 import { Image } from './image.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/form.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/form.module.js';
 
 export function Form({ title = 'Get booped on the brain.', children }) {
   const [sending, setSending] = useState(false);

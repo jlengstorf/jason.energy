@@ -1,18 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-for */
-import React from 'react';
+import { h } from 'preact';
 import { useSettings } from '../context/settings.js';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Photos } from './photos.js';
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/bio.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/bio.module.js';
 
 function LengthChooser() {
   const { bioLength, updateBioLength } = useSettings();

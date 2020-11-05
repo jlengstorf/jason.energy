@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { Header } from './header.js';
 import { Main } from './main.js';
 import { Footer } from './footer.js';

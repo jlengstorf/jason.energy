@@ -1,4 +1,4 @@
-import React from 'react';
+import { h } from 'preact';
 import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';

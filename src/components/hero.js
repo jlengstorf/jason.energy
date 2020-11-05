@@ -1,20 +1,11 @@
-import React from 'react';
+import { h, Fragment } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { useBoop } from '../hooks/use-boop.js';
 import { BoopDrop } from './boop-drop.js';
+import styles from '../styles/hero.module.js';
 
 const MAXIMUM_BOOPS = 100;
-
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/hero.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
 
 export const taglines = [
   {

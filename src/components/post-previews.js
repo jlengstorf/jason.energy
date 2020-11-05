@@ -2,15 +2,7 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/post-preview.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
-
-  module.exports = JSON.parse(styleJSON);
-`;
+import styles from '../styles/post-preview.module.js';
 
 const sites = {
   jasonaf: {

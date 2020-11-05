@@ -1,17 +1,9 @@
 /** @jsx h */
-import {h} from 'preact';
+import { h } from 'preact';
 
-// this is how we import styles, because my life is a nightmare
-const styles = preval`
-  const fs = require('fs');
-  const path = require('path');
-  const parsedStylePath = path.resolve(__dirname, '../styles/post-image.module.css.json');
-  const styleJSON = fs.readFileSync(parsedStylePath, 'utf-8');
+import styles from '../styles/post-image.module.js';
 
-  module.exports = JSON.parse(styleJSON);
-`;
-
-export function PostImage ({
+export function PostImage({
   align = 'center',
   border = true,
   caption,
