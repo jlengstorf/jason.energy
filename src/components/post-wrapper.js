@@ -1,15 +1,13 @@
 /** @jsx h */
 import { h } from 'preact';
 import { useRef, useEffect } from 'preact/hooks';
-import getShareImageModule from '@jlengstorf/get-share-image';
+import getShareImage from '@jlengstorf/get-share-image';
 import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { Form } from '../components/form.js';
 
 import styles from '../styles/post-wrapper.module.js';
-
-const getShareImage = getShareImageModule.default;
 
 export function PostWrapper({ children, title, description, image, slug }) {
   const ref = useRef();

@@ -15,7 +15,7 @@
     "serve": "serve public"
   },
   "dependencies": {
-    "@jlengstorf/get-share-image": "^0.7.1",
+    "@jlengstorf/get-share-image": "^0.8.0",
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/preact": "^1.6.19",
     "@sector/breadbox": "0.0.4",
