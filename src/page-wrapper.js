@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/preact';
 import { SettingsProvider } from './context/settings.js';
 import { PostWrapper } from './components/post-wrapper.js';
+import { PostAside } from './components/post-aside.js';
 import { PostImage } from './components/post-image.js';
 import { PostTweetBox } from './components/post-tweet-box.js';
 
@@ -69,6 +70,7 @@ export default ({ children, type = 'page', ...meta }) => {
       </Helmet>
       <MDXProvider
         components={{
+          PostAside,
           PostImage,
           PostTweetBox,
         }}

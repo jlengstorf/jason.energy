@@ -4,7 +4,8 @@
   functions = "functions"
 
 [dev]
-  command = "npm run build"
+  autoLaunch = false
+  command = "npm run dev"
   targetPort = 5000
   framework = "#custom"
 

@@ -35,22 +35,28 @@ export const sourceData = async ({ setDataForSlug }) => {
         ],
       });
 
-      const cloudinaryName = await upload({
-        imagePath: path.join(path.dirname(filename), data.exports.meta.image),
-        uploadFolder: 'jason.af',
-      });
+      let cloudinaryUrl =
+        'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1600,h_900,c_fill/jason.af/og-image.jpg';
+      let thumbnailUrl =
+        'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_500,h_250,c_fill/jason.af/og-image.jpg';
+      if (data.exports.meta.image) {
+        const cloudinaryName = await upload({
+          imagePath: path.join(path.dirname(filename), data.exports.meta.image),
+          uploadFolder: 'jason.af',
+        });
 
-      const cloudinaryUrl = getImageUrl({
-        fileName: cloudinaryName,
-        uploadFolder: 'jason.af',
-        transformations: 'f_auto,q_auto,w_1600,h_900,c_fill',
-      });
+        cloudinaryUrl = getImageUrl({
+          fileName: cloudinaryName,
+          uploadFolder: 'jason.af',
+          transformations: 'f_auto,q_auto,w_1600,h_900,c_fill',
+        });
 
-      const thumbnailUrl = getImageUrl({
-        fileName: cloudinaryName,
-        uploadFolder: 'jason.af',
-        transformations: 'f_auto,q_auto,w_500,h_250,c_fill',
-      });
+        thumbnailUrl = getImageUrl({
+          fileName: cloudinaryName,
+          uploadFolder: 'jason.af',
+          transformations: 'f_auto,q_auto,w_500,h_250,c_fill',
+        });
+      }
 
       await setDataForSlug(`/${data.exports.meta.slug}`, {
         component: {
