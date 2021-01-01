@@ -6,6 +6,7 @@ import { SEO } from '../components/seo.js';
 import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { Form } from '../components/form.js';
+import { TableOfContents } from '../components/table-of-contents.js';
 
 import styles from '../styles/post-wrapper.module.js';
 
@@ -34,9 +35,11 @@ export function PostWrapper({ children, title, description, image, slug }) {
 
     const footnotes = ref.current.querySelector('.footnotes');
 
-    footnotes.querySelectorAll('a[href^="#fnref"]').forEach(node => {
-      node.innerText = 'back';
-    });
+    if (footnotes) {
+      footnotes.querySelectorAll('a[href^="#fnref"]').forEach(node => {
+        node.innerText = 'back';
+      });
+    }
   }, [ref]);
 
   return [
@@ -54,6 +57,7 @@ export function PostWrapper({ children, title, description, image, slug }) {
         <img className={styles.image} src={image} alt={title} />
       </header>
       <Block color="white" className={styles['post-block']}>
+        <TableOfContents />
         <div className={styles['post-wrapper']} ref={ref}>
           {children}
         </div>

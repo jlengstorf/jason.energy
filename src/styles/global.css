@@ -7,6 +7,7 @@
   --yellow: #ffe742;
   --yellow-dark: #ddc62c;
   --pink: #ff87d4;
+  --pink-faded: #f5f2fc;
   --pink-dark: #c10b7e;
   --blue: #87fffb;
   --blue-dark: #63ddd9;
@@ -24,7 +25,9 @@
 .dark {
   --blue-dark: #0d314a;
   --pink-dark: #6d114c;
+  --pink-faded: #440e30;
   --text: var(--gray-medium);
+  --text-pink: #ff69c8;
   --text-emphasized: #d4d0da;
   --text-muted: #aba7b5;
   --background: var(--black);

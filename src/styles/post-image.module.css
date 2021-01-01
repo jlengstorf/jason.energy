@@ -28,8 +28,8 @@
 
 @media (min-width: 600px) {
   .figure {
-    margin: 2rem -5vw;
-    width: calc(100% + 10vw);
+    margin: 2rem max(-2rem, -5vw);
+    width: calc(100% + min(4rem, 10vw));
   }
 
   .left,
