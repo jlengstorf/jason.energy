@@ -1,6 +1,5 @@
 import path from 'path';
-import { fetchMdxFromDisk, compileMdx } from '@toastdotdev/mdx';
-import remarkPluckMeta from '@toastdotdev/mdx/remark-pluck-meta.js';
+import { fetchMdxFromDisk, processMdx } from '@toastdotdev/mdx';
 import cloudinary from 'rehype-local-image-to-cloudinary';
 import numberedFootnotes from 'remark-numbered-footnotes';
 import identifyFootnoteContainers from 'rehype-identity-footnote-containers';
@@ -12,17 +11,9 @@ export const sourceData = async ({ setDataForSlug }) => {
 
   const allPostMeta = await Promise.all(
     files.map(async ({ filename, file: content }) => {
-      const { content: compiledMdx, data } = await compileMdx(content, {
+      const { content: compiledMdx, data } = await processMdx(content, {
         filepath: filename,
-        remarkPlugins: [
-          [
-            remarkPluckMeta,
-            {
-              exportNames: ['meta'],
-            },
-          ],
-          numberedFootnotes,
-        ],
+        remarkPlugins: [numberedFootnotes],
         rehypePlugins: [
           [
             cloudinary,
