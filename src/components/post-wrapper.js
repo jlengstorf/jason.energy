@@ -10,23 +10,32 @@ import { TableOfContents } from '../components/table-of-contents.js';
 
 import styles from '../styles/post-wrapper.module.js';
 
-export function PostWrapper({ children, title, description, image, slug }) {
+export function PostWrapper({
+  children,
+  title,
+  description,
+  image,
+  slug,
+  useImageForSEO = false,
+}) {
   const ref = useRef();
   const url = new URL('https://www.jason.af/');
   url.pathname = `/${slug}`;
 
-  const ogImage = getShareImage({
-    title: title.toUpperCase(),
-    cloudName: 'jlengstorf',
-    imagePublicID: 'jason.af/og',
-    titleFont: 'jwf.otf',
-    titleExtraConfig: '_line_spacing_-25',
-    titleFontSize: 75,
-    textColor: '171321',
-    textLeftOffset: 354,
-    textAreaWidth: 920,
-    titleBottomOffset: 185,
-  });
+  const ogImage = useImageForSEO
+    ? image
+    : getShareImage({
+        title: title.toUpperCase(),
+        cloudName: 'jlengstorf',
+        imagePublicID: 'jason.af/og',
+        titleFont: 'jwf.otf',
+        titleExtraConfig: '_line_spacing_-25',
+        titleFontSize: 75,
+        textColor: '171321',
+        textLeftOffset: 354,
+        textAreaWidth: 920,
+        titleBottomOffset: 185,
+      });
 
   useEffect(() => {
     if (!ref.current) {
