@@ -185,18 +185,3 @@ index 0000000..aafa106
 +
 +export default useSound;
 +//# sourceMappingURL=use-sound.esm.js.map
-diff --git a/node_modules/use-sound/package.json b/node_modules/use-sound/package.json
-index af57d14..979a92f 100644
---- a/node_modules/use-sound/package.json
-+++ b/node_modules/use-sound/package.json
-@@ -66,6 +70,10 @@
-     "tslib": "^1.11.1",
-     "typescript": "^3.8.3"
-   },
-+  "exports": {
-+    "import": "./dist/use-sound.esm.mjs",
-+    "require": "./dist/index.js"
-+  },
-   "files": [
-     "dist"
-   ],

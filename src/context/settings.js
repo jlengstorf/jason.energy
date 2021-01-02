@@ -8,32 +8,6 @@ export const SettingsProvider = ({ children }) => {
   const [soundEnabled, setSoundEnabled] = useState();
   const [bioLength, setBioLength] = useState();
 
-  return (
-    <SettingsContext.Provider
-      value={{
-        soundEnabled,
-        darkMode,
-        setDarkMode,
-        setSoundEnabled,
-        bioLength,
-        setBioLength,
-      }}
-    >
-      {children}
-    </SettingsContext.Provider>
-  );
-};
-
-export const useSettings = () => {
-  const {
-    darkMode,
-    setDarkMode,
-    soundEnabled,
-    setSoundEnabled,
-    bioLength,
-    setBioLength,
-  } = useContext(SettingsContext);
-
   const initializeSetting = ({
     localStorageKey,
     setValue,
@@ -92,6 +66,32 @@ export const useSettings = () => {
     bioLength,
     setBioLength,
   ]);
+
+  return (
+    <SettingsContext.Provider
+      value={{
+        soundEnabled,
+        darkMode,
+        setDarkMode,
+        setSoundEnabled,
+        bioLength,
+        setBioLength,
+      }}
+    >
+      {children}
+    </SettingsContext.Provider>
+  );
+};
+
+export const useSettings = () => {
+  const {
+    darkMode,
+    setDarkMode,
+    soundEnabled,
+    setSoundEnabled,
+    bioLength,
+    setBioLength,
+  } = useContext(SettingsContext);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;

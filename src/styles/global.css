@@ -22,6 +22,21 @@
   --footnote-hover: var(--pink-dark);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-dark: #0d314a;
+    --pink-dark: #6d114c;
+    --pink-faded: #440e30;
+    --text: var(--gray-medium);
+    --text-pink: #ff69c8;
+    --text-emphasized: #d4d0da;
+    --text-muted: #aba7b5;
+    --background: var(--black);
+    --foreground: var(--white);
+    --footnote-hover: var(--yellow);
+  }
+}
+
 .dark {
   --blue-dark: #0d314a;
   --pink-dark: #6d114c;
@@ -33,6 +48,19 @@
   --background: var(--black);
   --foreground: var(--white);
   --footnote-hover: var(--yellow);
+}
+
+.light {
+  --blue-dark: #63ddd9;
+  --pink-dark: #c10b7e;
+  --pink-faded: #f5f2fc;
+  --text: #403c4a;
+  --text-pink: #c10b7e;
+  --text-emphasized: #201d29;
+  --text-muted: #78757f;
+  --background: var(--white);
+  --foreground: var(--black);
+  --footnote-hover: var(--pink-dark);
 }
 
 *,
