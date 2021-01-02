@@ -9,7 +9,7 @@
   display: block;
   font-size: 0.75rem;
   font-variant: small-caps;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 0.2em;
   margin: 0.5rem 0 3rem;
   text-align: center;
@@ -95,7 +95,7 @@
 .text {
   clip: rect(1px, 1px, 1px, 1px);
   color: var(--text-muted);
-  font-weight: 200;
+  font-weight: 400;
   height: 1px;
   letter-spacing: 0.2em;
   overflow: hidden;

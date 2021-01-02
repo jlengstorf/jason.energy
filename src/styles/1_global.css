@@ -1,3 +1,45 @@
+/* 
+ * this filename starts with 1 because files are concatenated in alphabetical 
+ * order, which is a side-effect of the very hacky way we’re loading CSS 
+ * modules, which is a side-effect of trying to keep things simple. 
+ * so... yay, we did it?
+ */
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-book.woff2') format('woff2'),
+    url('/fonts/jwf-book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-bookitalic.woff2') format('woff2'),
+    url('/fonts/jwf-bookitalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-ultra.woff2') format('woff2'),
+    url('/fonts/jwf-ultra.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-ultraitalic.woff2') format('woff2'),
+    url('/fonts/jwf-ultraitalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --white: white;
   --text: #403c4a;

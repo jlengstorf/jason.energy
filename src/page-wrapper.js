@@ -40,11 +40,39 @@ export default ({ children, type = 'page', ...meta }) => {
       <Helmet>
         <html lang="en" />
 
+        <link
+          rel="preload"
+          href="/fonts/jwf-book.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-bookitalic.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-ultra.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-ultraitalic.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
         <link rel="preconnect" href="https://res.cloudinary.com" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
-        <link rel="stylesheet" inline href="/styles/global.css" />
+        <link rel="stylesheet" inline href="/styles/styles.css" />
 
         <link
           rel="apple-touch-icon"
