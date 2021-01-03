@@ -32,9 +32,15 @@ console.log(
   `,
 );
 
-export default ({ children, type = 'page', ...meta }) => {
-  const Component = type === 'post' ? PostWrapper : Fragment;
+function BaseComponent({ type, children, ...props }) {
+  return type === 'post' ? (
+    <PostWrapper {...props}>{children}</PostWrapper>
+  ) : (
+    <div {...props}>{children}</div>
+  );
+}
 
+export default ({ children, type = 'page', ...meta }) => {
   return (
     <SettingsProvider>
       <Helmet>
@@ -103,7 +109,9 @@ export default ({ children, type = 'page', ...meta }) => {
           PostTweetBox,
         }}
       >
-        <Component {...meta}>{children}</Component>
+        <BaseComponent type={type} {...meta}>
+          {children}
+        </BaseComponent>
       </MDXProvider>
     </SettingsProvider>
   );
