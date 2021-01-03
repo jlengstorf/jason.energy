@@ -42,7 +42,7 @@ function BaseComponent({ type, children, ...props }) {
 
 export default ({ children, type = 'page', ...meta }) => {
   return (
-    <SettingsProvider>
+    <div>
       <Helmet>
         <html lang="en" />
 
@@ -109,10 +109,12 @@ export default ({ children, type = 'page', ...meta }) => {
           PostTweetBox,
         }}
       >
-        <BaseComponent type={type} {...meta}>
-          {children}
-        </BaseComponent>
+        <SettingsProvider>
+          <BaseComponent type={type} {...meta}>
+            {children}
+          </BaseComponent>
+        </SettingsProvider>
       </MDXProvider>
-    </SettingsProvider>
+    </div>
   );
 };
