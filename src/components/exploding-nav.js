@@ -1,7 +1,6 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
-import styles from '../styles/exploding-nav.module.js';
 
 const navItems = [
   {
@@ -47,20 +46,20 @@ export function ExplodingNav() {
   const { playPowerUp, playPowerDown, playPop, playClick } = useSfx();
 
   const toggleOpen = () => {
-    const toggle = document.querySelector(`.${styles.toggle}`);
+    const toggle = document.querySelector('.nav-toggle');
     if (state === 'closed') {
       playPowerUp();
       setState('open');
-      toggle.classList.add(styles.active);
+      toggle.classList.add('nav-is-active');
 
       if (firstRun) {
-        toggle.classList.remove(styles.firstRun);
+        toggle.classList.remove('nav-first-run');
         setFirstRun(false);
       }
     } else {
       playPowerDown();
       setState('closed');
-      toggle.classList.remove(styles.active);
+      toggle.classList.remove('nav-is-active');
     }
   };
 
@@ -92,21 +91,21 @@ export function ExplodingNav() {
 
   return (
     <div
-      className={`${styles.toggle} ${styles.firstRun}`}
+      class="nav-toggle nav-first-run"
       style={{ '--navCount': navItems.length }}
     >
-      <button className={styles.button} onClick={toggleOpen}>
+      <button class="nav-button" onClick={toggleOpen}>
         <img
-          className={styles.face}
+          class="nav-face"
           src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
           alt=""
         />
-        <span className="visually-hidden">Show Navigation</span>
+        <span class="visually-hidden">Show Navigation</span>
       </button>
-      <nav className={styles.nav}>
+      <nav class="main-nav">
         {navItems.map((item, index) => (
           <a
-            className={styles.navItem}
+            class="nav-item"
             key={`nav-${item.id}`}
             href={`/#${item.id}`}
             style={{

@@ -2,8 +2,6 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-import styles from '../styles/post-preview.module.js';
-
 const sites = {
   jasonaf: {
     name: 'jason.af',
@@ -47,11 +45,11 @@ export function PostPreviews({ posts }) {
   }, []);
 
   return (
-    <div className={styles.posts}>
+    <div class="post-previews">
       {posts.map((post, index) => (
-        <div className={styles.post} key={`featured-post-${index}`}>
+        <div class="post-preview" key={`featured-post-${index}`}>
           {post.site && (
-            <p className={styles.site}>
+            <p class="post-preview-site">
               <img
                 src={`https://res.cloudinary.com/jlengstorf/image/fetch/w_32,h_32,c_fill,g_face,q_auto,f_auto/${
                   sites[post.site].icon
@@ -72,19 +70,22 @@ export function PostPreviews({ posts }) {
                   : `https://res.cloudinary.com/jlengstorf/image/fetch/w_500,h_250,c_fill,g_face,q_auto,f_auto/${post.image}`
               }
               alt=""
-              className={styles.image}
+              class="post-preview-image"
               loading="lazy"
               width={250}
               height={125}
             />
           )}
-          <h3 className={styles.title}>
-            <a href={post.url || `/${post.slug}`} className={styles.titleLink}>
+          <h3 class="post-preview-title">
+            <a
+              href={post.url || `/${post.slug}`}
+              class="post-preview-title-link"
+            >
               {post.title}
             </a>
           </h3>
-          <p className={styles.description}>{post.description}</p>
-          <span aria-hidden="true" className={styles.link}>
+          <p class="post-preview-description">{post.description}</p>
+          <span aria-hidden="true" class="post-preview-link">
             Read this post &rarr;
           </span>
         </div>

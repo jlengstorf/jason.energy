@@ -2,8 +2,6 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-import styles from '../styles/post-tweet-box.module.js';
-
 export function PostTweetBox({ quote, retweetId = false }) {
   const [location, setLocation] = useState('https://www.jason.af');
 
@@ -25,9 +23,9 @@ export function PostTweetBox({ quote, retweetId = false }) {
     });
   }
   return (
-    <div className={styles['tweet-box']}>
+    <div class="post-tweet-box">
       <p>{quote}</p>
-      <p className={styles['tweet-link']}>
+      <p class="post-tweet-link">
         <a href={url}>Tweet this</a>
       </p>
     </div>

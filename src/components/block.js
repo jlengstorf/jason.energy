@@ -1,15 +1,10 @@
 import { h } from 'preact';
-import styles from '../styles/block.module.js';
 
 export function Block({ color, children, id, ...props }) {
-  const extraClass = props.className ?? '';
+  const extraClass = props.class ?? '';
 
   return (
-    <div
-      {...props}
-      id={id}
-      className={`${styles.block} ${styles[color]} ${extraClass}`}
-    >
+    <div {...props} id={id} class={`block ${color} ${extraClass}`}>
       {children}
     </div>
   );

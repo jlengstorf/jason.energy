@@ -1,20 +1,15 @@
 import { h } from 'preact';
-import styles from '../styles/intro.module.js';
 
-const Heading = ({ children, className, post }) =>
-  post ? (
-    <h1 className={className}>{children}</h1>
-  ) : (
-    <h2 className={className}>{children}</h2>
-  );
+const Heading = ({ children, post, ...props }) =>
+  post ? <h1 {...props}>{children}</h1> : <h2 {...props}>{children}</h2>;
 
 export function Intro({ headline, children, post = false }) {
   return [
-    <div className={styles.intro}>
-      <Heading className={styles.headline} post={post}>
+    <div class="intro">
+      <Heading class="intro-headline" post={post}>
         {headline}
       </Heading>
-      <div className={styles.lede}>{children}</div>
+      <div class="intro-lede">{children}</div>
     </div>,
   ];
 }

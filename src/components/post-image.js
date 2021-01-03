@@ -1,38 +1,38 @@
 /** @jsx h */
 import { h } from 'preact';
 
-import styles from '../styles/post-image.module.js';
-
 export function PostImage({
   align = 'center',
   border = true,
   caption,
   children,
-  className = false,
   creditType = 'Credit',
   creditLink = null,
   credit,
+  ...props
 }) {
   return (
     <figure
-      className={
-        className ||
-        `${styles.figure} ${styles[align]} ${border ? '' : styles.noBorder}`
+      class={
+        props.class ||
+        `post-figure post-figure-align-${align} ${
+          border ? '' : 'post-figure-no-border'
+        }`
       }
     >
       {children}
       {(caption || credit) && (
-        <figcaption className={styles.caption}>
+        <figcaption class="post-figure-caption">
           {caption && <span dangerouslySetInnerHTML={{ __html: caption }} />}
           {credit && (
-            <small className={styles.attribution}>
+            <small class="post-figure-attribution">
               {creditType}:
               {creditLink ? (
-                <a className={styles.attributionLink} href={creditLink}>
+                <a class="post-figure-attribution-link" href={creditLink}>
                   {credit}
                 </a>
               ) : (
-                <span className={styles.attributionLink}>{credit}</span>
+                <span class="post-figure-attribution-link">{credit}</span>
               )}
             </small>
           )}

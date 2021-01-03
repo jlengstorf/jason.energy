@@ -3,7 +3,6 @@ import { useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Image } from './image.js';
-import styles from '../styles/photos.module.js';
 
 const photos = [
   {
@@ -68,9 +67,9 @@ function Thumb({ photo, handleClick }) {
   const { playClick, playPop } = useSfx();
 
   return (
-    <li className={styles.thumb}>
+    <li class="gallery-thumb">
       <Button
-        className={styles.thumbLink}
+        class="gallery-thumb-link"
         hoverSound={playPop}
         clickSound={playClick}
         handleClick={handleClick}
@@ -87,12 +86,12 @@ function Thumb({ photo, handleClick }) {
   );
 }
 
-export function Photos({ className }) {
+export function Photos(props) {
   const [currentImage, setCurrentImage] = useState(photos[0]);
 
   return (
-    <div className={className}>
-      <figure className={styles.image}>
+    <div class={props.class}>
+      <figure class="gallery-image">
         <Image
           publicId={currentImage.publicId}
           alt={currentImage.alt}
@@ -102,26 +101,26 @@ export function Photos({ className }) {
         />
         <figcaption>
           {currentImage.caption}
-          <div className={styles.links}>
+          <div class="gallery-links">
             <a
-              className={styles.fullSize}
+              class="gallery-fullsize-link"
               target="_blank"
               rel="noopener noreferrer"
               href={`https://res.cloudinary.com/jlengstorf/image/upload/${currentImage.publicId}.jpg`}
             >
               open full size
             </a>
-            <span className={styles.credit}>
+            <span class="gallery-credit">
               Photo: <a href={currentImage.creditLink}>{currentImage.credit}</a>
             </span>
           </div>
         </figcaption>
       </figure>
-      <div className={styles.morePhotos}>
-        <h2 className={styles.photoHeading}>
+      <div class="gallery-options">
+        <h2 class="gallery-heading">
           You can use any of these photos with credit:
         </h2>
-        <ul className={styles.thumbnails}>
+        <ul class="gallery-thumbnails">
           {photos.map((photo, index) => (
             <Thumb
               key={`photo-${index}`}

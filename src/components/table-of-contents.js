@@ -1,27 +1,23 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
-import styles from '../styles/post-wrapper.module.js';
-
 export function TableOfContents() {
   const [headings, setHeadings] = useState([]);
 
   useEffect(() => {
-    const headingElements = document.querySelectorAll(
-      `.${styles['post-wrapper']} h2`,
-    );
+    const headingElements = document.querySelectorAll('.post-wrapper h2');
     const callback = ([entry]) => {
       const activeHeading = entry.target;
       const links = Array.from(
-        document.querySelectorAll(`.${styles['table-of-contents']} a`),
+        document.querySelectorAll(`.table-of-contents a`),
       );
 
       links.forEach(link => {
         const [, href] = link.href.split('#');
 
         if (entry.isIntersecting && href === activeHeading.id) {
-          links.forEach(l => l.classList.remove(styles.active));
-          link.classList.add(styles.active);
+          links.forEach(l => l.classList.remove('toc-active'));
+          link.classList.add('toc-active');
         }
       });
     };
@@ -49,8 +45,8 @@ export function TableOfContents() {
   }, []);
 
   return (
-    <aside className={styles['table-of-contents']}>
-      <div className={styles['toc-sticky-container']}>
+    <aside class="table-of-contents">
+      <div class="toc-sticky-container">
         <h2 id="table-of-contents">Table of Contents</h2>
         <ol>
           {headings.map(heading => (

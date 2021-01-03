@@ -1,11 +1,10 @@
 import { h } from 'preact';
-import styles from '../styles/footer.module.js';
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer class="footer">
       <span>powered by boops</span>
-      <nav className={styles.nav}>
+      <nav class="footer-nav">
         <a href="/posts">posts</a>
         <a href="https://github.com/jlengstorf/jason.af">source code</a>
       </nav>

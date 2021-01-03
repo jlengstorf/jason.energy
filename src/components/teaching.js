@@ -2,8 +2,6 @@ import { h } from 'preact';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
 
-import styles from '../styles/teaching.module.js';
-
 const platforms = [
   {
     id: 'lwj',
@@ -51,7 +49,7 @@ export function Teaching() {
         into every project.
       </p>
     </Intro>,
-    <section className={styles.container}>
+    <section class="teaching-container">
       {platforms.map(platform => (
         <Platform key={platform.id} {...platform} />
       ))}

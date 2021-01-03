@@ -4,7 +4,6 @@ import { useSfx } from '../hooks/use-sfx.js';
 import { Button } from './button.js';
 import { Intro } from './intro.js';
 import { Image } from './image.js';
-import styles from '../styles/form.module.js';
 
 export function Form({ title = 'Get booped on the brain.', children }) {
   const [sending, setSending] = useState(false);
@@ -32,7 +31,7 @@ export function Form({ title = 'Get booped on the brain.', children }) {
   };
 
   return (
-    <section className={styles.newsletter}>
+    <section class="newsletter-opt-in">
       <Intro headline={title}>
         {children || (
           <p>
@@ -43,8 +42,8 @@ export function Form({ title = 'Get booped on the brain.', children }) {
           </p>
         )}
       </Intro>
-      <div className={styles.wrapper}>
-        <div className={styles.imageWrapper}>
+      <div class="form-wrapper">
+        <div class="form-image-wrapper">
           <Image
             publicId="jason.af/opt-in"
             alt="Illustration of a letter with a heart on the top flap."
@@ -55,13 +54,13 @@ export function Form({ title = 'Get booped on the brain.', children }) {
         <form
           action="/api/subscribe"
           method="POST"
-          className={styles.form}
+          class="opt-in-form"
           onSubmit={handleSubmit}
         >
-          <label htmlFor="firstName" className={styles.label}>
+          <label htmlFor="firstName" class="opt-in-label">
             First Name
             <input
-              className={styles.input}
+              class="opt-in-input"
               type="text"
               name="firstName"
               id="firstName"
@@ -69,10 +68,10 @@ export function Form({ title = 'Get booped on the brain.', children }) {
               disabled={sending}
             />
           </label>
-          <label htmlFor="email" className={styles.label}>
+          <label htmlFor="email" class="opt-in-label">
             Email
             <input
-              className={styles.input}
+              class="opt-in-input"
               type="email"
               name="email"
               id="email"
@@ -81,18 +80,13 @@ export function Form({ title = 'Get booped on the brain.', children }) {
             />
           </label>
           <Button
-            className={styles.button}
+            class="opt-in-button"
             hoverSound={playPop}
             handleClick={() => {}}
             disabled={sending}
           >
             {sending ? 'Sending...' : 'Join'}
           </Button>
-          <p className={styles.privacy}>
-            <strong>Privacy notice:</strong> I will never sell or share your
-            personal information with anyone (because I’m not a jerk).
-            Unsubscribe at any time with one click.
-          </p>
         </form>
       </div>
     </section>

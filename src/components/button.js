@@ -2,7 +2,6 @@ import { h } from 'preact';
 
 export function Button({
   children,
-  className,
   handleClick,
   hoverSound = () => {},
   clickSound = () => {},
@@ -11,7 +10,7 @@ export function Button({
 }) {
   return (
     <button
-      className={className}
+      class={props.class}
       onKeyPress={event => {
         if (event.key !== 'Enter') return;
         handleClick(event);
