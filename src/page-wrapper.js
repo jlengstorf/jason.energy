@@ -78,7 +78,7 @@ export default ({ children, type = 'page', ...meta }) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
-        <link rel="stylesheet" inline href="/styles/styles.css" />
+        <link rel="stylesheet" href="/styles/styles.css" />
 
         <link
           rel="apple-touch-icon"
