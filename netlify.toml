@@ -10,4 +10,4 @@
   framework = "#custom"
 
 [[plugins]]
-  package = "netlify-plugin-inline-source"
+  package = "netlify-plugin-toast-cache"

@@ -26,6 +26,7 @@
     "globby": "^11.0.1",
     "matter-js": "^0.15.0",
     "netlify-plugin-inline-source": "^1.0.4",
+    "netlify-plugin-toast-cache": "0.0.4",
     "node-fetch": "^2.6.1",
     "patch-package": "^6.2.2",
     "poly-decomp": "^0.3.0",
