@@ -1,4 +1,3 @@
-// import useSound from 'use-sound';
 import { useSettings } from '../context/settings.js';
 
 const sfxCache = {};
