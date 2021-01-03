@@ -1,5 +1,22 @@
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 import { useSettings } from '../context/settings.js';
+
+const sfxCache = {};
+
+function useSound(url) {
+  try {
+    if (sfxCache[url]) {
+      return [() => sfxCache[url].play()];
+    } else {
+      const sfx = new Audio(url);
+      sfxCache[url] = sfx;
+
+      return [() => sfxCache[url].play()];
+    }
+  } catch (e) {
+    return [() => {}];
+  }
+}
 
 export function useSfx() {
   const { soundEnabled } = useSettings();
