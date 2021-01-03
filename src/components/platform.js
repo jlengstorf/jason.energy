@@ -1,8 +1,6 @@
 import { h } from 'preact';
 import { Image } from './image.js';
 
-import styles from '../styles/platform.module.js';
-
 export function Platform({
   label,
   link,
@@ -11,8 +9,8 @@ export function Platform({
   linkText = 'Check it out &rarr;',
 }) {
   return (
-    <div className={styles.platform}>
-      <a href={link} className={styles.logo}>
+    <div class="platform">
+      <a href={link} class="platform-logo">
         <Image
           publicId={`jason.af/${image}`}
           alt={label}
@@ -21,18 +19,18 @@ export function Platform({
           transformations={['c_fill']}
         />
       </a>
-      <div className={styles.card}>
-        <h2 className={styles.name}>
+      <div class="platform-card">
+        <h2 class="platform-name">
           <a href={link}>{label}</a>
         </h2>
         <p
-          className={styles.description}
+          class="platform-description"
           dangerouslySetInnerHTML={{ __html: description }}
         />
         {/* ESLint doesn’t recognize this text, so we ignore the error */}
         {/* eslint-disable jsx-a11y/control-has-associated-label */}
         <a
-          className={styles.link}
+          class="platform-link"
           href={link}
           dangerouslySetInnerHTML={{ __html: linkText }}
         />

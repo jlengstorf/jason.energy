@@ -1,0 +1,16 @@
+diff --git a/node_modules/use-sound/package.json b/node_modules/use-sound/package.json
+index d81dc29..54c661e 100644
+--- a/node_modules/use-sound/package.json
++++ b/node_modules/use-sound/package.json
+@@ -70,6 +70,11 @@
+     "tslib": "^1.11.1",
+     "typescript": "^3.8.3"
+   },
++  "type": "module",
++  "exports": {
++    "import": "./dist/use-sound.esm.js",
++    "require": "./dist/index.js"
++  },
+   "files": [
+     "dist"
+   ],

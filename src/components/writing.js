@@ -3,14 +3,12 @@ import { Intro } from './intro.js';
 import { PostPreviews } from './post-previews.js';
 import writing from '../data/writing.js';
 
-import styles from '../styles/writing.module.js';
-
 export function Writing() {
   // TODO pull this dynamically
   const featuredPosts = writing.filter(post => post.featured);
 
   return (
-    <section className={styles.writing}>
+    <section class="writing">
       <Intro headline="Jason shares stories about code (and not-code).">
         <p>
           Jason believes in the power of stories. He shares his stories and
@@ -20,10 +18,10 @@ export function Writing() {
           pieces he’s proud of:
         </p>
       </Intro>
-      <div className={styles.posts}>
+      <div>
         <PostPreviews posts={featuredPosts} />
       </div>
-      <a href="/posts" className={styles.button}>
+      <a href="/posts" class="writing-button">
         see all posts{' '}
       </a>
     </section>

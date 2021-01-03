@@ -34,7 +34,7 @@ export function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      <body className={darkMode ? 'dark' : 'light'} />
+      <body class={darkMode ? 'dark' : 'light'} />
     </Helmet>
   );
 }

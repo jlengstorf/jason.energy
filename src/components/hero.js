@@ -3,7 +3,6 @@ import { useEffect, useState } from 'preact/hooks';
 import { useSfx } from '../hooks/use-sfx.js';
 import { useBoop } from '../hooks/use-boop.js';
 import { BoopDrop } from './boop-drop.js';
-import styles from '../styles/hero.module.js';
 
 const MAXIMUM_BOOPS = 100;
 
@@ -92,17 +91,16 @@ const CycleTagline = ({ clickHandler }) => {
   };
 
   return (
-    <a
-      href="#cycle-tagline"
+    <button
       onClick={handleClick}
-      className={`${styles.cycle} ${active ? styles.active : ''}`}
+      class={`hero-cycle ${active ? 'cycle-is-active' : ''}`}
     >
       <img
         src={images[active ? 'on' : 'off']}
         alt="drawing of two arrows pointing in a circle"
       />
-      <span className="visually-hidden">change tagline</span>
-    </a>
+      <span class="visually-hidden">change tagline</span>
+    </button>
   );
 };
 
@@ -129,18 +127,14 @@ export function Hero() {
   }
 
   return [
-    <BoopDrop className={styles.boops} />,
-    <h1
-      className={`${styles.hero} ${
-        count >= MAXIMUM_BOOPS ? styles.maxBoops : ''
-      }`}
-    >
+    <BoopDrop class="boops" />,
+    <h1 class={`hero ${count >= MAXIMUM_BOOPS ? 'maximum-boops' : ''}`}>
       {count < MAXIMUM_BOOPS ? (
         <>
-          <span className={styles.firstLine}>Jason</span>
-          <span className={styles.box}>Lengstorf</span>
+          <span class="hero-first-line">Jason</span>
+          <span class="hero-box">Lengstorf</span>
           <span
-            className={styles.tagline}
+            class="hero-tagline"
             style={{
               '--top': tagline.top || '-7px',
               '--rotation': tagline['rotation'] || '0deg',
@@ -153,10 +147,8 @@ export function Hero() {
         </>
       ) : (
         <>
-          <span className={`${styles.firstLine} ${styles.maxBoops}`}>
-            Maximum
-          </span>
-          <span className={`${styles.box} ${styles.maxBoops}`}>Boops!</span>
+          <span class="hero-first-line maximum-boops">Maximum</span>
+          <span class="hero-box maximum-boops">Boops!</span>
         </>
       )}
     </h1>,

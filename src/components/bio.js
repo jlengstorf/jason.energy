@@ -3,7 +3,6 @@ import { h } from 'preact';
 import { useSettings } from '../context/settings.js';
 import { useSfx } from '../hooks/use-sfx.js';
 import { Photos } from './photos.js';
-import styles from '../styles/bio.module.js';
 
 function LengthChooser() {
   const { bioLength, updateBioLength } = useSettings();
@@ -15,17 +14,17 @@ function LengthChooser() {
   };
 
   return (
-    <form className={styles.control}>
-      <fieldset className={styles.fieldset}>
-        <legend className={styles.legend}>Adjust bio length:</legend>
-        <div className={styles.options}>
+    <form class="bio-length-control">
+      <fieldset class="bio-fieldset">
+        <legend class="bio-legend">Adjust bio length:</legend>
+        <div class="bio-length-options">
           {['shortest', 'shorter', 'short', 'long', 'longer', 'longest'].map(
             l => {
               /* eslint-disable jsx-a11y/no-static-element-interactions */
               return (
-                <div className={styles.option} onMouseEnter={playPop}>
+                <div class="bio-option" onMouseEnter={playPop}>
                   <input
-                    className={styles.input}
+                    class="bio-input"
                     type="radio"
                     id={`length-${l}`}
                     name="length"
@@ -36,9 +35,9 @@ function LengthChooser() {
                   <label
                     key={`length-${l}`}
                     htmlFor={`length-${l}`}
-                    className={styles.label}
+                    class="bio-label"
                   >
-                    <span className={styles.text}>{l}</span>
+                    <span class="bio-label-text">{l}</span>
                   </label>
                 </div>
               );
@@ -68,7 +67,7 @@ function BioText() {
   };
 
   return bioLength ? (
-    <p className={styles.bio}>
+    <p class="bio">
       <strong>Jason Lengstorf</strong>{' '}
       <span style={{ display: getVisibility('shorter') }}>
         works{' '}
@@ -135,13 +134,13 @@ export function Bio() {
   const { playPop, playClick } = useSfx();
 
   return (
-    <section className={styles.container}>
-      <div className={styles.bioWrapper}>
+    <section class="bio-container">
+      <div>
         <LengthChooser />
         <BioText />
-        <div className={styles.social}>
-          <h2 className={styles.connect}>Connect With Jason:</h2>
-          <ul className={styles.profiles}>
+        <div class="bio-social">
+          <h2 class="bio-connect">Connect With Jason:</h2>
+          <ul class="bio-profiles">
             {[
               {
                 id: 'twitter',
@@ -216,10 +215,10 @@ export function Bio() {
                 label: 'Dribbble',
               },
             ].map(profile => (
-              <li className={styles.profile}>
+              <li class="bio-profile">
                 <a
                   href={profile.link}
-                  className={styles.link}
+                  class="bio-link"
                   onMouseDown={event => {
                     playClick();
                     event.stopPropagation();
@@ -233,14 +232,14 @@ export function Bio() {
                   onMouseEnter={playPop}
                 >
                   {profile.svg}
-                  <span className="visually-hidden">{profile.label}</span>
+                  <span class="visually-hidden">{profile.label}</span>
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <Photos className={styles.imageContainer} />
+      <Photos class="bio-image-container" />
     </section>
   );
 }

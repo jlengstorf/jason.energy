@@ -1,7 +1,6 @@
 import { h } from 'preact';
 import { Intro } from './intro.js';
 import { Platform } from './platform.js';
-import styles from '../styles/connect.module.js';
 
 const platforms = [
   {
@@ -40,14 +39,14 @@ const platforms = [
 
 export function Connect() {
   return (
-    <section className={styles.connect}>
+    <section>
       <Intro headline="Connect with Jason.">
         <p>
           If you want to catch up with Jason, he’s most active on these
           platforms.
         </p>
       </Intro>
-      <div className={styles.platforms}>
+      <div class="connect-platforms">
         {platforms.map(platform => (
           <Platform key={platform.id} {...platform} />
         ))}

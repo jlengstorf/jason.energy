@@ -8,8 +8,6 @@ import { Block } from '../components/block.js';
 import { Form } from '../components/form.js';
 import { TableOfContents } from '../components/table-of-contents.js';
 
-import styles from '../styles/post-wrapper.module.js';
-
 export function PostWrapper({
   children,
   title,
@@ -60,14 +58,14 @@ export function PostWrapper({
       post
     />,
     <Layout>
-      <header className={styles.header}>
-        <h1 className={styles.headline}>{title}</h1>
-        <p className={styles.lede}>{description}</p>
-        <img className={styles.image} src={image} alt={title} />
+      <header class="post-header">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <img src={image} alt={title} />
       </header>
-      <Block color="white" className={styles['post-block']}>
+      <Block color="white" class="post-block">
         <TableOfContents />
-        <div className={styles['post-wrapper']} ref={ref}>
+        <div class="post-wrapper" ref={ref}>
           {children}
         </div>
       </Block>

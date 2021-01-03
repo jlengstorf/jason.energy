@@ -1,5 +1,5 @@
 [build]
-  command = "npm run breadbox && npm run build"
+  command = "npm run build"
   publish = "public"
   functions = "functions"
 
@@ -10,4 +10,4 @@
   framework = "#custom"
 
 [[plugins]]
-  package = "netlify-plugin-inline-source"
+  package = "netlify-plugin-toast-cache"

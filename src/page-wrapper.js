@@ -32,19 +32,53 @@ console.log(
   `,
 );
 
-export default ({ children, type = 'page', ...meta }) => {
-  const Component = type === 'post' ? PostWrapper : Fragment;
+function BaseComponent({ type, children, ...props }) {
+  return type === 'post' ? (
+    <PostWrapper {...props}>{children}</PostWrapper>
+  ) : (
+    <div {...props}>{children}</div>
+  );
+}
 
+export default ({ children, type = 'page', ...meta }) => {
   return (
-    <SettingsProvider>
+    <div>
       <Helmet>
         <html lang="en" />
 
+        <link
+          rel="preload"
+          href="/fonts/jwf-book.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-bookitalic.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-ultra.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/fonts/jwf-ultraitalic.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
         <link rel="preconnect" href="https://res.cloudinary.com" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
-        <link rel="stylesheet" inline href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/styles.css" />
 
         <link
           rel="apple-touch-icon"
@@ -75,8 +109,12 @@ export default ({ children, type = 'page', ...meta }) => {
           PostTweetBox,
         }}
       >
-        <Component {...meta}>{children}</Component>
+        <SettingsProvider>
+          <BaseComponent type={type} {...meta}>
+            {children}
+          </BaseComponent>
+        </SettingsProvider>
       </MDXProvider>
-    </SettingsProvider>
+    </div>
   );
 };

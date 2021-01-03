@@ -5,7 +5,6 @@ import { Layout } from '../components/layout.js';
 import { Block } from '../components/block.js';
 import { SEO } from '../components/seo.js';
 import { Image } from '../components/image.js';
-import styles from '../styles/404.module.js';
 
 export default () => {
   const [missingLink, setMissingLink] = useState();
@@ -20,9 +19,6 @@ export default () => {
   );
 
   return [
-    <Helmet>
-      <link rel="stylesheet" href="/styles/block.module.css" />
-    </Helmet>,
     <SEO
       title="Page Not Found"
       description="This page does not exist."
@@ -31,7 +27,7 @@ export default () => {
     />,
     <Layout>
       <Block color="yellow">
-        <div className={styles.container}>
+        <div class="not-found-container">
           <Image
             publicId="jason.af/404.png"
             alt="A drawing of a dumpster fire."

@@ -30,6 +30,7 @@ export const sourceData = async ({ setDataForSlug }) => {
         'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1600,h_900,c_fill/jason.af/og-image.jpg';
       let thumbnailUrl =
         'https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_500,h_250,c_fill/jason.af/og-image.jpg';
+
       if (data.exports.meta.image) {
         const cloudinaryName = await upload({
           imagePath: path.join(path.dirname(filename), data.exports.meta.image),

@@ -1,9 +1,7 @@
 /** @jsx h */
 import { h } from 'preact';
 
-import styles from '../styles/post-aside.module.js';
-
-export function PostAside({ children, className = false, spicy = false }) {
+export function PostAside({ children, spicy = false, ...props }) {
   const icons = {
     spicy: {
       src:
@@ -20,11 +18,11 @@ export function PostAside({ children, className = false, spicy = false }) {
   const icon = spicy ? icons.spicy : icons.default;
 
   return (
-    <aside className={className || styles.aside}>
-      <div className={styles.icon}>
+    <aside class={props.class ?? 'post-aside'}>
+      <div class="post-aside-icon">
         <img src={icon.src} alt={icon.alt} />
       </div>
-      <div className={styles.content}>{children}</div>
+      <div class="post-aside-content">{children}</div>
     </aside>
   );
 }

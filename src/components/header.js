@@ -2,7 +2,6 @@ import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { ExplodingNav } from './exploding-nav.js';
 import { Settings } from './settings.js';
-import styles from '../styles/header.module.js';
 
 export function Header() {
   const [isHome, setIsHome] = useState(false);
@@ -12,14 +11,14 @@ export function Header() {
   }, []);
 
   return (
-    <header className={styles.header}>
-      <a href="/" rel="home" className={styles.home}>
+    <header class="site-header">
+      <a href="/" rel="home" class="home">
         Jason Lengstorf
       </a>
       {isHome ? (
         <ExplodingNav />
       ) : (
-        <nav className={styles.nav}>
+        <nav class="site-nav">
           <a href="/posts">Writing</a>
         </nav>
       )}

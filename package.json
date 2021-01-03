@@ -6,12 +6,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "patch-package && npm run breadbox",
-    "prebuild": "postcss --config commonjs-compat src/styles/*.css --dir .cache/styles/ && mkdir -p public/styles &&  cat .cache/styles/*.css > public/styles/global.css",
+    "postinstall": "patch-package && breadbox --dest public/web_modules",
+    "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
     "build": "toast incremental .",
+    "postbuild": "./bin/minify.js",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "breadbox": "breadbox --dest public/web_modules",
     "predev": "npm run build",
     "dev": "npm run serve",
     "serve": "serve public"
@@ -22,9 +21,12 @@
     "@mdx-js/preact": "^1.6.22",
     "@sector/breadbox": "0.0.4",
     "@toastdotdev/mdx": "^0.1.5",
+    "cssnano": "^4.1.10",
+    "glob": "^7.1.6",
     "globby": "^11.0.1",
     "matter-js": "^0.15.0",
     "netlify-plugin-inline-source": "^1.0.4",
+    "netlify-plugin-toast-cache": "0.0.4",
     "node-fetch": "^2.6.1",
     "patch-package": "^6.2.2",
     "poly-decomp": "^0.3.0",
@@ -36,6 +38,7 @@
     "rehype-identity-footnote-containers": "^1.0.0",
     "rehype-local-image-to-cloudinary": "^1.0.4",
     "remark-numbered-footnotes": "^2.0.0",
+    "terser": "^5.5.1",
     "toast": "^0.3.39",
     "use-sound": "^2.0.1"
   },
@@ -45,6 +48,7 @@
   },
   "snowpack": {
     "exclude": [
+      "bin/**",
       "public/**",
       "commonjs-compat/**",
       "toast.js"
