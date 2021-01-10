@@ -24,6 +24,24 @@
 
 @font-face {
   font-family: 'jwf';
+  src: url('/fonts/jwf-bold.woff2') format('woff2'),
+    url('/fonts/jwf-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-bolditalic.woff2') format('woff2'),
+    url('/fonts/jwf-bolditalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
   src: url('/fonts/jwf-ultra.woff2') format('woff2'),
     url('/fonts/jwf-ultra.woff') format('woff');
   font-weight: 900;
@@ -151,7 +169,7 @@ a {
 
 strong,
 b {
-  font-weight: 900;
+  font-weight: 600;
 }
 
 img {
