@@ -1539,7 +1539,14 @@ img {
 .post-wrapper h5,
 .post-wrapper h6 {
   clear: both;
-  color: var(--text-emphasized);
+  color: var(--white);
+}
+
+.post-wrapper h3,
+.post-wrapper h4,
+.post-wrapper h5,
+.post-wrapper h6 {
+  font-weight: 600;
 }
 
 .post-wrapper p {
