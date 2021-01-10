@@ -24,6 +24,24 @@
 
 @font-face {
   font-family: 'jwf';
+  src: url('/fonts/jwf-bold.woff2') format('woff2'),
+    url('/fonts/jwf-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
+  src: url('/fonts/jwf-bolditalic.woff2') format('woff2'),
+    url('/fonts/jwf-bolditalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'jwf';
   src: url('/fonts/jwf-ultra.woff2') format('woff2'),
     url('/fonts/jwf-ultra.woff') format('woff');
   font-weight: 900;
@@ -151,7 +169,7 @@ a {
 
 strong,
 b {
-  font-weight: 900;
+  font-weight: 600;
 }
 
 img {
@@ -1530,6 +1548,31 @@ img {
 
 .post-wrapper > :first-child {
   margin-top: 0;
+}
+
+.post-wrapper blockquote {
+  border-left: 4px solid var(--pink-dark);
+  color: var(--text-emphasized);
+  font-style: italic;
+  margin: 0 1rem;
+  padding: 0 0 0 1.5rem;
+  position: relative;
+}
+
+.post-wrapper blockquote::before {
+  background: var(--background);
+  border-radius: 50%;
+  color: var(--pink-dark);
+  content: '“';
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  left: -2rem;
+  line-height: 1;
+  padding: 0 0.75rem;
+  position: absolute;
+  top: -0.25rem;
+  z-index: 10;
 }
 
 .has-footnote {
