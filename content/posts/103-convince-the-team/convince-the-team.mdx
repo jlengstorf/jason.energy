@@ -14,10 +14,10 @@ export const meta = {
 
 In previous posts, I've been working through some ideas around building more productive teams. These ideas are centered around two major themes so far:
 
-1. **[The type of work we do in any company happens on a spectrum](https://www.jason.af/squishy-projects), and our internal processes need to be flexible enough to adapt and support the type of work being done.** Success depends on the success of super well-defined, production-ready work ("load-bearing projects") as well as insights from research, team members, and customer feedback that need validation ("squishy projects").
-2. **Keeping customers happy and existing products running while also avoiding stagnation through continuous exploration and innovation requires deliberate effort to set up and sustain.** Exploratory work and production would should happen in parallel workstreams that complement and strengthen each other (what I lovingly call [the Yeet Delete Repeat pattern](https://www.jason.af/yeet-delete-repeat)).
+1. **[The type of work we do in any company happens on a spectrum](https://www.jason.af/squishy-projects), and our internal processes need to be flexible enough to adapt and support the type of work being done.** Success depends on the completion of well-defined, production-ready work ("load-bearing projects") as well as validating ideas from research, team members, and customer feedback ("squishy projects").
+2. **We need to take care of existing customers and products while continuing to explore and innovate. That requires deliberate effort to set up and sustain.** Exploratory work and production should happen in parallel workstreams that complement and strengthen each other (what I lovingly call [the Yeet Delete Repeat pattern](https://www.jason.af/yeet-delete-repeat)).
 
-In further discussions with friends and folks around the community, some questions came up that I feel are worth addressing — let's do that in this post.
+In further discussions with friends and folks around the community, questions came up that are worth addressing — let's do that in this post.
 
 <PostAside>
 
@@ -49,11 +49,11 @@ While true, this doesn't present a compelling argument to managers and leaders w
 
 Tech debt doesn't *only* affect the people doing the work, though! If we think about what the manager is struggling with, we can rephrase our request and include how it benefits *them* instead: "The delays in shipping are due to the complexity of this older area of the code. If we take a sprint to clean this up, we should be able to deliver things *much* faster!"
 
-Put yourself in the shoes of the person you're attempting to win over, and try to understand why they're stressed out (remember: what are the dirt floors?). Draw them a concrete map that solves their personal problems and you have a much better chance of getting buy-in.
+Put yourself in the shoes of the person you're attempting to win over, and try to understand why they're stressed out (remember: where are the dirt floors?). Present a concrete plan that solves their personal problems and you have a much better chance of getting buy-in.
 
 ## What if people on the team tend to treat the first draft as the final draft?
 
-> My team always jokes that the first draft is the final draft, so make sure you bring something solid. Because of this, people tend to work quietly on projects for a long time before showing them. It's a Catch-22 because we have trouble getting buy-in if it's not polished, but the more polished it is, the more likely it gets shipped as a final draft.
+> My team always jokes that "the first draft is the final draft, so make sure you bring something solid." Because of this, people tend to work quietly on projects for a long time before showing them. It's a Catch-22 because we have trouble getting buy-in if it's not polished, but the more polished it is, the more likely it gets shipped as a final draft.
 
 This is something I've run into in multiple companies, and I've personally been guilty of keeping something quiet until I felt like it was perfect to avoid getting nitpicked into oblivion by people who thought we were reviewing for production.
 
@@ -63,7 +63,7 @@ A parallel workstream for validation and production is designed to solve exactly
 
 Creating an actual process for experimental work, processes to support it, and clear expectations about how things move from idea to validation to production creates reliability in your team's environment. It helps to remove the anxiety around exploration, because exploration is no longer an extra activity, but *part of the job*.
 
-It removes the mystery around where ideas come from, creating stability, reliability, and — most importantly — a foundation for trust. And, as [Amberley Romo reminded me](https://twitter.com/amber1ey/status/1345054006884896770), no amount of process will help if the team doesn't have trust.
+Removing the mystery around where ideas come from creates stability, reliability, and — most importantly — a foundation for trust. And, as [Amberley Romo reminded me](https://twitter.com/amber1ey/status/1345054006884896770), no amount of process will help if the team doesn't have trust.
 
 This kind of stability and trust is also called _psychological safety_, which is [a strong predictor of team performance](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf).
 
@@ -71,21 +71,23 @@ This kind of stability and trust is also called _psychological safety_, which is
 
 Building deletion into the process is extremely important. Without deletion, a prototype can leak into the broader codebase, making it both fragile and hard to remove, and that's how tech debt is born.
 
-The validation workstream needs to have a heavy focus on sandboxing experiments, releasing only to limited test groups, and [optimizing for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=blog&utm_medium=jason.af&utm_content=optimize-for-deletion). I also strongly recommend that the last step of an experimental project should be to delete the project. If this goes to production, the team who picks up the project shouldn't have to start by cleaning up a mess; they should have the data and the original code available for reference, but they should be starting with no code actually committed so they can make decisions without the influence of inertia skewing the outcomes.
+The validation workstream needs to have a heavy focus on sandboxing experiments, releasing only to limited test groups, and [optimizing for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=blog&utm_medium=jason.af&utm_content=optimize-for-deletion). **I also strongly recommend that the last step of an experimental project should be to delete the project.**
+
+If the project is greenlit for production, the team who picks up the project shouldn't have to start by cleaning up a mess. They should have the data and the original code available for reference, but they should be starting with no code actually committed — it's important that they can make decisions without the influence of inertia skewing the outcomes.
 
 <PostAside>
 
-**Heads up!** Deleting code after validation is something I do even for personal projects. For example, when I teach workshops, I build the teaching project once, think about what makes sense and what I'd do differently, then delete it and build it again using that information. It leads to cleaner, easier to explain code because it separates the process of "can I make this work at all?" from "how do I do this properly?" — this lowers cognitive overhead and means better quality all around!
+**Heads up!** Deleting code after validation is something I do even for personal projects. For example, when I teach workshops, I build the teaching project once, think about what could improve and what I'd do differently, then delete it and build it again using that information. It leads to cleaner, easier to explain code because it separates the process of "can I make this work at all?" from "how do I do this properly?"
 
 </PostAside>
 
-## How do we convince management that it's a good idea to work on something that won't go to production?
+## How do we convince management it's a good idea to work on something that won't go to production?
 
-> I would have trouble convincing management that it's a good idea to spend time working on something that won't go to production. There's a ton of positive reinforcement for shipping things and quick wins, and they see this kind of stuff as a distraction.
+> I would have trouble convincing management it's a good idea to spend time working on something that won't go to production. They see this kind of stuff as a distraction.
 
 At the heart of every company is the need to survive, and the only way a company can survive is by continuously shipping valuable things to production that keep customers happy (and paying).
 
-On the surface, a workstream dedicated to validating squishy ideas might seem like an expensive waste of resources — and it definitely can be! I've seen several "experimental" teams spun up at companies that focused on innovation and exploration, but failed to create any meaningful impact or benefit for the company.
+On the surface, a workstream dedicated to validating squishy ideas might seem like a waste of resources — and it definitely can be! I've seen several "experimental" teams spun up at companies that focused on innovation and exploration, but failed to create any meaningful impact or benefit for the company.
 
 How is working on squishy projects and creating a workstream for validation different from those failed attempts?
 
@@ -93,19 +95,19 @@ How is working on squishy projects and creating a workstream for validation diff
 
 Experimental teams that are isolated from the rest of the company are able to act quickly and autonomously, but they're also completely out of the loop. The barriers that protect the team from red tape and slowdowns are *also* barriers preventing the team from feeding value back into the company.
 
-Unless the experimental team is working on something entirely separate from the rest of the company — a true [skunk works project](https://en.wikipedia.org/wiki/Skunkworks_project), which by definition should be short-lived — setting up barriers sets up the team for failure.
+Unless the experimental team is working on something entirely separate from the rest of the company — a true [skunk works project](https://en.wikipedia.org/wiki/Skunkworks_project), which by definition should be short-lived — adding barriers sets the team up for failure.
 
 To avoid this, the experimental side of the dual workstream approach serves to identify, scope, derisk, and validate experimental ideas that immediately go into the production pipeline.
 
 <PostAside spicy>
 
-**Hot take:** all of the validation work happening in the experimental workstream will get done whether or not it's planned for. Companies that put a full production team and process on ideas before validating them just spend far more time and money gathering the same information.
+**Hot take:** all of the validation work happening in the experimental workstream will get done whether or not it's planned for. The difference is that companies who put a full production team and process on ideas before validating them spend far more time and money on it.
 
 </PostAside>
 
 ### Dual workstreams avoid production bottlenecks
 
-In many companies, there are a huge number of unexplored opportunities that could improve the product, add more value, and make a huge impact. Many of those ideas are captured in "parking lots" or iceboxes or aging JIRA tickets because they're not formal enough to get prioritized in a production pipeline.
+In many companies, there are a huge number of unexplored opportunities that could improve the product, add more value, and make a huge impact. Many of those ideas are captured in "parking lots" or iceboxes or aging Jira tickets because they're not formal enough to get prioritized in a production pipeline.
 
 At the opposite end of the spectrum, ideas can end up on the product roadmap because someone with enough power was willing to champion the project.
 
@@ -125,19 +127,19 @@ If that sounds like your company, and you decide it's worth sticking it out and 
 
 Visibly shipping something, as far as I can tell, boils down to having something you can link to or share metrics from. And by that standard, leadership can visibly ship *so much more* by adopting the parallel workstream process.
 
-Experiments are small, have clear success metrics, and make a big impact on the company's bottom line. While I was at IBM, my team was able to ship multiple experiments faster than other teams delivered a single feature, and the validation research helped us avoid person-months of effort on ideas that didn't work, and lett us ship production features faster because we had more information about what success looks like.
+Experiments are small, have clear success metrics, and make a big impact on the company's bottom line. While I was at IBM, my team was able to ship multiple experiments faster than other teams delivered a single feature. The validation research from those experiments helped us avoid person-months of effort on ideas that didn't work, which meant we shipped production features faster because we had more information about what success looks like.
 
-Everyone on that team has been promoted since I left. My old manager has been promoted twice. This process made us *more* visible, and *more* likely to get a promotion.
+**Everyone I worked with on that team got promoted.** My old manager has been promoted twice. This process made us *more* visible, and *more* likely to get a promotion.
 
 This goes back to the idea of finding the win-win. This process truly is better for everyone; we just have to help the whole team see the individual benefits *for them*.
 
-### Shipping responsibly compounds the wins until it seems like magic
+### Shipping responsibly compounds wins until it seems like magic
 
-Managers and leaders who not only ship, but who ship things that are supported by data and make measurable, positive improvements to the product get promoted further and faster. Investing in learning fast and not making a mess helps teams (and leadership) appear to be superhuman: they have tons of new things shipping with clear metrics on what's working and what's not; they have fewer projects that go over schedule or end up failing after months of effort; they have great team dynamics, trust, and engagement; they rack up meaningful wins reliably.
+Managers and leaders who not only ship, but who ship things supported by data that make measurable, positive improvements to the product get promoted further and faster. **Investing in learning fast and not making a mess helps teams (and leadership) appear to be superhuman: they have tons of new things shipping with clear metrics on what's working and what's not; they have fewer projects that go over schedule or end up failing after months of effort; they have great team dynamics, trust, and engagement; they rack up meaningful wins reliably.**
 
 This isn't magic — working quickly to learn whether or not something is a good idea both racks up the "we shipped!" wins while *also* quickly identifying which projects will be successful. Only putting validated projects into production lets teams work with confidence and clarity to deliver production-ready wins consistently. Being on a team that ships things is extremely motivating, and the higher communication required for this process builds more trust among team members.
 
-I've seen multiple teams pull this off at companies of wildly varying sizes. The secret isn't in who the team is or how big the company is; it's in creating the right environment and processes the let teams thrive.
+I've seen multiple teams pull this off at companies of wildly varying sizes. The secret isn't in who the team is or how big the company is; it's in creating the right environment and processes that let teams thrive.
 
 ## The process alone isn't enough — the team needs to be bought in
 
