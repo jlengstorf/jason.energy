@@ -1539,7 +1539,7 @@ img {
 .post-wrapper h5,
 .post-wrapper h6 {
   clear: both;
-  color: var(--white);
+  color: var(--foreground);
 }
 
 .post-wrapper h3,
