@@ -1532,6 +1532,31 @@ img {
   margin-top: 0;
 }
 
+.post-wrapper blockquote {
+  border-left: 4px solid var(--pink-dark);
+  color: var(--text-emphasized);
+  font-style: italic;
+  margin: 0 1rem;
+  padding: 0 0 0 1.5rem;
+  position: relative;
+}
+
+.post-wrapper blockquote::before {
+  background: var(--background);
+  border-radius: 50%;
+  color: var(--pink-dark);
+  content: '“';
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  left: -2rem;
+  line-height: 1;
+  padding: 0 0.75rem;
+  position: absolute;
+  top: -0.25rem;
+  z-index: 10;
+}
+
 .has-footnote {
   padding-right: 2rem;
   position: relative;
