@@ -11,6 +11,7 @@ import { TableOfContents } from '../components/table-of-contents.js';
 export function PostWrapper({
   children,
   title,
+  seo_title,
   description,
   image,
   slug,
@@ -20,10 +21,12 @@ export function PostWrapper({
   const url = new URL('https://www.jason.af/');
   url.pathname = `/${slug}`;
 
+  const postTitle = seo_title || title;
+
   const ogImage = useImageForSEO
     ? image
     : getShareImage({
-        title: title.toUpperCase(),
+        title: postTitle.toUpperCase(),
         cloudName: 'jlengstorf',
         imagePublicID: 'jason.af/og',
         titleFont: 'jwf.otf',
@@ -51,7 +54,7 @@ export function PostWrapper({
 
   return [
     <SEO
-      title={title}
+      title={postTitle}
       description={description}
       image={ogImage}
       url={url}
