@@ -1582,6 +1582,11 @@ img {
   z-index: 10;
 }
 
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .has-footnote {
   padding-right: 2rem;
   position: relative;
