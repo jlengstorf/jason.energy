@@ -2,7 +2,11 @@ import { useSettings } from '../context/settings.js';
 
 const sfxCache = {};
 
-function useSound(url) {
+function useSound(url, { soundEnabled }) {
+  if (!soundEnabled) {
+    return [() => {}];
+  }
+
   try {
     if (sfxCache[url]) {
       return [() => sfxCache[url].play()];
@@ -19,6 +23,7 @@ function useSound(url) {
 
 export function useSfx() {
   const { soundEnabled } = useSettings();
+  console.log({ soundEnabled });
 
   const [playBoop] = useSound(
     'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/boop.mp3',
