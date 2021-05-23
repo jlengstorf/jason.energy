@@ -23,7 +23,6 @@ function useSound(url, { soundEnabled }) {
 
 export function useSfx() {
   const { soundEnabled } = useSettings();
-  console.log({ soundEnabled });
 
   const [playBoop] = useSound(
     'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1593395252/jason.af/sfx/boop.mp3',
