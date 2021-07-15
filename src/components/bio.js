@@ -72,7 +72,7 @@ function BioText() {
       <span style={{ display: getVisibility('shorter') }}>
         works{' '}
         <span style={{ display: getVisibility('long') }}>
-          as a principal developer experience engineer
+          as the VP of Developer Experience
         </span>{' '}
         at{' '}
         <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">
