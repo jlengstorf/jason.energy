@@ -6,6 +6,8 @@
 /egghead                        https://egghead.io/instructors/jason-lengstorf?af=azvpe4
 /frontendmasters                https://frontendmasters.com/teachers/jason-lengstorf/
 /fem                            https://frontendmasters.com/teachers/jason-lengstorf/
+/intro-to-gatsby                https://frontendmasters.com/workshops/gatsby-v2/
+/intermediate-gatsby            https://frontendmasters.com/workshops/intermediate-gatsby-v2/
 
 # workshop stuff
 /fem/img/*                      https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_600/fem-workshop/serverless/:splat   200!
