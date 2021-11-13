@@ -1,0 +1,58 @@
+---
+import Favicon from './head-favicon.astro';
+import Fonts from './head-fonts.astro';
+  
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{title}</title>
+
+  <link rel="preconnect" href="https://res.cloudinary.com" />
+
+  <Favicon />
+  <Fonts />
+
+</head>
+<body>
+
+  <header>
+    <a rel="home" href="/">Jason Lengstorf</a>
+
+    <nav class="site-nav">
+      <a href="/posts">Writing</a>
+      <a href="/projects">Projects</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/uses">Things I Use</a>
+      <a href="/press">Press Kit</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <nav class="exploding-head">
+      <a href="#bio">About Jason</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#writing">Writing</a>
+      <a href="#newsletter">newsletter</a>
+      <a href="#connect">connect</a>
+    </nav>
+  </header>
+  
+  <slot />
+
+  <footer>
+    <p>powered by boops</p>
+
+    <nav class="footer-links">
+      <a href="/posts">posts</a>
+      <a href="https://github.com/jlengstorf/jason.af">source code</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

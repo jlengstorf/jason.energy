@@ -2,12 +2,3 @@
   command = "npm run build"
   publish = "public"
   functions = "functions"
-
-[dev]
-  autoLaunch = false
-  command = "npm run dev"
-  targetPort = 5000
-  framework = "#custom"
-
-[[plugins]]
-  package = "netlify-plugin-toast-cache"

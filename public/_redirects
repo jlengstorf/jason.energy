@@ -70,5 +70,5 @@
 
 /optimize-for-deletion          https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=presentation&utm_medium=jamstack-architecture&utm_content=optimize-for-deletion
 
-https://jasonaf.netlify.app/*  https://www.jason.af/
+https://jasonaf.netlify.app/*  https://www.jason.af/:splat
 https://jason.af/*             https://www.jason.af/:splat

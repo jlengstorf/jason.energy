@@ -54,10 +54,6 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
-
 # Mac files
 .DS_Store
 
@@ -71,6 +67,5 @@ yarn-error.log
 # Local Netlify folder
 .netlify
 
-# YEAH TOAST!
-src/styles/*.js
-.tmp
+_old_src
+dist
