@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
 import { useSfx } from "../hooks/use-sfx.js";
-import styles from "../styles/exploding-nav.module.css";
+import styles from "../styles/header-exploding-nav.module.css";
 
 const navItems = [
   {

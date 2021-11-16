@@ -1,0 +1,37 @@
+.toggleSiteNav {
+  position: fixed;
+  top: 0;
+  left: 300px;
+  width: 60px;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 200ms ease-out;
+}
+
+.siteNav {
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(300px, 100vw);
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 200ms ease-out;
+}
+
+.open {
+  transform: translate3d(0, 0, 0);
+}
+
+.siteNav a {
+  border-bottom: 1px solid var(--blue-dark);
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+}
+
+.siteNav a:focus,
+.siteNav a:hover {
+  background: var(--blue-dark);
+}

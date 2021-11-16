@@ -1,0 +1,18 @@
+---
+import { Nav } from './header-nav.jsx';
+import { ExplodingNav } from './header-exploding-nav.jsx';
+---
+<style>
+  header {
+    background: var(--black);
+    display: block;
+    height: 60px;
+  }
+</style>
+
+<header>
+  <a rel="home" href="/">Jason Lengstorf</a>
+
+  <Nav client:load />
+  <ExplodingNav client:load />
+</header>

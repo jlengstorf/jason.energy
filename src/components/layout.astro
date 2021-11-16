@@ -1,8 +1,7 @@
 ---
 import Favicon from './head-favicon.astro';
 import Fonts from './head-fonts.astro';
-import Nav from './header-nav.astro';
-import { ExplodingNav } from './exploding-nav.jsx';
+import Header from './header.astro';
 
 const { title } = Astro.props;
 ---
@@ -153,12 +152,7 @@ const { title } = Astro.props;
 </head>
 <body>
 
-  <header>
-    <a rel="home" href="/">Jason Lengstorf</a>
-
-    <Nav />
-    <ExplodingNav client:load />
-  </header>
+  <Header />
   
   <slot />
 
