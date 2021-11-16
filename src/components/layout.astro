@@ -1,7 +1,9 @@
 ---
 import Favicon from './head-favicon.astro';
 import Fonts from './head-fonts.astro';
-  
+import Nav from './header-nav.astro';
+import { ExplodingNav } from './exploding-nav.jsx';
+
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -11,13 +13,142 @@ const { title } = Astro.props;
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://res.cloudinary.com" />
 
   <title>{title}</title>
 
-  <link rel="preconnect" href="https://res.cloudinary.com" />
-
   <Favicon />
   <Fonts />
+
+  <style global>
+    :root {
+      --white: white;
+      --text: #403c4a;
+      --text-emphasized: #201d29;
+      --text-muted: #78757f;
+      --text-pink: #c10b7e;
+      --yellow: #ffe742;
+      --yellow-dark: #ddc62c;
+      --pink: #ff87d4;
+      --pink-faded: #f5f2fc;
+      --pink-dark: #c10b7e;
+      --blue: #87fffb;
+      --blue-dark: #63ddd9;
+      --black: #171321;
+      --gray-light: #d4d0e0;
+      --gray-medium: #b1acb9;
+      --font-family: jwf, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+      --background: var(--white);
+      --foreground: var(--black);
+      --footnote-hover: var(--pink-dark);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue-dark: #0d314a;
+        --pink-dark: #6d114c;
+        --pink-faded: #440e30;
+        --text: var(--gray-medium);
+        --text-pink: #ff69c8;
+        --text-emphasized: #d4d0da;
+        --text-muted: #aba7b5;
+        --background: var(--black);
+        --foreground: var(--white);
+        --footnote-hover: var(--yellow);
+      }
+    }
+
+    .dark {
+      --blue-dark: #0d314a;
+      --pink-dark: #6d114c;
+      --pink-faded: #440e30;
+      --text: var(--gray-medium);
+      --text-pink: #ff69c8;
+      --text-emphasized: #d4d0da;
+      --text-muted: #aba7b5;
+      --background: var(--black);
+      --foreground: var(--white);
+      --footnote-hover: var(--yellow);
+    }
+
+    .light {
+      --blue-dark: #63ddd9;
+      --pink-dark: #c10b7e;
+      --pink-faded: #f5f2fc;
+      --text: #403c4a;
+      --text-pink: #c10b7e;
+      --text-emphasized: #201d29;
+      --text-muted: #78757f;
+      --background: var(--white);
+      --foreground: var(--black);
+      --footnote-hover: var(--pink-dark);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: var(--font-family);
+      font-weight: 400;
+      color: red;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    
+    .outer {
+      color: var(--text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--foreground);
+      font-weight: 900;
+      line-height: 1.1;
+      transition: 200ms color linear;
+    }
+
+    a {
+      color: var(--text-pink);
+      font-weight: 400;
+    }
+
+    strong,
+    b {
+      font-weight: 600;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; /* added line */
+    }
+  </style>
 
 </head>
 <body>
@@ -25,22 +156,8 @@ const { title } = Astro.props;
   <header>
     <a rel="home" href="/">Jason Lengstorf</a>
 
-    <nav class="site-nav">
-      <a href="/posts">Writing</a>
-      <a href="/projects">Projects</a>
-      <a href="/newsletter">Newsletter</a>
-      <a href="/uses">Things I Use</a>
-      <a href="/press">Press Kit</a>
-      <a href="/contact">Contact</a>
-    </nav>
-
-    <nav class="exploding-head">
-      <a href="#bio">About Jason</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#writing">Writing</a>
-      <a href="#newsletter">newsletter</a>
-      <a href="#connect">connect</a>
-    </nav>
+    <Nav />
+    <ExplodingNav client:load />
   </header>
   
   <slot />
