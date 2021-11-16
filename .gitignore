@@ -67,5 +67,5 @@ yarn-error.log
 # Local Netlify folder
 .netlify
 
-_old_src
+# _old_src
 dist
