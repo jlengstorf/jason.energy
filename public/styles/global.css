@@ -435,3 +435,24 @@ article {
   display: inline-block;
   transform: scale(1.625) translate(0.2rem, 0.1rem);
 }
+
+/* FOOTER */
+footer {
+  color: var(--color-text-muted);
+  display: flex;
+  font-size: 0.625rem;
+  justify-content: space-between;
+  padding: 1rem min(90vw, calc(50vw - 950px / 2));
+}
+
+footer nav,
+footer a {
+  color: inherit;
+  margin: 0;
+}
+
+footer nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
