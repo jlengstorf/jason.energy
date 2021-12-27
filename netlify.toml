@@ -1,2 +1,3 @@
 [build]
+  command = "# no build command"
   publish = "public"
