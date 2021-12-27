@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      href="/fonts/jwf-book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jwf-bookitalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jwf-ultra.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jwf-ultraitalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+
+    <title>Blog Post Template</title>
+
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff87d4" />
+    <meta name="msapplication-TileColor" content="#ffe742" />
+    <meta name="theme-color" content="#ffe742" />
+
+    <!-- <link rel="canonical" href={url} />
+    <meta name="description" content={description} />
+    <meta name="image" content={image} />
+
+    <meta property="og:type" content={post ? 'article' : 'website'} />
+    <meta property="og:url" content={url} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <meta
+      name="twitter:widgets:theme"
+      content={darkMode ? 'dark' : 'light'}
+    />
+    <meta name="twitter:dnt" content="on" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@jlengstorf" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} /> -->
+  </head>
+
+  <body>
+    <header>
+      <a href="/" rel="home" class="home-link">Jason Lengstorf</a>
+
+      <nav class="main-nav">
+        <a href="/posts">Writing</a>
+        <a href="/uses">Uses</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <div class="heading">
+          <h1>
+            Squishy vs. Load-Bearing Projects (or: How Not to Flatten
+            Innovation)
+          </h1>
+          <p class="lede">
+            Tackling projects with a team requires process, but too much process
+            stifles innovation. Learn how to avoid stagnation with adaptive
+            processes.
+          </p>
+        </div>
+
+        <div class="details">
+          <figure class="author">
+            <img
+              src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,c_fill,w_260,h_260,g_faces,c_fill/jason.af/jason-lengstorf-hat"
+              alt="Jason Lengstorf"
+            />
+            <figcaption>written by Jason Lengstorf</figcaption>
+          </figure>
+        </div>
+
+        <div class="sidebar">
+          <div class="sticky-sidebar">
+            <div class="newsletter-nudge">
+              <p>
+                Hey, friends! I share posts like these regularly in my
+                newsletter.
+                <strong
+                  >Sign up to get my best stuff direct to your inbox.</strong
+                >
+              </p>
+              <a href="#newsletter" class="button">I love stuff!</a>
+            </div>
+
+            <details class="table-of-contents" open>
+              <summary>Table of Contents</summary>
+
+              <ol>
+                <li>
+                  <a
+                    href="#everything-is-influenced-by-both-deliberate-and-emergent-behavior"
+                    >Everything is influenced by both deliberate and emergent
+                    behavior.</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#intention-is-deliberate-action-toward-a-defined-goal"
+                    >Intention is deliberate action toward a defined goal.</a
+                  >
+                </li>
+                <li>
+                  <a href="#drift-is-unstructured-exploration-and-observation"
+                    >Drift is unstructured exploration and observation.</a
+                  >
+                </li>
+                <li>
+                  <a href="#theres-value-in-both-intention-and-drift"
+                    >There's value in both intention and drift.</a
+                  >
+                </li>
+                <li>
+                  <a href="#be-intentional-when-the-goal-is-clear"
+                    >Be intentional when the goal is clear.</a
+                  >
+                </li>
+                <li>
+                  <a href="#drifting-allows-for-discovery-and-cultivation"
+                    >Drifting allows for discovery and cultivation.</a
+                  >
+                </li>
+                <li>
+                  <a href="#sometimes-we-should-drift----intentionally"
+                    >Sometimes we should drift . . . intentionally.</a
+                  >
+                </li>
+                <li>
+                  <a href="#balancing-intention-and-drift-is-important"
+                    >Balancing intention and drift is important.</a
+                  >
+                </li>
+              </ol>
+            </details>
+          </div>
+        </div>
+
+        <div class="content">
+          <p>
+            <strong
+              >No matter what we're building — whether it's a habit, a tool, a
+              company, or a culture — we need to pay very close attention to
+              what the defaults are.</strong
+            >
+            If someone follows our process and accepts all the defaults, what
+            kind of outcome does that create for them and the people around
+            them?
+          </p>
+          <p>How do things happen?</p>
+          <p class="has-footnote">
+            Back when I worked at IBM, my team worked on a project to
+            <a href="#fn-1" id="fnref-1" class="footnote-phrase"
+              >automate a bunch of busywork</a
+            >
+            that was being manually handled by every team separately.
+          </p>
+          <aside class="footnote" id="fn-1">
+            <details>
+              <summary>notes here</summary>
+              <p>
+                This swapped out a bunch of boilerplate code for a package that
+                handled security compliance, deployment, and other configuration
+                that was always the same but — for whatever reason —&nbsp;was
+                being copy-pasted by every team in the organization. And when a
+                policy changed, <em>every single team</em> needed to make manual
+                changes. Not to mention someone had to own reviewing every
+                team's work to make sure the changes were done correctly.
+              </p>
+              <p>In short: the old way was an efficiency nightmare.</p>
+              <p>
+                Our solution packaged up all of that copy-pasted configuration
+                and manual review into a single source of truth that could be
+                centrally managed. Each team could replace a huge chunk of their
+                code with this package, and then they'd never need to manually
+                update or review the boilerplate stuff again.
+                <a href="#fnref-1" class="footnote-backref">close</a>
+              </p>
+            </details>
+          </aside>
+          <p>
+            Do people <em>make</em> things happen? Or do things just happen
+            around us and we make the best of it?
+          </p>
+          <p>
+            I had the pleasure of talking to Dan Mall about, among other things,
+            <a
+              href="https://www.netlify.com/blog/2020/05/11/intention-vs.-drift-lets-learn-design-systems-part-1/?utm_campaign=devex-jl&amp;utm_source=blog&amp;utm_medium=jasonaf&amp;utm_content=intention-vs-drift"
+              >how design systems get created</a
+            >. In his experience,
+            <strong
+              >systems are created through a blend of deliberate effort and the
+              emergent processes of necessity and use.</strong
+            >
+          </p>
+          <p>
+            Dan said this in the context of design systems, but I've been
+            thinking about it ever since.
+          </p>
+          <aside class="post-aside">
+            <div class="post-aside-icon">
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.af/light-mode.png"
+                alt="light bulb"
+              />
+            </div>
+            <div class="post-aside-content">
+              <p>
+                <strong>Heads up!</strong> What follows in this post is me
+                riffing on Dan Mall's ideas. I would highly recommend
+                <a
+                  href="https://www.learnwithjason.dev/let-s-learn-design-systems"
+                  >watching Dan explain this himself</a
+                >, because he's a brilliant and inspirational thinker.
+              </p>
+            </div>
+          </aside>
+          <h2
+            id="everything-is-influenced-by-both-deliberate-and-emergent-behavior"
+          >
+            <a
+              href="#everything-is-influenced-by-both-deliberate-and-emergent-behavior"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Everything is influenced by both deliberate and emergent behavior.
+          </h2>
+          <p>
+            <strong
+              >In our lives, our careers, and our relationships, we're able to
+              intentionally create outcomes through deliberate effort. But we
+              <em>also</em> have plenty of things that emerge in our lives
+              without any conscious input — they drift into existence over
+              time.</strong
+            >
+          </p>
+          <p>
+            My first instinct was to make a plan to prevent things from
+            drifting. After all, anything we're not intentional about is a risk,
+            right? I want to be the author of my own story, and the idea of just
+            <em>letting things happen</em> feels like handing over control.
+          </p>
+          <p>
+            The first problem with this is that it's completely unrealistic to
+            try and be intentional about everything. There are too many moving
+            parts, too many variables, and too much context for it to be
+            possible.
+          </p>
+          <p>
+            But beyond that, Dan said something about design systems that
+            changed how I think about things now:
+            <strong
+              >letting people solve problems and identifying patterns before
+              acting, rather than trying to predict behavior in unknown
+              scenarios, leads to better outcomes.</strong
+            >
+          </p>
+          <p>
+            Let's talk about that using the shorthand "intention" and "drift".
+          </p>
+          <figure class="post-figure post-figure-align-center">
+            <p>
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/jason.af/skylight-kevin-jiner-4e4daaab8a0ce77ecd6abaa945fc61b6"
+                alt="A large, geometric skylight."
+                srcset="
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1800/jason.af/skylight-kevin-jiner-4e4daaab8a0ce77ecd6abaa945fc61b6 1800w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1200/jason.af/skylight-kevin-jiner-4e4daaab8a0ce77ecd6abaa945fc61b6 1200w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_600/jason.af/skylight-kevin-jiner-4e4daaab8a0ce77ecd6abaa945fc61b6   600w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_300/jason.af/skylight-kevin-jiner-4e4daaab8a0ce77ecd6abaa945fc61b6   300w
+                "
+                loading="lazy"
+              />
+            </p>
+            <figcaption class="post-figure-caption">
+              <small class="post-figure-attribution"
+                >Credit:
+                <a
+                  class="post-figure-attribution-link"
+                  href="https://unsplash.com/photos/D2o3Tp51ujM"
+                  >Kévin Jiner</a
+                ></small
+              >
+            </figcaption>
+          </figure>
+          <h2 id="intention-is-deliberate-action-toward-a-defined-goal">
+            <a
+              href="#intention-is-deliberate-action-toward-a-defined-goal"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Intention is deliberate action toward a defined goal.
+          </h2>
+          <p>
+            <strong
+              >"Intention" describes thoughtfully planned, carefully executed
+              tasks that accumulate into a polished, finished outcome.</strong
+            >
+          </p>
+          <p>
+            This is what we talk about almost exclusively in the context of
+            personal development and business alike. We research; we plan; we
+            execute. In fact, prior to this conversation, I'm fairly convinced I
+            thought <em>only</em> intentional work would lead to any meaningful
+            outcome.
+          </p>
+          <figure class="post-figure post-figure-align-center">
+            <p>
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/jason.af/sand-jeremy-bishop-7087ff243671d66a409e5429a816ce04"
+                alt="A pattern formed in sand dunes by wind."
+                srcset="
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1800/jason.af/sand-jeremy-bishop-7087ff243671d66a409e5429a816ce04 1800w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_1200/jason.af/sand-jeremy-bishop-7087ff243671d66a409e5429a816ce04 1200w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_600/jason.af/sand-jeremy-bishop-7087ff243671d66a409e5429a816ce04   600w,
+                  https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_300/jason.af/sand-jeremy-bishop-7087ff243671d66a409e5429a816ce04   300w
+                "
+                loading="lazy"
+              />
+            </p>
+            <figcaption class="post-figure-caption">
+              <small class="post-figure-attribution"
+                >Credit:
+                <a
+                  class="post-figure-attribution-link"
+                  href="https://unsplash.com/photos/FzrlPh20l7Q"
+                  >Jeremy Bishop</a
+                ></small
+              >
+            </figcaption>
+          </figure>
+          <h2 id="drift-is-unstructured-exploration-and-observation">
+            <a
+              href="#drift-is-unstructured-exploration-and-observation"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Drift is unstructured exploration and observation.
+          </h2>
+          <p>
+            Even without intention, though, things continue to happen. Left
+            alone, patterns and habits emerge in our own behavior and in the
+            culture of teams.
+          </p>
+          <p>
+            <strong
+              >"Drift" describes outcomes that aren't driven by any deliberate
+              action or plan. Drifting is what we get when we decide to let
+              things happen and see where we end up.</strong
+            >
+          </p>
+          <h2 id="theres-value-in-both-intention-and-drift">
+            <a
+              href="#theres-value-in-both-intention-and-drift"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >There's value in both intention and drift.
+          </h2>
+          <p>
+            I spent the majority of my life as a firm believer in The Plan™. I
+            created The Plan™ and I needed to Follow The Plan™ and I would
+            achieve Success According To The Plan™.
+          </p>
+          <p>
+            If I tally up the pivotal moments for myself, however, I can't help
+            but acknowledge that — both professionally and personally —
+            <strong
+              >drift has accounted for as much of my growth and momentum as
+              intentional efforts.</strong
+            >
+            In fact, a few of the <em>most</em> pivotal moments in my life
+            resulted from drifting:
+          </p>
+          <ul>
+            <li>
+              I learned to code because I was in a band and needed to build a
+              website and customize our MySpace page. When the band broke up, I
+              realized I'd accidentally built enough of a skill set to work
+              professionally as a web developer.
+            </li>
+            <li>
+              Starting
+              <em
+                ><a href="https://www.learnwithjason.dev/"
+                  >Learn With Jason</a
+                ></em
+              >
+              was a happy accident. I was experimenting with ideas for how to be
+              more transparent about my work, and invited
+              <a href="https://twitter.com/dabit3">Nader Dabit</a> to get on a
+              Zoom call and teach me how to use software he was working on. The
+              format worked, so I kept setting up "one more session" with other
+              guests — the show has
+              <a href="https://www.jason.af/process-not-a-project"
+                >continued to evolve</a
+              >
+              and I'm about to cross 200 episodes.
+            </li>
+            <li>
+              I met my partner, Marisa, in a period of my life when I was
+              "absolutely not dating anyone because I'm moving away soon". We
+              both had no intentions of getting into a relationship, and had
+              multiple conversations early on about how nothing serious would
+              happen between us. That was seven years ago, and we're still
+              together (but, in fairness, we're rarely serious).
+            </li>
+          </ul>
+          <p>
+            For all that I've told myself I followed The Plan™, I'd be lying if
+            I said I knew I'd end up where I am today. A huge amount of my life
+            and my career has emerged as a result of drifting, and I'm extremely
+            happy with the outcomes.
+          </p>
+          <h2 id="be-intentional-when-the-goal-is-clear">
+            <a
+              href="#be-intentional-when-the-goal-is-clear"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Be intentional when the goal is clear.
+          </h2>
+          <p>
+            If you know where you want to go, being intentional is important.
+            <strong
+              >Identifying a clear outcome,
+              <a href="https://www.jason.af/mise-en-place">making a plan</a>,
+              and executing that plan is the most predictable way to get where
+              you want to go.</strong
+            >
+          </p>
+          <p>
+            However, it's not always clear what the goal is, and that creates a
+            challenge. Trying to be intentional when the requirements are
+            unclear doesn't have the same payoff; you're pushing hard toward
+            <em>somewhere</em>, but it's a lot of hard work going toward an
+            unknown destination.
+          </p>
+          <aside class="post-aside">
+            <div class="post-aside-icon">
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1609402670/jason.af/fire.png"
+                alt="fire"
+              />
+            </div>
+            <div class="post-aside-content">
+              <p>
+                <strong>Hot take:</strong> without a clear goal, being
+                intentional is extremely risky. It's like driving full-speed at
+                night with the headlights off —&nbsp;by the time you see a
+                problem, it's probably too late to avoid it.
+              </p>
+            </div>
+          </aside>
+          <h2 id="drifting-allows-for-discovery-and-cultivation">
+            <a
+              href="#drifting-allows-for-discovery-and-cultivation"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Drifting allows for discovery and cultivation.
+          </h2>
+          <p>
+            In situations without clear goals, drifting allows us to exist in a
+            space and see how things interact. If we give ourselves the space to
+            observe how a situation is playing out, we start to learn more about
+            it, and
+            <strong
+              >gathering more information gives us the confidence we need to
+              clearly identify our next goal.</strong
+            >
+          </p>
+          <aside class="post-aside">
+            <div class="post-aside-icon">
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1609402670/jason.af/fire.png"
+                alt="fire"
+              />
+            </div>
+            <div class="post-aside-content">
+              <p>
+                <strong>Don't forget!</strong> Drifting is a useful tool, but we
+                have to remember to switch back over to being intentional —
+                otherwise we're leaving too much up to chance.
+              </p>
+            </div>
+          </aside>
+          <h2 id="sometimes-we-should-drift----intentionally">
+            <a
+              href="#sometimes-we-should-drift----intentionally"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Sometimes we should drift . . . intentionally.
+          </h2>
+          <p>
+            If it's unclear where you want to go, drifting can be a deliberate
+            choice that leads to better clarification.
+          </p>
+          <p>
+            If we want to do something well, whether it's passing a test or
+            learning a new skill, we can vastly improve our chances by studying.
+            With something like a test, how we do this is pretty straightforward
+            — but how do we "study" being successful, being happy, or building a
+            great team?
+          </p>
+          <p>
+            <strong
+              >By choosing to drift for a while instead of trying to make a plan
+              immediately, we get a chance to "study" our environment by
+              existing in it without an agenda.</strong
+            >
+            We can ask ourselves questions to gather information:
+          </p>
+          <ul>
+            <li>Where is my energy and happiness coming from?</li>
+            <li>What do I find draining or demotivating?</li>
+            <li>
+              <a href="https://www.jason.af/career-fulfillment-matrix"
+                >Do I enjoy the work I'm doing?</a
+              >
+            </li>
+            <li>Where are the biggest opportunities for growth?</li>
+            <li>Are there patterns to my (or my team's) behavior?</li>
+            <li>What do I wish I was doing that I'm not doing now?</li>
+          </ul>
+          <p>
+            By drifting, we can free up our mental bandwidth to ask questions
+            and let patterns and opportunities emerge.
+            <strong
+              >Once we have enough information, we can switch back over to being
+              intentional and make a plan to turn the opportunities into
+              growth.</strong
+            >
+          </p>
+          <h2 id="balancing-intention-and-drift-is-important">
+            <a
+              href="#balancing-intention-and-drift-is-important"
+              class="heading-link-anchor"
+              ><heading-link-icon
+                class="heading-link-icon"
+              ></heading-link-icon></a
+            >Balancing intention and drift is important.
+          </h2>
+          <p>
+            Embracing both intention and drift can give us the ability to
+            deliberately make progress toward our concrete goals while
+            <em>also</em> allowing us the space to notice new opportunities.
+          </p>
+          <p>
+            <strong
+              >We can be <em>both</em> the authors of our story and a curious
+              observer. Recognizing when we should adopt one or the other
+              approach can help us avoid frustration and risk.</strong
+            >
+          </p>
+          <p>
+            And, for me at least, it's led to a happy life that I've both worked
+            hard to build <em>and</em> stumbled face-first into.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer></footer>
+
+    <script>
+      const footnotes = document.querySelectorAll(".footnote-phrase");
+      Array.from(footnotes).forEach((fnLink) => {
+        fnLink.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const [, id] = event.target.href.split("#");
+          const footnote = document.querySelector(`#${id} details`);
+
+          footnote.open = !footnote.open;
+        });
+      });
+
+      const footnoteCloseLinks = document.querySelectorAll(".footnote-backref");
+      Array.from(footnoteCloseLinks).forEach((closeLink) => {
+        closeLink.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const footnote = event.target.closest("details");
+          footnote.open = false;
+        });
+      });
+    </script>
+  </body>
+</html>
