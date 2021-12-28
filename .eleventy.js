@@ -10,16 +10,16 @@ module.exports = function (eleventyConfig) {
   const mdAnchor = require('markdown-it-anchor');
   const mdLib = md({ html: true })
     .use(mdAnchor, {
-      slugify: s =>
+      slugify: (s) =>
         s
           .toLowerCase()
           .replace(/['’]/i, '')
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/^-|-$/g, ''),
     })
-    .use(md => {
-      md.core.ruler.before('linkify', 'lwj_images', async state => {
-        state.tokens.forEach(token => {
+    .use((md) => {
+      md.core.ruler.before('linkify', 'lwj_images', async (state) => {
+        state.tokens.forEach((token) => {
           if (token.type !== 'inline') {
             return;
           }
@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
 
           const srcSet = [2040, 1360, 680, 300]
             .map(
-              size => `${src.replace(/q_auto/, `q_auto,w_${size}`)} ${size}w`,
+              (size) => `${src.replace(/q_auto/, `q_auto,w_${size}`)} ${size}w`,
             )
             .join(',');
 
