@@ -98,6 +98,9 @@
 
   --color-background: var(--color-gray-000);
   --color-foreground: var(--color-text-default);
+
+  --color-footer-bg: var(--color-gray-100);
+  --color-footer-border: var(--color-gray-300);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -113,6 +116,9 @@
 
     --color-background: var(--color-gray-900);
     --color-foreground: var(--color-text-default);
+
+    --color-footer-bg: var(--color-gray-800);
+    --color-footer-border: var(--color-gray-700);
   }
 }
 
@@ -443,8 +449,8 @@ article {
 
 /* FOOTER */
 footer {
-  background: var(--color-gray-800);
-  border-top: 1px solid var(--color-gray-700);
+  background: var(--color-footer-bg);
+  border-top: 1px solid var(--color-footer-border);
   color: var(--color-text);
   display: flex;
   font-size: 0.625rem;
