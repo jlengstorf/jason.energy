@@ -337,6 +337,10 @@ article {
   text-decoration: none;
 }
 
+.table-of-contents a.active {
+  color: var(--color-text-emphasized);
+}
+
 .content > p:first-child {
   margin-top: 1.05rem;
 }
@@ -438,7 +442,9 @@ article {
 
 /* FOOTER */
 footer {
-  color: var(--color-text-muted);
+  background: var(--color-gray-800);
+  border-top: 1px solid var(--color-gray-700);
+  color: var(--color-text);
   display: flex;
   font-size: 0.625rem;
   justify-content: space-between;
