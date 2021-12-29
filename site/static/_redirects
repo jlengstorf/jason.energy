@@ -1,3 +1,4 @@
+/api/*                          /.netlify/functions/:splat  200
 
 # partner links
 /cloudinary                     https://cloudinary.com/?ap=lwj
