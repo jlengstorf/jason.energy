@@ -52,7 +52,7 @@ export function Form({ title = 'Get booped on the brain.', children }) {
           />
         </div>
         <form
-          action="/api/subscribe"
+          action="/.netlify/functions/subscribe"
           method="POST"
           class="opt-in-form"
           onSubmit={handleSubmit}
