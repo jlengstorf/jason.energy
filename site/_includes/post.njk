@@ -19,3 +19,39 @@
 <meta name="twitter:description" content="{{description}}" />
 {% if image %}<meta name="twitter:image" content="{{image | cloudinary(page.inputPath)}}" />{% endif %}
 {% endblock %}
+
+
+{% block details %}
+<div class="details">
+  <figure class="author">
+    <img
+      src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,c_fill,w_260,h_260,g_faces,c_fill/jason.af/jason-lengstorf-hat"
+      alt="Jason Lengstorf"
+    />
+    <figcaption>written by Jason Lengstorf</figcaption>
+  </figure>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar">
+  <div class="sticky-sidebar">
+    <div class="newsletter-nudge">
+      <p>
+        Hey, friends! I share posts like these regularly in my
+        newsletter.
+        <strong
+          >Sign up to get my best stuff direct to your inbox.</strong
+        >
+      </p>
+      <a href="#newsletter" class="button">I love stuff!</a>
+    </div>
+
+    <details class="table-of-contents" open>
+      <summary>Table of Contents</summary>
+
+      {{ content | toc | safe }}
+    </details>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "default.njk" %}
+
+{% block seo %}
+<title>I’ve written {{ collections.posts | length }} posts about how I stopped being such a dingus.</title>
+
+<link rel="canonical" href="{{site }}/{{slug}}/" />
+<meta name="description" content="{{description}}" />
+{% endblock %}
+
+{% block heading %}
+
+<div class="heading">
+  <h1>I’ve written {{ collections.posts | length }} posts about how I stopped being such a dingus.</h1>
+  <p class="lede">{{description}}</p>
+</div>
+
+{% endblock %}
+

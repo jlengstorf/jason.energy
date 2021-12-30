@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { Handler } from '@netlify/functions';
+import { Handler, builder } from '@netlify/functions';
 
 export type UsedItem = {
   id: string;
@@ -58,7 +58,7 @@ function parseNotionDatabase(data): UsedItem[] {
       id: result.id,
       name: name.title[0].plain_text,
       category: category.select.name,
-      tags: tags.multi_select.map(tag => tag.name),
+      tags: tags.multi_select.map((tag) => tag.name),
       details: notionRichTextToHTML(details.rich_text),
       link: link.url,
       sponsored: sponsored.checkbox,
@@ -66,7 +66,7 @@ function parseNotionDatabase(data): UsedItem[] {
   });
 }
 
-export const handler: Handler = async () => {
+export const handler: Handler = builder(async () => {
   const response = await fetch(
     'https://api.notion.com/v1/databases/bcd66ab9eb984975ab6765db391f7b8f/query',
     {
@@ -95,4 +95,4 @@ export const handler: Handler = async () => {
     statusCode: 200,
     body: JSON.stringify(items),
   };
-};
+});

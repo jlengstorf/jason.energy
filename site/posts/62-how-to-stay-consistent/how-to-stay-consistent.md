@@ -1,14 +1,15 @@
-export const meta = {
-    date: '2015-11-19',
-    title: 'Why Can’t I Stay Consistent?',
-    seo_title: 'Why can’t I stay consistent? How to keep a good thing going.',
-    slug: 'how-to-stay-consistent',
-    description: 'How can we make sure the things we care about most still get done, even when things get busy? Willpower isn’t enough; we need a routine to keep us on track.',
-    category: 'remote-productivity',
-    tags: ['motivation', 'planning', 'productivity', 'success'],
-    image: '/images/how-to-stay-consistent.jpg',
-    cta: 'work-happy',
-};
+---
+date: 2015-11-19
+title: Why Can’t I Stay Consistent?
+seo_title: Why can’t I stay consistent? How to keep a good thing going.
+slug: how-to-stay-consistent
+description: >
+  How can we make sure the things we care about most still get done, even when things get busy? Willpower isn’t enough; we need a routine to keep us on track.
+category: remote-productivity
+tags: [motivation, planning, productivity, success]
+image: /images/how-to-stay-consistent.jpg
+cta: work-happy
+---
 
 I've had trouble writing over the last few months. It's not writer's block, though; I haven't even been _trying_ to write.
 
@@ -16,20 +17,19 @@ It's been bumming me out, because writing makes me happy.
 
 I realized recently that I hadn't written anything in weeks. I knew I was screwing up. I was ignoring my own advice: I needed to [find time to do the things I care about](https://lengstorf.com/find-time).
 
-<PostImage>
-
-  ![How do I stay consistent?](./images/how-to-stay-consistent.jpg)
-
-</PostImage>
+{% figure %}
+![How do I stay consistent?](./images/how-to-stay-consistent.jpg)
+{% endfigure %}
 
 ## Why can't I stick to the things I want to do?
 
 What I was curious about, though, was _why_ I'd fallen off track. I didn't suddenly forget that I liked writing. I hadn't shifted focus away from writing. And I certainly hadn't forgotten the advice I was giving to other people: [_if it's important, do it every day_](https://lengstorf.com/do-it-every-day).
 
-The plan seemed simple enough: do a couple working blocks[^blocks] on my critical projects, then dedicate the last block to writing.
+The plan seemed simple enough: do a couple {% footnote id="blocks" %}working blocks{% endfootnote %} on my critical projects, then dedicate the last block to writing.
 
-[^blocks]:
-    A "working block" for me is typically 90 minutes of distraction-free time where I focus on one task. This is part of the [productivity strategy](https://lengstorf.com/scheduling-maximum-productivity) that lets me keep my working hours below 30 per week while tackling a full-time workload.
+{% footnoteText id="blocks" %}
+A "working block" for me is typically 90 minutes of distraction-free time where I focus on one task. This is part of the [productivity strategy](https://lengstorf.com/scheduling-maximum-productivity) that lets me keep my working hours below 30 per week while tackling a full-time workload.
+{% endfootnoteText %}
 
 So what was going wrong? Why was I failing to do something I both enjoy doing _and_ consider valuable to my happiness?
 
@@ -54,10 +54,11 @@ Researchers have found that [willpower is an exhaustible resource](http://www.ws
 
 As my day goes on, active demands pile up — no matter how small they are — and my willpower drains. By the time I've fought off my inner fatshit and dragged myself to the gym, stepped through the rest of my morning activities, settled in to work on my current project, and put in a solid few hours of programming, I just don't have enough willpower left to force myself to switch contexts and start writing.
 
-My creative brain gets tired faster than my programmer brain,[^variable] so after a couple programming blocks I'm too mentally tired for creative writing, but I still have plenty left in the tank for coding — **I was inadvertently sabotaging myself by trying to write later in the day.**
+{% footnote id="variable" %}My creative brain gets tired faster than my programmer brain,{% endfootnote %} so after a couple programming blocks I'm too mentally tired for creative writing, but I still have plenty left in the tank for coding — **I was inadvertently sabotaging myself by trying to write later in the day.**
 
-[^variable]:
-    The cognitive loads that demand more vary from person to person. I think I'm less taxed by the analytical processes because I have much more practice solving logical problems than creative ones. Someone who's been writing for decades and just picked up programming may feel exactly the opposite.
+{% footnoteText id="variable" %}
+The cognitive loads that demand more vary from person to person. I think I'm less taxed by the analytical processes because I have much more practice solving logical problems than creative ones. Someone who's been writing for decades and just picked up programming may feel exactly the opposite.
+{% endfootnoteText %}
 
 ### How does context fit into this?
 
@@ -75,7 +76,9 @@ Ten or fifteen minutes is plenty when I'm planning to go back to a similar conte
 
 So while I was coming into my third block with the right intentions, I was still thinking with my programmer brain, and that meant writing sounded worse than continuing to solve whatever problems I'd been working on in code for the last couple hours.
 
-> Further reading: [Scheduling for Maximum Productivity](https://lengstorf.com/scheduling-maximum-productivity)
+{% aside %}
+**Further reading:** [Scheduling for Maximum Productivity](https://lengstorf.com/scheduling-maximum-productivity)
+{% endaside %}
 
 ## Solving the problem
 
@@ -94,11 +97,9 @@ If I try to change the order — say brushing my teeth and flossing, then sittin
 
 However, I've never settled in, then _gotten out of bed_ to go get my phone. **The routine makes the right thing the easy thing.**
 
-<PostImage>
-
-  ![Make the right thing the easy thing.](./images/make-the-right-thing-the-easy-thing.jpg)
-
-</PostImage>
+{% figure %}
+![Make the right thing the easy thing.](./images/make-the-right-thing-the-easy-thing.jpg)
+{% endfigure %}
 
 This is because the routine takes away the active demands: _on the way_ to brush my teeth, I put my phone away for the night.
 
@@ -114,15 +115,17 @@ This is my first objective: **I need a writing trigger.**
 
 The two things I struggle most to stay consistent with are writing and going to the gym.
 
-These are both things that I like, and that make me feel good when I stay consistent with them. But they're also things that cause me discomfort.[^discomfort] So if I give myself an out, it's _very easy_ for me to take it — even though I know blowing off a workout or writing session will make me feel worse.
+These are both things that I like, and that make me feel good when I stay consistent with them. But they're also {% footnote id="discomfort" %}things that cause me discomfort.{% endfootnote %} So if I give myself an out, it's _very easy_ for me to take it — even though I know blowing off a workout or writing session will make me feel worse.
 
-[^discomfort]:
-    When I'm writing, I'm frustrated because the thought in my head that was so brilliant when I had the idea is falling flat because I can't string the right words together. In the gym, I'm cursing this do-squats-until-you-throw-up-or-pass-out workout because _OH GOD IT BURNS SO DEEP!_
+{% footnoteText id="discomfort" %}
+When I'm writing, I'm frustrated because the thought in my head that was so brilliant when I had the idea is falling flat because I can't string the right words together. In the gym, I'm cursing this do-squats-until-you-throw-up-or-pass-out workout because _OH GOD IT BURNS SO DEEP!_
+{% endfootnoteText %}
 
-I also know that there's a strong correlation between the number of hours I've been awake and the number of excuses I'll make to avoid things that aren't comfortable and easy for me. This is due to willpower fatigue.[^experiment]
+I also know that there's a strong correlation between the number of hours I've been awake and the number of excuses I'll make to avoid things that aren't comfortable and easy for me. {% footnote id="experiment" %}This is due to willpower fatigue.{% endfootnote %}
 
-[^experiment]:
-    In a [willpower experiment](http://www.opiniondynamics.com/2013/12/decision-fatigue/), two groups of people were asked to remember numbers. Group One was given a two-digit number; Group Two received a seven-digit number. After memorizing it, both groups were offered a snack: cake or fruit. The group that put more mental effort into memorizing a seven-digit number was almost _twice as likely_ to choose cake. The second group's will was broken by a single, medium-hard mental challenge. Our willpower is _frail_.
+{% footnoteText id="experiment" %}
+In a [willpower experiment](http://www.opiniondynamics.com/2013/12/decision-fatigue/), two groups of people were asked to remember numbers. Group One was given a two-digit number; Group Two received a seven-digit number. After memorizing it, both groups were offered a snack: cake or fruit. The group that put more mental effort into memorizing a seven-digit number was almost _twice as likely_ to choose cake. The second group's will was broken by a single, medium-hard mental challenge. Our willpower is _frail_.
+{% endfootnoteText %}
 
 Since both writing and working out present a challenge for my willpower, and my willpower is strongest in the morning, I can increase my chances of actually following through by scheduling them for the morning.
 
@@ -135,42 +138,43 @@ I set out a couple weeks ago to address my writing lapse. My plan was to come up
 1. Create a trigger habit for writing.
 2. Front-load writing to leverage my willpower.
 
-I've seen dozens of articles posted about "successful people"[^air-quotes] and their "morning rituals" — and promptly blew them off as fetishizing an Early Bird Gets the Worm mentality.
+I've seen dozens of articles posted about {% footnote id="air-quotes" %}"successful people" and their "morning rituals"{% endfootnote %} — and promptly blew them off as fetishizing an Early Bird Gets the Worm mentality.
 
-[^air-quotes]:
-    I'm demoting this claim to something that needs air-quotes to say out loud, because I don't believe that "powerful" or "rich" necessarily means "successful" — a millionaire CEO who can't get away from work long enough to spend time with their kids or enjoy the money they’re earning sounds more like a failure to me.
+{% footnoteText id="air-quotes" %}
+I'm demoting this claim to something that needs air-quotes to say out loud, because I don't believe that "powerful" or "rich" necessarily means "successful" — a millionaire CEO who can't get away from work long enough to spend time with their kids or enjoy the money they’re earning sounds more like a failure to me.
+{% endfootnoteText %}
 
-But between the inevitable Steve Jobs quote and 4:30am wake-up recommendation,[^early-bird] there's a pattern in these rituals:
+But between the inevitable Steve Jobs quote and {% footnote id="early-bird" %}4:30am wake-up recommendation,{% endfootnote %} there's a pattern in these rituals:
 
-[^early-bird]:
-    I want to make something perfectly clear: **I do not give a fuck what time you wake up.** I think time is a stupid thing to fixate on, and saying that someone who wakes up at 5am will be more successful than someone who wakes up at 10am is absurd. The early bird doesn't get the worm; _the bird that keeps showing up to do the work_ gets the worm. No matter what time of day it is.
+{% footnoteText id="early-bird" %}
+I want to make something perfectly clear: **I do not give a fuck what time you wake up.** I think time is a stupid thing to fixate on, and saying that someone who wakes up at 5am will be more successful than someone who wakes up at 10am is absurd. The early bird doesn't get the worm; _the bird that keeps showing up to do the work_ gets the worm. No matter what time of day it is.
+{% endfootnoteText %}
 
 **Most of these rituals involve doing things that most people struggle to do consistently _first thing in the morning_.**
 
-This is exciting, because it's anecdotal evidence that my theory is correct, and that I'll be able to meet my two objectives using a morning routine.[^sad]
+This is exciting, because it's anecdotal evidence that my theory is correct, and that {% footnote id="sad" %}I'll be able to meet my two objectives using a morning routine.{% endfootnote %}
 
-[^sad]:
-    It's also a little sad because — as usual — I've been staring at the answer for years in other people's success, and I just didn't bother to pay any attention until after I'd already gone through the hassle of reinventing the solution on my own.
+{% footnoteText id="sad" %}
+It's also a little sad because — as usual — I've been staring at the answer for years in other people's success, and I just didn't bother to pay any attention until after I'd already gone through the hassle of reinventing the solution on my own.
+{% endfootnoteText %}
 
 ### Building the routine
 
 With my objectives in mind, I went to work creating my own morning ritual. Here's what I'm currently doing each morning:
 
-- Wake up without an alarm[^alarm]
+- {% footnote id="alarm" %}Wake up without an alarm{% endfootnote %}
 - Spend a few minutes doing my blink-and-stare thing, then grab a coffee
-- Read a few articles to get my brain engaged[^articles]
+- Read a few articles to get my brain engaged
 - Open my laptop and write for about 90 minutes
 - Walk to the gym and work out
 - Head to breakfast with Marisa
 - Go home, shower, and start work on whatever is on my list for the day
 
-[^alarm]:
-    This is one of the biggest quality of life improvements I’ve made. I go to bed early (around 10 pm) and wake up without an alarm around 6 am feeling like a goddamn champion.
+{% footnoteText id="alarm" %}
+This is one of the biggest quality of life improvements I’ve made. I go to bed early (around 10 pm) and wake up without an alarm around 6 am feeling like a goddamn champion.
 
-    I know it's not an option for everyone, but if you can remove the alarm from your life, _do it._ When I wake up naturally, I have energy and I'm ready to get started.
-
-[^articles]:
-    I read industry blogs so I can at least pretend I understand what's happening in my professional field, and [imaginatively bizarre posts from McSweeney's](http://www.mcsweeneys.net/articles/its-decorative-gourd-season-motherfuckers) and its ilk to help kickstart my own creativity.
+I know it's not an option for everyone, but if you can remove the alarm from your life, _do it._ When I wake up naturally, I have energy and I'm ready to get started.
+{% endfootnoteText %}
 
 It's important to note that _the only thing that changed in my ritual was to add reading and writing before the gym_. Before, I'd wake up, have coffee, work out, and head to breakfast. Now I have coffee _and write_, then work out and head to breakfast.
 
@@ -218,10 +222,11 @@ I think it's worth mentioning that I didn't claim my routine is working _because
 
 It doesn't matter _what_ I'm doing. **What matters is that I've organized the things I consider important into an order that works _for me_** in a way that leverages _my own daily rhythms_.
 
-I'm more creative in the mornings, and writing is harder for me than coding. A workout gives me energy that carries me through the day. A slow breakfast with my partner keeps me relaxed and lets us spend time together before we start working.[^ignoring-you]
+I'm more creative in the mornings, and writing is harder for me than coding. A workout gives me energy that carries me through the day. A slow breakfast with my partner keeps me relaxed and lets us spend time together {% footnote id="ignoring-you" %}before we start working.{% endfootnote %}
 
-[^ignoring-you]:
-    The people watching us work in a coffee shop probably think we're the worst: "Jesus, those two haven't even _looked_ at each other since they sat down. Just threw on headphones and opened their laptops. You see?! _This_ is what's wrong with our culture, Miriam! _This_ is why everything is in the shitter! People don't talk anymore!"
+{% footnoteText id="ignoring-you" %}
+The people watching us work in a coffee shop probably think we're the worst: "Jesus, those two haven't even _looked_ at each other since they sat down. Just threw on headphones and opened their laptops. You see?! _This_ is what's wrong with our culture, Miriam! _This_ is why everything is in the shitter! People don't talk anymore!"
+{% endfootnoteText %}
 
 But this works for me because it is specifically built for me. If I tried to adopt some millionaire CEO's morning routine, I'd be miserable.
 

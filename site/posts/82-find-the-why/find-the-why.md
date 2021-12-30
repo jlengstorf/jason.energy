@@ -1,37 +1,34 @@
-export const meta = {
-  date: '2018-01-19',
-  title:
-    'Find the Why: Uncovering the (Sometimes Hidden) Reasons We Do the Things We Do',
-  slug: 'find-the-why',
-  description: `
-    Underneath the things we do, there are almost always deeper reasons. In 
-    order to make the best decisions and live the best life, we should figure 
-    out what they are.
-  `,
-  category: 'happiness',
-  tags: ['success', 'motivation'],
-  image: './images/find-the-why.jpg',
-  cta: 'default',
-};
+---
+date: 2018-01-19
+title: >
+  Find the Why: Uncovering the (Sometimes Hidden) Reasons We Do the Things We Do
+slug: find-the-why
+description: >
+  Underneath the things we do, there are almost always deeper reasons. In 
+  order to make the best decisions and live the best life, we should figure 
+  out what they are.
+category: happiness
+tags: [success, motivation]
+image: ./images/find-the-why.jpg
+cta: default
+---
 
-In some of my [previous](/right-thing-easy-thing) [posts](https://lengstorf.com/balance-for-first-year-entrepreneurs), I use the phrase **“Find the Why”**[^prior-art] as a kind of shorthand for the process of digging deeper into our behaviors, feelings, and ideas to figure out what’s _really_ going on: how we react to events, the way we behave at work and with friends, our fears and habits and vices — all of them have an underlying Why.
-≈
-[^prior-art]: This isn’t a new or novel concept: the [Five Whys](http://www.startuplessonslearned.com/2008/11/five-whys.html) was put into practice by Toyota many years ago; companies were conducting [root cause analyses](https://smartbear.com/learn/performance-monitoring/what-is-root-cause-analysis/) for decades. This article is my interpretation of a widely used practice for ensuring that problems are solved for realsies.
+In some of my [previous](/right-thing-easy-thing) [posts](https://lengstorf.com/balance-for-first-year-entrepreneurs), I use the phrase **“Find the Why”** as a kind of shorthand for the process of digging deeper into our behaviors, feelings, and ideas to figure out what’s _really_ going on: how we react to events, the way we behave at work and with friends, our fears and habits and vices — all of them have an underlying Why.
 
-In this post, I want to unpack what I mean by that, and offer up **a framework for Finding the Why on your own.** This is a framework we can use to build a deeper understanding of _why_ we are the way we are.
+{% aside %}
+**Heads up!** This isn’t a new or novel concept: the [Five Whys](http://www.startuplessonslearned.com/2008/11/five-whys.html) was put into practice by Toyota many years ago; companies have been conducting [root cause analyses](https://smartbear.com/learn/performance-monitoring/what-is-root-cause-analysis/) for decades.
+{% endaside %}
+
+In this post, I want to unpack what I mean by that, and offer up **a framework for Finding the Why on your own.** This is a framework we can use to build a deeper understanding of _why_ we are the way we are. (And, hopefully, a process by which we can be more certain that problems are solved for realsies.)
 
 **When we Find the Why, we take back control of our behavior.**
 
-<PostImage
-  creditLink="https://pixabay.com/en/users/TeroVesalainen-809550/"
+{% figure
+  creditLink="https://pixabay.com/en/users/TeroVesalainen-809550/",
   credit="Tero Vesalainen"
->
-
-
+%}
 ![Find the Why.](images/find-the-why.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 ## Why Is Finding the Why Important?
 
@@ -53,18 +50,14 @@ By taking the time to examine the underlying causes of problems, we gain subtle 
 
 There are a few people I work with on a daily basis who stress me out just to be around. Their entire existence, as far as I can tell, is spent careening from one fire to the next, desparately trying to stay on top of an endless stream of fire drills.
 
-<PostImage
-  align="right"
-  caption="No matter how fast you grab ’em, those chocolates will keep coming."
-  creditLink="http://www.cbs.com/shows/i_love_lucy/"
+{% figure
+  align="right",
+  caption="No matter how fast you grab ’em, those chocolates will keep coming.",
+  creditLink="http://www.cbs.com/shows/i_love_lucy/",
   credit="CBS / I Love Lucy"
->
-
-
-![Overwhelmed Lucille Ball at the conveyor belt.](images/lucy.gif)
-
-</PostImage>
-
+%}
+![Overwhelmed Lucille Ball at the conveyor belt.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640827704/jason.af/lucy.gif)
+{% endfigure %}
 
 This is a **reactive approach**, and it’s basically a waking nightmare: the world is constantly happening _to you_. Chaos reigns, and every problem is a surprise.
 
@@ -97,17 +90,21 @@ Had we instead looked at these as unique technical, tooling, and interpersonal p
 
 When people start working with nutritionists or dieticians, a really common first step is to ask them to write down everything they eat throughout the day. And in many cases, this simple act causes people to make improvements in their diet.
 
-I ask something similar of myself and the people I coach: take note of where your time goes during the day.[^productivity]
+I ask something similar of myself and the people I coach: {% footnote id="productivity" %}take note of where your time goes during the day.{% endfootnote %}
 
-[^productivity]: If you’re interested, I have a whole write-up on [how I keep myself productive](https://lengstorf.com/scheduling-maximum-productivity) that goes into more detail on this.
+{% footnoteText id="productivity" %}
+If you’re interested, I have a whole write-up on [how I keep myself productive](https://lengstorf.com/scheduling-maximum-productivity) that goes into more detail on this.
+{% endfootnoteText %}
 
 **When we’re paying attention, we tend to make better choices.**
 
 If we take the time to Find the Why behind our problems, we’re able to notice when something has the potential to become problematic.
 
-If you’ve ever burned out an electric motor,[^juicer] you probably now know that there are certain sounds and smells that mean something’s about to go horribly wrong. By recognizing that, you’re able to turn off the machine _before_ an expensive failure happens.
+If you’ve ever {% footnote id="juicer" %}burned out an electric motor,{% endfootnote %} you probably now know that there are certain sounds and smells that mean something’s about to go horribly wrong. By recognizing that, you’re able to turn off the machine _before_ an expensive failure happens.
 
-[^juicer]: I mean, _I’ve_ never done that, of course, but I have this friend who is _definitely not me_ that may have tried to cram a few too many carrots into a juicer and learned _all about_ the intricacies of its manufacturer warranty.
+{% footnoteText id="juicer" %}
+I mean, _I’ve_ never done that, of course, but I have this friend who is _definitely not me_ that may have tried to cram a few too many carrots into a juicer and learned _all about_ the intricacies of its manufacturer warranty.
+{% endfootnoteText %}
 
 Sometimes paying attention is all it takes to eliminate problems.
 
@@ -119,7 +116,7 @@ As with most things, there’s no foolproof formula or ironclad process; every s
 
 At arm’s length, this may seem like an obvious statement, but it’s important to keep in mind that we exist in a culture of [self-destructive work ethic](https://lengstorf.com/overkill-cult) and [unhealthy commitment to our own ideas](https://lengstorf.com/labels): when we’re in the middle of a project, our instinct may be to just power through.
 
-<PostTweetBox quote="When you hit a wall, sometimes it makes sense to plow through it. But most of the time there’s a solution that hurts less." />
+{% tweet postUrl="{{site}}/{{slug}}/" %}When you hit a wall, sometimes it makes sense to plow through it. But most of the time there’s a solution that hurts less.{% endtweet %}
 
 Before you put your head down and try to smash it through whatever the problem is, take a beat and try to get a sense of what you’re up against.
 
@@ -151,19 +148,20 @@ If you asked [Taiichi Ohno](https://en.wikipedia.org/wiki/Taiichi_Ohno) how to F
 5.  **Why was there a lack of clarity?** The team wasn’t included in the
     planning process.
 
-In this example, what initially looks like a performance problem (missed deadlines) may actually be caused by poor communication and planning.[^caveat]
+In this example, what initially looks like a performance problem (missed deadlines) may actually be caused by poor communication and planning.
 
-[^caveat]:
-    The catch with this approach is that different people will get different answers. If this team has a particularly disfunctional management chain, it could have gone more like this:
+{% aside "spicy" %}
+The catch with this approach is that different people will get different answers. If this team has a particularly dysfunctional management chain, it could have gone more like this:
 
-    1. **Why was it late?** The team screwed around and missed the deadline.
-    2. **Why did they screw around?** Because they’re nerds who secretly hate me
-       and waste their whole day on YouTube or something.
-    3. **Why do they spend their days on YouTube?** Because they’re stupid
-       _nerds!_
-    4. **Why are they nerds?** Why all the questions, nerd?
+1. **Why was it late?** The team screwed around and missed the deadline.
+2. **Why did they screw around?** Because they’re nerds who secretly hate me
+   and waste their whole day on YouTube or something.
+3. **Why do they spend their days on YouTube?** Because they’re stupid
+   _nerds!_
+4. **Why are they nerds?** Why all the questions, nerd?
 
-    It’s a tool. Tools can be misused. Use your judgment.
+It’s a tool. Tools can be misused. Use your judgment.
+{% endaside %}
 
 ### 5. Keep asking until you’ve reached the deepest reason you can control.
 
@@ -177,16 +175,12 @@ Going back to the example where I’m having a bad day, maybe I find a chain of 
 
 In this chain, the cause of my grumpiness is that I feel like I lost the whole day to meetings. The final cause — that people keep inviting me to meetings — appears to be the root cause, but it’s beyond my control: I don’t control other people, so how can I stop them from inviting me to meetings?
 
-<PostImage
-  caption="Only the things inside the circle are worth your effort."
+{% figure
+  caption="Only the things inside the circle are worth your effort.",
   credit="Jason Lengstorf"
->
-
-
+%}
 ![Things I can control.](images/things-i-can-control.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 If I take one step back, however, I _showed up to those meetings_. This is within my control, so I can ask a new set of questions:
 
@@ -194,18 +188,19 @@ If I take one step back, however, I _showed up to those meetings_. This is withi
 - **Why?** Because I had a buttload of meetings on my schedule.
 - **Why?** Because I accepted every meeting invite, even if they were
   irrelevant to my work.
-- **Why?** Because I didn’t want to seem rude by declining.[^rabbithole]
+- **Why?** Because I didn’t want to seem rude by declining.
 
-[^rabbithole]:
-    Beware the rabbit hole here. You can _always_ go deeper, but there’s a point of diminishing returns.
+{% aside %}
+Beware the rabbit hole here. You can _always_ go deeper, but there’s a point of diminishing returns.
 
-    Why don’t I want to seem rude? Because I’m worried it’ll get me fired. Why? Because I have self-worth issues. Why? Because I [feel like a phony](https://lengstorf.com/not-a-phony) sometimes. Why? Because...
+Why don’t I want to seem rude? Because I’m worried it’ll get me fired. Why? Because I have self-worth issues. Why? Because I [feel like a phony](https://lengstorf.com/not-a-phony) sometimes. Why? Because...
 
-    After a certain point, the “deeper cause” becomes so general — e.g. “I don’t value myself” — that it’s almost a symptom in itself. This is a problem with asking subjective questions: they allow you to talk yourself in a circle if you don’t choose a logical stopping point.
+After a certain point, the “deeper cause” becomes so general — e.g. “I don’t value myself” — that it’s almost a symptom in itself. This is a problem with asking subjective questions: they allow you to talk yourself in a circle if you don’t choose a logical stopping point.
 
-    Because — get ready for this — **why don’t I value myself?** Because I let people abuse my time, _which they often do by scheduling too many fucking meetings_.
+Because — get ready for this — **why don’t I value myself?** Because I let people abuse my time, _which they often do by scheduling too many fucking meetings_.
 
-    If you chase any strand of logic far enough, you’ll eventually [end up staring at the back of your own head](https://science.howstuffworks.com/dictionary/astronomy-terms/space-shape2.htm).
+If you chase any strand of logic far enough, you’ll eventually [end up staring at the back of your own head](https://science.howstuffworks.com/dictionary/astronomy-terms/space-shape2.htm).
+{% endaside %}
 
 Now that I’ve explored this new line of questioning, there’s a new potential root cause: I’m accepting meetings even when I shouldn’t be.
 
@@ -219,9 +214,11 @@ If we dig too deep, we end up with problems that are either so broad they’re n
 
 Even though it can be frustrating, stressful, or even frightening to Find the Why, there have been few things that improved my life more dramatically than adopting this as a core strategy for being alive.
 
-If something makes me angry or sad, digging deeper helps me find a healthy and/or productive way to process that emotion.[^destructive] If I’m stressed and irritable, I can dig deeper and figure out where that stress is coming from and how to address it. If something goes wrong at work, I look for deeper patterns that will prevent it from ever happening again, rather than just putting out the fire and pointing fingers at someone else.
+If something makes me angry or sad, digging deeper helps me find a {% footnote id="destructive" %}healthy and/or productive way to process that emotion.{% endfootnote %} If I’m stressed and irritable, I can dig deeper and figure out where that stress is coming from and how to address it. If something goes wrong at work, I look for deeper patterns that will prevent it from ever happening again, rather than just putting out the fire and pointing fingers at someone else.
 
-[^destructive]: This is a big change; I used to respond to strong emotion by verbally abusing the people around me to vent and/or eating pizza and ice cream until I couldn’t feel feelings anymore.
+{% footnoteText id="destructive" %}
+This is a big change; I used to respond to strong emotion by verbally abusing the people around me to vent and/or eating pizza and ice cream until I couldn’t feel feelings anymore.
+{% endfootnoteText %}
 
 **After I learned to Find the Why, I became a happier, healthier, less volatile person.** (Or, as many of my friends would put it: “He’s less of a dick now.”)
 

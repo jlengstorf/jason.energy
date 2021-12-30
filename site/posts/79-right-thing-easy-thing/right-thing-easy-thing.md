@@ -1,31 +1,32 @@
-export const meta = {
-  date: '2017-02-10',
-  title: 'Make the Right Thing the Easy Thing: Better Choices by Default',
-  slug: 'right-thing-easy-thing',
-  description: 'Why is it — even though we KNOW what’s right — we often end up taking shortcuts and doing the wrong thing? Here’s how to be your best self, every time.',
-  category: 'remote-productivity',
-  tags: ['failure', 'motivation', 'success'],
-  image: './images/quality-vs-convenience.jpg',
-  cta: 'work-happy',
-};
+---
+date: 2017-02-10
+title: >
+  Make the Right Thing the Easy Thing: Better Choices by Default
+slug: right-thing-easy-thing
+description: >
+  Why is it — even though we KNOW what’s right — we often end up taking shortcuts and doing the wrong thing? Here’s how to be your best self, every time.
+category: remote-productivity
+tags: [failure, motivation, success]
+image: ./images/quality-vs-convenience.jpg
+cta: work-happy
+---
 
-For a year or so, I lived on the top floor of a fancy building in Portland's Pearl District.[^yuppie]
+For a year or so, I lived on the top floor of a fancy building in {% footnote id="pearl" %}Portland's Pearl District.{% endfootnote %}
+
+{% footnoteText id="pearl" %}
+The Pearl, as far as I can tell, is where people who've just moved to Portland go because they're convinced that all the cool stuff in Portland is there. Then, after a year, they move to the east side because they've realized that the Pearl is where the more expensive copies of the cool stuff end up.
+
+This story is from my days of paying way too much for things so I could be "where the action is".
+{% endfootnoteText %}
 
 This place was _dope_: giant balcony, concrete floors and walls for soundproofing, a 24-hour concierge — this was the kind of place where I signed the lease and thought, "Clearly I've now arrived, and Jay-Z will be calling any minute to discuss how our lives are very different but equally awesome."
 
-[^yuppie]:
-    The Pearl, as far as I can tell, is where people who've just moved to Portland go because they're convinced that all the cool stuff in Portland is there. Then, after a year, they move to the east side because they've realized that the Pearl is where the more expensive copies of the cool stuff end up.
-
-    This story is from my days of paying way too much for things so I could be "where the action is".
-
-<PostImage
-  caption="If you can see past my buckets of class, this is the view from the apartment we’re talking about right now."
+{% figure
+  caption="If you can see past my buckets of class, this is the view from the apartment we’re talking about right now.",
   credit="Chris Forbes"
->
-
-  ![Jason Lengstorf on a balcony at night drinking beer.](./images/phototrash-chris-forbes.jpg)
-
-</PostImage>
+%}
+![Jason Lengstorf on a balcony at night drinking beer.](./images/phototrash-chris-forbes.jpg)
+{% endfigure %}
 
 But there was a catch. **I was scared to take out my recycling.**
 
@@ -45,16 +46,14 @@ But also, who’s going to change out of pajama pants and put on shoes just to g
 
 I _did_ make an effort — at least at first. But after a while, I rationalized it: _There's probably someone who sorts the trash anyways, right? I'm creating jobs! I'm a goddamned American hero!_
 
-<PostImage
-  align="right"
-  caption="“Listen: you <em>never</em> know when your commute can turn into an off-road adventure, okay?”"
-  creditLink="https://commons.wikimedia.org/wiki/User:Thomas_doerfer"
+{% figure
+  align="right",
+  caption="“Listen: you <em>never</em> know when your commute can turn into an off-road adventure, okay?”",
+  creditLink="https://commons.wikimedia.org/wiki/User:Thomas_doerfer",
   credit="Thomas Doerfer"
->
-
-  ![Hummer H2.](./images/hummer.jpg)
-
-</PostImage>
+%}
+![Hummer H2.](./images/hummer.jpg)
+{% endfigure %}
 
 **Eventually I just started taking out the boxes late at night in hopes I wouldn't see anyone in the hallway.** I'd be safe from judging eyes. Eyes that would see me stuffing recyclables into the trash chute like one of _those_ people — you know the type — who drives a Hummer with vanity plates that say ERTHFKR and tosses styrofoam cups out the window like confetti in a parade.
 
@@ -62,10 +61,11 @@ I _did_ make an effort — at least at first. But after a while, I rationalized 
 
 Why would I consciously accept guilt and shame just to save myself a couple minutes of inconvenience?
 
-I could — and did — blame the building for its lack of forethought in designing the trash rooms.[^leed]
+I could — and did — {% footnote id="leed" %}blame the building{% endfootnote %} for its lack of forethought in designing the trash rooms.
 
-[^leed]:
-    "You're going to call yourself a [LEED Platinum](https://www.usgbc.org/leed) building and not even have a recycling chute? Who’s running this clown show?!"
+{% footnoteText id="leed" %}
+"You're going to call yourself a [LEED Platinum](https://www.usgbc.org/leed) building and not even have a recycling chute? Who’s running this clown show?!"
+{% endfootnoteText %}
 
 I could — and did — come up with numerous other excuses: this was a failure of the management! the system! humanity in general!
 
@@ -73,24 +73,16 @@ But, despite my rationalization, this was _my_ failure. **I could have done the 
 
 Less obviously, though, is something more interesting: **this was a _completely predictable_ failure.**
 
-<PostImage>
-
-  ![Quality vs. convenience.](./images/quality-vs-convenience.jpg)
-
-</PostImage>
+{% figure %}
+![Quality vs. convenience.](./images/quality-vs-convenience.jpg)
+{% endfigure %}
 
 ### In the long run, convenience always wins.
 
 The frustrating trend in my life is that **I will nearly always end up doing the most convenient thing.**
 
-* Despite [all the shit I talk about great coffee](https://lengstorf.com/taste-doesnt-matter), given a choice between instant coffee[^airbnb] at home and walking 35 minutes in oppressive heat for a really good cup of coffee, most mornings I'd end up making the instant coffee.
-* Even though I've seen the documentaries and read the studies, after a particularly stressful day I'd go to a McDonald's in Japan instead of a local restaurant because I didn't have to think about the menu.[^mcdonalds]
-
-[^airbnb]:
-    Despite [my love for Airbnb](https://lengstorf.com/use-airbnb-like-a-pro/), you can always count on two things when you check in: utterly terrible instant coffee and all-IKEA everything.
-
-[^mcdonalds]:
-    Even though I was there, and I remember making the decision to do this, I'm still kind of outraged about it. Japan is easily top 3 places in the world for food, but somehow I decided Japanese menus were "too hard" and ordered a dang Big Mac instead. _What the hell is wrong with me?_
+- Despite [all the shit I talk about great coffee](https://lengstorf.com/taste-doesnt-matter), given a choice between instant coffee at home and walking 35 minutes in oppressive heat for a really good cup of coffee, most mornings I'd end up making the instant coffee.
+- Even though I've seen the documentaries and read the studies, after a particularly stressful day I'd go to a McDonald's in Japan instead of a local restaurant because I didn't have to think about the menu.
 
 This list could go on for days — I have dozens of examples of me making poor-but-convenient decisions, and I don't expect that this is a trend that will stop any time soon.
 
@@ -102,22 +94,20 @@ Of course not. But **we have to start looking at the problem differently.**
 
 In each of these situations where I did the wrong thing:
 
-* **I was completely aware of what the right thing was**
-* I logically understood that **I _wanted_ to do the right thing**, and that the right thing would make me happier
-* I also knew that **I'd feel shame and/or guilt about doing the wrong thing**
+- **I was completely aware of what the right thing was**
+- I logically understood that **I _wanted_ to do the right thing**, and that the right thing would make me happier
+- I also knew that **I'd feel shame and/or guilt about doing the wrong thing**
 
 And yet **I did the wrong thing anyways.**
 
-<PostImage
-  align="right"
-  caption="This doesn’t help."
-  creditLink="http://www.cc.com/shows/futurama"
+{% figure
+  align="right",
+  caption="This doesn’t help.",
+  creditLink="http://www.cc.com/shows/futurama",
   credit="Futurama"
->
-
-  ![You’re bad and you should feel bad.](./images/zoidberg-bad-feel-bad.jpg)
-
-</PostImage>
+%}
+![You’re bad and you should feel bad.](./images/zoidberg-bad-feel-bad.jpg)
+{% endfigure %}
 
 I could chalk this up to me being a weak person with shitty willpower, but that's not particularly productive. But if we look a little deeper and [Find The Why](/find-the-why/) another, more useful thread shows up: **these decisions are born out of convenience, not ignorance or malice.**
 
@@ -129,10 +119,11 @@ I'm not choosing McDonald's over a local izakaya because I prefer fake cheese an
 
 The fact that people default to convenience over doing the right thing might sound discouraging at first, but it's actually great news.
 
-**It means people aren't stupid or cruel; they're just lazy.**[^stupid]
+{% footnote id="cruel" %}It means people aren't stupid or cruel; they're just lazy.{% endfootnote %}
 
-[^stupid]:
-    Well, let me back that off a bit: many of the choices we would potentially chalk up to stupidity or cruelty can be chalked up to mere laziness. But that doesn't mean that some people aren't _also_ stupid and/or cruel.
+{% footnoteText id="cruel" %}
+Well, let me back that off a bit: many of the choices we would potentially chalk up to stupidity or cruelty can be chalked up to mere laziness. But that doesn't mean that some people aren't _also_ stupid and/or cruel.
+{% endfootnoteText %}
 
 So if we're aiming to change behavior — whether it's our own behavior or the behavior of other people — we don't need to convince them that something is The Right Thing To Do.
 
@@ -159,14 +150,15 @@ I'd argue that [cigarette use in the U.S. has declined](https://www.lung.org/our
 1. People will openly scold you for smoking now.
 2. It's _really fucking hard_ to find a place to smoke.
 
-In the past, everyone smoked and smoking was allowed everywhere — it was _easy_ to become a smoker. These days, it's so inconvenient to develop the habit that it’s far easier to just not bother at all.[^cigarettes]
+In the past, everyone smoked and smoking was allowed everywhere — it was _easy_ to become a smoker. These days, it's so inconvenient to develop the habit that {% footnote id="cigarettes" %}it’s far easier to just not bother at all.{% endfootnote %}
 
-[^cigarettes]:
-    This is 100% [anecdata](https://www.dictionary.com/browse/anecdata) — I have no idea what factor, if any, the inconvenience of smoking has played in its decline. I do know that in my case, I quit smoking because it became far too inconvenient to keep it up.
+{% footnoteText id="cigarettes" %}
+This is 100% [anecdata](https://www.dictionary.com/browse/anecdata) — I have no idea what factor, if any, the inconvenience of smoking has played in its decline. However, I _do_ know that I quit smoking because it became far too inconvenient.
 
-    When I played in a band, half or more of the people I met smoked. I slipped into the habit, and I became a pretty heavy smoker.
+When I played in a band, half or more of the people I met smoked. I slipped into the habit, and I became a pretty heavy smoker.
 
-    Then the band broke up. Continuing to smoke would mean regularly interrupting my workflow to go outside and smoke — where I'd get dirty looks from people on the street — then come back inside and get yelled at by my girlfriend for smelling bad. I quit for _entirely_ convenient reasons; health never even entered the conversation.
+Then the band broke up. Continuing to smoke would mean regularly interrupting my workflow to go outside and smoke — where I'd get dirty looks from people on the street — then come back inside and get yelled at by my girlfriend for smelling bad. I quit for _entirely_ convenient reasons; health never even entered the conversation.
+{% endfootnoteText %}
 
 ### A real example: electric cars in Costa Rica.
 
@@ -174,15 +166,13 @@ Monica Araya is working to get Costa Rica off fossil fuels entirely. But she's n
 
 Instead, she's working to make electric cars cheaper than gas-powered cars.
 
-<PostImage
-  creditType="Credit"
-  creditLink="https://www.ted.com/talks/monica_araya_a_small_country_with_big_ideas_to_get_rid_of_fossil_fuels"
+{% figure
+  creditType="Credit",
+  creditLink="https://www.ted.com/talks/monica_araya_a_small_country_with_big_ideas_to_get_rid_of_fossil_fuels",
   credit="TED / Monica Araya"
->
-
-  ![Monica Araya giving a TED Talk.](./images/monica-araya.jpg)
-
-</PostImage>
+%}
+![Monica Araya giving a TED Talk.](./images/monica-araya.jpg)
+{% endfigure %}
 
 **If she succeeds, Costa Rica will become the [first country to completely eliminate fossil fuels](https://www.ted.com/talks/monica_araya_a_small_country_with_big_ideas_to_get_rid_of_fossil_fuels).** Not because it's the right thing to do (it is), but because Monica Araya realizes that most people will do the easy thing by default. If electric cars are the easiest and cheapest option, electric cars win.
 
@@ -196,10 +186,11 @@ Here are a few ways I'm trying to Make The Right Thing The Easy Thing in my own 
 
 3.  **Remove the temptation altogether.** I don't keep snack food in my house. I know that if I have access to a bag of chips, I will eat that bag of chips. Not because I want it, but because it's there.
 
-4.  **Make it hard to procrastinate.** To keep myself from going off-task, I kill all notifications and [turn on FocusTime](https://www.rescuetime.com/rp/jlengstorf/focustime) so that I can't even _load_ Twitter, let alone use it to put off doing work.[^nuclear]
+4.  **Make it hard to procrastinate.** To keep myself from going off-task, I kill all notifications and [turn on FocusTime](https://www.rescuetime.com/rp/jlengstorf/focustime) so that I can't even _load_ Twitter, let alone use it to put off doing work.
 
-[^nuclear]:
-    Or, if you want to get _really_ serious, you can [schedule distraction-free time in advance](https://zapier.com/app/editor/template/5874?selected_apis=RescueTimeDevAPI,ScheduleAPI) — what my friend Nate calls [Nuclear Mode](https://nategreen.org/self-discipline/).
+{% aside "spicy" %}
+**Hot tip:** if you want to get _really_ serious, you can [schedule distraction-free time in advance](https://zapier.com/app/editor/template/5874?selected_apis=RescueTimeDevAPI,ScheduleAPI) — what my friend Nate calls [Nuclear Mode](https://nategreen.org/self-discipline/).
+{% endaside %}
 
 ## How will you make the right thing the easy thing?
 

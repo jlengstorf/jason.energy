@@ -1,47 +1,41 @@
-export const meta = {
-  date: '2016-09-28',
-  type: 'blog',
-  title: 'Why you should never feel guilty about “wasting time”.',
-  seo_title: 'Why you should never feel guilty about “wasting time”.',
-  slug: 'wasted-time',
-  description: 'If you worry that trying new ideas might be “wasted time”, consider this: I lived in a van and wore eyeliner for two years — and I owe my career to it.',
-  category: 'motivation',
-  tags:[
-    'confidence',
-    'failure',
-    'fear',
-    'learning',
-    'success',
-  ],
-  image: './images/play-it-safe.jpg',
-  cta: 'focus',
-};
+---
+date: 2016-09-28
+title: Why you should never feel guilty about “wasting time”.
+seo_title: Why you should never feel guilty about “wasting time”.
+slug: wasted-time
+description: >
+  If you worry that trying new ideas might be “wasted time”, consider this: I lived in a van and wore eyeliner for two years — and I owe my career to it.
+category: motivation
+tags: [confidence, failure, fear, learning, success]
+image: ./images/play-it-safe.jpg
+cta: focus
+---
 
 In high school I wanted to be a rockstar.
 
-In the pursuit of that goal, I eventually managed to drop out of college, become more or less unemployable,[^unemployable] ruin most of my relationships, and — most notably — _utterly fail_ to become a rockstar.
+In the pursuit of that goal, I eventually managed to drop out of college, become {% footnote id="unemployable" %}more or less unemployable,{% endfootnote %} ruin most of my relationships, and — most notably — _utterly fail_ to become a rockstar.
 
-[^unemployable]:
-    "Yeah, hi, can I work here for two weeks, then have three weeks off, then work here for, like, two more weeks before I leave again?"
+{% footnoteText id="unemployable" %}
+"Yeah, hi, can I work here for two weeks, then have three weeks off, then work here for, like, two more weeks before I leave again?"
+{% endfootnoteText %}
 
 It might be tempting to consider 2004–2007 "wasted time".
 
-After all, I set out with a goal to make a living as a musician. And despite hundreds of days touring the country, living in a van, and making ramen in styrofoam cups,[^broke] after a few years the band broke up — and I was nowhere near a professional musician.
+After all, I set out with a goal to make a living as a musician. And despite hundreds of days touring the country, living in a van, and {% footnote id="broke" %}making ramen in styrofoam cups,{% endfootnote %} after a few years the band broke up — and I was nowhere near a professional musician.
 
-[^broke]:
-    I learned that gas stations won't charge for cups full of hot water while living off about $60/month (earned by working for a week or so in a minimum wage job that I knew wouldn't call my references) and the charity of others.
+{% footnoteText id="broke" %}
+I learned that gas stations won't charge for cups full of hot water while living off about $60/month (earned by working for a week or so in a minimum wage job that I knew wouldn't call my references) and the charity of others.
 
-    We couldn't afford hotel rooms, so we begged from the stage for living room floor space to sleep on. If that failed we'd sleep in Walmart parking lots or on sticky venue floors.
+We couldn't afford hotel rooms, so we begged from the stage for living room floor space to sleep on. If that failed we'd sleep in Walmart parking lots or on sticky venue floors.
 
-    We ate _so much_ gas station ramen.
+We ate _so much_ gas station ramen.
+{% endfootnoteText %}
 
 And yet, I would never call that time wasted. In fact, **those "wasted" years were a critically important step in my early journey toward building a successful career.**
 
-<PostImage creditLink="http://tysonvick.com" credit="Tyson Vick">
-
-  ![MinusMyThoughts.](./images/minusmythoughts.jpg)
-
-</PostImage>
+{% figure creditLink="http://tysonvick.com", credit="Tyson Vick" %}
+![MinusMyThoughts.](./images/minusmythoughts.jpg)
+{% endfigure %}
 
 ## What did you learn?
 
@@ -49,28 +43,24 @@ Trying to make it as a musician threw me into the deep end of several new skill 
 
 I wasn't just a musician; I was a promoter, a manager, a designer, an accountant, and a dozen other jobs we couldn't afford to pay someone else to do for us. We needed shows booked, and t-shirts made, and payments negotiated (and collected). Equipment needed repairs and replacement. Concert posters needed to be designed and printed and mailed to people — and those people needed to be convinced to hang them up around town.
 
-<PostImage
-  align="right"
-  caption="One of my early design projects: a CD cover for a demo recording."
+{% figure
+  align="right",
+  caption="One of my early design projects: a CD cover for a demo recording.",
   credit="Jason Lengstorf"
->
-
-  ![Serenade in Shortwave EP — MinusMyThoughts.](./images/serenade-in-shortwave.jpg)
-
-</PostImage>
+%}
+![Serenade in Shortwave EP — MinusMyThoughts.](./images/serenade-in-shortwave.jpg)
+{% endfigure %}
 
 **Even though I was failing to make it big as a musician, I was gaining a lot of valuable information**: I liked the business part of the experience; I really enjoyed designing posters and building websites; I wasn't terrible at promotion and [sales](https://lengstorf.com/how-to-sell-without-selling).
 
 I also learned to rely on myself; each day on the road was [sink or swim](https://lengstorf.com/set-yourself-on-fire). And despite the frustration and near-hopelessness of it, I found that I deeply enjoyed the attempt at taking an unknown, generally unimpressive entity (my emo band) and trying to get people to support us with downloads and dollars.
 
-<PostImage
-  caption="What you learn for one task will also help you in others."
+{% figure
+  caption="What you learn for one task will also help you in others.",
   credit="Jason Lengstorf"
->
-
-  ![Learn it once. Profit for life.](./images/skill-crossover.jpg)
-
-</PostImage>
+%}
+![Learn it once. Profit for life.](./images/skill-crossover.jpg)
+{% endfigure %}
 
 ## The skills we learn cross over to other areas
 
@@ -80,21 +70,9 @@ Convincing someone to buy an album or a t-shirt is awfully similar to selling we
 
 Collecting payment from a broke promoter when my options were A) I get $100 for gas money, or B) I live in Tucson now — that was a _stellar_ crash-course on chasing down overdue invoices.
 
-Learning to customize my band's MySpace page started me down the path toward what I do for a living today.[^myspace]
-
-[^myspace]:
-    MySpace was the Facebook of yore, for all you youngins.
+Learning to customize my band's MySpace page started me down the path toward what I do for a living today.
 
 In light of that, it's hard to call my musical pipe dreams "wasted time". Instead, **that so-called "wasted" time was more of a roundabout discovery process, during which I learned about things I liked and/or was good at** (e.g. business, design, [travel](https://lengstorf.com/remote-work-travel), challenging environments), and things I didn't like so much and/or was terrible at (e.g. singing and playing an instrument, living in a van, wearing eyeliner).
-
-<PostImage
-  caption="Share this: <a href='https://twitter.com/intent/retweet?tweet_id=781215427997290496'>Twitter</a> · <a href='https://www.facebook.com/jlengstorf/photos/a.171796939556882.41687.107496345986942/1103492916387275/?type=3&theater'>Facebook</a>"
-  credit="Jason Lengstorf"
->
-
-  ![“Playing it safe” is just a polite way of saying, “Doing nothing and going nowhere.”](./images/play-it-safe.jpg)
-
-</PostImage>
 
 ## If you're learning, no time is wasted
 
@@ -102,21 +80,21 @@ From all this, I've realized that looking at anything ambitious as "wasted time"
 
 Life is a process of discovery. We start with a tiny spark of consciousness and _absolutely no idea what is going on elsewhere_. Over years of experience, we [chip away at the mysteries of life](https://lengstorf.com/growing-up-vs-growing-older), learning what things make us happy, what things make us sad; what things we care about, and [what things don't matter](https://lengstorf.com/taste-doesnt-matter).
 
-**Every new project — foolish, doomed, or otherwise — furthers that discovery process.** Every time we follow through[^follow-through] on a new venture, we can add to the pro/con lists that inform our decision-making processes, and our lives become a little (or a lot) better for the experience.
+**Every new project — foolish, doomed, or otherwise — furthers that discovery process.** Every time we {% footnote id="follow-through" %}follow through{% endfootnote %} on a new venture, we can add to the pro/con lists that inform our decision-making processes, and our lives become a little (or a lot) better for the experience.
 
-[^follow-through]: Follow-through is critical. Starting and abandoning something before we learn anything doesn't do anyone any good. It actually makes things worse because we feel like quitters.
+{% footnoteText id="follow-through" %}
+Follow-through is critical. Starting and abandoning something before we learn anything doesn't do anyone any good. It actually makes things worse because we feel like quitters.
+{% endfootnoteText %}
 
 ## Remember Minesweeper?
 
-<PostImage
-  align="right"
-  creditLink="https://www.microsoft.com/en-us/store/p/microsoft-minesweeper/9wzdncrfhwcn"
+{% figure
+  align="right",
+  creditLink="https://www.microsoft.com/en-us/store/p/microsoft-minesweeper/9wzdncrfhwcn",
   credit="Microsoft"
->
-
-  ![Minesweeper for Windows.](./images/minesweeper.jpg)
-
-</PostImage>
+%}
+![Minesweeper for Windows.](./images/minesweeper.jpg)
+{% endfigure %}
 
 When I was in high school and trying to avoid homework, I used to play a lot of [Minesweeper](https://www.microsoft.com/en-us/store/p/microsoft-minesweeper/9wzdncrfhwcn).
 
@@ -136,10 +114,7 @@ Often we try dumb shit, like sticking our fingers into electrical sockets. Aside
 
 Every once in a while we do something new and the whole board seems to open up. That was me and booking my first tour as a musician. That was Marisa and [leaving a comfortable corporate job to go freelance](http://thenuschool.com/how-to-get-over-fear/).
 
-Most of the time, though, we clear a few squares and at get a little more clarity about what we want to try next. We try out a new skill or hobby. We take on a new responsibility. We try food we've never tasted before.[^food-reference] And with each of those squares cleared, we learn more about what will make us [happy going forward](https://lengstorf.com/finding-happiness).
-
-[^food-reference]:
-    You didn't think I'd make it through a whole post without talking about food, did you?
+Most of the time, though, we clear a few squares and at get a little more clarity about what we want to try next. We try out a new skill or hobby. We take on a new responsibility. We try food we've never tasted before. And with each of those squares cleared, we learn more about what will make us [happy going forward](https://lengstorf.com/finding-happiness).
 
 ### ...but mistakes don't end the game.
 

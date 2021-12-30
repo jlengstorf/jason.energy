@@ -1,36 +1,35 @@
-export const meta = {
-  date: '2016-09-01',
-  title: 'Stop Glossing Over the Good Stuff: How to Be More Positive',
-  seo_title: 'How I Stopped Being So Negative: 1 Thing You Can Do NOW',
-  slug: 'how-to-be-positive',
-  description: 'We’re not born as “glass half full” or “glass half empty” people. We make that choice each day. Here’s how to stop negativity and start being more positive.',
-  category: 'happiness',
-  tags:[
-    'friends',
-    'happiness',
-    'mentorship',
-    'positivity',
-  ],
-  image: './images/how-to-be-positive.jpg',
-  cta: 'work-happy',
-};
+---
+date: 2016-09-01
+title: >
+  Stop Glossing Over the Good Stuff: How to Be More Positive
+seo_title: >
+  How I Stopped Being So Negative: 1 Thing You Can Do NOW
+slug: how-to-be-positive
+description: >
+  We’re not born as “glass half full” or “glass half empty” people. We make that choice each day. Here’s how to stop negativity and start being more positive.
+category: happiness
+tags: [friends, happiness, mentorship, positivity]
+image: ./images/how-to-be-positive.jpg
+cta: work-happy
+---
 
 As simple as it seems, taking the time to recognize the good stuff can have a huge positive impact on your relationships with colleagues, significant others, friends, and clients.
 
-**NOTE:** This post originally ran back in 2013 on [S2B](http://www.scrawnytobrawny.com/).[^why] I've updated it to reflect some of the changes in my life since it was first written.
+{% aside %}
+**NOTE:** This post {% footnote id="why" %}originally ran back in 2013{% endfootnote %} on [S2B](https://scrawnytobrawny.com/how-to-be-positive). I've updated it to reflect some of the changes in my life since it was first written.
+{% endaside %}
 
-[^why]:
-    Why was I writing for a fitness blog? S2B was formerly a branch of [Precision Nutrition's coaching program](http://www.precisionnutrition.com/), and my friend Nate Green headed up marketing for it. In 2013, I had barely any readership, and Nate took pity on me by running this article.
+{% footnoteText id="why" %}
+Why was I writing for a fitness blog? S2B was formerly a branch of [Precision Nutrition's coaching program](http://www.precisionnutrition.com/), and my friend Nate Green headed up marketing for it. In 2013 I had barely any readership; Nate took pity on me by running this article.
+{% endfootnoteText %}
 
-<PostImage
-  caption="Marisa and I in Barcelona."
-  creditLink="http://www.laboutiquedelaluz.com"
+{% figure
+  caption="Marisa and I in Barcelona.",
+  creditLink="http://www.laboutiquedelaluz.com",
   credit="La Boutique de la Luz"
->
-
-  ![Jason and Marisa in Barcelona.](./images/jason-and-marisa-barcelona.jpg)
-
-</PostImage>
+%}
+![Jason and Marisa in Barcelona.](./images/jason-and-marisa-barcelona.jpg)
+{% endfigure %}
 
 ## It’s easy to take a good thing for granted
 
@@ -38,17 +37,19 @@ As much as I hate to admit it, **I’m kind of a shitty person by default.**
 
 With very few exceptions, nearly every part of my day goes off perfectly.
 
-I wake up every morning without an alarm, next to a woman who makes me deeply happy. We playfully argue about whose turn it is to make coffee,[^local] cook breakfast and listen to [Radiolab](http://www.radiolab.org/), and head to a local gym to get our day started.
+I wake up every morning without an alarm, next to a woman who makes me deeply happy. We playfully argue about whose turn it is to {% footnote id="local" %}make coffee,{% endfootnote %} cook breakfast and listen to [Radiolab](http://www.radiolab.org/), and head to a local gym to get our day started.
 
-[^local]:
-    The coffee is from a local roaster who cares more about coffee than some people care about their children.
+{% footnoteText id="local" %}
+The coffee is from a local roaster who cares more about coffee than some people care about their children.
+{% endfootnoteText %}
 
 My work schedule is flexible. The projects I work on are of my own choosing; I have the freedom to only take on tasks that are both extremely interesting and intensely satisfying.
 
-Evenings are free to meet friends for drinks,[^cocktails] or to have a slow dinner at some fantastic restaurant I read about somewhere.
+Evenings are free to {% footnote id="cocktails" %}meet friends for drinks,{% endfootnote %} or to have a slow dinner at some fantastic restaurant I read about somewhere.
 
-[^cocktails]:
-    Usually this happens at cocktail lounges employing bartenders that look at an old fashioned with the same air of professionalism as a surgeon about to perform a double bypass.
+{% footnoteText id="cocktails" %}
+Usually this happens at cocktail lounges employing bartenders that look at an old fashioned with the same air of professionalism as a surgeon about to perform a double bypass.
+{% endfootnoteText %}
 
 Every so often I’m asked to speak at a conference, which means I get paid to travel to a cool city like Austin or San Francisco and share my ideas with people who love web design as much as I do.
 
@@ -62,9 +63,9 @@ With all the great things I’m lucky enough to do on a regular basis, you might
 
 But if you asked me how my day was back in 2013, you’d probably hear something like:
 
-* “It’s okay, I guess.”
-* “Super busy. I’m _so_ tired.”
-* “It’d be better if \_\_\_\_\_\_\_\_ would finally \_\_\_\_\_\_\_\_.”
+- “It’s okay, I guess.”
+- “Super busy. I’m _so_ tired.”
+- “It’d be better if \_\_\_\_\_\_\_\_ would finally \_\_\_\_\_\_\_\_.”
 
 What an ungrateful dick, right?
 
@@ -72,13 +73,9 @@ What an ungrateful dick, right?
 
 One of my long-term clients is a company called Precision Nutrition. It’s run by [Dr. John Berardi](http://www.precisionnutrition.com/about/john-berardi) and [Phil Caravaggio](http://www.precisionnutrition.com/issa/phil-caravaggio), and employs a good number of truly brilliant people, including my long-time friend [Nate Green](https://nategreen.org/).
 
-<PostImage
-  caption="Left to right: JB, me, Phil, and Nate, back in 2011."
->
-
-  ![JB, Jason, Phil, and Nate in Florida.](./images/jb-jason-phil-nate-2011.jpg)
-
-</PostImage>
+{% figure caption="Left to right: JB, me, Phil, and Nate, back in 2011." %}
+![JB, Jason, Phil, and Nate in Florida.](./images/jb-jason-phil-nate-2011.jpg)
+{% endfigure %}
 
 During a trip to Toronto for an all-hands PN meeting, JB, Phil, Nate, and I went out for dinner at a very cool Italian restaurant. We had an incredible family-style meal, and afterward we started talking about whatever was on our minds.
 
@@ -100,16 +97,14 @@ JB leaned in. “How many good things have happened to you today?”
 
 My four-star hotel room and the day’s extremely successful meeting with PN flashed through my mind. I felt blood rushing to my cheeks.
 
-<PostImage
-  align="right"
-  caption="How I imagine other people saw me when I complained about my awesome life."
-  creditLink="https://www.youtube.com/user/danisnotonfire"
+{% figure
+  align="right",
+  caption="How I imagine other people saw me when I complained about my awesome life.",
+  creditLink="https://www.youtube.com/user/danisnotonfire",
   credit="Dan Howell"
->
-
-  ![Why is life so hard?](./images/why-is-life-so-hard.gif)
-
-</PostImage>
+%}
+![Why is life so hard?](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834499/jason.af/why-is-life-hard.gif)
+{% endfigure %}
 
 “And how many bad things?”
 
@@ -129,15 +124,13 @@ JB swirled his wine and said, “This is going to feel silly, but list three goo
 
 I felt like a kid getting a lecture, but I knew they had all done this previously, so I played along.
 
-<PostImage
-  caption="The exact table at Gusto where I decided to start being more positive."
-  creditLink="http://gusto101.com/"
+{% figure
+  caption="The exact table at Gusto where I decided to start being more positive.",
+  creditLink="http://gusto101.com/",
   credit="Gusto 101"
->
-
-  ![Gusto 101 dining room, Toronto.](./images/gusto-toronto.jpg)
-
-</PostImage>
+%}
+![Gusto 101 dining room, Toronto.](./images/gusto-toronto.jpg)
+{% endfigure %}
 
 “My hotel has a great shower, our meeting today has really good implications for my business, and this is one of the best Italian meals I’ve ever had.”
 
@@ -147,18 +140,17 @@ Phil beamed; he had picked the restaurant.
 
 “Over time I stopped complaining, partly because I felt silly having to stop mid-conversation to derail a complaint,” JB paused to make eye contact, “but mostly because I just don’t think of the negative stuff as often.”
 
-<PostImage creditLink="http://laboutiquedelaluz.com" credit="La Boutique de la Luz">
-
-  ![How to stop being negative.](./images/how-to-be-positive.jpg)
-
-</PostImage>
+{% figure creditLink="http://laboutiquedelaluz.com", credit="La Boutique de la Luz" %}
+![How to stop being negative.](./images/how-to-be-positive.jpg)
+{% endfigure %}
 
 ## Reprogramming my brain
 
-In the weeks that followed, that conversation stuck with me.[^years] I was acutely aware of my negativity, and admonished myself publicly by stopping mid-complaint to apologize and list the day’s high points.
+In the weeks that followed, {% footnote id="years" %}that conversation stuck with me.{% endfootnote %} I was acutely aware of my negativity, and admonished myself publicly by stopping mid-complaint to apologize and list the day’s high points.
 
-[^years]:
-    It's been years since that conversation, now, and I _still_ find this to be one of my most effective tools for staying positive.
+{% footnoteText id="years" %}
+It's been years since that conversation, now, and I _still_ find this to be one of my most effective tools for staying positive.
+{% endfootnoteText %}
 
 Most of our lives are full of creeping, incremental changes that we can't really pinpoint; we start in one mindset, and over weeks or years we find that we've _shifted_, and now we have a different mindset, even though we didn't notice the change.
 
@@ -168,23 +160,21 @@ It didn’t take long for me to notice a significant drop in complaints. But tha
 
 ## Don’t let the good go unnoticed
 
-<PostImage
-  align="right"
-  caption="“I LOVE MY WHOLE HOUSE!”"
-  creditLink="https://www.youtube.com/watch?v=qR3rK0kZFkg"
+{%  figure
+  align="right",
+  caption="“I LOVE MY WHOLE HOUSE!”",
+  creditLink="https://www.youtube.com/watch?v=qR3rK0kZFkg",
   credit="dmchatster"
->
-
-  ![Daily affirmation.](./images/i-like-my-whole-house.gif)
-
-</PostImage>
+%}
+![Daily affirmation.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/i-like-my-whole-house.gif)
+{% endfigure %}
 
 In my new effort to curb negativity, I started making “anti-complaints”.
 
-* “I really like Dave. He’s such a happy guy.”
-* “Our waitress was really excellent tonight.”
-* “This project is going really smoothly.”
-* “I’m so happy someone invented toast.”
+- “I really like Dave. He’s such a happy guy.”
+- “Our waitress was really excellent tonight.”
+- “This project is going really smoothly.”
+- “I’m so happy someone invented toast.”
 
 These anti-complaints did more than realign my perception of the world, though; I started to see the people around me becoming more positive as well, which made for better experiences in both my professional and personal life.
 
@@ -198,15 +188,13 @@ In a healthy workplace, you’ll be asked for feedback on projects — it’s in
 
 **By taking the time to point out the good things your colleagues are doing, the negative feedback is less jarring.**
 
-<PostImage
-  caption="Chris Traeger is <em>literally</em> the best at positive feedback."
-  creditLink="http://www.nbc.com/parks-and-recreation"
+{% figure
+  caption="Chris Traeger is <em>literally</em> the best at positive feedback.",
+  creditLink="http://www.nbc.com/parks-and-recreation",
   credit="Parks and Recreation"
->
-
-  ![Parks & Recreation great job.](./images/parks-and-rec-great-job.gif)
-
-</PostImage>
+%}
+![Parks & Recreation great job.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/great-job.gif)
+{% endfigure %}
 
 Imagine a situation where you turn in projects to your boss, and she never says anything. Every project is accepted silently without any feedback.
 
@@ -222,35 +210,35 @@ It’s not weak or overly emotional to tell someone you appreciate them. In fact
 
 ### How to stay positive at home.
 
-<PostImage
-  align="right"
-  caption="Marisa is the only person I’ve ever met who takes “don’t take life so seriously” as seriously as I do."
-  creditLink="http://paintwithstars.com"
+{% figure
+  align="right",
+  caption="Marisa is the only person I’ve ever met who takes “don’t take life so seriously” as seriously as I do.",
+  creditLink="http://paintwithstars.com",
   credit="paint with stars"
->
-
-  ![Jason and Marisa in Tokyo.](./images/jason-and-marisa-playful.jpg)
-
-</PostImage>
+%}
+![Jason and Marisa in Tokyo.](./images/jason-and-marisa-playful.jpg)
+{% endfigure %}
 
 I tell [Marisa](https://marisamorby.com) how much I like her probably a half-dozen times a day.
 
 I try to remember to call out all the things I like about her, whether it's her constant drive to improve herself, her
-[unwillingness to accept that other people can do things she can't](https://marisamorby.com/talent/), her ability to match my giant-bearded-toddler playfulness, or the fact that she can handle my so-coldly-logical-it's-often-hurtful tendencies.[^case-in-point]
+[unwillingness to accept that other people can do things she can't](https://marisamorby.com/talent/), her ability to match my giant-bearded-toddler playfulness, or the fact that {% footnote id="case-in-point" %}she can handle my so-coldly-logical-it's-often-hurtful tendencies.{% endfootnote %}
 
-[^case-in-point]:
-    Relevant example: as I was updating this article, some of the edits involved an ex-girlfriend, and — like a robot — in one section I merely replaced my ex's name with Marisa's.
+{% footnoteText id="case-in-point" %}
+Relevant example: as I was updating this article, some of the edits involved an ex-girlfriend, and — like a robot — in one section I merely replaced my ex's name with Marisa's.
 
-    When I did this, I thought to myself, "Well, what I said about my ex then is now true about Marisa, so this is acceptable."
+When I did this, I thought to myself, "Well, what I said about my ex then is now true about Marisa, so this is acceptable."
 
-    When Marisa read that draft, she was (understandably) pissed. I didn't understand. So she patiently explained that normal people — including her — have feelings, and that a find-and-replace to swap out one name for another was a good way to hurt those feelings.
+When Marisa read that draft, she was (understandably) pissed. I didn't understand. So she patiently explained that normal people — including her — have feelings, and that a find-and-replace to swap out one name for another was a good way to hurt those feelings.
 
-    So we argued, I apologized, she was grumpy with me for half a day, and I (hopefully) learned something. There was no yelling. No crying. No sulking silences or blistering attacks on each other's character. We knew we were only fighting about _this mistake I made_, and not about anything else.
+So we argued, I apologized, she was grumpy with me for half a day, and I (hopefully) learned something. There was no yelling. No crying. No sulking silences or blistering attacks on each other's character. We knew we were only fighting about _this mistake I made_, and not about anything else.
+{% endfootnoteText %}
 
-As a result, we can share frustrations with each other without worrying that the relationship is falling apart. When we argue, it's not about whether or not we like each other; it's just that one of us was supposed to get ready to leave, and was still sans-pants three minutes before we're supposed to be out the door.[^my-bad]
+As a result, we can share frustrations with each other without worrying that the relationship is falling apart. When we argue, it's not about whether or not we like each other; it's just that one of us was supposed to get ready to leave, and was {% footnote id="my-bad" %}still sans-pants three minutes before we're supposed to be out the door.{% endfootnote %}
 
-[^my-bad]:
-    Yeah, that was my bad. I _really_ hate pants.
+{% footnoteText id="my-bad" %}
+Yeah, that was my bad. I _really_ hate pants.
+{% endfootnoteText %}
 
 ## Even when it’s bad, it’s not that bad
 
@@ -266,15 +254,13 @@ It's a subtle difference, but it reframes the situation from a botched outcome t
 
 Positivity works best when it’s shared. The people around you can’t read minds, so even if you’re noticing all the things they do that you appreciate and admire, **they’ll never know it unless you tell them.**
 
-<PostImage
-  caption="Don’t hold back on the positive feedback."
-  creditLink="http://www.sonypictures.com/movies/21jumpstreet/"
+{% figure
+  caption="Don’t hold back on the positive feedback.",
+  creditLink="http://www.sonypictures.com/movies/21jumpstreet/",
   credit="21 Jump Street"
->
-
-  ![You’re a goddamn rockstar.](./images/goddamn-rockstar.gif)
-
-</PostImage>
+%}
+![You’re a goddamn rockstar.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/rockstar.gif)
+{% endfigure %}
 
 **If you make a habit of sharing all the good things, you become someone that makes the people around you more positive.** You become a bright spot in people's days. You create a vacuum where negativity cannot survive, because you don't give it the chance to feed and grow.
 

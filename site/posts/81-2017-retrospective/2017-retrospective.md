@@ -1,50 +1,46 @@
-export const meta = {
-  date: '2018-01-18T00:00:00.000Z',
-  title:
-    '2017 Retrospective: What went right? What could have gone better? How will I improve going forward?\n',
-  slug: '2017-personal-retrospective',
-  seo_title: null,
-  description:
-    'For many of us, 2017 was a pretty rough year. In this post, I’ll take a look at my 2017 experience, and how I’ll use that information to improve my 2018.\n',
-  category: 'motivation',
-  tags: ['learning', 'planning', 'success'],
-  image: './images/speaking.jpg',
-  cta: 'default',
-};
+---
+date: 2018-01-18
+title: >
+  2017 Retrospective: What went right? What could have gone better? How will I improve going forward?
+slug: 2017-personal-retrospective
+description: >
+  For many of us, 2017 was a pretty rough year. In this post, I’ll take a look at my 2017 experience, and how I’ll use that information to improve my 2018.
+category: motivation
+tags: [learning, planning, success]
+image: ./images/speaking.jpg
+cta: default
+---
 
 2017 was... weird.
 
-I don’t know that the world _actually_ went to hell — in fact, there are a lot of reasons to argue that [the world in 2017 was the best it’s ever been](http://nyti.ms/2myrgI2) — but holy shit if my Twitter feed didn’t make me feel like I needed to move to New Zealand and stockpile non-perishable food.
-
-<PostImage
-  align="left"
-  caption="My Twitter feed most days."
-  creditLink="https://www.flickr.com/photos/donabelandewen/"
+{% figure
+  align="right",
+  caption="My Twitter feed most days.",
+  creditLink="https://www.flickr.com/photos/donabelandewen/",
   credit="Ewen Roberts"
->
-
-
+%}
 ![The end is nigh.](images/the-end-is-nigh.jpg)
+{% endfigure %}
 
-</PostImage>
-
+I don’t know that the world _actually_ went to hell — in fact, there are a lot of reasons to argue that [the world in 2017 was the best it’s ever been](http://nyti.ms/2myrgI2) — but holy shit if my Twitter feed didn’t make me feel like I needed to move to New Zealand and stockpile non-perishable food.
 
 But what was 2017 _actually_ like? If I step back from the chaos in the media, **what did 2017 mean for me and the people I care most about?**
 
-As we roll into a new year, I want to continue a tradition I’ve [stolen from Nate](https://nategreen.org/2017-personal-retrospective/) and write up a retrospective[^retrospective] on 2017.
+As we roll into a new year, I want to continue a tradition I’ve [stolen from Nate](https://nategreen.org/2017-personal-retrospective/) and {% footnote id="retro" %}write up a retrospective{% endfootnote %} on 2017.
 
-[^retrospective]:
-    If you’re not familiar with the concept of a retrospective, the core idea is this: whenever you’ve come to the end of something — a project, a sprint, or, in this case, a year — you sit down and review it by asking three questions:
+{% footnoteText id="retro" %}
+If you’re not familiar with the concept of a retrospective, the core idea is this: whenever you’ve come to the end of something — a project, a sprint, or, in this case, a year — you sit down and review it by asking three questions:
 
-    1. What went well?
-    2. What could have gone better?
-    3. What will I change next time?
+1. What went well?
+2. What could have gone better?
+3. What will I change next time?
 
-    This is an incredibly effective tool for teams because it allows you to regroup, [call out the good stuff](/how-to-be-positive/), notice potential problems, and make adjustments to correct them before they fester into full-on crises.
+This is an incredibly effective tool for teams because it allows you to regroup, [call out the good stuff](/how-to-be-positive/), notice potential problems, and make adjustments to correct them before they fester into full-on crises.
 
-    However, it turns out that it’s an excellent tool for individual development as well. I run a retrospective for pretty much everything I do: projects, contracts, relationships — hell, I’ve even run retrospectives on _recipes_.
+However, it turns out that it’s an excellent tool for individual development as well. I run a retrospective for pretty much everything I do: projects, contracts, relationships — hell, I’ve even run retrospectives on _recipes_.
 
-    The point is: they’re useful. You should use them.
+The point is: they’re useful. You should use them.
+{% endfootnoteText %}
 
 Over time, I hope these retrospectives help me form a story arc of who I’ve been, where I wanted to go, and where I actually ended up. For example, my [2016 retrospective](https://lengstorf.com/2016-personal-retrospective/) shows me rekindling an interest in teaching people to code and starting to cook again — both things that I did a lot of in 2017.
 
@@ -58,11 +54,13 @@ Overall, I’d call 2017 a pretty good year from a personal development standpoi
 
 ### I played well with others.
 
-One of the biggest changes I made in 2017 was switching to full-time employment for IBM. My long-time friend [Robin](https://medium.com/@shinytoyrobots) is a development manager there, and — despite my initial skepticism — he convinced me that there was a lot of opportunity for large-scale change at IBM.
+One of the biggest changes I made in 2017 was switching to full-time employment for IBM. My long-time friend [Robin](https://medium.com/@shinytoyrobots) is a development manager there, and — despite my initial skepticism — he convinced me that there was a lot of opportunity for large-scale change at IBM.
 
-So I moved to Austin, started working from an office a few days a week,[^commute] and joined a team of 12 developers.
+So I moved to Austin, started {% footnote id="commute" %}working from an office a few days a week,{% endfootnote %} and joined a team of 12 developers.
 
-[^commute]: This introduced a commute, about which I have _nothing_ nice to say. More on this later.
+{% footnoteText id="commute" %}
+This introduced a commute, about which I have _nothing_ nice to say. More on this later.
+{% endfootnoteText %}
 
 <blockquote class="twitter-tweet" data-lang="en">
   <p lang="en" dir="ltr">
@@ -72,7 +70,7 @@ So I moved to Austin, started working from an office a few days a week,[^commute
     balls is an octopus.
   </p>
   &mdash; Jason Lengstorf (@jlengstorf) <a href="https://twitter.com/jlengstorf/status/933071716959571968?ref_src=twsrc%5Etfw">November 21, 2017</a>
-</blockquote>
+</blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Prior to this, I’ve always worked on small teams, and my projects have _always_ been pretty much just mine. Learning to work on a team was a struggle, but I’m probably a much more pleasant person to be around these days.
 
@@ -84,36 +82,35 @@ Something I thought would take a couple weeks to fix ended up taking a couple mo
 
 This was a new and uncomfortable experience for me; in all of my previous roles I’ve either been working alone or the highest-ranked person in the room. I’d only ever had to sell ideas to clients, who generally couldn’t care less _how_ I solved a given problem, so long as it ceased to be a problem at the end of the project.
 
-I spent a lot of time this year learning how to present, how to package ideas, how to frame things to get the best response,[^framing] and how not to [set the building on fire](https://www.youtube.com/watch?v=tj0xtdN0_tA) when I didn’t immediately get my way.
+I spent a lot of time this year learning how to present, how to package ideas, {% footnote id="framing" %}how to frame things to get the best response,{% endfootnote %} and how not to [set the building on fire](https://www.youtube.com/watch?v=tj0xtdN0_tA) when I didn’t immediately get my way.
 
-[^framing]:
-    For example, I learned that **when I talk to my team about building something, I should focus on the big changes and wins**: faster turn-around times! fewer bottlenecks! more control! improved workflow!
+{% footnoteText id="framing" %}
+For example, I learned that **when I talk to my team about building something, I should focus on the big changes and wins**: faster turn-around times! fewer bottlenecks! more control! improved workflow!
 
-    However, **when I was trying to convince another team to let us touch their code, I needed to highlight how much things _wouldn’t_ change**: no extra work, no additional responsibilities, no added risk.
+However, **when I was trying to convince another team to let us touch their code, I needed to highlight how much things _wouldn’t_ change**: no extra work, no additional responsibilities, no added risk.
 
-    And **when I was talking to an executive, I needed to ignore any details and focus only on their bottom line**: improved Net Promoter Scores! more features shipped faster! lower turnover!
+And **when I was talking to an executive, I needed to ignore any details and focus only on their bottom line**: improved Net Promoter Scores! more features shipped faster! lower turnover!
 
-    This probably deserves its own blog post. I’ve added it to [my idea list](http://bit.ly/2mEMK60).
+If you're interested in reading more about this, I wrote a whole post on [communicating at the right level for the current goal](/level-setting/).
+{% endfootnoteText %}
 
 As much as this felt like pulling teeth, **one of my long-term goals is to start consulting for large companies to help institute broad technical changes**, so this experience is going to be absolutely critical as I work toward that goal.
 
 ### I rekindled my speaking career.
 
-In 2016, I didn’t do much speaking. Partially because I was [gallivanting around the world](https://lengstorf.com/two-years-in-airbnbs), but also because I just didn’t feel like I was working on anything exciting enough to speak about.[^exciting]
+In 2016, I didn’t do much speaking. Partially because I was [gallivanting around the world](https://lengstorf.com/two-years-in-airbnbs), but also because I just {% footnote id="exciting" %}didn’t feel like I was working on anything exciting enough to speak about.{% endfootnote %}
 
-[^exciting]: This is a tangent that probably deserves its own post, but I’ve realized that the reason we never think we have anything worth saying is that people are attracted to novelty, and there’s nothing novel about the things we _already know_. But we’re looking at our ideas as if we were going to watch them — and that’s not the case. **Everything we know now is something we _didn’t_ know before**; if we decide to write or talk about it, it will be new to the vast majority of people.
+{% footnoteText id="exciting" %}
+This is a tangent that probably deserves its own post, but I’ve realized that the reason we never think we have anything worth saying is that people are attracted to novelty, and there’s nothing novel about the things we _already know_. But we’re looking at our ideas as if we were going to watch them — and that’s not the case. **Everything we know now is something we _didn’t_ know before**; if we decide to write or talk about it, it will be new to the vast majority of people.
+{% endfootnoteText %}
 
-<PostImage
-  caption="Me + a giant projected image of my face at the 2017 GraphQL Summit."
-  creditLink="https://orangephotography.com/"
+{% figure
+  caption="Me + a giant projected image of my face at the 2017 GraphQL Summit.",
+  creditLink="https://orangephotography.com/",
   credit="Orange"
->
-
-
+%}
 ![Jason Lengstorf at the 2017 GraphQL Summit.](images/speaking.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 In 2017 I made an effort to get back on the speaking circuit, and made ten conference appearances between March and November, either speaking or teaching a workshop (or both, in some cases).
 
@@ -121,41 +118,33 @@ I didn’t notice it until I got back on stage, but I really missed it during 20
 
 ### I released an open source project I'm really excited about.
 
-<PostImage
-  align="left"
-  caption="I also got to design the logo."
-  creditLink="https://gramps.js.org"
+{% figure
+  align="left",
+  caption="I also got to design the logo.",
+  creditLink="https://gramps.js.org",
   credit="GrAMPS"
-  border={false}
->
-
-
+%}
 ![GrAMPS logo.](images/gramps.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 In line with sharing knowledge, I was able to release some software I built at IBM as open source software, which is pretty exciting.
 
-I’ll spare you all the nerdy details,[^nerds] but it’s called GrAMPS, which deeply satisfies my love of punny names. Since releasing it, I’ve had developers from companies like Target, the New York Times, and the NHL look into it as a solution for their large-scale projects.
+I’ll spare you all the {% footnote id="nerds" %}nerdy details,{% endfootnote %} but it’s called GrAMPS, which deeply satisfies my love of punny names. Since releasing it, I’ve had developers from companies like Target, the New York Times, and the NHL look into it as a solution for their large-scale projects.
 
-[^nerds]: The short version is that it’s a tool that makes it easy to create and share data sources in GraphQL servers. For a technical overview, [check out the docs](https://gramps.js.org/).
+{% footnoteText id="nerds" %}
+The short version is that it’s a tool that makes it easy to create and share data sources in GraphQL servers. For a technical overview, [check out the docs](https://gramps.js.org/).
+{% endfootnoteText %}
 
 I have no idea if it’ll make it into production anywhere (other than IBM, that is), but dammit **it felt _good_ to know that my work was helping other people with big problems to solve to do so a little faster.**
 
 ### Marisa and I got pretty good at cooking.
 
-<PostImage
-  caption="Some meals Marisa and I have cooked: bún chả and eggrolls (top left), gnocchi (top right), pulled pork (bottom left), gyoza (bottom right), pickled onions (center)."
+{% figure
+  caption="Some meals Marisa and I have cooked: bún chả and eggrolls (top left), gnocchi (top right), pulled pork (bottom left), gyoza (bottom right), pickled onions (center).",
   credit="Jason Lengstorf"
-  border={false}
->
-
-
+%}
 ![Collage of meals Marisa and Jason cooked together.](images/cooking.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 From 2010–2014, it’s safe to assume that I probably cooked fewer than ten meals. It’s just not something I was ever really into.
 
@@ -174,13 +163,15 @@ But in Texas, it’s not easy to eat healthy. Everything is fried, soaking in bu
   &mdash; Jason Lengstorf (@jlengstorf) <a href="https://twitter.com/jlengstorf/status/943383326592602112?ref_src=twsrc%5Etfw">
     December 20, 2017
   </a>
-</blockquote>
+</blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 This meant that we could either see how long it takes for me to regain all the weight I lost back in 2014, or we could start cooking healthy meals at home.
 
-It turns out that we _really_ enjoy cooking. And we’re not half bad at it. In fact, if I can toot my own horn for a minute, we’ve got a few meals that we make better than most restaurants.[^steak]
+It turns out that we _really_ enjoy cooking. And we’re not half bad at it. In fact, if I can toot my own horn for a minute, we’ve got a few meals that {% footnote id="steak" %}we make better than most restaurants.{% endfootnote %}
 
-[^steak]: For example, I’ll put my steak alongside most restaurants any day of the week. Trained chefs who focus on grilled meat will definitely kick my ass in a taste test, but still — it’s pretty damn good.
+{% footnoteText id="steak" %}
+For example, I’ll put my steak alongside most restaurants any day of the week. Trained chefs who focus on grilled meat will definitely kick my ass in a taste test, but still — it’s pretty damn good.
+{% endfootnoteText %}
 
 We started inviting friends over for dinner and taking turns cooking, which helped push us to perfect new and different recipes, and expanded our knowledge of cooking.
 
@@ -196,29 +187,28 @@ This is the part where I dig into what I _didn’t_ like about my 2017.
 
 There were a lot of good things that came with taking a job at IBM: I met more people in the industry, landed better speaking gigs, increased my income, and grew my skills in new and challenging areas.
 
-<PostImage
-  align="left"
-  caption="This is not how I want to spend my time."
-  creditType="Credit"
-  creditLink="https://unsplash.com/photos/Jk3-Uhdwjcs"
+{% figure
+  align="left",
+  caption="This is not how I want to spend my time.",
+  creditLink="https://unsplash.com/photos/Jk3-Uhdwjcs",
   credit="Nabeel Syed"
->
-
-
+%}
 ![Traffic jam.](images/commute.jpg)
-
-</PostImage>
-
+{% endfigure %}
 
 But there were a few downsides; most notably, **I have a fucking commute now.**
 
-Not every day, but at least two days a week I have to drive 45 minutes _each way_ to my office.[^car] This isn’t the worst commute I’ve heard of by a long shot, but my previous commute was a thirty-second walk to my couch — I really felt the pain of losing 90 minutes a day to sitting in a car.
+Not every day, but at least two days a week {% footnote id="car" %}I have to drive{% endfootnote %} 45 minutes _each way_ to my office.[^car] This isn’t the worst commute I’ve heard of by a long shot, but my previous commute was a thirty-second walk to my couch — I really felt the pain of losing 90 minutes a day to sitting in a car.
 
-[^car]: I also had to buy a car, which I was really trying not to do. Unfortunately, public transit in Austin is laughably terrible, and it’s hot enough to make long walks dangerous for half the year.
+{% footnoteText id="car" %}
+I also had to buy a car, which I was really trying not to do. Unfortunately, public transit in Austin is laughably terrible, and it’s hot enough to make long walks dangerous for half the year.
+{% endfootnoteText %}
 
-That time cut into my mornings and had a domino effect that I really dislike: I had to start setting an alarm, had to make a choice between writing and hitting the gym,[^gym] and had to choose between coffee and breakfast.
+That time cut into my mornings and had a domino effect that I really dislike: I had to start setting an alarm, had to make a {% footnote id="gym" %}choice between writing and hitting the gym,{% endfootnote %} and had to choose between coffee and breakfast.
 
-[^gym]: I chose the gym, because it’s about the only physical activity I get these days. More on that in a second.
+{% footnoteText id="gym" %}
+I chose the gym, because it’s about the only physical activity I get these days. More on that in a second.
+{% endfootnoteText %}
 
 ### I sucked at writing. Like, _really_ sucked at it.
 
@@ -252,7 +242,7 @@ When it gets too hot for that, I’ll spend 30–45 minutes walking on a treadmi
 
 I just can’t handle my commute anymore, so I’m only going to do it a couple days a week to minimize the impact.
 
-I really like my team, and enjoy doing things like team lunches or getting into a room and brainstorming or pairing up with someone to work on a problem, so I don’t want to stop going into the office altogether. However, at least one day a week my team and I can meet somewhere off-site — preferably walking distance for me — and work in a coffee shop. And the other days I can work from home.
+I really like my team, and enjoy doing things like team lunches or getting into a room and brainstorming or pairing up with someone to work on a problem, so I don’t want to stop going into the office altogether. However, at least one day a week my team and I can meet somewhere off-site — preferably walking distance for me — and work in a coffee shop. And the other days I can work from home.
 
 I worked from home a couple days a week in 2017, so my plan is to bump that number up from 2–3 days to 3–4 days — the majority of my time will be spent out of the office so I can use the time I’d otherwise lose to my commute on more productive things.
 

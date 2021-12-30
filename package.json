@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@netlify/functions": "^0.10.0",
     "@sindresorhus/slugify": "^2.1.0",
     "cloudinary": "^1.27.1",
     "eleventy-plugin-toc": "^1.1.5",

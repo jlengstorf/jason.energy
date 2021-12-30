@@ -234,7 +234,7 @@ main {
 }
 
 /* POST */
-article {
+.post {
   display: grid;
   gap: 1rem 50px;
   grid-template-columns: 220px 680px;
@@ -479,7 +479,7 @@ blockquote {
   margin-top: 0;
   position: relative;
 }
-.footnote p:first-of-type::before {
+.footnote details > p:first-of-type::before {
   color: var(--color-primary);
   content: '*';
   display: inline-block;
@@ -487,6 +487,12 @@ blockquote {
   position: absolute;
   top: 0.125rem;
   transform: scale(2.15);
+}
+
+.footnote a:last-of-type {
+  display: inline-block;
+  margin: 0;
+  margin-left: 0.75rem;
 }
 
 .footnote p {

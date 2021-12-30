@@ -11,6 +11,11 @@ cloudinary.config({
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'site/static': '/' });
 
+  eleventyConfig.addCollection('posts', (collectionApi) => {
+    // I was already using tags, so this is a workaround
+    return collectionApi.getAll().filter((item) => item.data.type === 'post');
+  });
+
   eleventyConfig.addPlugin(require('eleventy-plugin-toc'), {
     tags: ['h2'],
     wrapper: 'div',
@@ -210,6 +215,21 @@ module.exports = function (eleventyConfig) {
 `;
     },
   );
+
+  eleventyConfig.addShortcode('uses', (item) => {
+    return `
+<details class="uses-item">
+  <summary>${item.name}</summary>
+
+  <p>${item.details}</p>
+  <ul>${item.tags.map((tag) => `<li>${tag}</li>`).join(' ')}</ul>
+
+  <a href="${item.link}" class="${
+      item.sponsored ? 'sponsored' : ''
+    }">See details & purchase</a>
+</details>
+`;
+  });
 
   return {
     dir: {
