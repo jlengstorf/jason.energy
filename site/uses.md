@@ -3,7 +3,7 @@ layout: default
 
 title: Software, Gear, and Other Things Jason Lengstorf Uses
 description: >
-  I get a lot of questions about what gear, software, and other stuff I use. To make it easier to share, I've collected a list here.≈
+  I get a lot of questions about what gear, software, and other stuff I use. To make it easier to share, I've collected a list here.
 ---
 
 {% aside %}
@@ -12,12 +12,16 @@ description: >
 
 ## Gear
 
+<div class="item-list">
 {% for item in uses.items.gear %}
 {% uses item %}
 {% endfor %}
+</div>
 
 ## Software
 
+<div class="item-list">
 {% for item in uses.items.software %}
 {% uses item %}
 {% endfor %}
+</div>

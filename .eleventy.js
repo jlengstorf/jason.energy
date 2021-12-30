@@ -13,7 +13,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection('posts', (collectionApi) => {
     // I was already using tags, so this is a workaround
-    return collectionApi.getAll().filter((item) => item.data.type === 'post');
+    return collectionApi
+      .getAll()
+      .filter((item) => item.data.type === 'post')
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addPlugin(require('eleventy-plugin-toc'), {
@@ -107,7 +110,7 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addNunjucksAsyncFilter(
     'cloudinary',
-    async (value, currentFile, callback) => {
+    async (value, currentFile, width = 1360, callback) => {
       const baseDir = path.dirname(currentFile);
       const imagePath = path.join(baseDir, value);
 
@@ -118,7 +121,10 @@ module.exports = function (eleventyConfig) {
         unique_filename: false, // required to avoid duplicate uploads
       });
 
-      callback(null, res.secure_url);
+      callback(
+        null,
+        res.secure_url.replace(/upload/, `upload/f_auto,q_auto,w_${width}`),
+      );
     },
   );
 
@@ -218,16 +224,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode('uses', (item) => {
     return `
-<details class="uses-item">
-  <summary>${item.name}</summary>
-
-  <p>${item.details}</p>
+<div class="uses-item">
+  <h3>${item.name}</h3>
   <ul>${item.tags.map((tag) => `<li>${tag}</li>`).join(' ')}</ul>
+  <p>${item.details}</p>
 
-  <a href="${item.link}" class="${
+  <a href="${item.link}" class="uses-item-link ${
       item.sponsored ? 'sponsored' : ''
-    }">See details & purchase</a>
-</details>
+    }">
+    More <span class="sr-only">${item.name}</span> details &rarr;
+  </a>
+</div>
 `;
   });
 

@@ -50,20 +50,22 @@ function notionRichTextToHTML(richText: NotionRichTextObject[]): string {
 function parseNotionDatabase(data): UsedItem[] {
   const results = data.results;
 
-  return results.map((result): UsedItem => {
-    const { name, category, tags, details, link, sponsored } =
-      result.properties;
+  return results
+    .map((result): UsedItem => {
+      const { name, category, tags, details, link, sponsored } =
+        result.properties;
 
-    return {
-      id: result.id,
-      name: name.title[0].plain_text,
-      category: category.select.name,
-      tags: tags.multi_select.map((tag) => tag.name),
-      details: notionRichTextToHTML(details.rich_text),
-      link: link.url,
-      sponsored: sponsored.checkbox,
-    };
-  });
+      return {
+        id: result.id,
+        name: name.title[0].plain_text,
+        category: category.select.name,
+        tags: tags.multi_select.map((tag) => tag.name),
+        details: notionRichTextToHTML(details.rich_text),
+        link: link.url,
+        sponsored: sponsored.checkbox,
+      };
+    })
+    .reverse();
 }
 
 export const handler: Handler = builder(async () => {
