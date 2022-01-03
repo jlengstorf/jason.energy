@@ -1,6 +1,7 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+import { Handler } from '@netlify/functions';
 
-exports.handler = async event => {
+export const handler: Handler = async (event) => {
   const formId = process.env.CK_FORM_ID;
   const url = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
   const { firstName, email } = JSON.parse(event.body);
@@ -17,8 +18,8 @@ exports.handler = async event => {
         email,
       }),
     })
-      .then(res => res.json())
-      .catch(error => {
+      .then((res) => res.json())
+      .catch((error) => {
         throw new Error(error);
       });
 

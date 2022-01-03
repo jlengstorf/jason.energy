@@ -673,6 +673,58 @@ blockquote {
   content: ' (sponsored)';
 }
 
+/* OPT-IN */
+.opt-in {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 140px 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.opt-in form {
+  margin-top: 0;
+}
+
+.opt-in label,
+.opt-in input,
+.opt-in button {
+  display: block;
+  margin: 0;
+}
+
+.opt-in label {
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  line-height: 0.75rem;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+}
+
+.opt-in label:first-of-type {
+  margin-top: 0;
+}
+
+.opt-in input {
+  border: 0;
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  margin-top: 0.325rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.opt-in button {
+  margin-top: 0.75rem;
+}
+
+.opt-in .notice {
+  color: var(--color-text-muted);
+  font-size: 0.625rem;
+}
+
 /* FOOTER */
 footer {
   background: var(--color-footer-bg);
