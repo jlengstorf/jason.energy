@@ -156,9 +156,9 @@ body {
 
 h1 {
   color: var(--color-text-heading);
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: 900;
-  line-height: 1.5rem;
+  line-height: 2.25rem;
 }
 
 h2,
@@ -231,6 +231,7 @@ header a {
 main {
   margin: 4rem auto;
   max-width: min(90vw, 950px);
+  min-height: calc(100vh - 15rem - 5px);
 }
 
 /* POST */
@@ -244,10 +245,12 @@ main {
   align-self: flex-end;
   grid-column: 2;
   grid-row-end: 2;
+  text-align: center;
 }
 
-.heading.post-list {
-  text-align: center;
+.post h1 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .lede {
@@ -710,6 +713,7 @@ blockquote {
 .opt-in input {
   border: 0;
   border-radius: 0.125rem;
+  font-family: var(--font-family);
   font-size: 1rem;
   margin-top: 0.325rem;
   padding: 0.5rem;
@@ -717,12 +721,24 @@ blockquote {
 }
 
 .opt-in button {
+  background: var(--color-primary);
+  border: 0;
+  border-radius: 0.125rem;
+  color: var(--color-background);
+  font-family: var(--font-family);
+  font-size: 1.125rem;
+  font-weight: 900;
+  line-height: 0.75;
   margin-top: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  text-transform: uppercase;
 }
 
 .opt-in .notice {
   color: var(--color-text-muted);
   font-size: 0.625rem;
+  line-height: 0.75rem;
+  margin-top: 0.375rem;
 }
 
 /* FOOTER */
@@ -733,13 +749,14 @@ footer {
   display: flex;
   font-size: 0.625rem;
   justify-content: space-between;
-  padding: 1rem min(90vw, calc(50vw - 950px / 2));
+  padding: 1rem calc(5vw - 0.5rem);
 }
 
 footer nav,
 footer a {
   color: inherit;
   margin: 0;
+  text-transform: lowercase;
 }
 
 footer nav {

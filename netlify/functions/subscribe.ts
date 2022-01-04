@@ -4,7 +4,9 @@ import { Handler } from '@netlify/functions';
 export const handler: Handler = async (event) => {
   const formId = process.env.CK_FORM_ID;
   const url = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
-  const { firstName, email } = JSON.parse(event.body);
+  const params = new URLSearchParams(event.body);
+  const firstName = params.get('firstName');
+  const email = params.get('email');
 
   try {
     await fetch(url, {

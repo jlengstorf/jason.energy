@@ -46,17 +46,18 @@
     <meta name="theme-color" content="#ffe742" />
 
     {% block seo %}
-    <title>{{title}}</title>
+    <title>{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}</title>
     {% endblock %}
   </head>
 
-  <body>
+  <body class="{{ bodyClass }}">
     <header>
       <a href="/" rel="home" class="home-link">Jason Lengstorf</a>
 
       <nav class="main-nav">
-        <a href="/posts">Writing</a>
-        <a href="/uses">Uses</a>
+      {% for link in nav %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
       </nav>
     </header>
 
@@ -86,8 +87,9 @@
     <footer>
       <span class="boops">powered by boops</span>
       <nav class="footer-nav">
-        <a href="/posts">posts</a>
-        <a href="/uses">uses</a>
+      {% for link in nav %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
         <a href="https://github.com/jlengstorf/jason.af">source code</a>
       </nav>
     </footer>
