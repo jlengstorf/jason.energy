@@ -1,0 +1,217 @@
+{% extends "default.njk" %}
+
+{% block seo %}
+<title>A Very Jason Lengstor Website — Powered By Boops!</title>
+{% endblock %}
+
+{% block main %}
+<main class="home">
+  <section class="block" style="--color-background: var(--color-hero-bg)">
+    <canvas class="boop-drop"></canvas>
+  
+    <h1 class="hero">
+      <span class="hero-first-line">Jason</span>
+      <span class="hero-box">Lengstorf</span>
+      <span class="hero-tagline">has a lot of ideas</span>
+    </h1>
+
+    <button class="hero-cycle">
+      <span class="sr-only">change tagline</span>
+    </button>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js" integrity="sha512-5T245ZTH0m0RfONiFm2NF0zcYcmAuNzcGyPSQ18j8Bs5Pbfhp5HP1hosrR8XRt5M3kSRqzjNMYpm2+it/AUX/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+const taglines = [
+  {
+    size: '8.46vw',
+    'size-lg': '66px',
+    text: `
+      has a lot of ideas
+    `,
+  },
+  {
+    rotation: '11deg',
+    scale: '1.2',
+    size: '9.4vw',
+    'size-lg': '73px',
+    text: `
+      believes in us <span class="love"></span>
+    `,
+    top: '0',
+  },
+  {
+    size: '9.57vw',
+    'size-lg': '74.5px',
+    text: `
+      is an okay cook
+    `,
+  },
+  {
+    rotation: '-9deg',
+    scale: '1.15',
+    size: '8.44vw',
+    'size-lg': '65.5px',
+    text: `
+      <span class="love">love</span>s melted cheese
+    `,
+  },
+  {
+    rotation: '18deg',
+    scale: 1.35,
+    size: '5.75vw',
+    'size-lg': '44.5px',
+    text: `
+      thinks you belong here <span class="love"></span>
+    `,
+    top: '0.025em',
+  },
+  {
+    scale: 1.3,
+    rotation: '-3deg',
+    size: '5.02vw',
+    'size-lg': '39px',
+    text: `
+      would <span class="love">love</span> a sandwich, thanks
+    `,
+    top: '-0.1em',
+  },
+  {
+    rotation: '-11deg',
+    scale: 1.3,
+    size: '8.39vw',
+    'size-lg': '65.25px',
+    text: `
+      <span class="love">love</span>s pajama pants
+    `,
+  },
+];
+
+const element = document.querySelector('.hero-tagline');
+let currentIndex = 0;
+
+function cycleTagline() {
+  addBoop();
+
+  currentIndex = (currentIndex + 1) % taglines.length;
+  const tagline = taglines[currentIndex];
+
+  element.style.setProperty('--top', tagline.top || '-7px');
+  element.style.setProperty('--rotation', tagline.rotation || '0deg');
+  element.style.setProperty('--scale', tagline.scale || 1.1);
+  element.style.setProperty('--size', tagline.size || '8.1vw');
+  element.style.setProperty('--size-lg', tagline['size-lg'] || '44px');
+
+  element.innerHTML = tagline.text;
+}
+
+const taglineButton = document.querySelector('.hero-cycle');
+taglineButton.addEventListener('click', (event) => {
+  taglineButton.classList.add('active');
+
+  setTimeout(() => {
+    taglineButton.classList.remove('active');
+  }, 500);
+  
+  cycleTagline();
+});
+
+
+const { Engine, Render, Runner, World, Bodies } = Matter;
+
+const engine = Engine.create();
+const runner = Runner.create();
+
+function createBoop() {
+  const boop = Bodies.circle(
+    Math.round(Math.random() * window.innerWidth),
+    -30,
+    35,
+    {
+      angle: Math.PI * (Math.random() * 2 - 1),
+      friction: 0.01,
+      frictionAir: 0.01,
+      restitution: 0.75,
+      render: {
+        sprite: {
+          texture: 'https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_90/v1585764654/lwj/store/boop.png',
+          xScale: 1,
+          yScale: 1,
+        },
+      },
+    },
+  );
+
+  World.add(engine.world, [boop]);
+}
+
+let count = 0;
+function initBoopDrop() {
+  const canvas = document.querySelector('.boop-drop');
+
+  if (!canvas) {
+    return;
+  }
+
+  const height = canvas.clientHeight;
+  const width = canvas.clientWidth;
+
+  const render = Render.create({
+    element: 'div',
+    canvas,
+    engine: engine,
+    options: {
+      height,
+      width,
+      background: 'transparent',
+      wireframes: false,
+    },
+  });
+
+  const boundaries = {
+    isStatic: true,
+    render: {
+      fillStyle: 'transparent',
+      strokeStyle: 'transparent',
+    },
+  };
+  const ground = Bodies.rectangle(
+    width / 2,
+    height,
+    width + 20,
+    4,
+    boundaries,
+  );
+  const leftWall = Bodies.rectangle(
+    0,
+    height / 2,
+    4,
+    height + 60,
+    boundaries,
+  );
+  const rightWall = Bodies.rectangle(
+    width,
+    height / 2,
+    4,
+    height + 60,
+    boundaries,
+  );
+
+  World.add(engine.world, [ground, leftWall, rightWall]);
+
+  Render.run(render);
+  Runner.run(runner, engine);
+}
+
+function addBoop() {
+  createBoop();
+  count++;
+}
+
+initBoopDrop();
+addBoop();
+</script>
+{% endblock %}

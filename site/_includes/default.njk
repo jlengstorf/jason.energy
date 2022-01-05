@@ -61,6 +61,7 @@
       </nav>
     </header>
 
+    {% block main %}
     <main>
       <article class="{% if type === "post" %}post{% endif %}">
         {% block heading %}
@@ -83,6 +84,7 @@
         {% endblock %}
       </article>
     </main>
+    {% endblock %}
 
     <footer>
       <span class="boops">powered by boops</span>
