@@ -254,6 +254,10 @@ main.home {
   position: relative;
 }
 
+.hero-block {
+  --color-background: var(--color-hero-bg);
+}
+
 /* HERO */
 .hero {
   color: var(--color-hero-text);
@@ -375,6 +379,10 @@ main.home {
   grid-column: 2;
   grid-row-end: 2;
   text-align: center;
+}
+
+.post .heading {
+  text-align: left;
 }
 
 .post h1 {
