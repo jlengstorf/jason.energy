@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 
@@ -23,6 +24,19 @@ module.exports = function (eleventyConfig) {
     tags: ['h2'],
     wrapper: 'div',
   });
+
+  try {
+    fs.mkdirSync(path.join(process.cwd(), './.cache/'));
+  } catch (err) {}
+
+  const imageCachePath = path.join(
+    process.cwd(),
+    './.cache/cloudinary-11ty.json',
+  );
+  let imageCache = {};
+  if (fs.existsSync(imageCachePath)) {
+    imageCache = require(imageCachePath);
+  }
 
   const markdown = require('markdown-it');
   const mdAnchor = require('markdown-it-anchor');
@@ -63,20 +77,27 @@ module.exports = function (eleventyConfig) {
           }
 
           if (!src.startsWith('https://res.cloudinary.com/')) {
-            const filePath = path.resolve(state.env.page.inputPath);
-            const imagePath = path.join(path.dirname(filePath), src);
+            if (imageCache[src]) {
+              src = imageCache[src];
+            } else {
+              const filePath = path.resolve(state.env.page.inputPath);
+              const imagePath = path.join(path.dirname(filePath), src);
 
-            cloudinary.uploader.upload(imagePath, {
-              folder: 'jason.af', // optional; set this to whatever you want
-              use_filename: true, // use the filename as the public ID
-              overwrite: false, // don't re-upload images with the same filename
-              unique_filename: false, // required to avoid duplicate uploads
-            });
+              cloudinary.uploader.upload(imagePath, {
+                folder: 'jason.af', // optional; set this to whatever you want
+                use_filename: true, // use the filename as the public ID
+                overwrite: false, // don't re-upload images with the same filename
+                unique_filename: false, // required to avoid duplicate uploads
+              });
 
-            // no async in markdown-it (yay!) so we have to fake this a bit
-            src = `https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/jason.af/${path.basename(
-              imagePath,
-            )}`;
+              // no async in markdown-it (yay!) so we have to fake this a bit
+              const newSrc = `https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/jason.af/${path.basename(
+                imagePath,
+              )}`;
+              imageCache[src] = newSrc;
+              src = newSrc;
+            }
+
             image.attrSet('src', src);
           }
 
@@ -93,6 +114,8 @@ module.exports = function (eleventyConfig) {
           // don't forget to match this to content column width
           image.attrSet('sizes', '(max-width: 680px) 100vw, 680px');
         });
+
+        fs.writeFileSync(imageCachePath, JSON.stringify(imageCache));
       });
     });
 
@@ -114,17 +137,28 @@ module.exports = function (eleventyConfig) {
       const baseDir = path.dirname(currentFile);
       const imagePath = path.join(baseDir, value);
 
-      const res = await cloudinary.uploader.upload(imagePath, {
-        folder: 'jason.af', // optional; set this to whatever you want
-        use_filename: true, // use the filename as the public ID
-        overwrite: false, // don't re-upload images with the same filename
-        unique_filename: false, // required to avoid duplicate uploads
-      });
+      let newSrc;
 
-      callback(
-        null,
-        res.secure_url.replace(/upload/, `upload/f_auto,q_auto,w_${width}`),
-      );
+      if (imageCache[imagePath]) {
+        newSrc = imageCache[imagePath];
+      } else {
+        const res = await cloudinary.uploader.upload(imagePath, {
+          folder: 'jason.af', // optional; set this to whatever you want
+          use_filename: true, // use the filename as the public ID
+          overwrite: false, // don't re-upload images with the same filename
+          unique_filename: false, // required to avoid duplicate uploads
+        });
+
+        newSrc = res.secure_url.replace(
+          /upload/,
+          `upload/f_auto,q_auto,w_${width}`,
+        );
+        imageCache[imagePath] = newSrc;
+      }
+
+      fs.writeFileSync(imageCachePath, JSON.stringify(imageCache));
+
+      callback(null, newSrc);
     },
   );
 
