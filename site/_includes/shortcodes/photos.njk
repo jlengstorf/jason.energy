@@ -1,0 +1,68 @@
+<div class="photos">
+  <figure class="gallery-image">
+    <img src="https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/{{ photos[0].publicId }}.jpg" alt="{{ photos[0].alt }}" />
+    <figcaption>
+      <span class="image-caption">{{ photos[0].caption }}</span>
+      <div class="gallery-links">
+        <a
+          class="gallery-fullsize-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://res.cloudinary.com/jlengstorf/image/upload/{{ photos[0].publicId }}.jpg"
+        >
+          open full size
+        </a>
+        <span class="gallery-credit">
+          Photo: <a href="{{ photos[0].creditLink }}">{{ photos[0].credit }}</a>
+        </span>
+      </div>
+    </figcaption>
+  </figure>
+  <div class="gallery-options">
+    <h2 class="gallery-heading">
+      You can use any of these photos with credit:
+    </h2>
+    <ul class="gallery-thumbnails">
+    {% for photo in photos %}
+      <li class="gallery-thumb">
+        <button class="gallery-thumb-link">
+          <img
+            src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,c_fill,w_100,h_100,g_faces,c_thumb/{{ photo.publicId }}.jpg"
+            alt="{{ photo.alt }}"
+            data-public-id="{{ photo.publicId }}"
+            data-alt="{{ photo.alt }}"
+            data-caption="{{ photo.caption }}"
+            data-credit="{{ photo.credit }}"
+            data-credit-link="{{ photo.creditLink }}"
+          />
+        </button>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+const gallery = document.querySelector('.gallery-image');
+const img = gallery.querySelector('img');
+const caption = gallery.querySelector('.image-caption');
+const creditLink = gallery.querySelector('.gallery-credit a');
+
+function updateImage(event) {
+  const publicId = event.target.dataset.publicId;
+  const alt = event.target.dataset.alt;
+  const src = `https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg`;
+
+  img.src = src;
+  img.alt = alt;
+  caption.innerText = event.target.dataset.caption;
+  creditLink.href = event.target.dataset.creditLink;
+  creditLink.innerText = event.target.dataset.credit;
+}
+
+const thumbs = document.querySelectorAll('.gallery-thumb img');
+
+Array.from(thumbs).forEach((thumb) => {
+  thumb.addEventListener('click', updateImage);
+});
+</script>

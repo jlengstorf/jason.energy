@@ -1,0 +1,109 @@
+<section class="block hero-block">
+  {% include "shortcodes/boop-drop.njk" %}
+
+  <h1 class="hero">
+    <span class="hero-first-line">Jason</span>
+    <span class="hero-box">Lengstorf</span>
+    <span class="hero-tagline">has a lot of ideas</span>
+  </h1>
+
+  <button class="hero-cycle">
+    <span class="sr-only">change tagline</span>
+  </button>
+</section>
+
+<script type="module">
+const taglines = [
+  {
+    size: '8.46vw',
+    'size-lg': '66px',
+    text: `
+      has a lot of ideas
+    `,
+  },
+  {
+    rotation: '11deg',
+    scale: '1.2',
+    size: '9.4vw',
+    'size-lg': '73px',
+    text: `
+      believes in us <span class="love"></span>
+    `,
+    top: '0',
+  },
+  {
+    size: '9.57vw',
+    'size-lg': '74.5px',
+    text: `
+      is an okay cook
+    `,
+  },
+  {
+    rotation: '-9deg',
+    scale: '1.15',
+    size: '8.44vw',
+    'size-lg': '65.5px',
+    text: `
+      <span class="love">love</span>s melted cheese
+    `,
+  },
+  {
+    rotation: '18deg',
+    scale: 1.35,
+    size: '5.75vw',
+    'size-lg': '44.5px',
+    text: `
+      thinks you belong here <span class="love"></span>
+    `,
+    top: '0.025em',
+  },
+  {
+    scale: 1.3,
+    rotation: '-3deg',
+    size: '5.02vw',
+    'size-lg': '39px',
+    text: `
+      would <span class="love">love</span> a sandwich, thanks
+    `,
+    top: '-0.1em',
+  },
+  {
+    rotation: '-11deg',
+    scale: 1.3,
+    size: '8.39vw',
+    'size-lg': '65.25px',
+    text: `
+      <span class="love">love</span>s pajama pants
+    `,
+  },
+];
+
+const element = document.querySelector('.hero-tagline');
+let currentIndex = 0;
+
+function cycleTagline() {
+  window.addBoop();
+
+  currentIndex = (currentIndex + 1) % taglines.length;
+  const tagline = taglines[currentIndex];
+
+  element.style.setProperty('--top', tagline.top || '-7px');
+  element.style.setProperty('--rotation', tagline.rotation || '0deg');
+  element.style.setProperty('--scale', tagline.scale || 1.1);
+  element.style.setProperty('--size', tagline.size || '8.1vw');
+  element.style.setProperty('--size-lg', tagline['size-lg'] || '44px');
+
+  element.innerHTML = tagline.text;
+}
+
+const taglineButton = document.querySelector('.hero-cycle');
+taglineButton.addEventListener('click', (event) => {
+  taglineButton.classList.add('active');
+
+  setTimeout(() => {
+    taglineButton.classList.remove('active');
+  }, 500);
+  
+  cycleTagline();
+});
+</script>
