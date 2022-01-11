@@ -1,5 +1,5 @@
 ---
-date: 2021-05-02
+date: 2022-01-10
 slug: disconnect-on-vacation
 title: Checking Slack and email during vacation is bad for you AND your team. Please stop doing it.
 seo_title: Checking Slack and email during vacation is bad for you AND your team. Please stop doing it.
@@ -8,8 +8,7 @@ description: >
 category: impact
 tags: [teams, health, productivity]
 
-image: ./images/jessica-arends-lX3aiK4C1eU-unsplash.jpg
-useImageForSEO: false
+image: ./images/take-vacation.jpg
 cta: default
 ---
 
@@ -71,7 +70,7 @@ Teams build resilience by learning to solve problems in different ways. **If you
 
 - The team may grow to resent that you don't trust them enough to do things on their own.
 
-* You might start to resent that {% footnote id="initiative" %}no one takes initiative except you.{% endfootnote %}
+* You might start to resent that {% footnote id="initiative" %}no one is taking initiative except you.{% endfootnote %}
 
 {% footnoteText id="initiative" %}
 Of course, the _reason_ no one takes initiative is that you've trained them to wait for your approval. There are big downsides to putting yourself into the role of savior, and one of the biggest is that when you teach everyone to do things a certain way, you don't get to be upset when they listen to you.
