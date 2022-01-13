@@ -61,6 +61,7 @@
   --color-pink-900-alpha: #961d6e22;
 
   --color-gray-000: #ffffff;
+  --color-gray-050: #f5f4fb;
   --color-gray-100: #d4d0e0;
   --color-gray-300: #b1acb9;
   --color-gray-500: #7f7d87;
@@ -99,6 +100,13 @@
 
   --color-primary: var(--color-pink-700);
 
+  --color-button-bg: var(--color-background);
+  --color-button-border: var(--color-primary);
+  --color-button-text: var(--color-primary);
+  --color-button-hover-bg: var(--color-pink-700);
+  --color-button-hover-border: var(--color-primary);
+  --color-button-hover-text: var(--color-gray-000);
+
   --color-background: var(--color-gray-000);
   --color-border: var(--color-gray-100);
   --color-foreground: var(--color-text-default);
@@ -109,8 +117,8 @@
   --color-blue-bg: var(--color-teal-500);
   --color-blue-border: var(--color-teal-700);
 
-  --color-footer-bg: var(--color-gray-100);
-  --color-footer-border: var(--color-gray-300);
+  --color-footer-bg: var(--color-gray-050);
+  --color-footer-border: var(--color-gray-100);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -123,6 +131,12 @@
     --color-link: var(--color-blue-500);
 
     --color-pink-border: var(--color-pink-900);
+
+    --color-button-border: var(--color-pink-900);
+    --color-button-text: var(--color-primary);
+    --color-button-hover-bg: var(--color-primary);
+    --color-button-hover-border: var(--color-gray-900);
+    --color-button-hover-text: var(--color-gray-900);
 
     --color-background: var(--color-gray-900);
     --color-border: var(--color-gray-800);
@@ -657,11 +671,14 @@ main.home {
 
 /* PHOTOS */
 .photos {
-  margin: 3rem 0 0;
+  margin: 3rem auto 0;
+  max-width: 400px;
 }
 
 @media (min-width: 900px) {
   .photos {
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 0;
   }
 }
@@ -750,22 +767,31 @@ main.home {
 /* LEARNING */
 .learning-block {
   background: var(--color-blue-bg);
-  border: var(--color-blue-border);
+  border-color: var(--color-blue-border);
 }
 
 .platforms {
   display: flex;
   flex-direction: column;
   gap: 2.25rem;
-  justify-content: space-between;
+  justify-content: center;
   list-style: none;
   margin: 2.25rem 0 0;
   padding: 0;
 }
 
-@media (min-width: 900px) {
+.platform {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+@media (min-width: 1000px) {
   .platforms {
     flex-direction: row;
+  }
+
+  .platform {
+    margin: 0;
   }
 }
 
@@ -784,7 +810,7 @@ main.home {
 .platform-card {
   background: var(--color-background);
   border-radius: 0.25rem;
-  margin: -4.5rem 0 0;
+  margin: -5rem 0 0;
   padding: 5.25rem 1.5rem 1.5rem;
 }
 
@@ -800,6 +826,18 @@ main.home {
 
 .platform-description {
   font-size: 0.875rem;
+}
+
+.platform-link-text {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.subscribe-block {
+  border-bottom: 0;
 }
 
 /* POST */
@@ -854,7 +892,13 @@ main.home {
   grid-column: 1;
   grid-row: 1;
   grid-row-end: 2;
-  margin: 0;
+  margin: 1.5rem 0 0;
+}
+
+@media (min-width: 1000px) {
+  .details {
+    margin-top: 0;
+  }
 }
 
 .details figure {
@@ -862,7 +906,7 @@ main.home {
 }
 
 .details img {
-  border: 2px solid var(--color-pink-border);
+  border: 1px solid var(--color-pink-border);
   border-radius: 50%;
   display: block;
   margin: 0 auto;
@@ -884,16 +928,17 @@ main.home {
 }
 
 .newsletter-nudge {
-  border-top: 2px solid var(--color-pink-border);
+  border-top: 1px solid var(--color-border);
   font-size: 0.625rem;
   line-height: 0.75rem;
   padding-top: 1.45rem;
 }
 
 .newsletter-nudge .button {
-  border: 2px solid var(--color-primary);
+  background: var(--color-button-bg);
+  border: 2px solid var(--color-button-border);
   border-radius: 0.25rem;
-  color: var(--color-primary);
+  color: var(--color-button-text);
   display: block;
   font-size: 0.875rem;
   font-weight: 900;
@@ -906,9 +951,9 @@ main.home {
 
 .newsletter-nudge .button:focus,
 .newsletter-nudge .button:hover {
-  background: var(--color-pink-border);
-  border-color: var(--color-text-heading);
-  color: var(--color-text-heading);
+  background: var(--color-button-hover-bg);
+  border-color: var(--color-button-hover-border);
+  color: var(--color-button-hover-text);
 }
 
 .table-of-contents {
@@ -943,6 +988,17 @@ main.home {
 
 .table-of-contents a.active {
   color: var(--color-text-emphasized);
+}
+
+.content {
+  margin-bottom: 4.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1000px) {
+  .content {
+    margin-top: 0;
+  }
 }
 
 .content > p:first-child {
@@ -1291,7 +1347,6 @@ blockquote {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 140px 1fr;
-    margin-top: 0;
     width: 500px;
   }
 
@@ -1324,7 +1379,7 @@ blockquote {
 }
 
 .opt-in input {
-  border: 0;
+  border: 1px solid var(--color-border);
   border-radius: 0.125rem;
   font-family: var(--font-family);
   font-size: 1rem;
