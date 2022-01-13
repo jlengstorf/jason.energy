@@ -174,8 +174,14 @@ body {
 
 html {
   background-color: var(--color-background);
-  font-size: 20px;
+  font-size: 16px;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 body {
