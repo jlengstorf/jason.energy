@@ -54,11 +54,55 @@
     <header>
       <a href="/" rel="home" class="home-link">Jason Lengstorf</a>
 
-      <nav class="main-nav">
+      <nav class="main-nav {% if page.url === "/" %}offset-right{% endif %}">
       {% for link in nav %}
         <a href="{{ link.url }}">{{ link.label }}</a>
       {% endfor %}
       </nav>
+
+      {% if page.url === "/" %}
+      <div
+        class="exploding-nav first-run"
+        style="--navCount: {{ homeNav.length }}"
+      >
+        <button class="exploding-nav-button">
+          <img
+            class="face"
+            src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
+            alt=""
+          />
+          <span class="sr-only">Show Navigation</span>
+        </button>
+        <nav class="home-page-nav">
+          {% for item in homeNav %}
+            <a
+              class="home-item"
+              href="/#{{ item.id }}"
+              style="--offset: {{ loop.index}}"
+            >
+              {{ item.label }}
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/{{ item.icon }}.png"
+                alt=""
+              />
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+      <script>
+        const explodingNav = document.querySelector('.exploding-nav');
+        const explodingNavButton = document.querySelector('.exploding-nav-button');
+
+        function toggleNavOpen(event) {
+          event.preventDefault();
+
+          explodingNav.classList.remove('first-run');
+          explodingNav.classList.toggle('active');
+        }
+
+        explodingNavButton.addEventListener('click', toggleNavOpen);
+      </script>
+      {% endif %}
     </header>
 
     {% block main %}
