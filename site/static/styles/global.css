@@ -43,15 +43,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'jwf';
-  src: url('/fonts/jwf-ultraitalic.woff2') format('woff2'),
-    url('/fonts/jwf-ultraitalic.woff') format('woff');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-
 :root {
   --color-pink-100: #fcf2f9;
   --color-pink-500: #ff87d7;
@@ -726,6 +717,7 @@ main.home {
 }
 
 .bio-input {
+  cursor: pointer;
   height: 100%;
   left: 0;
   margin: 0;
@@ -767,8 +759,8 @@ main.home {
 }
 
 .bio-label {
-  cursor: pointer;
   font-size: 0.625rem;
+  pointer-events: none;
 }
 
 .bio-label::before,
@@ -849,6 +841,9 @@ main.home {
   display: block;
   height: 60px;
   margin: 0;
+  outline-color: transparent;
+  outline-offset: 0.25rem;
+  outline-width: 2px;
   padding: 0.75rem;
   transition: all 200ms linear;
   transition-delay: 150ms;
@@ -857,7 +852,7 @@ main.home {
 .bio-link:focus,
 .bio-link:hover {
   background: var(--color-pink-700);
-  outline: none;
+  outline-color: var(--color-foreground);
   transition-delay: 0ms;
 }
 

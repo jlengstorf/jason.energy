@@ -96,6 +96,12 @@
         function toggleNavOpen(event) {
           event.preventDefault();
 
+          if (explodingNav.classList.contains('active')) {
+            window.playSoundEffect('power-down');
+          } else {
+            window.playSoundEffect('power-up');
+          }
+
           explodingNav.classList.remove('first-run');
           explodingNav.classList.toggle('active');
         }
@@ -139,6 +145,66 @@
         <a href="https://github.com/jlengstorf/jason.af">source code</a>
       </nav>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+      const sound = new Howl({
+        src: [
+          'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.webm',
+          'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.mp3',
+        ],
+        sprite: {
+          airhorn: [0, 2076],
+          beep: [2205, 378],
+          boop: [2724, 483],
+          click: [3373, 273],
+          hooray: [3762, 900],
+          oop: [4800, 324],
+          pop: [5319, 324],
+          'power-down': [5838, 952],
+          'power-up': [7005, 953],
+          woohoo: [8173, 743],
+          yay: [9081, 1265],
+        }
+      });
+
+      window.playSoundEffect = (name = 'boop') => {
+        sound.play(name);
+      }
+
+      const hoverEls = document.querySelectorAll('[data-sound-hover]');
+      hoverEls.forEach((el) => {
+        const soundEffect = el.dataset.soundHover;
+
+        el.addEventListener('mouseenter', () => window.playSoundEffect(soundEffect));
+      });
+
+      const clickEls = document.querySelectorAll('[data-sound-click]');
+      clickEls.forEach((el) => {
+        const soundEffect = el.dataset.soundClick;
+
+        el.addEventListener('mousedown', (event) => {
+          window.playSoundEffect(soundEffect);
+
+          event.preventDefault();
+        });
+
+        el.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter') {
+            return;
+          }
+
+          window.playSoundEffect(soundEffect);
+        });
+      });
+
+      const focusEls = document.querySelectorAll('[data-sound-focus]');
+      focusEls.forEach((el) => {
+        const soundEffect = el.dataset.soundFocus;
+
+        el.addEventListener('focus', () => window.playSoundEffect(soundEffect));
+      });
+    </script>
 
     {% block scripts %}
     {% endblock %}

@@ -1,5 +1,6 @@
 <canvas class="boop-drop"></canvas>
 
+{% block scripts %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js"></script>
 <script type="module">
 const world = document.querySelector(".boop-drop");
@@ -53,12 +54,17 @@ Runner.run(runner, engine);
 
 World.add(engine.world, [ground, leftWall, rightWall]);
 
-const addBoop = () => {
+const addBoop = (sound = true) => {
+  if (sound) {
+    window.playSoundEffect('boop');
+  }
+
   const boop = createBall();
   World.add(engine.world, [boop]);
 };
 
 window.addBoop = addBoop;
 
-addBoop();
+addBoop(false);
 </script>
+{% endblock %}

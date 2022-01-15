@@ -25,7 +25,12 @@
     <ul class="gallery-thumbnails">
     {% for photo in photos %}
       <li class="gallery-thumb">
-        <button class="gallery-thumb-link">
+        <button
+          class="gallery-thumb-link"
+          data-sound-hover="pop"
+          data-sound-focus="pop"
+          data-sound-click="click"
+        >
           <img
             src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,c_fill,w_100,h_100,g_faces,c_thumb/{{ photo.publicId }}.jpg"
             alt="{{ photo.alt }}"
@@ -49,20 +54,28 @@ const caption = gallery.querySelector('.image-caption');
 const creditLink = gallery.querySelector('.gallery-credit a');
 
 function updateImage(event) {
-  const publicId = event.target.dataset.publicId;
-  const alt = event.target.dataset.alt;
+  const thumb = event.target.querySelector('img') || event.target;
+  const publicId = thumb.dataset.publicId;
+  const alt = thumb.dataset.alt;
   const src = `https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg`;
 
   img.src = src;
   img.alt = alt;
-  caption.innerText = event.target.dataset.caption;
-  creditLink.href = event.target.dataset.creditLink;
-  creditLink.innerText = event.target.dataset.credit;
+  caption.innerText = thumb.dataset.caption;
+  creditLink.href = thumb.dataset.creditLink;
+  creditLink.innerText = thumb.dataset.credit;
 }
 
-const thumbs = document.querySelectorAll('.gallery-thumb img');
+const thumbs = document.querySelectorAll('.gallery-thumb');
 
 Array.from(thumbs).forEach((thumb) => {
   thumb.addEventListener('click', updateImage);
+  thumb.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter') {
+      return;
+    }
+    
+    updateImage(event);
+  });
 });
 </script>
