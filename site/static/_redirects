@@ -1,0 +1,78 @@
+/api/*                          /.netlify/functions/:splat  200
+
+# partner links
+/cloudinary                     https://cloudinary.com/?ap=lwj
+
+# teaching platforms
+/egghead                        https://egghead.io/instructors/jason-lengstorf?af=azvpe4
+/frontendmasters                https://frontendmasters.com/teachers/jason-lengstorf/
+/fem                            https://frontendmasters.com/teachers/jason-lengstorf/
+/intro-to-gatsby                https://frontendmasters.com/workshops/gatsby-v2/
+/gatsby-intro                   https://frontendmasters.com/courses/gatsby-v2/
+/intermediate-gatsby            https://frontendmasters.com/workshops/intermediate-gatsby-v2/
+
+# workshop stuff
+/fem/img/*                      https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_600/fem-workshop/serverless/:splat   200!
+
+
+
+# social links
+/twitter                        https://twitter.com/jlengstorf
+/twitch                         https://www.twitch.tv/jlengstorf
+/party-corgi                    https://discord.gg/partycorgi
+/pcn                            https://discord.gg/partycorgi
+
+# egghead courses
+/egghead/stripe-products        https://egghead.io/playlists/sell-products-using-stripe-checkout-and-netlify-functions-25f6?af=azvpe4
+/egghead/wp-jamstack            https://egghead.io/playlists/migrate-a-wordpress-site-to-the-jamstack-using-gatsby-6d7f?af=azvpe4
+/egghead/netlify-deploy         https://egghead.io/lessons/egghead-deploy-a-site-to-netlify-from-git?af=azvpe4
+/egghead/stripe-donations       https://egghead.io/lessons/egghead-add-a-donation-button-to-a-website-using-stripe?af=azvpe4
+
+# links about Learn With Jason get prefixed — older ones are still here to avoid broken links
+/lwj                            https://www.learnwithjason.dev/
+/lwj/blog                       https://www.learnwithjason.dev/blog/
+/lwj/schedule                   https://www.learnwithjason.dev/schedule
+/lwj/book                       https://calendly.com/jlengstorf/learn-with-jason-livestream
+/lwj/youtube                    https://www.youtube.com/playlist?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj/cal                        https://calendar.google.com/calendar?cid=bGVuZ3N0b3JmLmNvbV85cGxqMW02dTl2dGRkbGRvaW5sMGhzMnZna0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+/lwj-calendar                   https://calendar.google.com/calendar?cid=bGVuZ3N0b3JmLmNvbV85cGxqMW02dTl2dGRkbGRvaW5sMGhzMnZna0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+/lwj-schedule                   https://www.learnwithjason.dev/schedule
+/lwj-youtube                    https://www.youtube.com/playlist?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+
+# these discussion links were an experiment that didn’t get much action
+/lwj-twilio                     https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@chatterboxcoder%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,chatterboxcoder&url=https://youtu.be/K02SnxY6c_0?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-aws                        https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@kurtiskemple%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,kurtiskemple&url=https://youtu.be/U6trl0_ynuM?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-source-plugin              https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@brii_toe_knee%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,brii_toe_knee&url=https://youtu.be/D4UbEuy_K9c?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-cron                       https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@kvlly%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,kvlly&url=https://youtu.be/zYqkNLntMo0?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-drupal                     https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@GrantGlidewell%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,GrantGlidewell&url=https://youtu.be/9nYnAInawr0?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-laurie                     https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@laurieontech%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,laurieontech&url=https://youtu.be/ciGFxNamooI?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-wpgraphql                  https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@jasonbahl%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,jasonbahl&url=https://youtu.be/DH7I1xRrbxs?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-showcase-pt2               https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf&url=https://youtu.be/8PWd-4lb4DY?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-rss                        https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@amber1ey%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,amber1ey&url=https://youtu.be/0hGlvyuQiKQ?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-theme-docs                 https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@hhg2288%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,hhg2288&url=https://youtu.be/rcUUIHwaZew?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-microfrontends             https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@chrisbiscardi%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,chrisbiscardi&url=https://youtu.be/0Ta-awtLZTs?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-emma                       https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@EmmaWedekind%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,EmmaWedekind&url=https://youtu.be/W2uTfay3doo?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-theme-ui                   https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@jxnblk%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,jxnblk&url=https://youtu.be/6Z4p-qjnKCQ?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-discuss-hasura             https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@VladimirNovick%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,VladimirNovick&url=https://youtu.be/2xscUCo4KVs?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+/lwj-discuss-podcast-player     https://twitter.com/intent/tweet?text=Hey%20@jlengstorf%20@left_pad%20I%20have%20a%20question%20about%20your%20livestream!&related=jlengstorf,left_pad&url=https://youtu.be/z4ETLpujcqo?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
+
+# never gonna give up on this joke
+/party                          https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+# personal site links
+/newsletter                     https://lengstorf.com/newsletter/
+/speaking                       https://lengstorf.com/speaking/
+/blog                           https://lengstorf.com/blog/
+/uses                           https://lengstorf.com/uses/
+/talks                          https://github.com/jlengstorf/presentations
+
+# miscellaneous
+/talk/serverless                https://jlengstorf.github.io/presentations/serverless-functions
+/30min                          https://calendly.com/jlengstorf/30min
+/60min                          https://calendly.com/jlengstorf/hour
+/workshop/jamstack-fast-track   https://www.learnwithjason.dev/workshops
+
+/optimize-for-deletion          https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=presentation&utm_medium=jamstack-architecture&utm_content=optimize-for-deletion
+
+https://jasonaf.netlify.app/*  https://www.jason.af/
+https://jason.af/*             https://www.jason.af/:splat

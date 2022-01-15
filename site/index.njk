@@ -1,0 +1,14 @@
+{% extends "default.njk" %}
+
+{% block seo %}
+<title>A Very Jason Lengstor Website — Powered By Boops!</title>
+{% endblock %}
+
+{% block main %}
+<main class="home">
+  {% include "shortcodes/hero.njk" %}
+  {% include "shortcodes/bio.njk" %}
+  {% include "shortcodes/learning.njk" %}
+  {% include "shortcodes/subscribe.njk" %}
+</main>
+{% endblock %}

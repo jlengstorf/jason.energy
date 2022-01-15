@@ -1,62 +1,28 @@
 {
-  "type": "module",
   "name": "jason.af",
   "private": true,
   "description": "the boopiest place on Earth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "patch-package && breadbox --dest public/web_modules",
-    "prebuild": "postcss --config commonjs-compat src/styles/*.css -d public/styles/",
-    "build": "toast incremental .",
-    "postbuild": "./bin/minify.js",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "predev": "npm run build",
-    "dev": "npm run serve",
-    "serve": "serve public"
+    "build": "eleventy",
+    "dev": "eleventy --serve"
   },
   "dependencies": {
-    "@jlengstorf/get-share-image": "^0.8.0",
-    "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/preact": "^1.6.22",
-    "@sector/breadbox": "0.0.4",
-    "@toastdotdev/mdx": "^0.1.5",
-    "cssnano": "^4.1.10",
-    "glob": "^7.1.6",
-    "matter-js": "^0.15.0",
-    "netlify-plugin-toast-cache": "0.0.4",
-    "node-fetch": "^2.6.1",
-    "patch-package": "^6.2.2",
-    "poly-decomp": "^0.3.0",
-    "postcss": "^8.2.2",
-    "postcss-cli": "^8.3.1",
-    "preact": "^10.5.8",
-    "react-helmet": "^6.1.0",
-    "rehype-identity-footnote-containers": "^1.0.0",
-    "rehype-local-image-to-cloudinary": "^1.0.4",
-    "remark-numbered-footnotes": "^2.0.0",
-    "terser": "^5.5.1",
-    "toast": "^0.3.39"
+    "@11ty/eleventy": "^0.12.1",
+    "@netlify/functions": "^0.10.0",
+    "@sindresorhus/slugify": "^2.1.0",
+    "cloudinary": "^1.27.1",
+    "eleventy-plugin-toc": "^1.1.5",
+    "markdown-it": "^12.3.0",
+    "markdown-it-anchor": "^8.4.1",
+    "matter-js": "^0.18.0",
+    "node-fetch": "^3.1.0",
+    "rehype-local-image-to-cloudinary": "^1.0.4"
   },
   "devDependencies": {
+    "@types/node": "^17.0.7",
     "prettier": "^2.2.1",
-    "serve": "^11.3.2"
-  },
-  "snowpack": {
-    "exclude": [
-      "bin/**",
-      "public/**",
-      "commonjs-compat/**",
-      "toast.js"
-    ],
-    "installOptions": {
-      "alias": {
-        "react": "preact/compat"
-      },
-      "knownEntryPoints": [
-        "preact",
-        "preact/hooks"
-      ]
-    }
+    "serve": "^13.0.2"
   }
 }

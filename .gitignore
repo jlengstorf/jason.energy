@@ -74,3 +74,4 @@ yarn-error.log
 # YEAH TOAST!
 src/styles/*.js
 .tmp
+dist

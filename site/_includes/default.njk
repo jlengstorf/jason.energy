@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="preload"
+      href="{{ '/fonts/jwf-book.woff2' | url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="{{ '/fonts/jwf-bookitalic.woff2' | url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="{{ '/fonts/jwf-ultra.woff2' | url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="{{ '/fonts/jwf-ultraitalic.woff2' | url }}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+
+    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ '/apple-touch-icon.png' | url }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | url }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | url }}" />
+    <link rel="manifest" href="{{ '/site.webmanifest' | url }}" />
+    <link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | url }}" color="#ff87d4" />
+    <meta name="msapplication-TileColor" content="#ffe742" />
+    <meta name="theme-color" content="#ffe742" />
+
+    {% block seo %}
+    <title>{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}</title>
+    {% endblock %}
+  </head>
+
+  <body class="{{ bodyClass }}">
+    <header>
+      <a href="/" rel="home" class="home-link">Jason Lengstorf</a>
+
+      <nav class="main-nav {% if page.url === "/" %}offset-right{% endif %}">
+      {% for link in nav %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+      </nav>
+
+      {% if page.url === "/" %}
+      <div
+        class="exploding-nav first-run"
+        style="--navCount: {{ homeNav.length }}"
+      >
+        <button class="exploding-nav-button">
+          <img
+            class="face"
+            src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/jason-brains.png"
+            alt=""
+          />
+          <span class="sr-only">Show Navigation</span>
+        </button>
+        <nav class="home-page-nav">
+          {% for item in homeNav %}
+            <a
+              class="home-item"
+              href="/#{{ item.id }}"
+              style="--offset: {{ loop.index}}"
+            >
+              {{ item.label }}
+              <img
+                src="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/jason.af/{{ item.icon }}.png"
+                alt=""
+              />
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+
+      <div class="site-settings">
+        <button
+          class="site-settings-button site-settings-toggle"
+          data-sound-hover="pop"
+          data-sound-click="click"
+        >
+          <img
+            class="site-settings-gear"
+            src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593477792/jason.af/gear.png"
+            alt=""
+          />
+          <span class="sr-only">Show Settings</span>
+        </button>
+        <div class="site-settings-panel">
+          <button
+            class="site-settings-button"
+            data-sound-hover="pop"
+            data-sound-click="click"
+            data-setting="sound"
+          >
+            <img
+              class="site-settings-sound"
+              src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-on.png"
+              alt=""
+              data-image-on="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-on.png"
+              data-image-off="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-off.png"
+            />
+            <span class="sr-only">Turn Sound Off</span>
+          </button>
+        </div>
+      </div>
+
+      <script>
+        const explodingNav = document.querySelector('.exploding-nav');
+        const explodingNavButton = document.querySelector('.exploding-nav-button');
+
+        function toggleNavOpen(event) {
+          event.preventDefault();
+
+          if (explodingNav.classList.contains('active')) {
+            window.playSoundEffect('power-down');
+          } else {
+            window.playSoundEffect('power-up');
+          }
+
+          explodingNav.classList.remove('first-run');
+          explodingNav.classList.toggle('active');
+        }
+
+        explodingNavButton.addEventListener('click', toggleNavOpen);
+
+
+        const settingsButton = document.querySelector('.site-settings-button');
+        const panel = document.querySelector('.site-settings-panel');
+        const soundToggle = document.querySelector('[data-setting=sound]');
+        const soundImage = soundToggle.querySelector('img');
+        let isSoundEnabled = window.localStorage.getItem('settings:sound');
+
+        function toggleSettings() {
+          panel.classList.toggle('site-settings-panel-open');
+        }
+
+        function toggleSound() {
+          isSoundEnabled = !isSoundEnabled;
+          window.localStorage.setItem('settings:sound', isSoundEnabled);
+
+          if (isSoundEnabled) {
+            window.sound.mute(false);
+            soundImage.src = soundImage.dataset.imageOn;
+          } else {
+            window.sound.mute(true);
+            soundImage.src = soundImage.dataset.imageOff;
+          }
+        }
+
+        settingsButton.addEventListener('click', (event) => {
+          toggleSettings();
+        });
+
+        soundToggle.addEventListener('click', () => {
+          toggleSound();
+        });
+      </script>
+      {% endif %}
+    </header>
+
+    {% block main %}
+    <main>
+      <article class="{% if type === "post" %}post{% endif %}">
+        {% block heading %}
+        <div class="heading">
+          <h1>{{title}}</h1>
+          <p class="lede">{{description}}</p>
+        </div>
+        {% endblock %}
+
+        {% block details %}
+        {% endblock %}
+
+        {% block sidebar %}
+        {% endblock %}
+
+        {% block content %}
+        <div class="content">
+          {{ content | safe }}
+        </div>
+        {% endblock %}
+      </article>
+    </main>
+    {% endblock %}
+
+    <footer>
+      <span class="boops">powered by boops</span>
+      <nav class="footer-nav">
+      {% for link in nav %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+        <a href="https://github.com/jlengstorf/jason.af">source code</a>
+      </nav>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+      const sound = new Howl({
+        src: [
+          'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.webm',
+          'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.mp3',
+        ],
+        sprite: {
+          airhorn: [0, 2076],
+          beep: [2205, 378],
+          boop: [2724, 483],
+          click: [3373, 273],
+          hooray: [3762, 900],
+          oop: [4800, 324],
+          pop: [5319, 324],
+          'power-down': [5838, 952],
+          'power-up': [7005, 953],
+          woohoo: [8173, 743],
+          yay: [9081, 1265],
+        }
+      });
+
+      window.sound = sound;
+
+      window.playSoundEffect = (name = 'boop') => {
+        sound.play(name);
+      }
+
+      const hoverEls = document.querySelectorAll('[data-sound-hover]');
+      hoverEls.forEach((el) => {
+        const soundEffect = el.dataset.soundHover;
+
+        el.addEventListener('mouseenter', () => window.playSoundEffect(soundEffect));
+      });
+
+      const clickEls = document.querySelectorAll('[data-sound-click]');
+      clickEls.forEach((el) => {
+        const soundEffect = el.dataset.soundClick;
+
+        el.addEventListener('mousedown', (event) => {
+          window.playSoundEffect(soundEffect);
+
+          event.preventDefault();
+        });
+
+        el.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter') {
+            return;
+          }
+
+          window.playSoundEffect(soundEffect);
+        });
+      });
+
+      const focusEls = document.querySelectorAll('[data-sound-focus]');
+      focusEls.forEach((el) => {
+        const soundEffect = el.dataset.soundFocus;
+
+        el.addEventListener('focus', () => window.playSoundEffect(soundEffect));
+      });
+    </script>
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
