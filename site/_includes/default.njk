@@ -89,6 +89,39 @@
           {% endfor %}
         </nav>
       </div>
+
+      <div class="site-settings">
+        <button
+          class="site-settings-button site-settings-toggle"
+          data-sound-hover="pop"
+          data-sound-click="click"
+        >
+          <img
+            class="site-settings-gear"
+            src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593477792/jason.af/gear.png"
+            alt=""
+          />
+          <span class="sr-only">Show Settings</span>
+        </button>
+        <div class="site-settings-panel">
+          <button
+            class="site-settings-button"
+            data-sound-hover="pop"
+            data-sound-click="click"
+            data-setting="sound"
+          >
+            <img
+              class="site-settings-sound"
+              src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-on.png"
+              alt=""
+              data-image-on="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-on.png"
+              data-image-off="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_70/v1593533573/jason.af/sound-off.png"
+            />
+            <span class="sr-only">Turn Sound Off</span>
+          </button>
+        </div>
+      </div>
+
       <script>
         const explodingNav = document.querySelector('.exploding-nav');
         const explodingNavButton = document.querySelector('.exploding-nav-button');
@@ -107,6 +140,38 @@
         }
 
         explodingNavButton.addEventListener('click', toggleNavOpen);
+
+
+        const settingsButton = document.querySelector('.site-settings-button');
+        const panel = document.querySelector('.site-settings-panel');
+        const soundToggle = document.querySelector('[data-setting=sound]');
+        const soundImage = soundToggle.querySelector('img');
+        let isSoundEnabled = window.localStorage.getItem('settings:sound');
+
+        function toggleSettings() {
+          panel.classList.toggle('site-settings-panel-open');
+        }
+
+        function toggleSound() {
+          isSoundEnabled = !isSoundEnabled;
+          window.localStorage.setItem('settings:sound', isSoundEnabled);
+
+          if (isSoundEnabled) {
+            window.sound.mute(false);
+            soundImage.src = soundImage.dataset.imageOn;
+          } else {
+            window.sound.mute(true);
+            soundImage.src = soundImage.dataset.imageOff;
+          }
+        }
+
+        settingsButton.addEventListener('click', (event) => {
+          toggleSettings();
+        });
+
+        soundToggle.addEventListener('click', () => {
+          toggleSound();
+        });
       </script>
       {% endif %}
     </header>
@@ -167,6 +232,8 @@
           yay: [9081, 1265],
         }
       });
+
+      window.sound = sound;
 
       window.playSoundEffect = (name = 'boop') => {
         sound.play(name);

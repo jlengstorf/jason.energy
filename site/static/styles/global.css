@@ -270,6 +270,12 @@ header a {
   margin-top: 0;
 }
 
+@media (min-width: 580px) {
+  .main-nav.offset-right {
+    margin-right: 50px;
+  }
+}
+
 @media (min-width: 675px) {
   .main-nav.offset-right {
     margin-right: 150px;
@@ -476,6 +482,63 @@ header a {
   background: var(--pink);
   border-color: var(--yellow);
   color: var(--black);
+}
+
+/* SITE SETTINGS */
+.site-settings {
+  margin-top: 0.25rem;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 50px;
+  z-index: 900;
+}
+
+.site-settings-button {
+  background: var(--color-gray-900);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  margin-top: 0.5rem;
+  padding: 5px;
+  transition: 200ms all linear;
+  width: 49px;
+}
+
+.site-settings-toggle {
+  margin-top: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.site-settings-button:focus,
+.site-settings-button:hover {
+  background: var(--color-pink-500);
+  border-color: var(--color-pink-700);
+}
+
+.site-settings-gear,
+.site-settings-sound {
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.site-settings-panel {
+  background: var(--color-background);
+  background-blend-mode: multiply;
+  border-radius: calc(25px + 0.25rem) calc(25px + 0.25rem);
+  display: none;
+  padding: calc(50px + 1rem) 0.25rem 0.25rem;
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  width: calc(50px + 0.5rem);
+}
+
+.site-settings-panel.site-settings-panel-open {
+  display: block;
 }
 
 /* MAIN */
