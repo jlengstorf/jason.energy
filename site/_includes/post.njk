@@ -65,9 +65,10 @@
       event.preventDefault();
 
       const [, id] = event.target.href.split("#");
-      const footnote = document.querySelector(`#${id} details`);
+      const footnote = document.querySelector(`#${id} .footnote-content`);
+      const newStatus = footnote.dataset.status === 'visible' ? 'hidden' : 'visible';
 
-      footnote.open = !footnote.open;
+      footnote.dataset.status = newStatus;
     });
   });
 
@@ -76,8 +77,8 @@
     closeLink.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const footnote = event.target.closest("details");
-      footnote.open = false;
+      const footnote = event.target.closest(".footnote-content");
+      footnote.dataset.status = 'hidden';
     });
   });
 

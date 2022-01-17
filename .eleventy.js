@@ -166,16 +166,16 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addPairedShortcode('footnote', (content, { id }) => {
-    return `<a href="#${id}" id="${id}ref" class="footnote-phrase">${content}</a>`;
+    return `<a href="#${id}" id="${id}ref" class="footnote-phrase" aria-described-by="footnote-label-${id}">${content}</a>`;
   });
 
   eleventyConfig.addPairedShortcode('footnoteText', (content, { id }) => {
     return `
 <aside class="footnote" id="${id}">
-  <details>
-    <summary>notes here</summary>
-    ${content} <a href="#${id}ref" class="footnote-backref">close</a>
-  </details>
+  <p class="sr-only" id="footnote-label-${id}">additional context</p>
+  <div class="footnote-content" data-visible="false">
+    ${content} <a href="#${id}ref" class="footnote-backref" aria-label="Back to content">close</a>
+  </div>
 </aside>
 `;
   });

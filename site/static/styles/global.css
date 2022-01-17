@@ -1475,24 +1475,26 @@ blockquote {
 .footnote {
   background: var(--color-accent-background);
   border-radius: 0.25rem;
-  font-size: 0.625rem;
-  line-height: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
-.footnote details[open] {
+.footnote-content {
+  display: none;
   padding: 1rem;
   padding-left: 1.5rem;
 }
 
-.footnote summary {
-  display: none;
+.footnote-content[data-status='visible'] {
+  display: block;
 }
 
-.footnote p:first-of-type {
+.footnote-content p:first-of-type {
   margin-top: 0;
   position: relative;
 }
-.footnote details > p:first-of-type::before {
+
+.footnote-content p:first-of-type::before {
   color: var(--color-primary);
   content: '*';
   display: inline-block;
@@ -1502,13 +1504,13 @@ blockquote {
   transform: scale(2.15);
 }
 
-.footnote a:last-of-type {
+.footnote-content a:last-of-type {
   display: inline-block;
   margin: 0;
   margin-left: 0.75rem;
 }
 
-.footnote p {
+.footnote-content p {
   margin-top: 0.75rem;
 }
 
