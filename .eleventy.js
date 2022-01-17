@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 
 cloudinary.config({
   cloud_name: 'jlengstorf',
@@ -10,6 +11,8 @@ cloudinary.config({
 });
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginRss);
+
   eleventyConfig.addPassthroughCopy({ 'site/static': '/' });
 
   eleventyConfig.addCollection('posts', (collectionApi) => {

@@ -9,7 +9,8 @@
     "dev": "eleventy --serve"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@netlify/functions": "^0.10.0",
     "@sindresorhus/slugify": "^2.1.0",
     "cloudinary": "^1.27.1",
