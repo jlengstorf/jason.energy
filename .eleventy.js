@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const getShareImage = require('@jlengstorf/get-share-image').default;
 
 cloudinary.config({
   cloud_name: 'jlengstorf',
@@ -164,6 +165,21 @@ module.exports = function (eleventyConfig) {
       callback(null, newSrc);
     },
   );
+
+  eleventyConfig.addFilter('seoImage', (content) => {
+    return getShareImage({
+      title: content.toUpperCase(),
+      cloudName: 'jlengstorf',
+      imagePublicID: 'jason.af/og',
+      titleFont: 'jwf.otf',
+      titleExtraConfig: '_line_spacing_-25',
+      titleFontSize: 75,
+      textColor: '171321',
+      textLeftOffset: 354,
+      textAreaWidth: 920,
+      titleBottomOffset: 185,
+    });
+  });
 
   eleventyConfig.addPairedShortcode('footnote', (content, { id }) => {
     return `<a href="#${id}" id="${id}ref" class="footnote-phrase" aria-described-by="footnote-label-${id}">${content}</a>`;

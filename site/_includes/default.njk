@@ -41,6 +41,34 @@
 
     {% block seo %}
     <title>{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}</title>
+
+    <link rel="canonical" href="{{site }}/" />
+    <meta name="description" content="{{description}}" />
+    {% if image %}
+    <meta name="image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+    {% else %}
+    <meta name="image" content="{{ title | seoImage }}" />
+    {% endif %}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{site }}/" />
+    <meta property="og:description" content="{{description}}" />
+    {% if image %}
+    <meta property="og:image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+    {% else %}
+    <meta property="og:image" content="{{ title | seoImage }}" />
+    {% endif %}
+
+    <meta name="twitter:dnt" content="on" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@jlengstorf" />
+    <meta name="twitter:title" content="{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}" />
+    <meta name="twitter:description" content="{{description}}" />
+    {% if image %}
+    <meta name="twitter:image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+    {% else %}
+    <meta name="twitter:image" content="{{ title | seoImage }}" />
+    {% endif %}
     {% endblock %}
   </head>
 

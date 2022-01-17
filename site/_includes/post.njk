@@ -1,23 +1,35 @@
 {% extends "default.njk" %}
 
 {% block seo %}
-<title>{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}</title>
+<title>{% if seo_title %}{{ seo_title }}{% else %}{{ title }}{% endif %}</title>
 
-<link rel="canonical" href="{{site }}/{{slug}}/" />
-<meta name="description" content="{{description}}" />
-{% if image %}<meta name="image" content="{{image | cloudinary(page.inputPath, 1200)}}" />{% endif %}
+<link rel="canonical" href="{{ site }}/{{ slug }}/" />
+<meta name="description" content="{{ description }}" />
+{% if image %}
+<meta name="image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+{% else %}
+<meta name="image" content="{{ title | seoImage }}" />
+{% endif %}
 
 <meta property="og:type" content="article" />
-<meta property="og:url" content="{{site }}/{{slug}}/" />
-<meta property="og:description" content="{{description}}" />
-{% if image %}<meta property="og:image" content="{{image | cloudinary(page.inputPath, 1200)}}" />{% endif %}
+<meta property="og:url" content="{{ site }}/{{ slug }}/" />
+<meta property="og:description" content="{{ description }}" />
+{% if image %}
+<meta property="og:image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+{% else %}
+<meta property="og:image" content="{{ title | seoImage }}" />
+{% endif %}
 
 <meta name="twitter:dnt" content="on" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:creator" content="@jlengstorf" />
-<meta name="twitter:title" content="{% if seo_title %}{{seo_title}}{% else %}{{title}}{% endif %}" />
-<meta name="twitter:description" content="{{description}}" />
-{% if image %}<meta name="twitter:image" content="{{image | cloudinary(page.inputPath, 1200)}}" />{% endif %}
+<meta name="twitter:title" content="{% if seo_title %}{{ seo_title }}{% else %}{{ title }}{% endif %}" />
+<meta name="twitter:description" content="{{ description }}" />
+{% if image %}
+<meta name="twitter:image" content="{{ image | cloudinary(page.inputPath, 1200) }}" />
+{% else %}
+<meta name="twitter:image" content="{{ title | seoImage }}" />
+{% endif %}
 {% endblock %}
 
 
