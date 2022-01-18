@@ -637,7 +637,8 @@ main.home {
 }
 
 .love {
-  background: url('https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593755650/jason.af/love.png');
+  background-color: transparent;
+  background-image: url('https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593755650/jason.af/love.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -654,7 +655,8 @@ main.home {
 }
 
 .hero-cycle {
-  background: url(https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593806090/jason.af/rotate-off.png);
+  background-color: transparent;
+  background-image: url(https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593806090/jason.af/rotate-off.png);
   background-size: contain;
   border: none;
   color: var(--color-text-muted);
@@ -677,7 +679,7 @@ main.home {
   animation-duration: 500ms;
   animation-name: spin-hero-cycle;
   animation-iteration-count: 1;
-  background: url(https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593806090/jason.af/rotate-on.png);
+  background-image: url(https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1593806090/jason.af/rotate-on.png);
   background-size: contain;
 }
 
