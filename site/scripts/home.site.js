@@ -1,4 +1,13 @@
-// exploding nav
+/*
+ * -----------------------------------------------------------------------------
+ * exploding nav
+ *
+ * This nav is an exercise in taking something functional and useful and asking
+ * the question, "What if this was significantly more unsettling?" It's because
+ * I'm willing to ask hard-hitting questions like these that I never get
+ * invited to serious discussions about the web.
+ * -----------------------------------------------------------------------------
+ */
 const explodingNav = document.querySelector('.exploding-nav');
 const explodingNavButton = document.querySelector('.exploding-nav-button');
 
@@ -48,7 +57,11 @@ soundToggle.addEventListener('click', () => {
   toggleSound();
 });
 
-// taglines
+/*
+ * -----------------------------------------------------------------------------
+ * taglines
+ * -----------------------------------------------------------------------------
+ */
 const taglines = [
   {
     size: '8.46vw',
@@ -143,7 +156,17 @@ taglineButton.addEventListener('click', (event) => {
   cycleTagline();
 });
 
-// boop drop
+/*
+ * -----------------------------------------------------------------------------
+ * boop drop
+ *
+ * This uses Matter.js for physics. I'm pinned to an older version of Matter
+ * because I only *sort of* understand how all this code works, and when I use
+ * the latest version of Matter everything starts rolling to the right and
+ * acting weird. I don't even know where to start debugging it, so pinned
+ * versions forever it is!
+ * -----------------------------------------------------------------------------
+ */
 const world = document.querySelector('.boop-drop');
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
@@ -220,41 +243,30 @@ window.addBoop = addBoop;
 
 addBoop(false);
 
-// bio
-const bios = {
-  shortest: `
-    <strong>Jason Lengstorf</strong> is trying his very best.
-  `,
-  shorter: `
-    <strong>Jason Lengstorf</strong> works at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>. He is trying his very best.
-  `,
-  short: `
-    <strong>Jason Lengstorf</strong> works at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  long: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  longer: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a>, where he works to improve the experience of building and deploying to the modern web. He also hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  longest: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a>, where he works to improve the experience of building and deploying to the modern web. He also hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time writing to share what he’s learned in tech as well as stories about how he used to suck, listened to people who taught him valuable lessons, and made changes that helped him suck less. This frequently boils down to telling people that the formula for success and happiness is to lift each other up at every opportunity and share what we learn, even when it feels like something that’s been shared before or that “everybody already knows”. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-};
+/*
+ * -----------------------------------------------------------------------------
+ * bio switcher
+ * -----------------------------------------------------------------------------
+ */
 
-const radioEls = document.querySelectorAll('.bio-input');
+// bio options in an HTML template tag because it's content
+const bios = document.querySelector('#bios').content.cloneNode(true);
 const bioEl = document.querySelector('.bio');
 
-radioEls.forEach((el) => {
-  el.addEventListener('change', (event) => {
-    const currentLength = event.target.value;
-    const nextBio = bios[currentLength];
+// Jason Miller suggested using event delegation to keep this clean
+// https://twitter.com/_developit/status/1483104367981076484
+const options = document.querySelector('.bio-length-options');
+options.addEventListener('change', (event) => {
+  const nextBio = bios.querySelector(`[data-length=${event.target.value}]`);
 
-    bioEl.innerHTML = nextBio;
-  });
+  bioEl.innerHTML = nextBio.innerHTML;
 });
 
-// gallery
+/*
+ * -----------------------------------------------------------------------------
+ * gallery
+ * -----------------------------------------------------------------------------
+ */
 const gallery = document.querySelector('.gallery-image');
 const img = gallery.querySelector('img');
 const caption = gallery.querySelector('.image-caption');
@@ -273,20 +285,27 @@ function updateImage(event) {
   creditLink.innerText = thumb.dataset.credit;
 }
 
-const thumbs = document.querySelectorAll('.gallery-thumb');
+const thumbs = document.querySelector('.gallery-thumbnails');
 
-Array.from(thumbs).forEach((thumb) => {
-  thumb.addEventListener('click', updateImage);
-  thumb.addEventListener('keydown', (event) => {
-    if (event.key !== 'Enter') {
-      return;
-    }
+thumbs.addEventListener('click', updateImage);
+thumbs.addEventListener('keydown', (event) => {
+  if (event.key !== 'Enter') {
+    return;
+  }
 
-    updateImage(event);
-  });
+  updateImage(event);
 });
 
-// sound effects
+/*
+ * -----------------------------------------------------------------------------
+ * sound effects
+ *
+ * This uses Howler.js to play sounds. I tried doing this with plain ol' Audio
+ * before, but things like playing the sound rapidly in succession and handing
+ * quick mouseovers of things that should click felt janky. Howler Just Works™
+ * so I don't have to reinvent those wheels.
+ * -----------------------------------------------------------------------------
+ */
 const sound = new Howl({
   src: [
     'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.webm',
@@ -307,12 +326,16 @@ const sound = new Howl({
   },
 });
 
+// I originally attached these to the window to share it between scripts. Now
+// that it's been combined into one file I should probably refactor. Someday.
 window.sound = sound;
 
 window.playSoundEffect = (name = 'boop') => {
   sound.play(name);
 };
 
+// This little maneuver is cool because it lets you add sound effects just by
+// adding a `data-sound-hover="boop"` to any element. I need to write this up.
 const hoverEls = document.querySelectorAll('[data-sound-hover]');
 hoverEls.forEach((el) => {
   const soundEffect = el.dataset.soundHover;
