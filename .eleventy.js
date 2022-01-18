@@ -3,6 +3,10 @@ const path = require('path');
 const cloudinary = require('cloudinary').v2;
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const getShareImage = require('@jlengstorf/get-share-image').default;
+const terser = require('terser');
+const postcss = require('postcss');
+const csso = require('csso');
+const autoprefixer = require('autoprefixer');
 
 cloudinary.config({
   cloud_name: 'jlengstorf',
@@ -124,6 +128,35 @@ module.exports = function (eleventyConfig) {
     });
 
   eleventyConfig.setLibrary('md', mdLib);
+
+  eleventyConfig.addTemplateFormats('site.js');
+
+  eleventyConfig.addExtension('site.js', {
+    outputFileExtension: 'min.js',
+    compile: function (contents) {
+      return async () => {
+        const ret = await terser.minify(contents);
+        return ret.code;
+      };
+    },
+  });
+
+  eleventyConfig.addTemplateFormats('css');
+
+  eleventyConfig.addExtension('css', {
+    outputFileExtension: 'css',
+    compile: function (contents, inputPath) {
+      return async () => {
+        postcss();
+        const css = await postcss([autoprefixer()]).process(contents, {
+          from: inputPath,
+        }).css;
+        const minifiedCss = csso.minify(css).css;
+        console.log(minifiedCss);
+        return minifiedCss;
+      };
+    },
+  });
 
   /*
    * usage: {{ relativeImagePath | cloudinary(page.inputPath) }}
