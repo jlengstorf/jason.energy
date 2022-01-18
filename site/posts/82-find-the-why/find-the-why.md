@@ -116,7 +116,7 @@ As with most things, there’s no foolproof formula or ironclad process; every s
 
 At arm’s length, this may seem like an obvious statement, but it’s important to keep in mind that we exist in a culture of [self-destructive work ethic](https://lengstorf.com/overkill-cult) and [unhealthy commitment to our own ideas](https://lengstorf.com/labels): when we’re in the middle of a project, our instinct may be to just power through.
 
-{% tweet postUrl="{{site}}/{{slug}}/" %}When you hit a wall, sometimes it makes sense to plow through it. But most of the time there’s a solution that hurts less.{% endtweet %}
+{% tweet postUrl="{{siteUrl}}/{{slug}}/" %}When you hit a wall, sometimes it makes sense to plow through it. But most of the time there’s a solution that hurts less.{% endtweet %}
 
 Before you put your head down and try to smash it through whatever the problem is, take a beat and try to get a sense of what you’re up against.
 
