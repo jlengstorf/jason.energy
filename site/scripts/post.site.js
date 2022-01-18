@@ -24,7 +24,7 @@ Array.from(footnoteCloseLinks).forEach((closeLink) => {
 });
 
 // ToC section highlighting
-function handleIntersection(entries, observer) {
+function handleIntersection(entries) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       return;
