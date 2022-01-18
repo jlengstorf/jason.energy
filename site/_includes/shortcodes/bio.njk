@@ -27,9 +27,63 @@
           </div>
         </fieldset>
       </form>
+
+    <template id="bios">
+      <p data-length="shortest">
+        <strong>Jason Lengstorf</strong> is trying his very best.
+      </p>
+      <p data-length="shorter">
+        <strong>Jason Lengstorf</strong> works at 
+        <a href="https://ntl.fyi/jason-bio">Netlify</a> and hosts 
+        <a href="https://lwj.dev/"><em>Learn With Jason</em></a>. 
+        He's trying his very best.
+      </p>
+      <p data-length="short">
+        {% set defaultBio %}
+        <strong>Jason Lengstorf</strong> works at 
+        <a href="https://ntl.fyi/jason-bio">Netlify</a> and hosts 
+        <a href="https://lwj.dev/"><em>Learn With Jason</em></a>. 
+        As a keynote speaker and author, Jason focuses on building healthier 
+        teams through trust, curiosity, and play. He's trying his very best to 
+        follow his own advice. He lives in Portland, Oregon.
+        {% endset %}
+      </p>
+      <p data-length="long">
+        <strong>Jason Lengstorf</strong> is the VP of Developer Experience at 
+        <a href="https://ntl.fyi/jason-bio">Netlify</a> and the host of 
+        <a href="https://lwj.dev/"><em>Learn With Jason</em></a>, a 
+        live-streamed video show where he pair programs to learn something new 
+        in 90 minutes. As a keynote speaker and author, Jason focuses on 
+        building healthier teams through trust, curiosity, and play. He's trying 
+        his very best to follow his own advice. He lives in Portland, Oregon.
+      </p>
+      <p data-length="longer">
+        <strong>Jason Lengstorf</strong> is the VP of Developer Experience at 
+        <a href="https://ntl.fyi/jason-bio">Netlify</a>, where he's helping 
+        build the workflow for the modern web. He hosts 
+        <a href="https://lwj.dev/"><em>Learn With Jason</em></a>, 
+        a live-streamed video show where he pair programs to learn something 
+        new in 90 minutes. As a keynote speaker and author, Jason focuses on 
+        building healthier teams through trust, curiosity, and play. He's trying 
+        his very best to follow his own advice. He lives in Portland, Oregon.
+      </p>
+      <p data-length="longest">
+        <strong>Jason Lengstorf</strong> is the VP of Developer Experience at 
+        <a href="https://ntl.fyi/jason-bio">Netlify</a>, where he's helping 
+        build the workflow for the modern web. He hosts 
+        <a href="https://lwj.dev/"><em>Learn With Jason</em></a>, 
+        a live-streamed video show where he pair programs to learn something new 
+        in 90 minutes. As a keynote speaker and author, Jason focuses on 
+        building healthier teams through trust, curiosity, and play. 
+        Outside of work, he's on a mission to 
+        <a href="https://burgers.dev">perfect the smashburger and vanquish his 
+        enemies</a>. When this whole internet thing goes out of style, he'll 
+        probably open a food truck in his home city of Portland, Oregon.
+      </p>
+    </template>
       
       <p class="bio">
-        <strong>Jason Lengstorf</strong> works at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
+        {{ defaultBio | safe }}
       </p>
 
       <div class="bio-social">
