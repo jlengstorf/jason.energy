@@ -3,12 +3,12 @@
 {% block seo %}
 <title>A Very Jason Lengstorf Website — Powered By Boops!</title>
 
-<link rel="canonical" href="{{ site }}/" />
+<link rel="canonical" href="{{ siteUrl }}/" />
 <meta name="description" content="Jason Lengstorf works at Netlify and hosts Learn With Jason. He is trying his very best to follow his own advice. He lives in Portland, Oregon." />
 <meta name="image" content="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_1200/v1593579116/jason.af/og-image.jpg" />
 
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ site }}/" />
+<meta property="og:url" content="{{ siteUrl }}/" />
 <meta property="og:description" content="Jason Lengstorf works at Netlify and hosts Learn With Jason. He is trying his very best to follow his own advice. He lives in Portland, Oregon." />
 <meta property="og:image" content="https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_1200/v1593579116/jason.af/og-image.jpg" />
 
@@ -27,4 +27,8 @@
   {% include "shortcodes/learning.njk" %}
   {% include "shortcodes/subscribe.njk" %}
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+<script src="/scripts/home.min.js"></script>
 {% endblock %}

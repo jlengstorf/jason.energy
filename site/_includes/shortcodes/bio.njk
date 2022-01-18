@@ -124,38 +124,3 @@
     {% include "shortcodes/photos.njk" %}
   </div>
 </section>
-
-<script type="module">
-const bios = {
-  shortest: `
-    <strong>Jason Lengstorf</strong> is trying his very best.
-  `,
-  shorter: `
-    <strong>Jason Lengstorf</strong> works at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>. He is trying his very best.
-  `,
-  short: `
-    <strong>Jason Lengstorf</strong> works at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  long: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a> and hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  longer: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a>, where he works to improve the experience of building and deploying to the modern web. He also hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time telling people that the formula for success and happiness is to lift each other up and share what we learn. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-  longest: `
-    <strong>Jason Lengstorf</strong> works as the VP of Developer Experience at <a href="https://www.netlify.com/?utm_source=jasonaf&utm_medium=jason-bio-jl&utm_campaign=devex">Netlify</a>, where he works to improve the experience of building and deploying to the modern web. He also hosts <a href="https://www.learnwithjason.dev/"><em>Learn With Jason</em></a>, a live-streamed video show where he pair programs to learn something new in 90 minutes. He spends a lot of time writing to share what he’s learned in tech as well as stories about how he used to suck, listened to people who taught him valuable lessons, and made changes that helped him suck less. This frequently boils down to telling people that the formula for success and happiness is to lift each other up at every opportunity and share what we learn, even when it feels like something that’s been shared before or that “everybody already knows”. He is trying his very best to follow his own advice. He lives in Portland, Oregon.
-  `,
-};
-
-const radioEls = document.querySelectorAll('.bio-input');
-const bioEl = document.querySelector('.bio');
-
-radioEls.forEach((el) => {
-  el.addEventListener('change', (event) => {
-    const currentLength = event.target.value;
-    const nextBio = bios[currentLength];
-
-    bioEl.innerHTML = nextBio;
-  });
-});
-</script>
