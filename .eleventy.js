@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const cloudinary = require('cloudinary').v2;
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const getShareImage = require('@jlengstorf/get-share-image').default;
 const terser = require('terser');
@@ -8,11 +5,10 @@ const postcss = require('postcss');
 const csso = require('csso');
 const autoprefixer = require('autoprefixer');
 
-cloudinary.config({
+const cloudinary = require('@jlengstorf/cloudinary-11ty-helpers')({
   cloud_name: 'jlengstorf',
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-  secure: true,
+  folder: 'jason.af',
+  image_width: 680,
 });
 
 module.exports = function (eleventyConfig) {
@@ -33,19 +29,6 @@ module.exports = function (eleventyConfig) {
     wrapper: 'div',
   });
 
-  try {
-    fs.mkdirSync(path.join(process.cwd(), './.cache/'));
-  } catch (err) {}
-
-  const imageCachePath = path.join(
-    process.cwd(),
-    './.cache/cloudinary-11ty.json',
-  );
-  let imageCache = {};
-  if (fs.existsSync(imageCachePath)) {
-    imageCache = require(imageCachePath);
-  }
-
   const markdown = require('markdown-it');
   const mdAnchor = require('markdown-it-anchor');
   const mdLib = markdown({ html: true })
@@ -57,75 +40,7 @@ module.exports = function (eleventyConfig) {
           .replace(/[^a-z0-9]+/g, '-') // convert "some text" => "some-text"
           .replace(/^-|-$/g, ''), // avoid leading/trailing hyphens
     })
-    .use((md) => {
-      /*
-       * this is a custom plugin to upload all local images to Cloudinary and
-       * modify the HTML output to include the Cloudinary URL + responsive image
-       * attributes to improve performance
-       *
-       * this is configured specifically for this site, so if you want to use
-       * this you'll need to modify the Cloudinary config, folder name, src
-       * rewrite, and the sizes (see the note on sizes for details)
-       */
-      md.core.ruler.before('linkify', 'lwj_images', (state) => {
-        state.tokens.forEach((token) => {
-          if (token.type !== 'inline') {
-            return;
-          }
-
-          if (!token.children || token.children[0].type !== 'image') {
-            return;
-          }
-
-          const image = token.children[0];
-          let src = image.attrGet('src');
-
-          if (path.extname(src) === '.gif') {
-            return;
-          }
-
-          if (!src.startsWith('https://res.cloudinary.com/')) {
-            if (imageCache[src]) {
-              src = imageCache[src];
-            } else {
-              const filePath = path.resolve(state.env.page.inputPath);
-              const imagePath = path.join(path.dirname(filePath), src);
-
-              cloudinary.uploader.upload(imagePath, {
-                folder: 'jason.af', // optional; set this to whatever you want
-                use_filename: true, // use the filename as the public ID
-                overwrite: false, // don't re-upload images with the same filename
-                unique_filename: false, // required to avoid duplicate uploads
-              });
-
-              // no async in markdown-it (yay!) so we have to fake this a bit
-              const newSrc = `https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/jason.af/${path.basename(
-                imagePath,
-              )}`;
-              imageCache[src] = newSrc;
-              src = newSrc;
-            }
-
-            image.attrSet('src', src);
-          }
-
-          // 3x, 2x, 1x, and mobile sizes based on content column width of 680px
-          const srcSet = [2040, 1360, 680, 300]
-            .map(
-              (size) => `${src.replace(/q_auto/, `q_auto,w_${size}`)} ${size}w`,
-            )
-            .join(',');
-
-          image.attrSet('srcset', srcSet);
-          image.attrSet('loading', 'lazy');
-
-          // don't forget to match this to content column width
-          image.attrSet('sizes', '(max-width: 680px) 100vw, 680px');
-        });
-
-        fs.writeFileSync(imageCachePath, JSON.stringify(imageCache));
-      });
-    });
+    .use(cloudinary.mdPlugin);
 
   eleventyConfig.setLibrary('md', mdLib);
 
@@ -152,7 +67,7 @@ module.exports = function (eleventyConfig) {
           from: inputPath,
         }).css;
         const minifiedCss = csso.minify(css).css;
-        console.log(minifiedCss);
+
         return minifiedCss;
       };
     },
@@ -168,36 +83,7 @@ module.exports = function (eleventyConfig) {
    * as far as I can tell there's no way to get the current inputPath without
    * passing it in via the filter, which feels a bit clunky but it works
    */
-  eleventyConfig.addNunjucksAsyncFilter(
-    'cloudinary',
-    async (value, currentFile, width = 1360, callback) => {
-      const baseDir = path.dirname(currentFile);
-      const imagePath = path.join(baseDir, value);
-
-      let newSrc;
-
-      if (imageCache[imagePath]) {
-        newSrc = imageCache[imagePath];
-      } else {
-        const res = await cloudinary.uploader.upload(imagePath, {
-          folder: 'jason.af', // optional; set this to whatever you want
-          use_filename: true, // use the filename as the public ID
-          overwrite: false, // don't re-upload images with the same filename
-          unique_filename: false, // required to avoid duplicate uploads
-        });
-
-        newSrc = res.secure_url.replace(
-          /upload/,
-          `upload/f_auto,q_auto,w_${width}`,
-        );
-        imageCache[imagePath] = newSrc;
-      }
-
-      fs.writeFileSync(imageCachePath, JSON.stringify(imageCache));
-
-      callback(null, newSrc);
-    },
-  );
+  eleventyConfig.addNunjucksAsyncFilter('cloudinary', cloudinary.asyncFilter);
 
   eleventyConfig.addFilter('seoImage', (content) => {
     return getShareImage({
