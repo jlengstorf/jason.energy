@@ -1,6 +1,11 @@
 <div class="photos">
   <figure class="gallery-image">
-    <img src="https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/{{ photos[0].publicId }}.jpg" alt="{{ photos[0].alt }}" />
+    <img
+      src="https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/{{ photos[0].publicId }}.jpg"
+      srcSet="https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/{{ photos[0].publicId }}.jpg 1x,
+              https://res.cloudinary.com/jlengstorf/image/upload/w_800,h_800,c_fill,g_faces,q_auto,f_auto/{{ photos[0].publicId }}.jpg 2x"
+      alt="{{ photos[0].alt }}"
+    />
     <figcaption>
       <span class="image-caption">{{ photos[0].caption }}</span>
       <div class="gallery-links">

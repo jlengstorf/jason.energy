@@ -277,10 +277,12 @@ function updateImage(event) {
   const thumb = event.target.querySelector('img') || event.target;
   const publicId = thumb.dataset.publicId;
   const alt = thumb.dataset.alt;
-  const src = `https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg`;
+  const src = `https://res.cloudinary.com/jlengstorf/image/upload/w_800,h_800,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg`;
+  const srcSet = `https://res.cloudinary.com/jlengstorf/image/upload/w_400,h_400,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg 1x, https://res.cloudinary.com/jlengstorf/image/upload/w_800,h_800,c_fill,g_faces,q_auto,f_auto/${publicId}.jpg 2x`;
   const fullSizeUrl = `https://res.cloudinary.com/jlengstorf/image/upload/${publicId}.jpg`;
 
   img.src = src;
+  img.srcSet = srcSet;
   img.alt = alt;
   caption.innerText = thumb.dataset.caption;
   creditLink.href = thumb.dataset.creditLink;
