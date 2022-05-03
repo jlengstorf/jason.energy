@@ -10,5 +10,5 @@
   function = "hello"
 
 [[edge_functions]]
-  path = "/api/uses"
+  path = "/uses"
   function = "geo-amazon"
