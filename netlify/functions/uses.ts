@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { Handler, builder } from '@netlify/functions';
+import { Handler } from '@netlify/functions';
 
 export type UsedItem = {
   id: string;
@@ -68,7 +68,7 @@ function parseNotionDatabase(data): UsedItem[] {
     .reverse();
 }
 
-export const handler: Handler = builder(async () => {
+export const handler: Handler = async () => {
   const response = await fetch(
     'https://api.notion.com/v1/databases/bcd66ab9eb984975ab6765db391f7b8f/query',
     {
@@ -97,4 +97,4 @@ export const handler: Handler = builder(async () => {
     statusCode: 200,
     body: JSON.stringify(items),
   };
-});
+};
