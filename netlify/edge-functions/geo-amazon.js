@@ -11,9 +11,9 @@ export default async (_request, context) => {
   };
 
   const countryCode = context.geo?.country?.code || 'US';
-  const amazonTLD = AMAZON_TLDS[countryCode];
+  const amazonTLD = AMAZON_TLDS[countryCode] || 'US';
 
-  console.log({ amazonTLD });
+  console.log({ amazonTLD, countryCode });
 
   const response = await context.next();
   const text = await response.text();
