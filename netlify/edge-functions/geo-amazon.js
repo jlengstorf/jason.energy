@@ -16,10 +16,10 @@ export default async (_request, context) => {
 
   console.log({ amazonTLD, countryCode });
 
-  const response = await context.next();
-  const text = await response.text();
+  // const response = await context.next();
+  // const text = await response.text();
 
-  response.headers.set('Content-Type', 'text/html');
+  // response.headers.set('Content-Type', 'text/html');
 
-  return new Response(text.replace(/amazon.com/gi, amazonTLD), response);
+  // return new Response(text.replace(/amazon.com/gi, amazonTLD), response);
 };
