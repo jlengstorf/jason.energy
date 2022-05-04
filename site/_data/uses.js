@@ -4,7 +4,7 @@ module.exports = async function () {
 
     const items = await fetch(
       // `${process.env.URL || 'http://localhost:8888'}/api/uses`,
-      `https://deploy-preview-37--jasonaf.netlify.app/api/uses`,
+      `https://11ty--jasonaf.netlify.app/api/uses`,
     ).then((res) => res.json());
 
     const categories = new Set();
