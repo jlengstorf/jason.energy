@@ -17,21 +17,21 @@ export default async (_request, context) => {
 
   console.log({ amazonTLD, countryCode });
 
-  // const response = await context.next();
+  const response = await context.next();
 
   response.headers.set('X-Booped', 'yup');
 
-  // return new HTMLRewriter()
-  //   .on('a', {
-  //     element(element) {
-  //       const href = element.getAttribute('href');
-  //       if (href.includes('amazon.com')) {
-  //         element.setAttribute(
-  //           'href',
-  //           href.replace('amazon.com', 'amazon.co.uk'),
-  //         );
-  //       }
-  //     },
-  //   })
-  //   .transform(response);
+  return new HTMLRewriter()
+    .on('a', {
+      element(element) {
+        const href = element.getAttribute('href');
+        if (href.includes('amazon.com')) {
+          element.setAttribute(
+            'href',
+            href.replace('amazon.com', 'amazon.co.uk'),
+          );
+        }
+      },
+    })
+    .transform(response);
 };
