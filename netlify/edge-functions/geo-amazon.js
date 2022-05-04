@@ -19,6 +19,8 @@ export default async (_request, context) => {
 
   const response = await context.next();
 
+  response.headers.set('X-Booped', 'yup');
+
   return new HTMLRewriter()
     .on('a', {
       element(element) {
