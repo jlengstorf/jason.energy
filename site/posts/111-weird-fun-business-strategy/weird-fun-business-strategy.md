@@ -9,6 +9,8 @@ description: >
 category: impact
 tags: [concept, success, teams]
 
+image: images/youtube-thumbnail.jpg
+
 cta: default
 ---
 
