@@ -24,6 +24,8 @@ Watch it here:
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gUlAMMborUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% endfigure %}
 
+For more information, you can also [read the official Netlify post about this video](https://netlify.com/blog/making-tale-of-web-development-in-two-universes/?utm_source=jason-af&utm_medium=brand-video-0422-meta&utm_campaign=devex-jl).
+
 ## Why make a video like this?
 
 The post-pandemic world has changed how people want to spend their time. Things that used to be a staple, like webinars, have become much harder to attract attendees to because **no one wants yet another Zoom call on their calendar.**
