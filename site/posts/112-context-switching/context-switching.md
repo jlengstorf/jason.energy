@@ -10,7 +10,7 @@ description: >
 category: remote-productivity
 tags: [motivation, planning, productivity, success]
 
-image: ./images/context-switching-time-loss.jpg
+image: ./images/context-switching-time-loss-v2.jpg
 cta: work-happy
 
 # Alfred shortcuts:
@@ -76,7 +76,7 @@ If we plot that time loss on a bar chart, it's pretty chilling.
   credit="Jason Lengstorf",
   creditLink="https://jason.af/context-switching"
 %}
-  ![A bar graph showing how context switching time loss reduces productivity. The first chart shows a single project with 100% time spent on it. The bar chart shows additional projects, with each additional project adding 20% to the context switching time loss. With 5 projects, 80% of working time is lost to context switching.](images/context-switching-time-loss.jpg)
+  ![A bar graph showing how context switching time loss reduces productivity. The first chart shows a single project with 100% time spent on it. The bar chart shows additional projects, with each additional project adding 20% to the context switching time loss. With 5 projects, 80% of working time is lost to context switching.](images/context-switching-time-loss-v2.jpg)
 {% endfigure %}
 
 That means for every parallel task you work on, you're {% footnote id="four-day-workweek" %}losing about one full working day each week.{% endfootnote %}
