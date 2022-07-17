@@ -27,6 +27,10 @@ But I understand how it happens — it's a seductive idea: "I have three things 
 
 But in reality, **multitasking is a productivity disaster.** It not only fails to get projects done faster — it makes them _significantly_ slower to complete.
 
+{% aside "default" %}
+  **Heads up!** [Laura Langdon very kindly pointed out](https://twitter.com/laura_e_langdon/status/1548516435248291840) that the advice in this article may not apply for neurodiverse folks. So let me add a disclaimer that this post is advice based on my personal experience — please take it with a grain of salt.
+{% endaside %}
+
 ## Multitasking is how we manage to work hard all day and still get nothing done.
 
 We've all had days where we _know_ we were working but we can't for the life of us figure out what we actually got _done_.
