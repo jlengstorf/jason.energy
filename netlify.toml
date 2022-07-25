@@ -4,3 +4,11 @@
 
 [dev]
   command = "npm run dev"
+
+[[edge_functions]]
+  path = "/api/get-greeting"
+  function = "hello"
+
+[[edge_functions]]
+  path = "/uses/"
+  function = "geo-amazon"
