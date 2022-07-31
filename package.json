@@ -19,7 +19,7 @@
     "cloudinary": "^1.27.1",
     "csso": "^5.0.2",
     "eleventy-plugin-toc": "^1.1.5",
-    "markdown-it": "^12.3.0",
+    "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.4.1",
     "matter-js": "^0.18.0",
     "node-fetch": "^3.1.0",
@@ -28,8 +28,8 @@
     "terser": "^5.10.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.7",
+    "@types/node": "^18.6.3",
     "prettier": "^2.2.1",
-    "serve": "^13.0.2"
+    "serve": "^14.0.1"
   }
 }
