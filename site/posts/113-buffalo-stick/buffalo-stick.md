@@ -26,6 +26,12 @@ At some point she mashed this up into "scratch multiple buffalo with one stick",
 
 The central theme of this goofy phrase is gold, though: **we not only need to make sure that our work is used effectively, but that our work is _used effectively in multiple ways_.**
 
+{% figure
+  caption="Because we all know scritches are the best."
+%}
+  ![Two cutout images of buffalo with a stick badly photoshopped onto them. There are scritch sound effects and the caption "the buffalo stick"](./images/buffalo-stick-full.jpg)
+{% endfigure %}
+
 ## How to create longer-lived, more versatile content
 
 The challenge of using work in multiple ways is to get into the mindset of thinking about every step in your creative process as a potential thing to use elsewhere.
