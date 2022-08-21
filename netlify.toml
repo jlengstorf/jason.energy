@@ -12,3 +12,7 @@
 [[edge_functions]]
   path = "/uses/"
   function = "geo-amazon"
+
+[[edge_functions]]
+  path = "/posts"
+  function = "lengstorf-redirect"
