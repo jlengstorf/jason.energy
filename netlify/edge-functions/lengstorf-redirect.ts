@@ -2,11 +2,11 @@ import { Context } from 'https://edge.netlify.com';
 import { HTMLRewriter } from 'https://ghuc.cc/worker-tools/html-rewriter/index.ts';
 
 export default async (request: Request, context: Context) => {
-  console.log(request.headers.entries());
+  const url = new URL(request.url);
 
   if (
-    !request.headers.has('X-From') ||
-    request.headers.get('X-From') !== 'lengstorf.com'
+    !url.searchParams.has('from') ||
+    url.searchParams.get('from') !== 'lengstorf.com'
   ) {
     return;
   }
