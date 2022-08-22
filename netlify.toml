@@ -14,5 +14,5 @@
   function = "geo-amazon"
 
 [[edge_functions]]
-  path = "/posts"
+  path = "/posts/redirected"
   function = "lengstorf-redirect"
