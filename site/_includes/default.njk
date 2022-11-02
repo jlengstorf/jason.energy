@@ -151,12 +151,14 @@
     {% block main %}
     <main>
       <article class="{% if type === "post" %}post{% endif %}">
+        {% if type !== "links" %}
         {% block heading %}
         <div class="heading">
           <h1>{{title}}</h1>
           <p class="lede">{{description}}</p>
         </div>
         {% endblock %}
+        {% endif %}
 
         {% block details %}
         {% endblock %}

@@ -14,6 +14,27 @@ description: >
     width: min(90vw, 28rem);
   }
 
+  .links img {
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+  }
+
+  .links h1 {
+    font-size: 1.25rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .links p {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    margin: 0.25rem 0 1.5rem;
+    text-align: center;
+  }
+
   .links nav {
     display: flex;
     flex-direction: column;
@@ -78,8 +99,14 @@ description: >
 </style>
 
 <section class="links">
+  <img
+    src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto,w_300,h_300,c_thumb,g_faces,z_0.65/press/jason-lengstorf-ac-alley3.jpg"
+    alt="Jason Lengstorf"
+  />
+  <h1>Jason Lengstorf</h1>
+  <p>Host of <em>Learn With Jason</em> · Smashburger Champ</p>
   <nav>
-    <a href="https://jason.af" data-enrich="true" data-site="blog">
+    <a href="https://jason.af/posts" data-enrich="true" data-site="blog">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
         <path
           fill="#C10B7E"
@@ -158,6 +185,15 @@ description: >
       </svg>
       Twitch</a
     >
+    <a href="https://www.linkedin.com/in/jlengstorf/" data-site="linkedin">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
+        <path
+          fill="#C10B7E"
+          d="M32.2 10H15.8a5.8 5.8 0 0 0-5.8 5.8v16.4c0 3.2 2.6 5.8 5.8 5.8h16.4c3.2 0 5.8-2.6 5.8-5.8V15.8c0-3.2-2.6-5.8-5.8-5.8ZM19.3 32.2h-3.5V19.3h3.5v12.9Zm-1.7-14.3a2 2 0 0 1-2-2.1c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2Zm15.7 14.3h-3.5v-6.6c0-3.9-4.6-3.6-4.6 0v6.6h-3.5V19.3h3.5v2c1.6-3 8.1-3.1 8.1 3v7.9Z"
+        />
+      </svg>
+      LinkedIn</a
+    >
     <a href="https://www.polywork.com/jlengstorf" data-site="polywork">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
         <path
@@ -168,15 +204,6 @@ description: >
         />
       </svg>
       Polywork</a
-    >
-    <a href="https://www.linkedin.com/in/jlengstorf/" data-site="linkedin">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 50">
-        <path
-          fill="#C10B7E"
-          d="M32.2 10H15.8a5.8 5.8 0 0 0-5.8 5.8v16.4c0 3.2 2.6 5.8 5.8 5.8h16.4c3.2 0 5.8-2.6 5.8-5.8V15.8c0-3.2-2.6-5.8-5.8-5.8ZM19.3 32.2h-3.5V19.3h3.5v12.9Zm-1.7-14.3a2 2 0 0 1-2-2.1c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2Zm15.7 14.3h-3.5v-6.6c0-3.9-4.6-3.6-4.6 0v6.6h-3.5V19.3h3.5v2c1.6-3 8.1-3.1 8.1 3v7.9Z"
-        />
-      </svg>
-      LinkedIn</a
     >
   </nav>
 </section>
