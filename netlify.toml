@@ -16,3 +16,7 @@
 [[edge_functions]]
   path = "/posts/redirected"
   function = "lengstorf-redirect"
+
+[[edge_functions]]
+  path = "/links"
+  function = "link-stats"

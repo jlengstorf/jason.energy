@@ -73,6 +73,7 @@
   </head>
 
   <body class="{{ bodyClass }}">
+    {% if type !== "links" %}
     <header>
       <a href="/" rel="home" class="home-link">Jason Lengstorf</a>
 
@@ -145,6 +146,7 @@
       </div>
       {% endif %}
     </header>
+    {% endif %}
 
     {% block main %}
     <main>
