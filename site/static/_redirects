@@ -1,6 +1,9 @@
 /api/stats/*                    /.netlify/functions/stats-:splat  200
 /api/*                          /.netlify/functions/:splat  200
 
+# shortcut for linking to my preferred headshot
+/headshot.jpg                   https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_500,ar_1,c_thumb,g_faces,z_0.65/press/jason-lengstorf-ac-alley3.jpg 200
+
 # partner links
 /cloudinary                     https://cloudinary.com/?ap=lwj
 
