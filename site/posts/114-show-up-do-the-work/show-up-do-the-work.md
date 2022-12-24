@@ -19,7 +19,7 @@ In fact, I'd argue that if you could only choose one, consistency without abilit
 
 ## It's not what you're capable of — it's what you do that counts
 
-A relatively small group of people produce most of what we experience every day, from entertainment to education to products to businesses. And you might look at that output and feel strongly that you could do a better job. And, hey! You're probably right!
+A relatively small group of people produce most of what we experience every day, from entertainment to education to products to businesses. And you might look at that output and feel strongly that you could do a better job. And, hey! You might be right!
 
 But here's the thing: the creator you're critiquing is showing up and doing the work and they're achieving their goals. It doesn't matter how much talent or potential you have — if you're not showing up and doing the work, you won't see much progress.
 
