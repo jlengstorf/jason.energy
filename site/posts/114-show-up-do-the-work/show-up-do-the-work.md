@@ -9,7 +9,7 @@ description: >
 category: impact
 tags: [concept, success, core-idea]
 
-image: ./images/show-up-do-the-work.jpg
+image: ./images/show-up-and-do-the-work.jpg
 cta: default
 ---
 
