@@ -13,7 +13,22 @@ image: ./images/your-job-doesnt-matter.jpg
 cta: default
 ---
 
-This may be my most controversial belief. On its face, it might sound bleak, but stick with me — I promise that this is actually the source of my positive outlook. So keep that in mind, and read beyond the next sentence before you send me your rebuttal.
+This may be my most controversial belief. On its face, it might sound bleak, but stick with me — I promise that this is actually the source of my positive outlook. So keep that in mind, and read until the end before {% footnote id="rebuttal" %}you send me your rebuttal.{% endfootnote %}
+
+{% footnoteText id="rebuttal" %}
+  But please do talk to me about this. One of my favorite things to do is debate the meaning of life with friends over a beverage.
+{% endfootnoteText %}
+
+## Prefer to watch instead?
+
+This article is based on a question I was asked on [my livestream](https://www.learnwithjason.dev). You can watch my thoughts on this instead of (in addition to?) reading them if you prefer.
+
+{% figure
+  credit="Learn With Jason on YouTube",
+  creditLink="https://youtu.be/DOHZi6Em6H8"
+%}
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DOHZi6Em6H8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% endfigure %}
 
 ## What’s left if the power goes out?
 
