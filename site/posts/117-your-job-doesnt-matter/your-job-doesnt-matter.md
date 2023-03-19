@@ -95,3 +95,9 @@ I want to be around the builders. The makers. The people who are curious and eng
 **Meaning comes from finding things that feel deeply satisfying and making deliberate choices to do more of those things and share them with people you care about.** For me, that includes creating a great website or video, cooking a great meal for my friends, or helping someone find the “light bulb moment” as they’re learning something new.
 
 So, sure: none of this stuff really matters. But that’s great news, because it means you can do _whatever you find meaningful_ — and as long as it’s making you and the people around you happy, you’re living a wonderful, meaningful life.
+
+## Get more like this directly in your inbox
+
+I’m a web generalist who believes that a great path to a fulfilling career is through exploration, play, and examining how we interact with the world around us. I publish across multiple sites and media regularly, so subscribing to my newsletter is the best way to make sure you don’t miss anything!
+
+{% include "shortcodes/newsletter-form.njk" %}
