@@ -25,7 +25,12 @@ The told me: **find something you can do consistently — and then stick to it.*
 
 That’s it. No secret hacks. No weird tricks. Just consistency and incremental growth.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5CIRtblwngU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% figure
+  credit="Learn With Jason",
+  creditLink="https://youtu.be/5CIRtblwngU"
+%}
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5CIRtblwngU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% endfigure %}
 
 ## “Going viral” is a bad strategy.
 
