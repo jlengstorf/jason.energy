@@ -108,4 +108,4 @@ Knowing what you find fulfilling doesn't change what you're doing today, but it 
 
 **This exercise doesn't create fulfillment, but it helps you draw a map to it.** I've found this to be incredibly helpful whenever I start to feel run down at work, and usually I realize that I've started to let most of my tasks slip into the "good at it but draining" quadrant.
 
-So what's in your blue zone? What actions can you take to help you move more of your day-to-day tasks into the blue zone? [I'd love to talk about it on Twitter!](https://twitter.com/compose/tweet?text=How%20to%20draw%20a%20map%20to%20a%20fulfilling%20career%20by%20@jlengstorf&url=https://www.jason.af/career-fulfillment-matrix/)
+So what's in your blue zone? What actions can you take to help you move more of your day-to-day tasks into the blue zone? [I'd love to talk about it on Twitter!](https://twitter.com/compose/tweet?text=How%20to%20draw%20a%20map%20to%20a%20fulfilling%20career%20by%20@jlengstorf&url=https://www.jason.energy/career-fulfillment-matrix/)

@@ -1,4 +1,4 @@
-# [![Jason Lengstorf has a lot of ideas](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_1200/v1593579116/jason.af/og-image.jpg)](https://jason.af)
+# [![Jason Lengstorf has a lot of ideas](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_1200/v1593579116/jason.energy/og-image.jpg)](https://jason.energy)
 
 <h1 align="center">
   powered by boops
@@ -7,9 +7,9 @@
   This is Jason Lengstorf's personal website. It's silly and weird and (if you look hard enough) might contain the odd insight.
 </h3>
 <p align="center">
-  <a href="https://www.jason.af/"><strong>see the site</strong></a> · 
+  <a href="https://www.jason.energy/"><strong>see the site</strong></a> · 
   <a href="https://twitter.com/jlengstorf"><strong>Jason on Twitter</strong></a> · 
-  <a href="https://jason.af/posts"><strong>read Jason's blog</strong></a>
+  <a href="https://jason.energy/posts"><strong>read Jason's blog</strong></a>
 </p>
 
 &nbsp;

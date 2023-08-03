@@ -52,7 +52,7 @@ The best version of this will accomplish all three of these goals:
 
 1. Solve a clear pain point for the community
 2. Contribute toward one or more of your company’s goals
-3. Help you [grow in the way you’re optimizing for](https://www.jason.af/what-are-you-optimizing-for/)
+3. Help you [grow in the way you’re optimizing for](https://www.jason.energy/what-are-you-optimizing-for/)
 
 Hitting just one of these goals is great, but there’s often an opportunity to make any given task a win-win-win.
 

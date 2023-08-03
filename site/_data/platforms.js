@@ -2,7 +2,7 @@ module.exports = [
   {
     id: 'egghead',
     label: 'egghead',
-    link: 'https://jason.af/egghead',
+    link: 'https://jason.energy/egghead',
     description: `
       Jason has created dozens of video lessons on egghead. These videos skip
       the chatter, instead diving straight into the code and delivering tons of
@@ -25,7 +25,7 @@ module.exports = [
   {
     id: 'frontendmasters',
     label: 'Frontend Masters',
-    link: 'https://jason.af/frontendmasters',
+    link: 'https://jason.energy/frontendmasters',
     description: `
       Jason has taught several workshops with Frontend Masters, a long-form
       workshop format focused on deep dives into a topic for a full day. These

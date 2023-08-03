@@ -102,7 +102,7 @@ If we don’t make decisions, we can’t act. Taking action requires a clearly s
   credit="Parks and Recreation",
   creditLink=""
 %}
-  ![Ron Swanson saying, “Never half-ass two things. Whole-ass one thing.”](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640755973/jason.af/whole-ass.gif)
+  ![Ron Swanson saying, “Never half-ass two things. Whole-ass one thing.”](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640755973/jason.energy/whole-ass.gif)
 {% endfigure %}
 
 In the words of Ron Swanson, “Never half-ass two things. Whole-ass one thing.”

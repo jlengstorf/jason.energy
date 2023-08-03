@@ -77,14 +77,14 @@ I spent the majority of my life as a firm believer in The Plan™. I created The
 If I tally up the pivotal moments for myself, however, I can't help but acknowledge that — both professionally and personally — **drift has accounted for as much of my growth and momentum as intentional efforts.** In fact, a few of the _most_ pivotal moments in my life resulted from drifting:
 
 - I learned to code because I was in a band and needed to build a website and customize our MySpace page. When the band broke up, I realized I'd accidentally built enough of a skill set to work professionally as a web developer.
-- Starting _[Learn With Jason](https://www.learnwithjason.dev/)_ was a happy accident. I was experimenting with ideas for how to be more transparent about my work, and invited [Nader Dabit](https://twitter.com/dabit3) to get on a Zoom call and teach me how to use software he was working on. The format worked, so I kept setting up "one more session" with other guests — the show has [continued to evolve](https://www.jason.af/process-not-a-project) and I'm about to cross 200 episodes.
+- Starting _[Learn With Jason](https://www.learnwithjason.dev/)_ was a happy accident. I was experimenting with ideas for how to be more transparent about my work, and invited [Nader Dabit](https://twitter.com/dabit3) to get on a Zoom call and teach me how to use software he was working on. The format worked, so I kept setting up "one more session" with other guests — the show has [continued to evolve](https://www.jason.energy/process-not-a-project) and I'm about to cross 200 episodes.
 - I met my partner, Marisa, in a period of my life when I was "absolutely not dating anyone because I'm moving away soon". We both had no intentions of getting into a relationship, and had multiple conversations early on about how nothing serious would happen between us. That was seven years ago, and we're still together (but, in fairness, we're rarely serious).
 
 For all that I've told myself I followed The Plan™, I'd be lying if I said I knew I'd end up where I am today. A huge amount of my life and my career has emerged as a result of drifting, and I'm extremely happy with the outcomes.
 
 ## Be intentional when the goal is clear.
 
-If you know where you want to go, being intentional is important. **Identifying a clear outcome, [making a plan](https://www.jason.af/mise-en-place), and executing that plan is the most predictable way to get where you want to go.**
+If you know where you want to go, being intentional is important. **Identifying a clear outcome, [making a plan](https://www.jason.energy/mise-en-place), and executing that plan is the most predictable way to get where you want to go.**
 
 However, it's not always clear what the goal is, and that creates a challenge. Trying to be intentional when the requirements are unclear doesn't have the same payoff; you're pushing hard toward _somewhere_, but it's a lot of hard work going toward an unknown destination.
 
@@ -114,7 +114,7 @@ If we want to do something well, whether it's passing a test or learning a new s
 
 - Where is my energy and happiness coming from?
 - What do I find draining or demotivating?
-- [Do I enjoy the work I'm doing?](https://www.jason.af/career-fulfillment-matrix)
+- [Do I enjoy the work I'm doing?](https://www.jason.energy/career-fulfillment-matrix)
 - Where are the biggest opportunities for growth?
 - Are there patterns to my (or my team's) behavior?
 - What do I wish I was doing that I'm not doing now?

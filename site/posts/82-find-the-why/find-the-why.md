@@ -56,7 +56,7 @@ There are a few people I work with on a daily basis who stress me out just to be
   creditLink="http://www.cbs.com/shows/i_love_lucy/",
   credit="CBS / I Love Lucy"
 %}
-![Overwhelmed Lucille Ball at the conveyor belt.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640827704/jason.af/lucy.gif)
+![Overwhelmed Lucille Ball at the conveyor belt.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640827704/jason.energy/lucy.gif)
 {% endfigure %}
 
 This is a **reactive approach**, and it’s basically a waking nightmare: the world is constantly happening _to you_. Chaos reigns, and every problem is a surprise.

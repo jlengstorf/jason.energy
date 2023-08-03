@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /success/
 Disallow: /confirmed/
 
-Sitemap: https://www.jason.af/sitemap.txt
+Sitemap: https://www.jason.energy/sitemap.txt

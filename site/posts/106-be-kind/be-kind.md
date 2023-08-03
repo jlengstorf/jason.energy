@@ -20,7 +20,7 @@ To me, "be nice" is too often coded language for "don't make anyone uncomfortabl
 
 So let's stop being *nice* and instead work to be *kind*.
 
-{% figure credit="Jason Lengstorf", creditLink="https://jason.af" %}
+{% figure credit="Jason Lengstorf", creditLink="https://jason.energy" %}
 ![Don't be nice. Be kind.](images/be-kind.jpg)
 {% endfigure %}
 

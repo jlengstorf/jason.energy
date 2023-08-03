@@ -84,7 +84,7 @@ And, every once in a while, they release something that goes viral.
 
 ## Focus on cumulative growth
 
-It’s extremely important to remember that [creating content is a process, not a one-off project](https://www.jason.af/process-not-a-project/). Try to find a format that’s easy to follow and sustainable to produce on a regular cadence. **Don’t focus overly on the performance of individual pieces — look at trends over time.**
+It’s extremely important to remember that [creating content is a process, not a one-off project](https://www.jason.energy/process-not-a-project/). Try to find a format that’s easy to follow and sustainable to produce on a regular cadence. **Don’t focus overly on the performance of individual pieces — look at trends over time.**
 
 For example, I post an episode with a guest once a week on YouTube. I have grown about 24% year over year on my channel. On a day-to-day basis, I don’t see massive spikes in my numbers, but my growth has been steadily trending up and to the right for years now.
 

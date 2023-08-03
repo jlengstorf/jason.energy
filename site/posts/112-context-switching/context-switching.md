@@ -78,7 +78,7 @@ If we plot that time loss on a bar chart, it's pretty chilling.
 {% figure
   caption="Using Gerald Weinberg's estimates, multitasking is one of the worst choices you can make for productivity.",
   credit="Jason Lengstorf",
-  creditLink="https://jason.af/context-switching"
+  creditLink="https://jason.energy/context-switching"
 %}
   ![A bar graph showing how context switching time loss reduces productivity. The first chart shows a single project with 100% time spent on it. The bar chart shows additional projects, with each additional project adding 20% to the context switching time loss. With 5 projects, 80% of working time is lost to context switching.](images/context-switching-time-loss-v2.jpg)
 {% endfigure %}
@@ -102,7 +102,7 @@ Lots of in-flight projects feels productive. It feels _good_. Look how busy we a
 {% figure
   caption="Running projects in parallel _feels_ productive, but it makes us slower in all the ways that matter.",
   credit="Jason Lengstorf",
-  creditLink="https://jason.af/context-switching"
+  creditLink="https://jason.energy/context-switching"
 %}
 ![A timeline showing parallel tasks vs. sequential tasks. The parallel tasks are roughly twice as slow to deliver the first result as well as complete all projects.](images/context-switching-timeline-comparison.jpg)
 {% endfigure %}

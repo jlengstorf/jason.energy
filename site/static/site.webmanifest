@@ -1,14 +1,14 @@
 {
-    "name": "jason.af",
-    "short_name": "jason.af",
-    "icons": [
-        {
-            "src": "/android-chrome-144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffe742",
-    "background_color": "#ffe742",
-    "display": "standalone"
+  "name": "jason.energy",
+  "short_name": "jason.energy",
+  "icons": [
+    {
+      "src": "/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffe742",
+  "background_color": "#ffe742",
+  "display": "standalone"
 }

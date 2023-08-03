@@ -49,7 +49,7 @@ The letter listed one of my options as, “talk to the agent’s manager,” but
   credit="Ugly Americans",
   creditLink="http://www.cc.com/shows/ugly-americans"
 %}
-  ![Doug the koala from Ugly Americans.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640756516/jason.af/koala.gif)
+  ![Doug the koala from Ugly Americans.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640756516/jason.energy/koala.gif)
 {% endfigure %}
 
 I was told they can’t share that information. Instead, they have to put my information into a queue that will get me a call back “within the next 30 days between 7 am and 7 pm”.

@@ -103,7 +103,7 @@ My four-star hotel room and the day’s extremely successful meeting with PN fla
   creditLink="https://www.youtube.com/user/danisnotonfire",
   credit="Dan Howell"
 %}
-![Why is life so hard?](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834499/jason.af/why-is-life-hard.gif)
+![Why is life so hard?](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834499/jason.energy/why-is-life-hard.gif)
 {% endfigure %}
 
 “And how many bad things?”
@@ -166,7 +166,7 @@ It didn’t take long for me to notice a significant drop in complaints. But tha
   creditLink="https://www.youtube.com/watch?v=qR3rK0kZFkg",
   credit="dmchatster"
 %}
-![Daily affirmation.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/i-like-my-whole-house.gif)
+![Daily affirmation.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.energy/i-like-my-whole-house.gif)
 {% endfigure %}
 
 In my new effort to curb negativity, I started making “anti-complaints”.
@@ -193,7 +193,7 @@ In a healthy workplace, you’ll be asked for feedback on projects — it’s in
   creditLink="http://www.nbc.com/parks-and-recreation",
   credit="Parks and Recreation"
 %}
-![Parks & Recreation great job.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/great-job.gif)
+![Parks & Recreation great job.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.energy/great-job.gif)
 {% endfigure %}
 
 Imagine a situation where you turn in projects to your boss, and she never says anything. Every project is accepted silently without any feedback.
@@ -259,7 +259,7 @@ Positivity works best when it’s shared. The people around you can’t read min
   creditLink="http://www.sonypictures.com/movies/21jumpstreet/",
   credit="21 Jump Street"
 %}
-![You’re a goddamn rockstar.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.af/rockstar.gif)
+![You’re a goddamn rockstar.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640834500/jason.energy/rockstar.gif)
 {% endfigure %}
 
 **If you make a habit of sharing all the good things, you become someone that makes the people around you more positive.** You become a bright spot in people's days. You create a vacuum where negativity cannot survive, because you don't give it the chance to feed and grow.
@@ -278,4 +278,4 @@ I think it’s important to note that nothing else changed while these improveme
 
 ## Your turn: list 3 good things that happened today
 
-You can change your life too, starting today. Share your experiences in the comments and **[tell me 3 good things that happened today](http://twitter.com/compose/tweet?text=3%20good%20things%20that%20happened%20today:%0D%0A%0D%0A1.%20%0D%0A2.%20%0D%0A3.%20%0D%0A%0D%0ALearn%20how%20to%20be%20more%20positive%20with%20@jlengstorf&url=https://www.jason.af/how-to-be-positive).**
+You can change your life too, starting today. Share your experiences in the comments and **[tell me 3 good things that happened today](http://twitter.com/compose/tweet?text=3%20good%20things%20that%20happened%20today:%0D%0A%0D%0A1.%20%0D%0A2.%20%0D%0A3.%20%0D%0A%0D%0ALearn%20how%20to%20be%20more%20positive%20with%20@jlengstorf&url=https://www.jason.energy/how-to-be-positive).**

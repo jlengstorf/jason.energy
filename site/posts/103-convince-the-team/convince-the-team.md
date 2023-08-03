@@ -14,8 +14,8 @@ cta: default
 
 In previous posts, I've been working through some ideas around building more productive teams. These ideas are centered around two major themes so far:
 
-1. **[The type of work we do in any company happens on a spectrum](https://www.jason.af/squishy-projects), and our internal processes need to be flexible enough to adapt and support the type of work being done.** Success depends on the completion of well-defined, production-ready work ("load-bearing projects") as well as validating ideas from research, team members, and customer feedback ("squishy projects").
-2. **We need to take care of existing customers and products while continuing to explore and innovate. That requires deliberate effort to set up and sustain.** Exploratory work and production should happen in parallel workstreams that complement and strengthen each other (what I lovingly call [the Yeet Delete Repeat pattern](https://www.jason.af/yeet-delete-repeat)).
+1. **[The type of work we do in any company happens on a spectrum](https://www.jason.energy/squishy-projects), and our internal processes need to be flexible enough to adapt and support the type of work being done.** Success depends on the completion of well-defined, production-ready work ("load-bearing projects") as well as validating ideas from research, team members, and customer feedback ("squishy projects").
+2. **We need to take care of existing customers and products while continuing to explore and innovate. That requires deliberate effort to set up and sustain.** Exploratory work and production should happen in parallel workstreams that complement and strengthen each other (what I lovingly call [the Yeet Delete Repeat pattern](https://www.jason.energy/yeet-delete-repeat)).
 
 In further discussions with friends and folks around the community, questions came up that are worth addressing — let's do that in this post.
 
@@ -35,7 +35,7 @@ However, there are some strategies that I've used in the past that can help turn
 
 ### Find the dirt floors
 
-To make any meaningful change, we need to understand why things are the way they are. This means [we need to find the dirt floors](https://www.jason.af/dirt-floors): what is *causing* leadership to think this way?
+To make any meaningful change, we need to understand why things are the way they are. This means [we need to find the dirt floors](https://www.jason.energy/dirt-floors): what is *causing* leadership to think this way?
 
 To use an analogy, if there's a bucket in the middle of the floor you might say, "This bucket is a tripping hazard and we should move it." If leadership responds, "Can't. We have to have the bucket there," that might seem illogical and stubborn. With a little digging, though, you might learn the root cause is a leaky roof, and the bucket catches the water. If you know about the leaky roof, you can stop complaining about the bucket and focus on the roof — once the roof is fixed, the bucket's no longer necessary and no one will care if you remove it.
 
@@ -69,7 +69,7 @@ This kind of stability and trust is also called _psychological safety_, which is
 
 Building deletion into the process is extremely important. Without deletion, a prototype can leak into the broader codebase, making it both fragile and hard to remove, and that's how tech debt is born.
 
-The validation workstream needs to have a heavy focus on sandboxing experiments, releasing only to limited test groups, and [optimizing for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=blog&utm_medium=jason.af&utm_content=optimize-for-deletion). **I also strongly recommend that the last step of an experimental project should be to delete the project.**
+The validation workstream needs to have a heavy focus on sandboxing experiments, releasing only to limited test groups, and [optimizing for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=blog&utm_medium=jason.energy&utm_content=optimize-for-deletion). **I also strongly recommend that the last step of an experimental project should be to delete the project.**
 
 If the project is greenlit for production, the team who picks up the project shouldn't have to start by cleaning up a mess. They should have the data and the original code available for reference, but they should be starting with no code actually committed — it's important that they can make decisions without the influence of inertia skewing the outcomes.
 

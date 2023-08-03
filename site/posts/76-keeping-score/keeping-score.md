@@ -19,7 +19,7 @@ There's no formal award ceremony denoting success. There's {% footnote id="house
 If you've ever subjected yourself to the horrors of reality television, a few minutes of the petty nonsense on _The Real Housewives of Wherever_ is all the proof we need that having a bunch of fancy crap doesn't correlate with success _at all_.
 
 {% figure %}
-![SO MAD](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832260/jason.af/real-housewives.gif)
+![SO MAD](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832260/jason.energy/real-housewives.gif)
 {% endfigure %}
 {% endfootnoteText %}
 
@@ -27,7 +27,7 @@ If you've ever subjected yourself to the horrors of reality television, a few mi
   align="right",
   caption="This guy felt like a goddamn champion for all of six seconds."
 %}
-![Goalie blocking a kick, then celebrating as the ball rolls into the goal behind him.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832507/jason.af/success-to-failure.gif)
+![Goalie blocking a kick, then celebrating as the ball rolls into the goal behind him.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832507/jason.energy/success-to-failure.gif)
 {% endfigure %}
 
 Worse, what feels like success _now_ can slide out from under us and feel like stagnation or failure, like a kid who feels so proud of her B+ on the math test until her parents ask, "Why didn't you get an A?"
@@ -163,7 +163,7 @@ If we're looking to beat ourselves up, someone is _always_ more impressive. Nata
   align="left",
   caption="We’re all definitely having a better day than this dog."
 %}
-![Dog falling down the stairs and then exploding in a fireball.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832673/jason.af/exploding-dog.gif)
+![Dog falling down the stairs and then exploding in a fireball.](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto/v1640832673/jason.energy/exploding-dog.gif)
 {% endfigure %}
 
 Or, if we're looking to comfort ourselves, we can always find someone doing worse. If all we're looking for is someone to make us look good by comparison, a quick scroll through social media is all we need.

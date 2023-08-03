@@ -10,7 +10,7 @@ export const handler: Handler = async () => {
   let posts = 0;
 
   try {
-    const res = await fetch('https://www.jason.af/feed.xml');
+    const res = await fetch('https://www.jason.energy/feed.xml');
 
     if (!res.ok) {
       console.error(`Failed to fetch channel statistics: ${res.status}`);

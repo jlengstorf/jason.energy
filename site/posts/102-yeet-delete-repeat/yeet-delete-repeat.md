@@ -18,7 +18,7 @@ Let's talk about a strategy for moving quickly *without* breaking things or burn
 
 ## Not shipping has high business and emotional costs.
 
-Every company has its list of "we should" and "what if" ideas. In growing companies, this list often ends up collecting dust because there's *so much to do* that [squishy projects](https://www.jason.af/squishy-projects) like these get pushed back indefinitely in favor of more concrete, immediate needs.
+Every company has its list of "we should" and "what if" ideas. In growing companies, this list often ends up collecting dust because there's *so much to do* that [squishy projects](https://www.jason.energy/squishy-projects) like these get pushed back indefinitely in favor of more concrete, immediate needs.
 
 Working on immediate needs puts out fires, but it leaves the company in a reactive pattern. This is high stress and can be demotivating, especially if the teams doing the firefighting wish they had time to experiment. 
 
@@ -62,7 +62,7 @@ Just... please just ship it. Stop thinking about it. Ship. For the love of god. 
 
 One of the major complaints about shipping quickly is that it creates overwhelming technical debt. I've worked in companies where this is the case, and I've felt the pain of digging into an undocumented weekend project that's somehow the only thing keeping a core part of the product functioning.
 
-We *do not* want to create that problem for ourselves. Instead, we want to [optimize for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=jason.af&utm_medium=yeet-delete-repeat&utm_content=optimize-for-deletion) — and delete our experiments by default.
+We *do not* want to create that problem for ourselves. Instead, we want to [optimize for deletion](https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=jason.energy&utm_medium=yeet-delete-repeat&utm_content=optimize-for-deletion) — and delete our experiments by default.
 
 To avoid technical debt, experiments should be deleted as part of collecting research. If possible, ship the experiment as an entirely separate codebase. Barring that, build the entire feature into one squash commit that can be reverted. No matter how you build it, assume that the experiment will be completely erased once it's complete.
 

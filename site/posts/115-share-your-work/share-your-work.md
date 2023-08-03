@@ -38,7 +38,7 @@ Instead of focusing our energy on huge, standalone efforts, we can see a lot mor
   credit="James Clear",
   creditLink="https://jamesclear.com/continuous-improvement"
 %}
-  ![A chart showing a comparison of a 1% daily improvement over 365 days vs. a 1% daily decline over the same period.](https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1671834237/jason.af/james-clear-power-of-tiny-gains.jpg)
+  ![A chart showing a comparison of a 1% daily improvement over 365 days vs. a 1% daily decline over the same period.](https://res.cloudinary.com/jlengstorf/image/upload/f_auto,q_auto/v1671834237/jason.energy/james-clear-power-of-tiny-gains.jpg)
 {% endfigure %}
 
 Stacking up steady, incremental progress has a compounding effect. **1% every day may not sound like much, but the cumulative effect is exponential growth over longer periods of time.**

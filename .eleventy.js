@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 const cloudinary = require('@jlengstorf/cloudinary-11ty-helpers')({
   cloud_name: 'jlengstorf',
-  folder: 'jason.af',
+  folder: 'jason.energy',
   image_width: 680,
 });
 
@@ -89,7 +89,7 @@ module.exports = function (eleventyConfig) {
     return getShareImage({
       title: content.toUpperCase(),
       cloudName: 'jlengstorf',
-      imagePublicID: 'jason.af/og',
+      imagePublicID: 'jason.energy/og',
       titleFont: 'jwf.otf',
       titleExtraConfig: '_line_spacing_-25',
       titleFontSize: 75,
@@ -118,11 +118,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode('aside', (content, type = 'default') => {
     const icons = {
       default: {
-        src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.af/light-mode.png',
+        src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.energy/light-mode.png',
         alt: 'light bulb',
       },
       spicy: {
-        src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1609402670/jason.af/fire.png',
+        src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1609402670/jason.energy/fire.png',
         alt: 'fire',
       },
     };

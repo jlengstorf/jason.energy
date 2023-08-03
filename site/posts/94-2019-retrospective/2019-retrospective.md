@@ -73,7 +73,7 @@ A lot of this content happened in later 2019, which was after I left Gatsby and 
 
 Another huge factor was surrounding myself with people who regularly discuss the kinds of topics I love to dive into — several posts I wrote in 2019 started as copy-pasted excerpts of discussions from those chats.
 
-(If you're a content creator and you like discussing both "philosophy of work" and web development, you may want to join the [Party Corgi Discord](https://jason.af/pcn), which is where I've been having these discussions.)
+(If you're a content creator and you like discussing both "philosophy of work" and web development, you may want to join the [Party Corgi Discord](https://jason.energy/pcn), which is where I've been having these discussions.)
 
 In addition to writing, I also created a bunch of code-related video content on _[Learn With Jason](https://www.learnwithjason.dev/)_, [egghead](https://egghead.io/instructors/jason-lengstorf), and [Frontend Masters](https://frontendmasters.com/teachers/jason-lengstorf/).
 
@@ -147,6 +147,6 @@ Running a retrospective remains one of my favorite methods for measuring my prog
 2. What could have gone better?
 3. What will I change going forward?
 
-Sharing it publicly can be a good way to hold yourself accountable if you're comfortable with that. I strongly recommend posting it on your blog, but you can also [tweet at me](https://twitter.com/jlengstorf). And if your goals for 2020 include creating stuff and you want a safe, supportive community to bounce ideas off of, please [join the Party Corgi Discord](https://jason.af/pcn)!
+Sharing it publicly can be a good way to hold yourself accountable if you're comfortable with that. I strongly recommend posting it on your blog, but you can also [tweet at me](https://twitter.com/jlengstorf). And if your goals for 2020 include creating stuff and you want a safe, supportive community to bounce ideas off of, please [join the Party Corgi Discord](https://jason.energy/pcn)!
 
 Here's to making 2020 the best year yet!

@@ -26,7 +26,7 @@ export default async (request: Request) => {
             <div class="post-aside" style="margin-bottom: 3rem;">
               <div class="post-aside-icon">
                 <img
-                  src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.af/light-mode.png"
+                  src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.energy/light-mode.png"
                   alt="light bulb"
                   style="width: 100%;"
                 />

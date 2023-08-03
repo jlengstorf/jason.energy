@@ -89,7 +89,7 @@ For me, I think of the things that made me laugh while teaching me something:
 
 {% endfigure %}
 
-Finding ways to make knowledge transfer fun has been pretty central to my career — whether it's something like [_Learn With Jason_](https://www.learnwithjason.dev) where I'm actively teaching development skills, or the way I entertain myself with meta-commentary in [my blog posts](https://www.jason.af/yak-shaving/), or the absurd level of effort I put into [silly apps for my workshops](https://frontendmasters.com/courses/serverless-functions/) because they make me smile.
+Finding ways to make knowledge transfer fun has been pretty central to my career — whether it's something like [_Learn With Jason_](https://www.learnwithjason.dev) where I'm actively teaching development skills, or the way I entertain myself with meta-commentary in [my blog posts](https://www.jason.energy/yak-shaving/), or the absurd level of effort I put into [silly apps for my workshops](https://frontendmasters.com/courses/serverless-functions/) because they make me smile.
 
 I can only speak for myself, but **I am _far_ more likely to follow through on something if I'm having fun while I do it, so I've started prioritizing fun in projects** as the most important factor. No matter what we make, we're going to share knowledge; that's table stakes. When we look at _how_ we're going to share that knowledge, the approach that sounds like the most fun is going to win out every time.
 

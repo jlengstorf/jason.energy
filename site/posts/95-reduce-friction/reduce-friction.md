@@ -158,4 +158,4 @@ This is far from a comprehensive framework, but I've used this set of questions 
 
 Do you have strategies for reducing friction? When have you found it to be a good thing to make something harder? What other questions do you ask when you set out to improve a workflow?
 
-[Hit me up on Twitter](https://twitter.com/compose/tweet?url=https://lengstorf.com/reduce-friction&text=Hey%20@jlengstorf%20I%20have%20opinions%20about) or join the [Party Corgi Discord](https://jason.af/pcn) — I'd love to chat with you!
+[Hit me up on Twitter](https://twitter.com/compose/tweet?url=https://lengstorf.com/reduce-friction&text=Hey%20@jlengstorf%20I%20have%20opinions%20about) or join the [Party Corgi Discord](https://jason.energy/pcn) — I'd love to chat with you!

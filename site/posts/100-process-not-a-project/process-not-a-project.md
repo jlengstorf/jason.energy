@@ -57,7 +57,7 @@ Once the basics of streaming felt more natural, I had the ability to try out exp
   caption="The show has come a long way: interactive chat, notifications, better lighting and design, and other improvements."
 %}
   <iframe
-    src="https://clips.twitch.tv/embed?clip=BelovedCulturedWallabyRiPepperonis&parent=localhost&parent=www.jason.af&autoplay=false"
+    src="https://clips.twitch.tv/embed?clip=BelovedCulturedWallabyRiPepperonis&parent=localhost&parent=www.jason.energy&autoplay=false"
     height="450"
     width="800"
     scrolling="no"

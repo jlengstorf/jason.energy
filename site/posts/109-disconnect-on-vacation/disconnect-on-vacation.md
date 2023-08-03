@@ -76,7 +76,7 @@ Teams build resilience by learning to solve problems in different ways. **If you
 Of course, the _reason_ no one takes initiative is that you've trained them to wait for your approval. There are big downsides to putting yourself into the role of savior, and one of the biggest is that when you teach everyone to do things a certain way, you don't get to be upset when they listen to you.
 {% endfootnoteText %}
 
-It might feel like ignoring work during vacations is unfair to your team, but [it's the kind thing to do](https://www.jason.af/be-kind).
+It might feel like ignoring work during vacations is unfair to your team, but [it's the kind thing to do](https://www.jason.energy/be-kind).
 
 ### You'll avoid sending mixed messages to your team.
 

@@ -313,8 +313,8 @@ thumbs.addEventListener('keydown', (event) => {
  */
 const sound = new Howl({
   src: [
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.webm',
-    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.af/sfx/sprite.mp3',
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.energy/sfx/sprite.webm',
+    'https://res.cloudinary.com/jlengstorf/video/upload/q_auto/v1642207423/jason.energy/sfx/sprite.mp3',
   ],
   sprite: {
     airhorn: [0, 2076],
