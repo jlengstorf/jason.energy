@@ -76,6 +76,9 @@
 
 /optimize-for-deletion          https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=presentation&utm_medium=jamstack-architecture&utm_content=optimize-for-deletion
 
+/food-with-friends              https://frosty-night-132.ck.page/e84c15ad28 200
+/fwf                            /food-with-friends
+
 https://jasonaf.netlify.app/*   https://www.jason.energy/
 https://jason.af/*              https://www.jason.energy/:splat
 
