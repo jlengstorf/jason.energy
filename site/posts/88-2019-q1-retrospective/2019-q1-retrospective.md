@@ -41,7 +41,7 @@ I [set goals at multiple levels](/level-setting/) in an effort to have a long-te
     I had no problem hitting this goal because I absolutely love doing these {% footnote id="beers" %}community events.{% endfootnote %} Between local meetups and hosting a rotating dinner party series with friends, I’ve had no problem keeping my calendar full of great community events.
 
 {% footnoteText id="beers" %}
-  Do you live in Portland? [Join us for the next one!](https://tinyletter.com/foodwithfriends)
+  Do you live in Portland? [Join us for the next one!](https://jason.energy/food-with-friends)
 {% endfootnoteText %}
 
 {% figure

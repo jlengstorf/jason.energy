@@ -79,7 +79,7 @@ In addition to writing, I also created a bunch of code-related video content on 
 
 ### My community ties felt strong and got stronger.
 
-One of the major reasons to settle in Portland was to build a strong community, and it feels like we're doing that. In 2019, [Kyle Shevlin](https://kyleshevlin.com/) and I turned our impromptu get-togethers into a somewhat organized, usually [monthly get-together over food and beverages called Food With Friends](https://tinyletter.com/foodwithfriends), where anyone in the Portland community is welcome to join, with a nice group of regulars.
+One of the major reasons to settle in Portland was to build a strong community, and it feels like we're doing that. In 2019, [Kyle Shevlin](https://kyleshevlin.com/) and I turned our impromptu get-togethers into a somewhat organized, usually [monthly get-together over food and beverages called Food With Friends](https://jason.energy/food-with-friends), where anyone in the Portland community is welcome to join, with a nice group of regulars.
 
 <blockquote class="twitter-tweet">
   <p lang="en" dir="ltr">
