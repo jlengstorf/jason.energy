@@ -74,7 +74,7 @@ Distrust, doubt, and discord — all because we wanted to be nice.
 
 If I make a mistake today and you approach me about it in six months, we're going to talk about the mistake _and why you didn't bring it up sooner._
 
-**The best managers I've had (hi [Sarah](https://twitter.com/sarah_edo) and [Robin](https://twitter.com/shinytoyrobots)) give immediate feedback and don't give problems enough room to expand.** They address the problems directly and immediately, giving tough feedback from a place of caring.
+**The best managers I've had (hi [Sarah](https://twitter.com/sarah_edo) and [Robin](https://www.shinytoyrobots.com/)) give immediate feedback and don't give problems enough room to expand.** They address the problems directly and immediately, giving tough feedback from a place of caring.
 
 These immediate feedback loops gave me confidence in the team. There was no secret reality that was covered up by niceness; things really were the way they seemed because issues were dealt with openly and honestly.
 
