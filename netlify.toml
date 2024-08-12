@@ -1,22 +1,18 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+command = "npm run build"
+publish = "dist"
 
 [dev]
-  command = "npm run dev"
+command = "npm run dev"
 
 [[edge_functions]]
-  path = "/api/get-greeting"
-  function = "hello"
+path = "/api/get-greeting"
+function = "hello"
 
 [[edge_functions]]
-  path = "/uses/"
-  function = "geo-amazon"
+path = "/uses/"
+function = "geo-amazon"
 
 [[edge_functions]]
-  path = "/posts/redirected"
-  function = "lengstorf-redirect"
-
-[[edge_functions]]
-  path = "/links"
-  function = "link-stats"
+path = "/posts/redirected"
+function = "lengstorf-redirect"
