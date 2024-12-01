@@ -4,7 +4,13 @@ Array.from(footnotes).forEach((fnLink) => {
   fnLink.addEventListener('click', (event) => {
     event.preventDefault();
 
-    const [, id] = event.target.href.split('#');
+    // make sure we're using the link and not a contained element
+    const target =
+      event.target.href !== undefined
+        ? event.target
+        : event.target.closest('a');
+
+    const [, id] = target.href.split('#');
     const footnote = document.querySelector(`#${id} .footnote-content`);
     const newStatus =
       footnote.dataset.status === 'visible' ? 'hidden' : 'visible';
