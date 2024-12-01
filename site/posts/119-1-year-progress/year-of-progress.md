@@ -1,9 +1,9 @@
 ---
 date: 2024-11-30
 slug: year-of-progress
-title: 1 Year of Steady Progress Is More Than I Thought
+title: 1 Year of Steady Progress Is More Than I Expected
 seo_title: >
-  1 Year of Steady Progress Is More Than I Thought
+  1 Year of Steady Progress Is More Than I Expected
 description: >
   I never feel like I'm doing enough. But I looked at what I was doing a year ago and... it was kind of a shock how much changed. There's a lesson in here.
 category: impact
