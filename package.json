@@ -1,37 +1,15 @@
 {
-  "name": "jason.energy",
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
-  "description": "the boopiest place on Earth",
-  "version": "0.2.0",
-  "license": "MIT",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@jlengstorf/cloudinary-11ty-helpers": "^0.1.3",
-    "@jlengstorf/get-share-image": "^0.8.0",
-    "@jlengstorf/get-twitch-oauth": "^1.0.1",
-    "@netlify/functions": "^1.0.0",
-    "@sindresorhus/slugify": "^2.1.0",
-    "autoprefixer": "^10.4.2",
-    "cloudinary": "^1.27.1",
-    "csso": "^5.0.2",
-    "eleventy-plugin-toc": "^1.1.5",
-    "fast-xml-parser": "^4.0.11",
-    "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.4.1",
-    "matter-js": "^0.19.0",
-    "node-fetch": "^3.1.0",
-    "postcss": "^8.4.5",
-    "rehype-local-image-to-cloudinary": "^1.0.4",
-    "terser": "^5.10.0"
-  },
-  "devDependencies": {
-    "@types/node": "^18.6.3",
-    "prettier": "^2.2.1",
-    "serve": "^14.0.1"
+    "astro": "^5.5.2"
   }
 }

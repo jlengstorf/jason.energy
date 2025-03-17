@@ -1,0 +1,338 @@
+---
+
+---
+
+<section class="links">
+	<nav class="items">
+		<a href="https://codetv.dev" class="item lg xs-expander xs-short">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/codetv-lockup.png"
+				alt="CodeTV — tv for developers"
+			/>
+		</a>
+
+		<a href="https://partners.codetv.dev" class="item lg xs-expander">
+			<span class="shrinky"> I've worked with companies including: </span>
+
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742181484/jason.energy/v2/codetv-worked-with-logos-sm.png"
+				alt="Google, Figma, AWS, GitHub, Clerk, Convex, Algolia, Neon, DataStax, CodePen"
+				class="logos"
+			/>
+
+			<span class="fake-btn"> Learn how I can help &rarr; </span>
+		</a>
+
+		<a href="https://codetv.link/lh" class="item md">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/leet-heat-lockup.png"
+				alt="Leet Heat"
+			/>
+		</a>
+
+		<a href="https://codetv.link/wdc" class="item md">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178627/jason.energy/v2/web-dev-challenge-lockup.png"
+				alt="Web Dev Challenge"
+			/>
+		</a>
+
+		<a href="https://codetv.link/lwj" class="item md">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178627/jason.energy/v2/learn-with-jason-lockup.png"
+				alt="Learn With Jason"
+			/>
+		</a>
+
+		<a href="" class="item lg span-2"> Newsletter </a>
+
+		<a href="" class="item lg span-2"> Blog </a>
+
+		<a href="https://bsky.app/profile/jason.energy" class="item sm social">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/bluesky.png"
+				alt="Bluesky"
+			/>
+			<span>Bluesky</span>
+		</a>
+
+		<a href="https://youtube.com/@codetv-dev" class="item sm social">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/youtube.png"
+				alt="YouTube"
+			/>
+			<span>YouTube</span>
+		</a>
+
+		<a href="https://linkedin.com/in/jlengstorf" class="item sm social">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/linkedin.png"
+				alt="LinkedIn"
+			/>
+			<span>LinkedIn</span>
+		</a>
+
+		<a href="https://instagram.com/jlengstorf" class="item sm social">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/instagram.png"
+				alt="Instagram"
+			/>
+			<span>Instagram</span>
+		</a>
+	</nav>
+
+	<figure class="image">
+		<img
+			src="https://assets.codepen.io/64141/BA1_7488.jpg"
+			alt="Jason Lengstorf looking up and to his right while smiling in a way that looks like someone caught him off-guard with a good joke"
+		/>
+
+		<figcaption>
+			<a href="https://jasonhill.photo">Photo by Jason Hill</a>
+		</figcaption>
+	</figure>
+</section>
+
+<style>
+	.links {
+		--max-size: min(100cqi, 720px);
+		--cols: 12;
+		--rows: 29;
+
+		@media (min-width: 470px) {
+			--rows: 21;
+		}
+
+		container: bento / inline-size;
+		display: grid;
+		grid-template-columns: repeat(
+			var(--cols),
+			calc((var(--max-size) / var(--cols)))
+		);
+		grid-template-rows: repeat(
+			var(--rows),
+			calc((var(--max-size) / var(--cols)))
+		);
+		inline-size: var(--max-size);
+		margin-inline: auto;
+	}
+
+	.items {
+		align-items: start;
+		background: var(--gray-700);
+		display: grid;
+		gap: 4px;
+		grid-template-columns: subgrid;
+		grid-template-rows: subgrid;
+		grid-column: span 12;
+		grid-row: span 27;
+		order: 2;
+		padding: 4px;
+
+		@media (min-width: 600px) {
+			grid-row: span 15;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		.item {
+			align-items: center;
+			block-size: 100%;
+			color: var(--gray-100);
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			justify-content: center;
+
+			&:not(:has(.item)) {
+				background: var(--gray-600);
+				border: 1px solid transparent;
+				border-radius: 3px;
+				container: item / inline-size;
+				transition: all 100ms ease-in-out;
+
+				&:is(:hover, :active, :focus) {
+					background: var(--gray-900);
+					border-color: var(--gray-600);
+					scale: calc(100% + 20px);
+				}
+			}
+
+			&.lg {
+				grid-column: span 6;
+				grid-row: span 6;
+
+				svg {
+					block-size: auto;
+					inline-size: 80cqi;
+				}
+			}
+
+			&.md {
+				grid-column: span 4;
+				grid-row: span 4;
+			}
+
+			&.sm {
+				grid-column: span 3;
+				grid-row: span 3;
+
+				svg {
+					block-size: auto;
+					inline-size: min(40cqi, 60px);
+				}
+			}
+
+			&.span-2 {
+				grid-row: span 2;
+			}
+
+			&.short {
+				grid-row: span 3;
+			}
+
+			&.xs-expander {
+				grid-column: span 12;
+				grid-row: span 8;
+
+				&.xs-short {
+					grid-row: span 6;
+				}
+
+				@media (min-width: 470px) {
+					grid-column: span 6;
+					grid-row: span 6;
+				}
+			}
+
+			img {
+				block-size: auto;
+				inline-size: 60cqi;
+
+				&.logos {
+					inline-size: 80cqi;
+				}
+			}
+
+			&.social {
+				display: flex;
+				flex-direction: column;
+				font-size: clamp(0.75rem, 2cqi, 1rem);
+				gap: 6px;
+
+				img {
+					max-inline-size: min(32cqi, 60px);
+				}
+			}
+		}
+	}
+
+	.image {
+		background: var(--gray-700);
+		border: 4px solid transparent;
+		border-block-end: 0;
+		block-size: 100%;
+		grid-column: span 12;
+		grid-row: span 6;
+		inline-size: 100%;
+		margin: 0;
+		order: 1;
+		position: relative;
+
+		img {
+			block-size: 100%;
+			border-radius: 3px;
+			display: block;
+			inline-size: 100%;
+			object-fit: cover;
+			object-position: 50% 7%;
+		}
+
+		figcaption {
+			background: color-mix(in oklch, var(--gray-600) 50%, transparent);
+			backdrop-filter: blur(6px);
+			border-radius: 3px;
+			color: var(--gray-100);
+			inset-block-end: 10px;
+			inset-inline-end: 10px;
+			position: absolute;
+			z-index: 10;
+
+			a {
+				color: inherit;
+				display: block;
+				font-size: 0.75rem;
+				line-height: 1;
+				padding: 8px 12px;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.shrinky {
+		font-size: clamp(0.75rem, 5cqi, 3rem);
+		max-inline-size: 90cqi;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	.fake-btn {
+		--size: clamp(0.625rem, 4.5cqi, 2.75rem);
+
+		background: var(--pink);
+		border-radius: 2px;
+		font-size: var(--size);
+		font-weight: 500;
+		line-height: 1;
+		padding: calc(var(--size) * 0.5) calc(var(--size) * 0.75);
+
+		@media (min-width: 600px) {
+			margin-block-start: 12px;
+		}
+	}
+
+	@media (min-width: 960px) {
+		.links {
+			--max-size: 100cqi;
+			--cols: 20;
+			--rows: 15;
+		}
+
+		.items {
+			grid-column: span 12;
+			grid-row: span 15;
+			order: 1;
+		}
+
+		.image {
+			border-block-end: 4px solid transparent;
+			border-inline-start: 0;
+			grid-column: span 8;
+			grid-row: span 15;
+			object-position: 50% 50%;
+			order: 2;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.links {
+			--cols: 26;
+			--rows: 15;
+		}
+
+		.items {
+			grid-column: span 12;
+			grid-row: span 15;
+			order: 1;
+		}
+
+		.image {
+			grid-column: span 14;
+			grid-row: span 15;
+			order: 2;
+		}
+	}
+</style>

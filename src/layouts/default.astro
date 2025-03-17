@@ -1,0 +1,86 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'tay-amaya';
+		src: url('/fonts/TAYAmaya.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'tay-dreamboat';
+		src: url('/fonts/TAYDreamboat.woff2') format('woff2');
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	:root {
+		--white: #f5f2fb;
+		--gray-100: #dbd4e9;
+		--gray-600: #322942;
+		--gray-700: #231239;
+		--gray-900: #030626;
+		--pink: #a20979;
+		--purple: #4e2d88;
+
+		--font-heading: 'tay-dreamboat';
+		--font-subheading: 'tay-amaya';
+		--font-body: system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+			'Segoe UI Symbol';
+
+		background-color: var(--gray-700);
+		font-family: var(--font-body);
+		interpolate-size: allow-keywords;
+		line-height: 1.45;
+	}
+
+	img {
+		block-size: auto;
+		display: block;
+		max-inline-size: 100%;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6) {
+		font-family: var(--font-heading);
+		line-height: 0.8;
+	}
+
+	:is(p, li) {
+		line-height: 1.45;
+	}
+</style>
+
+<style>
+	body {
+		background: var(--gray-700);
+		margin: 0;
+		padding-top: min(100dvb, 100dvi);
+	}
+
+	main {
+		container: main / inline-size;
+	}
+</style>
