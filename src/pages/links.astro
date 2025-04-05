@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/default.astro';
+import LinkSection from '../components/links.astro';
+import Footer from '../components/footer.astro';
+---
+
+<Layout title="Jason Lengstorf" simple={true}>
+	<h1>Jason Lengstorf makes tv for developers</h1>
+	<LinkSection />
+	<Footer />
+</Layout>
+
+<style>
+	h1 {
+		--font-size: 1;
+
+		color: var(--white);
+		font-family: var(--font-heading);
+		font-size: calc(var(--font-size) * clamp(1rem, 2.5cqi, 4rem));
+		margin-block: 30px;
+		padding: 25px 5cqi 15px;
+		text-align: center;
+	}
+</style>

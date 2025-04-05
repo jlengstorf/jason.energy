@@ -1,9 +1,10 @@
 ---
 export interface Props {
 	title: string;
+	simple?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, simple = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -15,7 +16,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 
-	<body>
+	<body class:list={{ simple }}>
 		<main>
 			<slot />
 		</main>
@@ -45,6 +46,8 @@ const { title } = Astro.props;
 		--gray-900: #030626;
 		--pink: #a20979;
 		--purple: #4e2d88;
+		--blue: #389fff;
+		--orange: #bc7218;
 
 		--font-heading: 'tay-dreamboat';
 		--font-subheading: 'tay-amaya';
@@ -52,6 +55,7 @@ const { title } = Astro.props;
 			'Segoe UI Symbol';
 
 		background-color: var(--gray-700);
+		color-mode: light dark;
 		font-family: var(--font-body);
 		interpolate-size: allow-keywords;
 		line-height: 1.45;
@@ -71,13 +75,22 @@ const { title } = Astro.props;
 	:is(p, li) {
 		line-height: 1.45;
 	}
+
+	a {
+		color: var(--blue);
+	}
 </style>
 
 <style>
 	body {
 		background: var(--gray-700);
 		margin: 0;
-		padding-top: min(100dvb, 100dvi);
+
+		&:not(.simple) {
+			@media (min-width: 1000px) {
+				padding-top: min(100dvb, 100dvi);
+			}
+		}
 	}
 
 	main {

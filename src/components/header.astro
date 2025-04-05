@@ -23,13 +23,10 @@
 	}
 
 	header {
-		animation: header-resize linear forwards;
-		animation-timeline: scroll();
-		animation-range: 0dvb 85dvb;
 		background: url(https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742186341/jason.energy/v2/header.jpg);
 		background-position: center;
 		background-size: cover;
-		block-size: 100dvb;
+		border-block-end: 4px solid var(--gray-700);
 		color: var(--white);
 		display: flex;
 		flex-direction: column;
@@ -37,9 +34,16 @@
 		max-inline-size: 100dvi;
 		padding: 25px 5cqi 15px;
 		place-content: center;
-		position: fixed;
-		top: 0;
-		z-index: 10;
+		z-index: 100;
+
+		@media (min-width: 1000px) {
+			animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
+			animation-timeline: scroll();
+			animation-range: 0dvb 85dvb;
+			block-size: 100dvb;
+			position: fixed;
+			top: 0;
+		}
 
 		.name,
 		.tagline {

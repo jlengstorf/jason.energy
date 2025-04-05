@@ -1,0 +1,97 @@
+---
+
+---
+
+<footer>
+	<div>
+		<p>© Jason Lengstorf</p>
+		<p>I’m nicer than I look, I swear.</p>
+		<p>
+			Don’t let my <abbr title="Resting Murder Face">RMF</abbr> fool you; there’s
+			no murder in my heart.
+		</p>
+	</div>
+
+	<div>
+		<ul>
+			<li>
+				<a href="https://partners.codetv.dev">work with me</a>
+			</li>
+			<li>
+				<a href="https://jason.energy/uses">stuff I use</a>
+			</li>
+			<li>
+				<a href="mailto:jason@codetv.dev">jason@codetv.dev</a>
+			</li>
+		</ul>
+	</div>
+</footer>
+
+<style>
+	footer {
+		align-items: center;
+		background: var(--gray-600);
+		border-radius: 3px;
+		color: var(--gray-100);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: space-between;
+		margin-block-end: 4px;
+		margin-inline: 4px;
+		padding: 30px 60px;
+		text-align: center;
+
+		@media (min-width: 750px) {
+			flex-direction: initial;
+			gap: initial;
+			text-align: initial;
+		}
+
+		div {
+			display: flex;
+			flex-direction: column;
+			font-size: 0.875rem;
+			font-weight: 200;
+			gap: 8px;
+			letter-spacing: 0.1em;
+		}
+
+		p {
+			margin: 0;
+			text-wrap: balance;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+
+			@media (min-width: 750px) {
+				text-align: end;
+			}
+		}
+
+		a {
+			color: inherit;
+			display: inline-block;
+			padding: 6px 16px;
+
+			@media (pointer: coarse) {
+				padding-block: 10px;
+			}
+
+			@media (any-hover: hover) {
+				text-decoration: none;
+
+				&:is(:hover, :focus) {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+</style>

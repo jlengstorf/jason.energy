@@ -44,11 +44,20 @@
 			/>
 		</a>
 
-		<a href="" class="item lg span-2"> Newsletter </a>
+		<a href="https://codetv.link/discord" class="item lg span-2">
+			<img
+				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1743890272/jason.energy/v2/codetv-discord.png"
+				alt="Join the CodeTV Discord"
+			/>
+		</a>
 
 		<a href="" class="item lg span-2"> Blog </a>
 
-		<a href="https://bsky.app/profile/jason.energy" class="item sm social">
+		<a
+			href="https://bsky.app/profile/jason.energy"
+			class="item sm social"
+			rel="nofollow"
+		>
 			<img
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/bluesky.png"
 				alt="Bluesky"
@@ -56,7 +65,11 @@
 			<span>Bluesky</span>
 		</a>
 
-		<a href="https://youtube.com/@codetv-dev" class="item sm social">
+		<a
+			href="https://youtube.com/@codetv-dev"
+			class="item sm social"
+			rel="nofollow"
+		>
 			<img
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/youtube.png"
 				alt="YouTube"
@@ -64,7 +77,11 @@
 			<span>YouTube</span>
 		</a>
 
-		<a href="https://linkedin.com/in/jlengstorf" class="item sm social">
+		<a
+			href="https://linkedin.com/in/jlengstorf"
+			class="item sm social"
+			rel="nofollow"
+		>
 			<img
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/linkedin.png"
 				alt="LinkedIn"
@@ -72,7 +89,11 @@
 			<span>LinkedIn</span>
 		</a>
 
-		<a href="https://instagram.com/jlengstorf" class="item sm social">
+		<a
+			href="https://instagram.com/jlengstorf"
+			class="item sm social"
+			rel="nofollow"
+		>
 			<img
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/instagram.png"
 				alt="Instagram"
@@ -286,8 +307,17 @@
 		border-radius: 2px;
 		font-size: var(--size);
 		font-weight: 500;
+		letter-spacing: 0.1em;
 		line-height: 1;
 		padding: calc(var(--size) * 0.5) calc(var(--size) * 0.75);
+		text-shadow: 0 1px 1px color-mix(in oklch, var(--gray-900) 35%, transparent);
+		text-transform: uppercase;
+		transition: 150ms linear all;
+
+		:is(:hover, :focus) > & {
+			background: color-mix(in oklch, var(--pink) 90%, var(--white));
+			color: var(--white);
+		}
 
 		@media (min-width: 600px) {
 			margin-block-start: 12px;
