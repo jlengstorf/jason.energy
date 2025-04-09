@@ -1,0 +1,97 @@
+---
+export interface Props {
+	caption?: string;
+	credit?: string;
+	creditLink?: string;
+	creditType?: string;
+	aspectRatio?: number;
+}
+
+const {
+	caption,
+	credit,
+	creditLink,
+	creditType = 'Credit',
+	aspectRatio = -1,
+} = Astro.props;
+---
+
+<figure class="post-figure">
+	{
+		aspectRatio > 0 ? (
+			<div class="embed-container">
+				<slot />
+			</div>
+		) : (
+			<slot />
+		)
+	}
+
+	{
+		caption || credit ? (
+			<figcaption>
+				<span set:html={caption} />
+
+				{credit ? (
+					<small>
+						{creditType}:
+						{creditLink ? (
+							<a href={creditLink}>{credit}</a>
+						) : (
+							<span>{credit}</span>
+						)}
+					</small>
+				) : null}
+			</figcaption>
+		) : null
+	}
+</figure>
+
+<style>
+	.post-figure {
+		margin: 32px -20px;
+
+		.embed-container {
+			aspect-ratio: 16 / 9;
+			container: embed / size;
+			inline-size: 100%;
+		}
+
+		img {
+			border-radius: 3px 3px 0 0;
+			display: block;
+			width: 100%;
+		}
+
+		&:not(:has(figcaption)) img {
+			border-radius: 3px;
+		}
+
+		> * {
+			display: block;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		figcaption {
+			background: var(--gray-600);
+			border-radius: 0 0 3px 3px;
+			color: var(--gray-200);
+			font-size: 0.75em;
+			font-style: italic;
+			margin: 0;
+			padding: 4px 20px;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		blockquote + figcaption {
+			background: transparent;
+			color: var(--gray-700);
+		}
+	}
+</style>

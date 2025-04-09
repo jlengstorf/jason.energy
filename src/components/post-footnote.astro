@@ -1,0 +1,51 @@
+---
+export interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<a href={`#${id}`} class="footnote" id={`${id}-ref`}><slot /></a>
+
+<script>
+	function addFootnoteListeners() {
+		const footnotes = document.querySelectorAll(
+			'.footnote',
+		) as NodeListOf<HTMLAnchorElement>;
+
+		footnotes.forEach((el) => {
+			const [, targetId] = el.href.split('#');
+			const fnText = document.getElementById(targetId);
+
+			if (!fnText) {
+				return;
+			}
+
+			el.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				fnText.classList.toggle('visible');
+			});
+		});
+	}
+
+	addFootnoteListeners();
+</script>
+
+<style>
+	a {
+		--alpha: 75%;
+
+		background: color-mix(in oklch, var(--purple) var(--alpha), transparent);
+		border-radius: 3px;
+		color: inherit;
+		padding: 0 4px;
+		text-decoration: none;
+		transition: background 150ms linear;
+
+		&:is(:hover, :focus) {
+			--alpha: 100%;
+		}
+	}
+</style>

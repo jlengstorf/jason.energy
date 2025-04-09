@@ -1,10 +1,19 @@
 ---
 export interface Props {
 	title: string;
+	description?: string;
+	image?: string;
+	imageAlt?: string;
 	simple?: boolean;
 }
 
-const { title, simple = false } = Astro.props;
+const {
+	title,
+	description = 'Jason has 20+ years of developer experience, which he combines with stage and video production expertise to help companies tell better stories.',
+	image = 'https://res.cloudinary.com/jlengstorf/image/upload/v1743895371/jason.energy/v2/jason.energy-social-card.png',
+	imageAlt = 'Jason Lengstorf lit in purple hues. Text is overlaid that says, "Jason Lengstof makes tv for developers with his friends."',
+	simple = false,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -14,6 +23,27 @@ const { title, simple = false } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<slot name="head">
+			<meta name="description" content={description} />
+			<meta name="image" content={image} />
+
+			<meta property="og:type" content="website" />
+			<meta property="og:title" content={title} />
+			<meta property="og:site_name" content="Jason Lengstorf" />
+			<meta property="og:description" content={description} />
+			<meta property="og:url" content={Astro.url} />
+
+			<meta property="og:image" content={image} />
+			<meta property="og:image:width" content="1600" />
+			<meta property="og:image:height" content="900" />
+			<meta property="og:image:alt" content={imageAlt} />
+
+			<meta name="twitter:dnt" content="on" />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:description" content={description} />
+			<meta name="twitter:image" content={image} />
+		</slot>
 	</head>
 
 	<body class:list={{ simple }}>
@@ -49,16 +79,17 @@ const { title, simple = false } = Astro.props;
 		--blue: #389fff;
 		--orange: #bc7218;
 
-		--font-heading: 'tay-dreamboat';
-		--font-subheading: 'tay-amaya';
+		--font-heading: 'tay-dreamboat', sans-serif;
+		--font-subheading: 'tay-amaya', sans-serif;
 		--font-body: system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 			'Segoe UI Symbol';
 
 		background-color: var(--gray-700);
-		color-mode: light dark;
+		color-scheme: light dark;
 		font-family: var(--font-body);
 		interpolate-size: allow-keywords;
 		line-height: 1.45;
+		text-rendering: optimizeLegibility;
 	}
 
 	img {
@@ -69,6 +100,7 @@ const { title, simple = false } = Astro.props;
 
 	:is(h1, h2, h3, h4, h5, h6) {
 		font-family: var(--font-heading);
+		font-weight: normal;
 		line-height: 0.8;
 	}
 

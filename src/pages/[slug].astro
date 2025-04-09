@@ -1,0 +1,364 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from '@unpic/astro';
+import Layout from '../layouts/default.astro';
+import Header from '../components/header.astro';
+import Figure from '../components/post-figure.astro';
+import Footer from '../components/footer.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+const seo = {
+	title: post.data.seo?.title ?? post.data.title,
+	description: post.data.seo?.description ?? post.data.description,
+	image: post.data.seo?.image ?? post.data.image,
+};
+---
+
+<Layout title={seo.title} simple={true}>
+	<Fragment slot="head">
+		<link rel="canonical" href={Astro.url.toString()} />
+
+		<meta name="description" content={seo.description} />
+		<meta name="image" content={seo.image?.src} />
+
+		<meta property="og:type" content="video.episode" />
+		<meta property="og:url" content={Astro.url.toString()} />
+		<meta property="og:title" content={seo.title} />
+		<meta property="og:site_name" content="CodeTV" />
+		<meta property="og:description" content={seo.description} />
+
+		<meta property="og:image" content={seo.image?.src} />
+		<meta property="og:image:alt" content={seo.image?.alt} />
+		<meta property="og:image:width" content="1600" />
+		<meta property="og:image:height" content="900" />
+
+		<meta name="twitter:dnt" content="on" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:description" content={seo.description} />
+		<meta name="twitter:image" content={seo.image?.src} />
+	</Fragment>
+
+	<Header />
+
+	<article>
+		<header>
+			{
+				post.data.image?.src ? (
+					<Figure>
+						<Image
+							src={post.data.image?.src}
+							alt={post.data.image?.alt}
+							width={1600}
+							height={900}
+						/>
+					</Figure>
+				) : null
+			}
+
+			<div class="post-overview">
+				<h1>{post.data.title}</h1>
+				<p>{post.data.description}</p>
+			</div>
+		</header>
+
+		<nav>
+			<details open>
+				<summary>Post Navigation</summary>
+
+				<h3>Post navigation:</h3>
+				<ol>
+					{
+						headings.map((heading) => (
+							<li>
+								<a href={`#${heading.slug}`}>{heading.text}</a>
+							</li>
+						))
+					}
+				</ol>
+			</details>
+		</nav>
+
+		<section>
+			<div>
+				<Content />
+			</div>
+		</section>
+
+		<aside>
+			<div>
+				<div class="mini-bio">
+					<Image
+						src="https://res.cloudinary.com/jlengstorf/image/upload/v1743826151/jason.energy/v2/jason-lengstorf-jh-color-03.jpg"
+						alt="Jason Lengstorf"
+						width={100}
+						height={100}
+						operations={{
+							cloudinary: {
+								c: 'thumb',
+								g: 'face',
+								ar: '1',
+								z: 0.75,
+							},
+						}}
+						layout="fixed"
+					/>
+
+					<div class="text">
+						<p>written by Jason Lengstorf</p>
+						<p>
+							Jason makes tv for developers at <a href="https://codetv.dev"
+								>CodeTV</a
+							>. He’s been building for the web for over 20 years.
+						</p>
+					</div>
+				</div>
+
+				<a href="https://codetv.link/wdc">
+					<Image
+						src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/w_600/v1743218553/web-dev-challenge-cover-s2.e1.png"
+						alt="two people smiling on the set of Web Dev Challenge. The text overlay shows the Web Dev Challenge logo and the name of the show."
+						aspectRatio={16 / 9}
+						width={600}
+						height={337.5}
+					/>
+				</a>
+
+				<a href="https://codetv.link/lh">
+					<Image
+						src="https://res.cloudinary.com/jlengstorf/image/upload/v1743220160/leet-heat-cover-s1-alexis.jpg"
+						alt="A man and woman smiling behind game show podiums. The Leet Heat wheel and set is visible in the background."
+						aspectRatio={16 / 9}
+						width={600}
+						height={337.5}
+					/>
+				</a>
+			</div>
+		</aside>
+	</article>
+
+	<Footer />
+</Layout>
+
+<style>
+	article {
+		color: var(--gray-100);
+		container: article / inline-size;
+		display: grid;
+		grid-template-columns: 25% 50% 25%;
+		justify-content: center;
+		margin-inline: auto;
+		max-inline-size: 2400px;
+	}
+
+	header {
+		background: var(--gray-700);
+		display: grid;
+		grid-column: span 3;
+		grid-template-columns: repeat(2, 50cqi);
+
+		.post-figure {
+			margin: 4px;
+			margin-inline-start: 8px;
+
+			img {
+				border: 1px solid var(--gray-600);
+				border-radius: 3px;
+			}
+		}
+
+		.post-overview {
+			background: var(--gray-900);
+			border: 1px solid var(--gray-600);
+			border-radius: 3px;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+			margin: 4px;
+			margin-inline-end: 8px;
+			padding: 40px 32px;
+
+			h1 {
+				color: var(--white);
+				font-family: var(--font-subheading);
+				font-size: clamp(1.5rem, 4.5cqi, 5rem);
+				line-height: 1;
+				margin: 0;
+				max-inline-size: 16ch;
+				text-wrap: balance;
+			}
+
+			p {
+				color: var(--gray-200);
+				font-size: clamp(1rem, 2cqi, 1.75rem);
+				font-weight: 200;
+				line-height: 1.35;
+				margin: 0;
+				max-inline-size: 40ch;
+				text-wrap: pretty;
+			}
+		}
+	}
+
+	section {
+		font-size: clamp(1rem, 1.5cqi, 1.5rem);
+		inline-size: 100%;
+		order: 2;
+		text-wrap: pretty;
+
+		> div {
+			background: var(--gray-900);
+			border: 1px solid var(--gray-600);
+			border-radius: 3px;
+			margin: 4px;
+			padding: 40px 5% 80px;
+		}
+	}
+
+	aside {
+		margin: 0;
+		order: 1;
+
+		> div {
+			inset-block-start: 8px;
+			position: sticky;
+		}
+
+		> div > * {
+			background: var(--gray-600);
+			border: 1px solid transparent;
+			border-radius: 3px;
+			margin: 4px;
+			margin-inline-start: 8px;
+			padding: 16px;
+		}
+
+		> div > a {
+			display: block;
+			padding: 0;
+
+			img {
+				block-size: auto;
+				border-radius: 3px;
+				inline-size: 100%;
+			}
+		}
+	}
+
+	.mini-bio {
+		display: flex;
+		gap: 20px;
+
+		img {
+			border: 1px solid var(--gray-900);
+			border-radius: 3px;
+		}
+
+		p {
+			font-size: 0.875em;
+			font-weight: 300;
+			margin: 0;
+
+			&:not(:first-child) {
+				margin-block-start: 16px;
+			}
+		}
+	}
+
+	nav {
+		order: 3;
+	}
+
+	details {
+		background: var(--gray-600);
+		border: 1px solid transparent;
+		border-radius: 3px;
+		font-size: 0.875em;
+		font-weight: 300;
+		inset-block-start: 8px;
+		margin: 4px;
+		margin-inline-end: 8px;
+		padding: 16px;
+		position: sticky;
+
+		h3 {
+			display: none;
+		}
+
+		@media (min-width: 1200px) {
+			summary {
+				display: none;
+			}
+
+			h3 {
+				display: block;
+			}
+		}
+
+		ol {
+			color: var(--gray-200);
+			margin: 0;
+			padding: 0;
+			text-wrap: pretty;
+
+			li {
+				display: flex;
+				margin: 0;
+
+				&:not(:first-child) {
+					margin-block-start: 8px;
+				}
+			}
+
+			a {
+				align-self: first baseline;
+				border-radius: 3px;
+				color: var(--gray-200);
+				display: block;
+				padding: 4px 8px;
+				text-decoration: none;
+				transition: background 150ms linear;
+
+				&:is(:hover, :focus) {
+					background: color-mix(in oklch, var(--white) 20%, transparent);
+					color: var(--white);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+</style>
+
+<style is:global>
+	:is(h1, h2, h3, h4, h5, h6) {
+		line-height: 1.1;
+	}
+
+	section > div > * {
+		margin: 0;
+
+		&:not(:first-child) {
+			margin-block-start: 16px;
+
+			&:is(h1, h2, h3, h4, h5, h6) {
+				margin-block-start: 56px;
+			}
+		}
+	}
+
+	h2 {
+		color: var(--white);
+		font-family: var(--font-subheading);
+		font-size: clamp(1.5rem, 2cqi, 3rem);
+	}
+</style>

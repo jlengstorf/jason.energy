@@ -10,7 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.2.3",
     "@unpic/astro": "^1.0.0",
-    "astro": "^5.5.2"
+    "astro": "^5.5.2",
+    "lite-youtube-embed": "^0.3.3"
   }
 }

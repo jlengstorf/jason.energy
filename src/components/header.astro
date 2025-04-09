@@ -36,15 +36,6 @@
 		place-content: center;
 		z-index: 100;
 
-		@media (min-width: 1000px) {
-			animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
-			animation-timeline: scroll();
-			animation-range: 0dvb 85dvb;
-			block-size: 100dvb;
-			position: fixed;
-			top: 0;
-		}
-
 		.name,
 		.tagline {
 			line-height: 0.8;
@@ -100,6 +91,17 @@
 					color: var(--gray-900);
 				}
 			}
+		}
+	}
+
+	:global(body:not(.simple) header) {
+		@media (min-width: 1000px) {
+			animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
+			animation-timeline: scroll();
+			animation-range: 0dvb 85dvb;
+			block-size: 100dvb;
+			position: fixed;
+			inset-block-start: 0;
 		}
 	}
 
