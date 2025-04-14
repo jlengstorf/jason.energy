@@ -7,11 +7,12 @@
 	<p class="tagline">makes tv for developers with his friends</p>
 
 	<nav>
-		<a href="#home" class="active">Home</a>
-		<a href="#blog">Blog</a>
-		<a href="#stuff-i-use">Stuff I Use</a>
-		<a href="#links">Links</a>
-		<a href="#contact">Contact</a>
+		<a href="/" class:list={{ active: Astro.url.pathname === '/' }}>Home</a>
+		<a href="/blog" class:list={{ active: Astro.url.pathname === '/blog' }}
+			>Blog</a
+		>
+		<a href="/uses">Stuff I Use</a>
+		<a href="https://partners.codetv.dev">Work With Me</a>
 	</nav>
 </header>
 
