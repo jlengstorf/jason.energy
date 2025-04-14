@@ -5,7 +5,13 @@ import Layout from '../layouts/default.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 
-const posts = await getCollection('blog');
+const postsRaw = await getCollection('blog');
+const posts = postsRaw.sort((a, b) => {
+	const ts1 = a.data.date.getTime();
+	const ts2 = b.data.date.getTime();
+
+	return ts1 > ts2 ? -1 : 1;
+});
 ---
 
 <Layout title="Writing by Jason Lengstorf" simple>
@@ -26,6 +32,7 @@ const posts = await getCollection('blog');
 										src={post.data.image?.src}
 										alt={post.data.image?.alt}
 										aspectRatio={16 / 9}
+										placeholder="dominantColor"
 									/>
 								</a>
 							</div>
