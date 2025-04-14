@@ -33,14 +33,14 @@
 /egghead/stripe-donations       https://egghead.io/lessons/egghead-add-a-donation-button-to-a-website-using-stripe?af=azvpe4
 
 # links about Learn With Jason get prefixed — older ones are still here to avoid broken links
-/lwj                            https://www.learnwithjason.dev/
-/lwj/blog                       https://www.learnwithjason.dev/blog/
-/lwj/schedule                   https://www.learnwithjason.dev/schedule
+/lwj                            https://codetv.link/lwj
+/lwj/blog                       https://codetv.dev/blog/
+/lwj/schedule                   https://codetv.dev/series/learn-with-jason/s8
 /lwj/book                       https://calendly.com/learnwithjason/livestream
 /lwj/youtube                    https://www.youtube.com/playlist?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
 /lwj/cal                        https://calendar.google.com/calendar?cid=bGVuZ3N0b3JmLmNvbV85cGxqMW02dTl2dGRkbGRvaW5sMGhzMnZna0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 /lwj-calendar                   https://calendar.google.com/calendar?cid=bGVuZ3N0b3JmLmNvbV85cGxqMW02dTl2dGRkbGRvaW5sMGhzMnZna0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-/lwj-schedule                   https://www.learnwithjason.dev/schedule
+/lwj-schedule                   https://codetv.dev/series/learn-with-jason/s8
 /lwj-youtube                    https://www.youtube.com/playlist?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx
 
 # these discussion links were an experiment that didn’t get much action
@@ -74,7 +74,7 @@
 /talk/serverless                https://jlengstorf.github.io/presentations/serverless-functions
 /15min                          https://calendly.com/learnwithjason/15min
 /30min                          https://calendly.com/learnwithjason/30min
-/workshop/jamstack-fast-track   https://www.learnwithjason.dev/workshops
+/workshop/jamstack-fast-track   https://codetv.dev
 
 /optimize-for-deletion          https://www.netlify.com/blog/2020/10/28/optimize-for-deletion-speed-up-development-without-adding-risk/?utm_campaign=devex-jl&utm_source=presentation&utm_medium=jamstack-architecture&utm_content=optimize-for-deletion
 
