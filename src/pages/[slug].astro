@@ -80,7 +80,7 @@ const seo = {
 				<ol>
 					{
 						headings.map((heading) => (
-							<li>
+							<li data-depth={heading.depth}>
 								<a href={`#${heading.slug}`}>{heading.text}</a>
 							</li>
 						))
@@ -151,21 +151,37 @@ const seo = {
 </Layout>
 
 <style>
+	:global(:root) {
+		scroll-behavior: smooth;
+	}
+
 	article {
 		color: var(--gray-100);
 		container: article / inline-size;
 		display: grid;
-		grid-template-columns: 25% 50% 25%;
+		grid-template-columns: 100%;
 		justify-content: center;
 		margin-inline: auto;
 		max-inline-size: 2400px;
+
+		@media (min-width: 750px) {
+			/* grid-template-columns: 240px auto 25%; */
+			grid-template-columns: 25% 50% 25%;
+		}
+
+		@media (min-width: 1280px) {
+			grid-template-columns: 25% 50% 25%;
+		}
 	}
 
 	header {
 		background: var(--gray-700);
 		display: grid;
-		grid-column: span 3;
-		grid-template-columns: repeat(2, 50cqi);
+
+		@media (min-width: 750px) {
+			grid-column: span 3;
+			grid-template-columns: repeat(2, 50cqi);
+		}
 
 		.post-figure {
 			margin: 4px;
@@ -186,7 +202,11 @@ const seo = {
 			justify-content: end;
 			margin: 4px;
 			margin-inline-end: 8px;
-			padding: 40px 32px;
+			padding: 16px;
+
+			@media (min-width: 750px) {
+				padding: 40px 32px;
+			}
 
 			h1 {
 				color: var(--white);
@@ -227,7 +247,11 @@ const seo = {
 
 	aside {
 		margin: 0;
-		order: 1;
+		order: 3;
+
+		@media (min-width: 750px) {
+			order: 1;
+		}
 
 		> div {
 			inset-block-start: 8px;
@@ -256,8 +280,14 @@ const seo = {
 	}
 
 	.mini-bio {
+		container: mini-bio / inline-size;
 		display: flex;
+		flex-direction: column;
 		gap: 20px;
+
+		@media (min-width: 1280px) {
+			flex-direction: initial;
+		}
 
 		img {
 			border: 1px solid var(--gray-900);
@@ -276,7 +306,11 @@ const seo = {
 	}
 
 	nav {
-		order: 3;
+		order: 1;
+
+		@media (min-width: 750px) {
+			order: 3;
+		}
 	}
 
 	details {
@@ -315,8 +349,24 @@ const seo = {
 				display: flex;
 				margin: 0;
 
-				&:not(:first-child) {
+				&[data-depth='2']:not(:first-child) {
 					margin-block-start: 8px;
+					padding-block-start: 6px;
+				}
+
+				&[data-depth='3'] {
+					border-inline-start: 2px solid var(--gray-700);
+					display: none;
+					margin-inline-start: 12px;
+					padding-inline-start: 4px;
+
+					@media (min-width: 1280px) {
+						display: block;
+					}
+
+					a {
+						border-radius: 0 3px 3px 0;
+					}
 				}
 			}
 
@@ -325,6 +375,7 @@ const seo = {
 				border-radius: 3px;
 				color: var(--gray-200);
 				display: block;
+				inline-size: 100%;
 				padding: 4px 8px;
 				text-decoration: none;
 				transition: background 150ms linear;
@@ -360,5 +411,20 @@ const seo = {
 		color: var(--white);
 		font-family: var(--font-subheading);
 		font-size: clamp(1.5rem, 2cqi, 3rem);
+	}
+
+	h3 {
+		color: var(--gray-100);
+		font-size: clamp(1rem, 1.25cqi, 2rem);
+	}
+
+	.twitter-tweet[style] {
+		margin: 32px auto !important;
+	}
+
+	.giphy-embed {
+		aspect-ratio: 480 / 270;
+		block-size: auto;
+		inline-size: 100%;
 	}
 </style>
