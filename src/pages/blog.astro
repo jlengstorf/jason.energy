@@ -1,0 +1,137 @@
+---
+import { Image } from '@unpic/astro';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/default.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+
+const posts = await getCollection('blog');
+---
+
+<Layout title="Writing by Jason Lengstorf" simple>
+	<Header />
+
+	<section>
+		{
+			posts.map((post) => {
+				const url = new URL(Astro.url);
+				url.pathname = post.id;
+
+				return (
+					<article>
+						{post.data.image && post.data.image.src ? (
+							<div class="image">
+								<a href={url.toString()}>
+									<Image
+										src={post.data.image?.src}
+										alt={post.data.image?.alt}
+										aspectRatio={16 / 9}
+									/>
+								</a>
+							</div>
+						) : null}
+						<div class="details">
+							<h2>
+								<a href={url.toString()}>{post.data.title}</a>
+							</h2>
+							<p>{post.data.description}</p>
+
+							<p class="read-more">
+								<a href={url.toString()} class="fake-btn">
+									Read this post &rarr;
+								</a>
+							</p>
+						</div>
+					</article>
+				);
+			})
+		}
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	section {
+		--columns: 1;
+
+		display: grid;
+		gap: 4px;
+		grid-template-columns: repeat(
+			var(--columns),
+			calc((100cqi - (var(--columns) + 1) * 4px) / var(--columns))
+		);
+		padding: 0 4px 4px;
+
+		@media (min-width: 500px) {
+			--columns: 2;
+		}
+
+		@media (min-width: 750px) {
+			--columns: 3;
+		}
+
+		@media (min-width: 1000px) {
+			--columns: 4;
+		}
+
+		@media (min-width: 1480px) {
+			--columns: 6;
+		}
+	}
+
+	article {
+		container: article / inline-size;
+		align-items: center;
+		block-size: 100%;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		color: var(--gray-100);
+		display: flex;
+		flex-direction: column;
+		justify-content: stretch;
+
+		img {
+			border-radius: 3px 3px 0 0;
+		}
+
+		.details {
+			background: var(--gray-600);
+			block-size: 100%;
+			border-radius: 0 0 3px 3px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			justify-content: start;
+			padding: 16px 8px;
+		}
+
+		:is(h2, p) {
+			margin: 0;
+		}
+
+		h2 {
+			color: var(--white);
+			font-family: var(--font-subheading);
+			font-size: clamp(1rem, 7cqi, 2.5rem);
+			line-height: 1.1;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+
+		.read-more {
+			margin-block-start: auto;
+		}
+
+		&:has(:hover, :focus) {
+			border-color: var(--gray-600);
+
+			.details {
+				background: var(--gray-900);
+			}
+		}
+	}
+</style>

@@ -1,0 +1,122 @@
+---
+
+---
+
+<header>
+	<p class="name">Jason Lengstorf</p>
+	<p class="tagline">makes tv for developers with his friends</p>
+
+	<nav>
+		<a href="/" class:list={{ active: Astro.url.pathname === '/' }}>Home</a>
+		<a href="/blog" class:list={{ active: Astro.url.pathname === '/blog' }}
+			>Blog</a
+		>
+		<a href="/uses">Stuff I Use</a>
+		<a href="https://partners.codetv.dev">Work With Me</a>
+	</nav>
+</header>
+
+<style>
+	@property --font-size {
+		syntax: '<number>';
+		initial-value: 1;
+		inherits: true;
+	}
+
+	header {
+		background: url(https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742186341/jason.energy/v2/header.jpg);
+		background-position: center;
+		background-size: cover;
+		border-block-end: 4px solid var(--gray-700);
+		color: var(--white);
+		display: flex;
+		flex-direction: column;
+		inline-size: 100%;
+		max-inline-size: 100dvi;
+		padding: 25px 5cqi 15px;
+		place-content: center;
+		z-index: 100;
+
+		.name,
+		.tagline {
+			line-height: 0.8;
+			margin: 0;
+			text-align: center;
+			text-shadow: 1px 2px var(--gray-700);
+		}
+
+		.name {
+			font-family: var(--font-heading);
+			font-size: calc(var(--font-size) * clamp(1rem, 3.2cqi, 2.5rem));
+
+			&::after {
+				background: var(--white);
+				block-size: 3px;
+				border-radius: 1px;
+				content: '';
+				display: block;
+				inline-size: min(87cqi, 13ch);
+				margin-inline: auto;
+			}
+		}
+
+		.tagline {
+			font-family: var(--font-subheading);
+			font-size: 5.65cqi;
+			font-size: calc(var(--font-size) * clamp(0.8rem, 2.825cqi, 2.2rem));
+			line-height: 1.5;
+		}
+
+		nav {
+			display: flex;
+			flex-wrap: wrap;
+			font-family: var(--font-heading);
+			gap: 5px;
+			justify-content: center;
+			margin-inline: auto;
+			inline-size: min(var(--font-size) * 50ch, 90cqi);
+			padding-inline: 1cqi;
+
+			a {
+				background: var(--purple);
+				border-radius: 1px;
+				color: var(--white);
+				display: inline-block;
+				font-size: calc(var(--font-size) * clamp(0.8rem, 0.85cqi, 1rem));
+				padding: 10px 1cqi 5px;
+				text-decoration: none;
+
+				&:is(:hover, :active, :focus),
+				&.active {
+					background: var(--white);
+					color: var(--gray-900);
+				}
+			}
+		}
+	}
+
+	:global(body:not(.simple) header) {
+		@media (min-width: 1000px) {
+			animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
+			animation-timeline: scroll();
+			animation-range: 0dvb 85dvb;
+			block-size: 100dvb;
+			position: fixed;
+			inset-block-start: 0;
+		}
+	}
+
+	@keyframes header-resize {
+		from {
+			--font-size: 2;
+
+			height: min(100dvb, 100dvi);
+		}
+
+		to {
+			--font-size: 1;
+
+			height: auto;
+		}
+	}
+</style>

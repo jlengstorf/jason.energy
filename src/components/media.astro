@@ -1,0 +1,326 @@
+---
+import { Image } from '@unpic/astro';
+
+const media = [
+	{
+		img: {
+			src: '/v1743826720/jason.energy/v2/219-244A5994.jpg',
+			alt: 'Jason Lengstorf smiling.',
+		},
+		photographer: {
+			name: 'Solo',
+			site: 'https://www.instagram.com/_shotsbysolo/',
+		},
+	},
+	{
+		img: {
+			src: '/v1743826151/jason.energy/v2/jason-lengstorf-jh-color-03.jpg',
+			alt: 'Jason Lengstorf on a colored background, looking off to his left',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743824433/jason.energy/v2/jason-lengstorf-jh-headshot-03.jpg',
+			alt: 'Jason Lengstorf sitting at a table with a hand to his head. It looks moody, like maybe he’s a tough guy. (He’s not.)',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743829346/jason.energy/v2/BA1_8208.jpg',
+			alt: 'Jason Lengstorf on the set of Web Dev Challenge.',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743826157/jason.energy/v2/jason-lengstorf-jh-headshot-01.jpg',
+			alt: 'Jason Lengstorf reaching up toward his hat, looking directly into the camera.',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743826166/jason.energy/v2/20220225_Jason_Lengstorf_Headshot_0568.jpg',
+			alt: 'Jason Lengstorf smiling and standing in front of an alley.',
+		},
+		photographer: {
+			name: 'Amaren Colosi',
+			site: 'https://www.amarencolosi.work',
+		},
+	},
+	{
+		img: {
+			src: '/v1743829538/jason.energy/v2/BA1_7775_1.jpg',
+			alt: 'Jason Lengstorf on the set of Web Dev Challenge.',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743823540/jason.energy/v2/jason-lengstorf-wdc-s2e1-jasonhill.jpg',
+			alt: 'Jason Lengstorf on the set of Web Dev Challenge',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743829790/jason.energy/v2/jason-lengstorf-jh-color-01.jpg',
+			alt: 'Jason Lengstorf on a brightly colored background looking severe.',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743828769/jason.energy/v2/BA1_4558.jpg',
+			alt: 'Jason Lengstorf holding hot sauce bottles in front of the Leet Heat logo',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743828106/jason.energy/v2/jason-lengstorf-jh-linen-02.jpg',
+			alt: 'Jason Lengstorf wearing a light colored linen outfit on a dark background.',
+		},
+		photographer: {
+			name: 'Jason Hill',
+			site: 'https://jasonhillphoto.com',
+		},
+	},
+	{
+		img: {
+			src: '/v1743880312/jason.energy/v2/DSC00027.jpg',
+			alt: 'Jason Lengstorf in a hat with pink trim wearing a hoodie with bright colored accents, in front of a background that has multi-colored lights shining on it.',
+		},
+		photographer: {
+			name: 'Jason Lengstorf',
+			site: 'https://jason.energy',
+		},
+	},
+];
+---
+
+<section>
+	<div class="info">
+		<h2>Media Kit</h2>
+		<p>
+			Any of these photos can be used for speaker photos, and other media.
+			Photographer credit must be included.
+		</p>
+	</div>
+	{
+		media.map((photo) => {
+			return (
+				<figure>
+					<Image
+						src={`https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/w_500,ar_1,c_fill,g_face${photo.img.src}`}
+						alt={photo.img.alt}
+					/>
+					<figcaption>
+						<a
+							href={`https://res.cloudinary.com/jlengstorf/image/upload${photo.img.src}`}
+							class="full-res"
+						>
+							full resolution
+						</a>
+						<a href={photo.photographer.site}>
+							photo: {photo.photographer.name}
+						</a>
+					</figcaption>
+				</figure>
+			);
+		})
+	}
+</section>
+
+<style>
+	section {
+		--columns: 2;
+
+		container: media / inline-size;
+		display: grid;
+		gap: 4px;
+		grid-template-columns: repeat(
+			var(--columns),
+			calc((100cqi - (var(--columns) + 1) * 4px) / var(--columns))
+		);
+		padding: 0 4px 4px;
+
+		@media (min-width: 750px) {
+			--columns: 3;
+		}
+
+		@media (min-width: 1000px) {
+			--columns: 4;
+		}
+
+		@media (min-width: 1480px) {
+			--columns: 6;
+		}
+	}
+
+	.info {
+		background: var(--white);
+		border-radius: 3px;
+		color: var(--orange);
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		grid-column: span 2;
+		grid-row-start: 1;
+		justify-content: end;
+		min-block-size: calc(
+			(100cqi - (var(--columns) + 1) * 4px) / var(--columns)
+		);
+		padding: 30px;
+
+		@media (min-width: 750px) {
+			grid-column: span 1;
+			grid-row-start: 2;
+		}
+
+		@media (min-width: 1480px) {
+			grid-column-start: 3;
+			grid-row-start: 1;
+		}
+
+		h2 {
+			line-height: 1;
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	figure {
+		aspect-ratio: 1;
+		margin: 0;
+		position: relative;
+
+		&:nth-of-type(12) {
+			display: block;
+
+			@media (min-width: 750px) {
+				display: none;
+			}
+		}
+
+		img {
+			block-size: 100%;
+			border-radius: 3px;
+			display: block;
+			inset: 0;
+			margin: 0;
+			max-inline-size: 100%;
+			position: absolute;
+			z-index: 1;
+		}
+
+		figcaption {
+			display: flex;
+			font-size: 0.75rem;
+			gap: 0.5rem;
+			inset-block-end: 10px;
+			inset-inline-end: 10px;
+			justify-content: space-between;
+			position: absolute;
+			transition: 150ms linear opacity;
+			z-index: 10;
+
+			@media (any-hover: hover) {
+				opacity: 0;
+			}
+
+			a {
+				color: var(--gray-100);
+				backdrop-filter: blur(6px);
+				background: color-mix(in oklch, var(--gray-600) 50%, transparent);
+				border-radius: 3px;
+				padding: 4px 8px;
+				position: relative;
+				text-decoration: none;
+				z-index: 10;
+
+				&:is(:focus, :hover) {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		@media (any-hover: none) {
+			figcaption {
+				align-items: end;
+				display: flex;
+				justify-content: end;
+				inset: 0;
+				padding: 10px;
+			}
+
+			a.full-res {
+				inset: 0;
+				opacity: 0;
+				position: absolute;
+			}
+		}
+
+		@media (any-hover: hover) {
+			&::after {
+				background: color-mix(in oklch, var(--purple) 80%, transparent);
+				block-size: 100%;
+				content: '';
+				display: block;
+				inset: 0;
+				mix-blend-mode: multiply;
+				opacity: 0.5;
+				position: relative;
+				transition: 150ms linear opacity;
+				z-index: 5;
+			}
+
+			&:is(:hover, :focus-within) {
+				figcaption {
+					opacity: 1;
+				}
+
+				&::after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	@media (any-hover: hover) {
+		:has(figure:hover, figure:focus-within) figure:not(:hover, :focus-within) {
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+</style>

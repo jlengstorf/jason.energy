@@ -1,0 +1,76 @@
+---
+import { Image } from '@unpic/astro';
+
+export interface Props {
+	type?: string;
+}
+
+const { type = 'default' } = Astro.props;
+
+let icon;
+
+switch (type) {
+	case 'spicy':
+		icon = {
+			src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1609402670/jason.energy/fire.png',
+			alt: 'fire',
+		};
+		break;
+
+	default:
+		icon = {
+			src: 'https://res.cloudinary.com/jlengstorf/image/upload/w_80,f_auto,q_auto/v1593991250/jason.energy/light-mode.png',
+			alt: 'light bulb',
+		};
+		break;
+}
+---
+
+<aside class="post-aside">
+	<div class="post-aside-icon">
+		<Image
+			src={icon.src}
+			alt={icon.alt}
+			width={40}
+			height={40}
+			layout="fixed"
+		/>
+	</div>
+
+	<div class="post-aside-content">
+		<slot />
+	</div>
+</aside>
+
+<style>
+	.post-aside {
+		align-items: start;
+		background: var(--gray-600);
+		border-radius: 3px;
+		color: var(--gray-200);
+		display: flex;
+		font-size: 0.875em;
+		font-style: italic;
+		gap: 16px;
+		margin: 32px -16px;
+		padding: 16px;
+
+		.post-aside-icon {
+			flex-basis: 40px;
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+		.post-aside-content {
+			margin: 0;
+
+			> * {
+				margin: 0;
+
+				&:not(:first-child) {
+					margin-block-start: 16px;
+				}
+			}
+		}
+	}
+</style>

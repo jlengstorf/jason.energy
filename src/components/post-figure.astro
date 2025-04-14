@@ -1,0 +1,149 @@
+---
+export interface Props {
+	align?: 'left' | 'right' | 'center';
+	caption?: string;
+	credit?: string;
+	creditLink?: string;
+	creditType?: string;
+	aspectRatio?: number;
+}
+
+const {
+	align = 'center',
+	caption,
+	credit,
+	creditLink,
+	creditType = 'Credit',
+	aspectRatio = -1,
+} = Astro.props;
+---
+
+<figure
+	class:list={{
+		'post-figure': true,
+		left: align === 'left',
+		right: align === 'right',
+	}}
+>
+	{
+		aspectRatio > 0 ? (
+			<div class="embed-container">
+				<slot />
+			</div>
+		) : (
+			<slot />
+		)
+	}
+
+	{
+		caption || credit ? (
+			<figcaption>
+				<span set:html={caption} />
+
+				{credit ? (
+					<small>
+						{creditType}:
+						{creditLink ? (
+							<a href={creditLink}>{credit}</a>
+						) : (
+							<span>{credit}</span>
+						)}
+					</small>
+				) : null}
+			</figcaption>
+		) : null
+	}
+</figure>
+
+<style>
+	.post-figure {
+		clear: both;
+		margin: 32px -16px;
+
+		@media (min-width: 750px) {
+			&.left {
+				float: left;
+				margin-inline-end: 16px;
+				max-inline-size: 40%;
+			}
+
+			&.right {
+				float: right;
+				margin-inline-start: 16px;
+				max-inline-size: 40%;
+			}
+
+			aside &.left {
+				margin-inline-start: 0;
+			}
+			aside &.right {
+				margin-inline-end: 0;
+			}
+		}
+
+		.embed-container {
+			aspect-ratio: 16 / 9;
+			container: embed / size;
+			inline-size: 100%;
+		}
+
+		img {
+			border-radius: 3px 3px 0 0;
+			display: block;
+			width: 100%;
+		}
+
+		&:not(:has(figcaption)) img {
+			border-radius: 3px;
+		}
+
+		> * {
+			display: block;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		iframe {
+			aspect-ratio: 16 / 9;
+			block-size: auto;
+			inline-size: 100%;
+		}
+
+		figcaption {
+			align-items: last baseline;
+			background: var(--gray-600);
+			border-radius: 0 0 3px 3px;
+			color: var(--gray-200);
+			font-size: 0.75em;
+			font-style: italic;
+			margin: 0;
+			padding: 4px 16px;
+
+			a {
+				color: inherit;
+			}
+
+			small {
+				display: block;
+			}
+		}
+
+		blockquote + figcaption {
+			background: transparent;
+			color: var(--gray-700);
+		}
+	}
+
+	.post-figure:not(.left):not(.right) {
+		figcaption {
+			display: flex;
+			justify-content: space-between;
+
+			small {
+				white-space: nowrap;
+			}
+		}
+	}
+</style>

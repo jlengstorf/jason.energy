@@ -1,0 +1,275 @@
+---
+import { Image } from '@unpic/astro';
+---
+
+<section>
+	<div class="img">
+		<Image
+			src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1743738513/jason.energy/v2/jason-lengstorf-bio.jpg"
+			alt="Jason Lengstorf wearing a shirt that reads, Free People Read Freely"
+		/>
+	</div>
+
+	<div class="text">
+		<fieldset>
+			<legend>About Jason Lengstorf</legend>
+
+			<label>
+				Shorter-er
+				<input type="radio" name="bio-length" value="shorterer" />
+			</label>
+
+			<label>
+				Shorter
+				<input type="radio" name="bio-length" value="shorter" />
+			</label>
+
+			<label>
+				Short
+				<input type="radio" name="bio-length" value="short" />
+			</label>
+
+			<label>
+				Long
+				<input type="radio" name="bio-length" value="long" checked />
+			</label>
+
+			<label>
+				Longer
+				<input type="radio" name="bio-length" value="longer" />
+			</label>
+
+			<label>
+				Longer-er
+				<input type="radio" name="bio-length" value="longerer" />
+			</label>
+		</fieldset>
+
+		<div class="bio">
+			<p>
+				<span data-length="1"
+					>Jason Lengstorf makes tv for developers at <a
+						href="https://codetv.dev">CodeTV</a
+					>.<span data-length="2">
+						He’s been building for the web since the early 2000s<span
+							data-length="3"
+							>, working jobs ranging from freelancer to agency owner to
+							frontend architect at megacorps to startup VP</span
+						>.</span
+					></span
+				>
+				<span data-length="3"><br /><br /></span><span data-length="6"
+					>A lifelong educator and performer,
+				</span><span data-length="3"
+					>Jason believes that the best way to learn and grow a healthy career
+					is through playful exploration, active community, and sharing stories.</span
+				><span data-length="4">
+					He taps into his broad background <span data-length="5"
+						>as a touring musician, designer, cook, leader, and engineer
+					</span>to put together<span data-length="6">
+						creative, engaging, and unique experiences that blend video, web,
+						and in-person interaction into</span
+					> creative production that’s good for the community and good for business.</span
+				>
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+		color: var(--gray-100);
+		container: bio / inline-size;
+		display: grid;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		font-size: clamp(1rem, 3cqi, 1.5rem);
+		gap: 40px;
+		padding: max(5cqb, 5cqi) 5cqi;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	[data-length] {
+		background: transparent;
+		display: none;
+		opacity: 0;
+		transition-duration: 1s;
+		transition-property: background opacity;
+
+		@starting-style {
+			background: var(--purple);
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	[data-length='1'] {
+		display: initial;
+		opacity: 1;
+	}
+
+	[data-length='2'] {
+		display: none;
+	}
+
+	:has([value='shorter']:checked) {
+		[data-length='2'] {
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	:has([value='short']:checked) {
+		:is([data-length='2'], [data-length='3']) {
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	:has([value='long']:checked) {
+		:is([data-length='2'], [data-length='3'], [data-length='4']) {
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	:has([value='longer']:checked) {
+		:is(
+				[data-length='2'],
+				[data-length='3'],
+				[data-length='4'],
+				[data-length='5']
+			) {
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	:has([value='longerer']:checked) {
+		:is(
+				[data-length='2'],
+				[data-length='3'],
+				[data-length='4'],
+				[data-length='5'],
+				[data-length='6']
+			) {
+			display: initial;
+			opacity: 1;
+		}
+	}
+
+	fieldset {
+		border: none;
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+
+		legend {
+			color: var(--white);
+			font-family: var(--font-heading);
+			font-size: clamp(1rem, max(2cqi, 2cqb), 2.5rem);
+			font-weight: normal;
+			inline-size: 100%;
+			line-height: 1;
+			margin: 0 0 32px;
+			padding: 0;
+			text-align: center;
+		}
+
+		label {
+			--size: 6px;
+
+			border-radius: 2px;
+			color: var(--gray-700);
+			display: flex;
+			flex-direction: column;
+			font-family: var(--font-subheading);
+			font-size: clamp(1rem, 1cqb, 1.5rem);
+			line-height: 1;
+			outline: 1px solid transparent;
+			margin: 0;
+			padding: 28px 2px 0;
+			position: relative;
+			transition: 100ms linear all;
+
+			&::before {
+				background: var(--gray-100);
+				block-size: var(--size);
+				border: calc(14px - var(--size)) solid var(--gray-700);
+				border-radius: 50%;
+				content: '';
+				inline-size: var(--size);
+				inset-inline-start: calc((100% - 14px) / 2);
+				inset-block-start: 0;
+				position: absolute;
+				transition: 100ms linear all;
+			}
+
+			&:has([value='longerer']) {
+				display: none;
+
+				@media (min-width: 1000px) {
+					display: block;
+				}
+			}
+
+			&:has(:focus) {
+				outline: 1px solid var(--purple);
+				outline-offset: 4px;
+			}
+
+			&:has(:focus, :checked) {
+				--size: 12px;
+
+				color: var(--gray-100);
+
+				&::before {
+					background-color: var(--gray-700);
+					border-color: var(--pink);
+				}
+			}
+
+			input {
+				opacity: 0;
+				position: absolute;
+			}
+		}
+	}
+
+	.img {
+		border: 4px solid transparent;
+		border-block-end: 0;
+		min-block-size: 100cqi;
+		position: relative;
+
+		img {
+			block-size: 100%;
+			border-radius: 3px;
+			inline-size: 100%;
+			inset: 0;
+			object-position: top;
+			position: absolute;
+		}
+	}
+
+	@media (min-width: 1000px) {
+		section {
+			grid-template-columns: repeat(2, 50cqi);
+		}
+
+		.text {
+			padding: max(10cqb, 10cqi) 5cqi;
+		}
+
+		.img {
+			min-block-size: 50cqi;
+		}
+	}
+</style>

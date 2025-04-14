@@ -1,0 +1,184 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	imageAlt?: string;
+	simple?: boolean;
+}
+
+const {
+	title,
+	description = 'Jason has 20+ years of developer experience, which he combines with stage and video production expertise to help companies tell better stories.',
+	image = 'https://res.cloudinary.com/jlengstorf/image/upload/v1743895371/jason.energy/v2/jason.energy-social-card.png',
+	imageAlt = 'Jason Lengstorf lit in purple hues. Text is overlaid that says, "Jason Lengstof makes tv for developers with his friends."',
+	simple = false,
+} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<link rel="preconnect" href="https://res.cloudinary.com" />
+		<link
+			rel="preload"
+			href="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742186341/jason.energy/v2/header.jpg"
+			as="image"
+		/>
+		<link
+			rel="preload"
+			href="fonts/TAYAmaya.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/TAYDreamboat.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
+		<slot name="head">
+			<meta name="description" content={description} />
+			<meta name="image" content={image} />
+
+			<meta property="og:type" content="website" />
+			<meta property="og:title" content={title} />
+			<meta property="og:site_name" content="Jason Lengstorf" />
+			<meta property="og:description" content={description} />
+			<meta property="og:url" content={Astro.url} />
+
+			<meta property="og:image" content={image} />
+			<meta property="og:image:width" content="1600" />
+			<meta property="og:image:height" content="900" />
+			<meta property="og:image:alt" content={imageAlt} />
+
+			<meta name="twitter:dnt" content="on" />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:description" content={description} />
+			<meta name="twitter:image" content={image} />
+		</slot>
+	</head>
+
+	<body class:list={{ simple }}>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'tay-amaya';
+		src: url('/fonts/TAYAmaya.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'tay-dreamboat';
+		src: url('/fonts/TAYDreamboat.woff2') format('woff2');
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	:root {
+		--white: #f5f2fb;
+		--gray-100: #dbd4e9;
+		--gray-600: #322942;
+		--gray-700: #231239;
+		--gray-900: #030626;
+		--pink: #a20979;
+		--purple: #4e2d88;
+		--blue: #389fff;
+		--orange: #bc7218;
+
+		--font-heading: 'tay-dreamboat', sans-serif;
+		--font-subheading: 'tay-amaya', sans-serif;
+		--font-body: system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+			'Segoe UI Symbol';
+
+		background-color: var(--gray-700);
+		color-scheme: light dark;
+		font-family: var(--font-body);
+		interpolate-size: allow-keywords;
+		line-height: 1.45;
+		text-rendering: optimizeLegibility;
+	}
+
+	img {
+		block-size: auto;
+		display: block;
+		max-inline-size: 100%;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6) {
+		font-family: var(--font-heading);
+		font-weight: normal;
+		line-height: 0.8;
+	}
+
+	:is(p, li) {
+		line-height: 1.45;
+	}
+
+	a {
+		color: var(--blue);
+	}
+
+	.fake-btn {
+		--size: clamp(0.625rem, 4.5cqi, 2.75rem);
+
+		background: var(--pink);
+		border-radius: 2px;
+		color: inherit;
+		display: inline-block;
+		font-size: var(--size);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		line-height: 1;
+		margin: 0;
+		padding: calc(var(--size) * 0.5) calc(var(--size) * 0.75);
+		text-decoration: none;
+		text-shadow: 0 1px 1px color-mix(in oklch, var(--gray-900) 35%, transparent);
+		text-transform: uppercase;
+		transition: 150ms linear all;
+
+		:is(:hover, :focus) > & {
+			background: color-mix(in oklch, var(--pink) 90%, var(--white));
+			color: var(--white);
+		}
+
+		@media (min-width: 600px) {
+			margin-block-start: 12px;
+		}
+	}
+</style>
+
+<style>
+	body {
+		background: var(--gray-700);
+		margin: 0;
+
+		&:not(.simple) {
+			@media (min-width: 1000px) {
+				padding-top: min(100dvb, 100dvi);
+			}
+		}
+	}
+
+	main {
+		container: main / inline-size;
+	}
+</style>
