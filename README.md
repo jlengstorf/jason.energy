@@ -1,3 +1,5 @@
+> This is the v1 version of Jason Lengstorf's personal website. It is still available at [v1.jason.energy](https://v1.jason.energy)
+
 # [![Jason Lengstorf has a lot of ideas](https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_1200/v1593579116/jason.energy/og-image.jpg)](https://jason.energy)
 
 <h1 align="center">
