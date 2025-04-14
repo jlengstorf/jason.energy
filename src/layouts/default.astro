@@ -19,10 +19,35 @@ const {
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<link rel="preconnect" href="https://res.cloudinary.com" />
+		<link
+			rel="preload"
+			href="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742186341/jason.energy/v2/header.jpg"
+			as="image"
+		/>
+		<link
+			rel="preload"
+			href="fonts/TAYAmaya.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="fonts/TAYDreamboat.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
 
 		<slot name="head">
 			<meta name="description" content={description} />
@@ -110,6 +135,34 @@ const {
 
 	a {
 		color: var(--blue);
+	}
+
+	.fake-btn {
+		--size: clamp(0.625rem, 4.5cqi, 2.75rem);
+
+		background: var(--pink);
+		border-radius: 2px;
+		color: inherit;
+		display: inline-block;
+		font-size: var(--size);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		line-height: 1;
+		margin: 0;
+		padding: calc(var(--size) * 0.5) calc(var(--size) * 0.75);
+		text-decoration: none;
+		text-shadow: 0 1px 1px color-mix(in oklch, var(--gray-900) 35%, transparent);
+		text-transform: uppercase;
+		transition: 150ms linear all;
+
+		:is(:hover, :focus) > & {
+			background: color-mix(in oklch, var(--pink) 90%, var(--white));
+			color: var(--white);
+		}
+
+		@media (min-width: 600px) {
+			margin-block-start: 12px;
+		}
 	}
 </style>
 

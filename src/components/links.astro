@@ -299,30 +299,6 @@
 		text-wrap: balance;
 	}
 
-	.fake-btn {
-		--size: clamp(0.625rem, 4.5cqi, 2.75rem);
-
-		background: var(--pink);
-		border-radius: 2px;
-		font-size: var(--size);
-		font-weight: 500;
-		letter-spacing: 0.1em;
-		line-height: 1;
-		padding: calc(var(--size) * 0.5) calc(var(--size) * 0.75);
-		text-shadow: 0 1px 1px color-mix(in oklch, var(--gray-900) 35%, transparent);
-		text-transform: uppercase;
-		transition: 150ms linear all;
-
-		:is(:hover, :focus) > & {
-			background: color-mix(in oklch, var(--pink) 90%, var(--white));
-			color: var(--white);
-		}
-
-		@media (min-width: 600px) {
-			margin-block-start: 12px;
-		}
-	}
-
 	@media (min-width: 960px) {
 		.links {
 			--max-size: 100cqi;
