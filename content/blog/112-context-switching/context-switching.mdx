@@ -1,23 +1,22 @@
 ---
-date: 2022-07-16
 slug: context-switching
+
+date: 2022-07-16
 title: >
   Please stop multitasking. I’m begging you. Please.
-seo_title: >
-  Please stop multitasking. I’m begging you. Please.
+
 description: >
   The greatest trick we ever pulled on ourselves as knowledge workers was convincing ourselves we could juggle multiple projects with no consequences.
-category: remote-productivity
-tags: [motivation, planning, productivity, success]
 
-image: ./images/context-switching-time-loss-v2.jpg
-cta: work-happy
-
-# Alfred shortcuts:
-# - `;fn` to add a footnote
-# - `;fig` to add an image
-# - `;aside` to add an aside
+image:
+  src: https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1744234069/jason.energy/v2/blog/context-switching/context-switching-time-loss-v2.jpg
+  alt: a series of line charts showing time spent on projects vs. context switching, with the single task putting all time on projects, and 20% lost to context switching for each additional project. the final bar shows 5 simultaneous projects with 80% time loss to context switching
 ---
+
+import Fn from '../../../src/components/post-footnote.astro';
+import FnText from '../../../src/components/post-footnote-text.astro';
+import Figure from '../../../src/components/post-figure.astro';
+import Aside from '../../../src/components/post-aside.astro';
 
 You know how sometimes you hear an idea that is so obviously and demonstrably incorrect that you can't really understand how it became popular? For me, multitasking is that idea. **The lie that we can get more work done by working on multiple things at once is so absurd, so incorrect, and so utterly destructive that I can't believe it's a near-universal practice.**
 
@@ -27,9 +26,9 @@ But I understand how it happens — it's a seductive idea: "I have three things 
 
 But in reality, **multitasking is a productivity disaster.** It not only fails to get projects done faster — it makes them _significantly_ slower to complete.
 
-{% aside "default" %}
-  **Heads up!** [Laura Langdon very kindly pointed out](https://twitter.com/laura_e_langdon/status/1548516435248291840) that the advice in this article may not apply for neurodiverse folks. So let me add a disclaimer that this post is advice based on my personal experience — please take it with a grain of salt.
-{% endaside %}
+<Aside>
+  **Heads up!** [Laura Langdon very kindly pointed out](https://twitter.com/laura_e_langdon/status/1548516435248291840) that the advice in this article may not apply for neurodiverse folks. So let me add a disclaimer that this post is advice based on my personal experience — please take it with a grain of salt.
+</Aside>
 
 ## Multitasking is how we manage to work hard all day and still get nothing done.
 
@@ -39,9 +38,9 @@ For me, those days are _always_ because I spent the entire day bouncing between 
 
 Rather than actually _working_, I spent the entire day _context switching_.
 
-{% footnote id="multitasking" %}Multitasking in action is a disaster.{% endfootnote %}
+<Fn id="multitasking">Multitasking in action is a disaster.</Fn>
 
-{% footnoteText id="multitasking" %}
+<FnText id="multitasking">
   It's 9am. You've got your coffee, you've got a pocket full of dreams, and you've got a big-ass todo list.
 
   You've decided that you'll get that list done faster by multitasking.
@@ -67,7 +66,7 @@ Rather than actually _working_, I spent the entire day _context switching_.
   Back to the code editor. Wait! You really need to send that email so you can respond to Slack so you can ask that question so you can finish your code review!
 
   Hey, how is it lunchtime already?
-{% endfootnoteText %}
+</FnText>
 
 ## Context switching is the silent killer of progress.
 
@@ -75,19 +74,19 @@ Gerald Weinberg’s book [_Quality Software Management: Systems Thinking_](https
 
 If we plot that time loss on a bar chart, it's pretty chilling.
 
-{% figure
-  caption="Using Gerald Weinberg's estimates, multitasking is one of the worst choices you can make for productivity.",
-  credit="Jason Lengstorf",
+<Figure
+  caption="Using Gerald Weinberg's estimates, multitasking is one of the worst choices you can make for productivity."
+  credit="Jason Lengstorf"
   creditLink="https://jason.energy/context-switching"
-%}
-  ![A bar graph showing how context switching time loss reduces productivity. The first chart shows a single project with 100% time spent on it. The bar chart shows additional projects, with each additional project adding 20% to the context switching time loss. With 5 projects, 80% of working time is lost to context switching.](images/context-switching-time-loss-v2.jpg)
-{% endfigure %}
+>
+  ![A bar graph showing how context switching time loss reduces productivity. The first chart shows a single project with 100% time spent on it. The bar chart shows additional projects, with each additional project adding 20% to the context switching time loss. With 5 projects, 80% of working time is lost to context switching.](https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1744234069/jason.energy/v2/blog/context-switching/context-switching-time-loss-v2.jpg)
+</Figure>
 
-That means for every parallel task you work on, you're {% footnote id="four-day-workweek" %}losing about one full working day each week.{% endfootnote %}
+That means for every parallel task you work on, you're <Fn id="four-day-workweek">losing about one full working day each week.</Fn>
 
-{% footnoteText id="four-day-workweek" %}
+<FnText id="four-day-workweek">
   We talk about wanting [four-day workweeks](https://www.cnbc.com/2022/06/20/four-day-week-these-firms-say-theyve-nailed-the-new-working-model.html), but... not like this.
-{% endfootnoteText %}
+</FnText>
 
 And it's worse than you might think: **context switching time loss is _compounding_ — five parallel tasks means you can expect about 80% time loss to context switching.**
 
@@ -99,13 +98,13 @@ When you're staring down a sizable backlog with lots of stakeholders who feel ve
 
 Lots of in-flight projects feels productive. It feels _good_. Look how busy we are! We're killing it! Go us!
 
-{% figure
-  caption="Running projects in parallel _feels_ productive, but it makes us slower in all the ways that matter.",
-  credit="Jason Lengstorf",
+<Figure
+  caption="Running projects in parallel _feels_ productive, but it makes us slower in all the ways that matter."
+  credit="Jason Lengstorf"
   creditLink="https://jason.energy/context-switching"
-%}
-![A timeline showing parallel tasks vs. sequential tasks. The parallel tasks are roughly twice as slow to deliver the first result as well as complete all projects.](images/context-switching-timeline-comparison.jpg)
-{% endfigure %}
+>
+  ![A timeline showing parallel tasks vs. sequential tasks. The parallel tasks are roughly twice as slow to deliver the first result as well as complete all projects.](https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1744234070/jason.energy/v2/blog/context-switching/context-switching-timeline-comparison.jpg)
+</Figure>
 
 The unfortunate reality, however, is that we're moving _significantly_ slower than we would if we just did these projects sequentially. **Working on one project at a time leads to both faster initial delivery and faster completion of all projects.**
 
@@ -129,17 +128,17 @@ When you prioritize, choose the _one thing_ that needs to be done first, and _on
 
 One of the sneakiest forms of multitasking is distraction. Bouncing between apps breaks concentration — that's a context switch.
 
-Combat this by {% footnote id="interval" %}choosing an interval that works for you{% endfootnote %}, set a timer, and close everything unrelated to your task for that full working block.
+Combat this by <Fn id="interval">choosing an interval that works for you</Fn>, set a timer, and close everything unrelated to your task for that full working block.
 
-{% footnoteText id="interval" %}
+<FnText id="interval">
   Personally, I like 90 minutes. It's long enough for me to get really stuck into a project and make meaningful progress, but not so long that I'm unreachable at work or leaving any big decisions hanging.
-{% endfootnoteText %}
+</FnText>
 
 There are lots of strategies and apps to help with this, but don't overthink it. Just close stuff and set a timer.
 
-{% aside "default" %}
+<Aside>
   **Heads up!** If you want to hear me yelling at you if you get distracted, I [partnered up with Centered](https://www.centered.app/dashboard/group/flow-with-jason-1) to create a group specifically for doing this kind of focused work.
-{% endaside %}
+</Aside>
 
 ### 3. Break down large tasks into smaller milestones.
 
