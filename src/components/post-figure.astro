@@ -1,5 +1,6 @@
 ---
 export interface Props {
+	align?: 'left' | 'right' | 'center';
 	caption?: string;
 	credit?: string;
 	creditLink?: string;
@@ -8,6 +9,7 @@ export interface Props {
 }
 
 const {
+	align = 'center',
 	caption,
 	credit,
 	creditLink,
@@ -16,7 +18,13 @@ const {
 } = Astro.props;
 ---
 
-<figure class="post-figure">
+<figure
+	class:list={{
+		'post-figure': true,
+		left: align === 'left',
+		right: align === 'right',
+	}}
+>
 	{
 		aspectRatio > 0 ? (
 			<div class="embed-container">
@@ -49,7 +57,29 @@ const {
 
 <style>
 	.post-figure {
-		margin: 32px -20px;
+		clear: both;
+		margin: 32px -16px;
+
+		@media (min-width: 750px) {
+			&.left {
+				float: left;
+				margin-inline-end: 16px;
+				max-inline-size: 40%;
+			}
+
+			&.right {
+				float: right;
+				margin-inline-start: 16px;
+				max-inline-size: 40%;
+			}
+
+			aside &.left {
+				margin-inline-start: 0;
+			}
+			aside &.right {
+				margin-inline-end: 0;
+			}
+		}
 
 		.embed-container {
 			aspect-ratio: 16 / 9;
@@ -75,23 +105,45 @@ const {
 			margin: 0;
 		}
 
+		iframe {
+			aspect-ratio: 16 / 9;
+			block-size: auto;
+			inline-size: 100%;
+		}
+
 		figcaption {
+			align-items: last baseline;
 			background: var(--gray-600);
 			border-radius: 0 0 3px 3px;
 			color: var(--gray-200);
 			font-size: 0.75em;
 			font-style: italic;
 			margin: 0;
-			padding: 4px 20px;
+			padding: 4px 16px;
 
 			a {
 				color: inherit;
+			}
+
+			small {
+				display: block;
 			}
 		}
 
 		blockquote + figcaption {
 			background: transparent;
 			color: var(--gray-700);
+		}
+	}
+
+	.post-figure:not(.left):not(.right) {
+		figcaption {
+			display: flex;
+			justify-content: space-between;
+
+			small {
+				white-space: nowrap;
+			}
 		}
 	}
 </style>

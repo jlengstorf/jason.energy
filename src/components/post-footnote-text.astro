@@ -13,21 +13,24 @@ const { id } = Astro.props;
 		background: var(--gray-600);
 		block-size: 0;
 		border-radius: 3px;
-		overflow-y: clip;
-		padding: 0 32px;
+		color: var(--gray-200);
+		font-size: 0.875em;
+		margin-inline: -16px;
+		overflow-y: hidden;
+		padding: 0 16px;
 		transition-property: block-size, padding;
 		transition-duration: 250ms;
 		transition-timing-function: linear;
 
 		@starting-style {
 			block-size: 0;
-			padding: 0 32px;
+			padding: 0 16px;
 		}
 
 		&.visible {
 			block-size: calc-size(max-content, size);
 			display: block;
-			padding: 16px 32px;
+			padding: 16px;
 		}
 
 		> * {
