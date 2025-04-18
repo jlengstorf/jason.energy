@@ -133,6 +133,7 @@ const media = [
 			Photographer credit must be included.
 		</p>
 	</div>
+
 	{
 		media.map((photo) => {
 			return (
@@ -160,19 +161,13 @@ const media = [
 </section>
 
 <dialog id="media" popover>
-	<img
-		src={`https://res.cloudinary.com/jlengstorf/image/upload${media.at(0)?.img.src}`}
-		alt={media.at(0)?.img.alt}
-		class="preview"
-	/>
+	<img src="" alt="" class="preview" />
 
 	<div class="options">
 		<a href="#" class="thumb">thumbnail crop</a>
 		<a href="#" class="web">web resolution</a>
 		<a href="#" class="full">full resolution</a>
-		<a href={media.at(0)?.photographer.site} class="photographer">
-			Photo by {media.at(0)?.photographer.name}
-		</a>
+		<a href="" class="photographer"> Photo by </a>
 	</div>
 
 	<button id="close-modal">&times; close</button>
@@ -395,11 +390,10 @@ const media = [
 	}
 
 	dialog {
-		aspect-ratio: 600 / 1040;
 		background: var(--gray-900);
 		block-size: auto;
 		border: 1px solid var(--gray-600) !important;
-		border-radius: 3px;
+		border-radius: 7px;
 		container: media-popover / size;
 		inline-size: auto;
 		max-block-size: 90dvb;
@@ -407,29 +401,36 @@ const media = [
 		overflow: hidden;
 		z-index: 1000;
 
+		&[open] {
+			display: grid;
+			grid-template-rows: minmax(auto, calc(90dvb - 170px)) 50px;
+		}
+
 		img {
-			aspect-ratio: 1;
-			block-size: auto;
+			block-size: 100%;
 			border-radius: 3px;
 			inline-size: 100%;
 			object-fit: contain;
 		}
 
 		.options {
+			align-items: end;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 4px;
 			justify-content: space-between;
-			padding: 4px;
+			padding: 4px 0 0;
 		}
 
 		a {
 			background: var(--white);
+			border-radius: 3px;
 			color: var(--gray-800);
 			display: block;
-			font-size: clamp(0.75rem, 1.5cqi, 2rem);
+			font-size: clamp(0.75rem, 1.5cqi, 1.125rem);
 			font-weight: 400;
 			inline-size: 100%;
+			line-height: 12px;
 			padding: 12px;
 			text-align: center;
 			text-decoration: none;
@@ -442,17 +443,16 @@ const media = [
 		}
 
 		@media (min-width: 750px) {
-			aspect-ratio: 8 / 5;
+			&[open] {
+				grid-template-rows: minmax(auto, calc(90dvb - 50px)) 40px;
+			}
 
 			img {
-				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 
 			.options {
 				flex-wrap: nowrap;
-			}
-
-			a {
 			}
 		}
 	}
