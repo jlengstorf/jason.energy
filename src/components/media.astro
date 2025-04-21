@@ -126,41 +126,48 @@ const media = [
 ---
 
 <section>
-	<div class="info" role="list">
-		<h2>Media Kit</h2>
-		<p>
-			Any of these photos can be used for speaker photos, and other media.
-			Photographer credit must be included.
-		</p>
-	</div>
+	<ul>
+		<li class="info">
+			<h2>Media Kit</h2>
+			<p>
+				Any of these photos can be used for speaker photos, and other media.
+				Photographer credit must be included.
+			</p>
+		</li>
 
-	{
-		media.map((photo) => {
-			return (
-				<figure
-					class="photo-container"
-					data-src={photo.img.src}
-					data-alt={photo.img.alt}
-					data-photographer={photo.photographer.name}
-					data-photographer-site={photo.photographer.site}
-					tabindex="0"
-				>
-					<Image
-						src={`https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/w_500,ar_1,c_fill,g_face${photo.img.src}`}
-						alt={photo.img.alt}
-						aspectRatio={1}
-						width={500}
-					/>
-					<figcaption>
-						<p>click for download options and details</p>
-					</figcaption>
-				</figure>
-			);
-		})
-	}
+		{
+			media.map((photo) => {
+				return (
+					<li>
+						<figure
+							class="photo-container"
+							data-src={photo.img.src}
+							data-alt={photo.img.alt}
+							data-photographer={photo.photographer.name}
+							data-photographer-site={photo.photographer.site}
+							role="listitem"
+							tabindex="0"
+						>
+							<Image
+								src={`https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/w_500,ar_1,c_fill,g_face${photo.img.src}`}
+								alt={photo.img.alt}
+								aspectRatio={1}
+								width={500}
+							/>
+							<figcaption>
+								<p>click for download options and details</p>
+							</figcaption>
+						</figure>
+					</li>
+				);
+			})
+		}
+	</ul>
 </section>
 
 <dialog id="media" popover>
+	<button id="close-modal">&times; close</button>
+
 	<img src="" alt="" class="preview" />
 
 	<div class="options">
@@ -169,8 +176,6 @@ const media = [
 		<a href="#" class="full">full resolution</a>
 		<a href="" class="photographer"> Photo by </a>
 	</div>
-
-	<button id="close-modal">&times; close</button>
 </dialog>
 
 <script>
@@ -185,13 +190,16 @@ const media = [
 	const thumbTransformations = '/f_auto/q_auto/ar_1,w_400,c_thumb,g_face';
 	const webTransformations = '/f_auto/q_auto/w_1600';
 
-	closeBtn?.addEventListener('click', () => {
+	const resetImageElements = () => {
 		const preview = dialog.querySelector('.preview') as HTMLImageElement;
 
 		preview.src = '';
 
 		dialog.close();
-	});
+	};
+
+	closeBtn?.addEventListener('click', resetImageElements);
+	closeBtn?.addEventListener('keypress', resetImageElements);
 
 	photos.forEach((el) => {
 		const src = el.dataset?.src;
@@ -230,26 +238,34 @@ const media = [
 		--columns: 2;
 
 		container: media / inline-size;
-		display: grid;
-		gap: 4px;
-		grid-template-columns: repeat(
-			var(--columns),
-			calc((min(2400px, 100cqi) - (var(--columns) + 1) * 4px) / var(--columns))
-		);
 		margin-inline: auto;
 		max-inline-size: 2400px;
 		padding: 0 4px 4px;
 
-		@media (min-width: 750px) {
-			--columns: 3;
-		}
+		ul {
+			display: grid;
+			gap: 4px;
+			grid-template-columns: repeat(
+				var(--columns),
+				calc(
+					(min(2400px, 100cqi) - (var(--columns) + 1) * 4px) / var(--columns)
+				)
+			);
+			list-style: none;
+			margin: 0;
+			padding: 0;
 
-		@media (min-width: 1000px) {
-			--columns: 4;
-		}
+			@media (min-width: 750px) {
+				--columns: 3;
+			}
 
-		@media (min-width: 1480px) {
-			--columns: 6;
+			@media (min-width: 1000px) {
+				--columns: 4;
+			}
+
+			@media (min-width: 1480px) {
+				--columns: 6;
+			}
 		}
 	}
 
@@ -288,11 +304,7 @@ const media = [
 		}
 	}
 
-	figure {
-		aspect-ratio: 1;
-		margin: 0;
-		position: relative;
-
+	li {
 		&:nth-of-type(12) {
 			display: block;
 
@@ -300,6 +312,12 @@ const media = [
 				display: none;
 			}
 		}
+	}
+
+	figure {
+		aspect-ratio: 1;
+		margin: 0;
+		position: relative;
 
 		img {
 			block-size: 100%;
@@ -315,10 +333,8 @@ const media = [
 		figcaption {
 			display: flex;
 			font-size: 0.75rem;
-			gap: 0.5rem;
 			inline-size: 100%;
 			inset-block-end: 10px;
-			inset-inline-end: 10px;
 			justify-content: center;
 			position: absolute;
 			transition: 150ms linear opacity;
@@ -392,7 +408,7 @@ const media = [
 	}
 
 	dialog {
-		background: var(--gray-900);
+		background: var(--gray-700);
 		block-size: auto;
 		border: 1px solid var(--gray-600) !important;
 		border-radius: 7px;
@@ -425,21 +441,26 @@ const media = [
 		}
 
 		a {
-			background: var(--white);
+			background: var(--gray-900);
+			border: 1px solid color-mix(in oklch, var(--white) 25%, transparent);
 			border-radius: 3px;
-			color: var(--gray-700);
+			color: var(--gray-100);
 			display: block;
-			font-size: clamp(0.75rem, 1.5cqi, 1.125rem);
+			font-size: 0.75rem;
 			font-weight: 400;
 			inline-size: 100%;
+			letter-spacing: 0.3em;
 			line-height: 12px;
-			padding: 12px;
+			padding: 10px;
 			text-align: center;
 			text-decoration: none;
+			text-transform: uppercase;
+			transition: 150ms all linear;
 
 			&:is(:active, :focus, :hover) {
-				background-color: var(--pink);
-				color: var(--white);
+				background: color-mix(in oklch, var(--white) 85%, transparent);
+				color: var(--gray-900);
+				font-weight: 500;
 				outline-offset: 4px;
 			}
 		}
@@ -460,17 +481,27 @@ const media = [
 	}
 
 	#close-modal {
-		background: var(--white);
-		border: none;
+		background: color-mix(in oklch, var(--gray-900) 75%, transparent);
+		border: 1px solid color-mix(in oklch, var(--white) 25%, transparent);
 		border-radius: 3px;
-		color: var(--gray-700);
+		color: var(--gray-200);
 		cursor: pointer;
-		font-size: 1rem;
+		font-size: 0.625em;
 		font-weight: 300;
 		inset-block-start: 8px;
 		inset-inline-end: 8px;
-		padding: 4px 8px;
+		letter-spacing: 0.3em;
+		padding: 8px 12px;
 		position: absolute;
+		text-transform: uppercase;
+		transition: 150ms all linear;
+
+		&:is(:active, :focus, :hover) {
+			background: color-mix(in oklch, var(--white) 85%, transparent);
+			color: var(--gray-900);
+			font-weight: 600;
+			outline-offset: 4px;
+		}
 	}
 </style>
 
