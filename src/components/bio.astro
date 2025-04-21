@@ -7,6 +7,9 @@ import { Image } from '@unpic/astro';
 		<Image
 			src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1743738513/jason.energy/v2/jason-lengstorf-bio.jpg"
 			alt="Jason Lengstorf wearing a shirt that reads, Free People Read Freely"
+			width={1200}
+			aspectRatio={1}
+			placeholder="blurhash"
 		/>
 	</div>
 
@@ -81,6 +84,8 @@ import { Image } from '@unpic/astro';
 		color: var(--gray-100);
 		container: bio / inline-size;
 		display: grid;
+		margin-inline: auto;
+		max-inline-size: 2400px;
 	}
 
 	.text {
@@ -261,7 +266,7 @@ import { Image } from '@unpic/astro';
 
 	@media (min-width: 1000px) {
 		section {
-			grid-template-columns: repeat(2, 50cqi);
+			grid-template-columns: repeat(2, min(50cqi, 1200px));
 		}
 
 		.text {
