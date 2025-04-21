@@ -1,60 +1,74 @@
 ---
-
+import { Image } from '@unpic/astro';
 ---
 
 <section class="links">
 	<nav class="items">
 		<a href="https://codetv.dev" class="item lg xs-expander xs-short">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/codetv-lockup.png"
 				alt="CodeTV — tv for developers"
+				width={326}
+				aspectRatio={326 / 100}
 			/>
 		</a>
 
 		<a href="https://partners.codetv.dev" class="item lg xs-expander">
 			<span class="shrinky"> I've worked with companies including: </span>
 
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742181484/jason.energy/v2/codetv-worked-with-logos-sm.png"
 				alt="Google, Figma, AWS, GitHub, Clerk, Convex, Algolia, Neon, DataStax, CodePen"
 				class="logos"
+				width={435}
+				aspectRatio={435 / 164}
 			/>
 
 			<span class="fake-btn"> Learn how I can help &rarr; </span>
 		</a>
 
 		<a href="https://codetv.link/lh" class="item md">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/leet-heat-lockup.png"
 				alt="Leet Heat"
+				width={215}
+				aspectRatio={215 / 201}
 			/>
 		</a>
 
 		<a href="https://codetv.link/wdc" class="item md">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178627/jason.energy/v2/web-dev-challenge-lockup.png"
 				alt="Web Dev Challenge"
+				width={217}
+				aspectRatio={217 / 222}
 			/>
 		</a>
 
 		<a href="https://codetv.link/lwj" class="item md">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178627/jason.energy/v2/learn-with-jason-lockup.png"
 				alt="Learn With Jason"
+				width={215}
+				aspectRatio={215 / 95}
 			/>
 		</a>
 
 		<a href="https://codetv.link/discord" class="item lg span-2">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1743890272/jason.energy/v2/codetv-discord.png"
 				alt="Join the CodeTV Discord"
+				width={326}
+				aspectRatio={326 / 72}
 			/>
 		</a>
 
 		<a href="/blog" class="item lg span-2">
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1744734929/jason.energy/v2/jason-blog.png"
 				alt="Read Jason's Blog"
+				width={326}
+				aspectRatio={326 / 72}
 			/>
 		</a>
 
@@ -63,9 +77,11 @@
 			class="item sm social"
 			rel="nofollow"
 		>
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/bluesky.png"
 				alt="Bluesky"
+				width={60}
+				height={60}
 			/>
 			<span>Bluesky</span>
 		</a>
@@ -75,9 +91,11 @@
 			class="item sm social"
 			rel="nofollow"
 		>
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/youtube.png"
 				alt="YouTube"
+				width={60}
+				height={60}
 			/>
 			<span>YouTube</span>
 		</a>
@@ -87,9 +105,11 @@
 			class="item sm social"
 			rel="nofollow"
 		>
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/linkedin.png"
 				alt="LinkedIn"
+				width={60}
+				height={60}
 			/>
 			<span>LinkedIn</span>
 		</a>
@@ -99,18 +119,22 @@
 			class="item sm social"
 			rel="nofollow"
 		>
-			<img
+			<Image
 				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178628/jason.energy/v2/instagram.png"
 				alt="Instagram"
+				width={60}
+				height={60}
 			/>
 			<span>Instagram</span>
 		</a>
 	</nav>
 
 	<figure class="image">
-		<img
-			src="https://assets.codepen.io/64141/BA1_7488.jpg"
+		<Image
+			src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1745251047/jason-lengstorf-codetv-studios-2025.jpg"
 			alt="Jason Lengstorf looking up and to his right while smiling in a way that looks like someone caught him off-guard with a good joke"
+			width={1300}
+			placeholder="blurhash"
 		/>
 
 		<figcaption>
@@ -141,6 +165,7 @@
 		);
 		inline-size: var(--max-size);
 		margin-inline: auto;
+		max-inline-size: 2400px;
 	}
 
 	.items {
@@ -306,7 +331,7 @@
 
 	@media (min-width: 960px) {
 		.links {
-			--max-size: 100cqi;
+			--max-size: min(100cqi, 2400px);
 			--cols: 20;
 			--rows: 15;
 		}
