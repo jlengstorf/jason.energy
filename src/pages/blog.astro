@@ -32,7 +32,10 @@ const posts = postsRaw.sort((a, b) => {
 										src={post.data.image?.src}
 										alt={post.data.image?.alt}
 										aspectRatio={16 / 9}
-										placeholder="dominantColor"
+										width={500}
+										layout="constrained"
+										placeholder="blurhash"
+										loading="lazy"
 									/>
 								</a>
 							</div>
@@ -98,8 +101,18 @@ const posts = postsRaw.sort((a, b) => {
 		flex-direction: column;
 		justify-content: stretch;
 
+		.image {
+			aspect-ratio: 16 / 9;
+			block-size: auto;
+			display: block;
+			inline-size: 100%;
+		}
+
 		img {
+			aspect-ratio: 16 / 9;
+			block-size: auto;
 			border-radius: 3px 3px 0 0;
+			inline-size: 100%;
 		}
 
 		.details {
