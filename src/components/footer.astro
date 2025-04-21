@@ -93,5 +93,13 @@
 				}
 			}
 		}
+
+		abbr {
+			@media (pointer: coarse) {
+				&::after {
+					content: ' (' attr(title) ')';
+				}
+			}
+		}
 	}
 </style>
