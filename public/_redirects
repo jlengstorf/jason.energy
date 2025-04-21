@@ -83,5 +83,3 @@
 
 https://jason-energy.netlify.app/*   https://www.jason.energy/
 https://jason.af/*              https://www.jason.energy/:splat
-
-/*                              https://www.jason.energy/404 404
