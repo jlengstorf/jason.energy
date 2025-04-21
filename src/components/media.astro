@@ -234,8 +234,10 @@ const media = [
 		gap: 4px;
 		grid-template-columns: repeat(
 			var(--columns),
-			calc((100cqi - (var(--columns) + 1) * 4px) / var(--columns))
+			calc((min(2400px, 100cqi) - (var(--columns) + 1) * 4px) / var(--columns))
 		);
+		margin-inline: auto;
+		max-inline-size: 2400px;
 		padding: 0 4px 4px;
 
 		@media (min-width: 750px) {
