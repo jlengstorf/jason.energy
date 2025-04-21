@@ -145,7 +145,6 @@ const media = [
 							data-alt={photo.img.alt}
 							data-photographer={photo.photographer.name}
 							data-photographer-site={photo.photographer.site}
-							role="listitem"
 							tabindex="0"
 						>
 							<Image
@@ -272,7 +271,7 @@ const media = [
 	.info {
 		background: var(--white);
 		border-radius: 3px;
-		color: var(--orange);
+		color: color-mix(in oklch, var(--orange), var(--gray-900) 15%);
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
