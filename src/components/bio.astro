@@ -250,9 +250,13 @@ import { Image } from '@unpic/astro';
 
 	.img {
 		border: 4px solid transparent;
-		border-block-end: 0;
+		border-block-width: 0;
 		min-block-size: 100cqi;
 		position: relative;
+
+		@supports (interpolate-size: allow-keywords) {
+			border-block-start-width: 4px;
+		}
 
 		img {
 			block-size: 100%;

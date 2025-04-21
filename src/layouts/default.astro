@@ -80,11 +80,13 @@ const {
 
 <style is:global>
 	@font-face {
+		font-display: swap;
 		font-family: 'tay-amaya';
 		src: url('/fonts/TAYAmaya.woff2') format('woff2');
 	}
 
 	@font-face {
+		font-display: swap;
 		font-family: 'tay-dreamboat';
 		src: url('/fonts/TAYDreamboat.woff2') format('woff2');
 	}
@@ -172,8 +174,10 @@ const {
 		margin: 0;
 
 		&:not(.simple) {
-			@media (min-width: 1000px) {
-				padding-top: min(100dvb, 100dvi);
+			@supports (interpolate-size: allow-keywords) {
+				@media (min-width: 1000px) {
+					padding-top: min(100dvb, 100dvi);
+				}
 			}
 		}
 	}

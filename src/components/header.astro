@@ -95,14 +95,16 @@
 		}
 	}
 
-	:global(body:not(.simple) header) {
-		@media (min-width: 1000px) {
-			animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
-			animation-timeline: scroll();
-			animation-range: 0dvb 85dvb;
-			block-size: 100dvb;
-			position: fixed;
-			inset-block-start: 0;
+	@supports (interpolate-size: allow-keywords) {
+		:global(body:not(.simple) header) {
+			@media (min-width: 1000px) {
+				animation: header-resize cubic-bezier(0, 0, 0.5, 0.55) forwards;
+				animation-timeline: scroll();
+				animation-range: 0dvb 85dvb;
+				block-size: 100dvb;
+				position: fixed;
+				inset-block-start: 0;
+			}
 		}
 	}
 
