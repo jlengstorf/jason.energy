@@ -262,9 +262,11 @@ import { Image } from '@unpic/astro';
 			img {
 				block-size: auto;
 				inline-size: 60cqi;
+				max-inline-size: 70cqi !important;
 
 				&.logos {
 					inline-size: 80cqi;
+					max-inline-size: 80cqi !important;
 				}
 			}
 
@@ -275,7 +277,7 @@ import { Image } from '@unpic/astro';
 				gap: 6px;
 
 				img {
-					max-inline-size: min(32cqi, 60px);
+					max-inline-size: min(32cqi, 60px) !important;
 				}
 			}
 		}
