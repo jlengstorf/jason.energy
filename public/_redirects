@@ -3,6 +3,8 @@
 /api/stats/*                    /.netlify/functions/stats-:splat  200
 /api/*                          /.netlify/functions/:splat  200
 
+/feed.xml                       /rss.xml
+
 # shortcut for linking to my preferred headshot
 /headshot.jpg                   https://res.cloudinary.com/jlengstorf/image/upload/q_auto,f_auto,w_500,ar_1,c_thumb,g_faces,z_0.65/press/jason-lengstorf-ac-alley3.jpg 200
 
@@ -81,5 +83,19 @@
 /food-with-friends              https://frosty-night-132.ck.page/61aac63cad 200
 /fwf                            /food-with-friends
 
-https://jason-energy.netlify.app/*   https://www.jason.energy/
-https://jason.af/*              https://www.jason.energy/:splat
+/index.php                                      /404
+/.well-known/traffic-advice                     /404
+/wp-login.php                                   /404
+/wp1/wp-includes/wlwmanifest.xml                /404
+/xmlrpc.php                                     /404
+/wp-content/plugins/litespeed-cache/readme.txt  /404
+/site/wp-includes/wlwmanifest.xml               /404
+/web/wp-includes/wlwmanifest.xml                /404
+/website/wp-includes/wlwmanifest.xml            /404
+/wp-includes/wlwmanifest.xml                    /404
+/news/wp-includes/wlwmanifest.xml               /404
+/2019/wp-includes/wlwmanifest.xml               /404
+//xmlrpc.php                                    /404
+
+https://jason-energy.netlify.app/*    https://www.jason.energy/
+https://jason.af/*                    https://www.jason.energy/:splat
