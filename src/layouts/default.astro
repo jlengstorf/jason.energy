@@ -28,6 +28,13 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Jason Lengstorf’s blog"
+			href={new URL('rss.xml', Astro.site)}
+		/>
+
 		<link rel="preconnect" href="https://res.cloudinary.com" />
 		<link
 			rel="preload"
