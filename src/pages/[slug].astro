@@ -322,14 +322,23 @@ const seo = {
 		inset-block-start: 8px;
 		margin: 4px;
 		margin-inline-end: 8px;
-		padding: 16px;
+		padding: 16px 0;
 		position: sticky;
 
 		h3 {
 			display: none;
+			padding-inline: 16px;
+		}
+
+		summary {
+
+			margin-inline: 16px;
+				/* padding-inline: 16px; */
 		}
 
 		@media (min-width: 1200px) {
+			max-block-size: calc(100dvb - 16px);
+
 			summary {
 				display: none;
 			}
@@ -342,8 +351,13 @@ const seo = {
 		ol {
 			color: var(--gray-200);
 			margin: 0;
-			padding: 0;
+			padding: 0 16px;
 			text-wrap: pretty;
+
+			@media (min-width: 1200px) {
+				max-block-size: 88dvb;
+				overflow-y: scroll;
+			}
 
 			li {
 				display: flex;
