@@ -3,8 +3,10 @@
 ---
 
 <header>
-	<p class="name">Jason Lengstorf</p>
-	<p class="tagline">makes tv for developers with his friends</p>
+	<h1>
+		<span class="name">Jason Lengstorf</span>
+		<span class="tagline">makes tv for developers with his friends</span>
+	</h1>
 
 	<nav>
 		<a href="/" class:list={{ active: Astro.url.pathname === '/' }}>Home</a>
@@ -37,12 +39,19 @@
 		place-content: center;
 		z-index: 100;
 
+		h1 {
+			margin: 0;
+		}
+
 		.name,
 		.tagline {
+			display: block;
 			line-height: 0.8;
 			margin: 0;
 			text-align: center;
+			text-box-trim: trim-both;
 			text-shadow: 1px 2px var(--gray-700);
+			text-spacing-trim: space-all;
 		}
 
 		.name {
@@ -64,7 +73,7 @@
 			font-family: var(--font-subheading);
 			font-size: 5.65cqi;
 			font-size: calc(var(--font-size) * clamp(0.8rem, 2.825cqi, 2.2rem));
-			line-height: 1.5;
+			margin-block-start: 16px;
 		}
 
 		nav {
