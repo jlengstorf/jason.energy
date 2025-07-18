@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^4.3.1",
     "@astrojs/rss": "^4.0.12",
     "@unpic/astro": "^1.0.0",
-    "astro": "^5.11.0",
+    "astro": "^5.12.0",
     "lite-youtube-embed": "^0.3.3"
   }
 }
