@@ -1,12 +1,18 @@
 ---
+export interface Props {
+	useH1?: boolean;
+}
 
+const { useH1 = false } = Astro.props;
+
+const Element = useH1 ? 'h1' : 'p';
 ---
 
 <header>
-	<h1>
+	<Element>
 		<span class="name">Jason Lengstorf</span>
 		<span class="tagline">makes tv for developers with his friends</span>
-	</h1>
+	</Element>
 
 	<nav>
 		<a href="/" class:list={{ active: Astro.url.pathname === '/' }}>Home</a>
@@ -39,7 +45,8 @@
 		place-content: center;
 		z-index: 100;
 
-		h1 {
+		h1,
+		p {
 			margin: 0;
 		}
 
