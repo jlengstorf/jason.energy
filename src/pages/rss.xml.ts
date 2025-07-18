@@ -1,8 +1,13 @@
 import rss from '@astrojs/rss';
+import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
-export async function GET(context) {
+export const GET: APIRoute = async (context) => {
   const blog = await getCollection('blog');
+
+  if (!context.site) {
+    throw new Error('site must be set in the Astro config');
+  }
 
   return rss({
     title: 'Jason Lengstorf’s Blog',
