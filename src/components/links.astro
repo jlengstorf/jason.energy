@@ -5,12 +5,16 @@ import { Image } from '@unpic/astro';
 <section class="links">
 	<nav class="items">
 		<a href="https://codetv.dev" class="item lg xs-expander xs-short">
+			<span class="shrinky"> This is my company: </span>
 			<Image
-				src="https://res.cloudinary.com/jlengstorf/image/upload/f_auto/q_auto/v1742178629/jason.energy/v2/codetv-lockup.png"
+				src="https://res.cloudinary.com/jlengstorf/image/upload/w_576,h_217,f_auto,c_pad,b_none/q_auto/v1742178629/jason.energy/v2/codetv-lockup.png"
 				alt="CodeTV — tv for developers"
-				width={326}
-				aspectRatio={326 / 100}
+				class="codetv-logo"
+				width={435}
+				aspectRatio={435 / 164}
 			/>
+
+			<span class="fake-btn"> Watch a show &rarr; </span>
 		</a>
 
 		<a href="https://partners.codetv.dev" class="item lg xs-expander">
@@ -264,7 +268,8 @@ import { Image } from '@unpic/astro';
 				inline-size: 60cqi;
 				max-inline-size: 70cqi !important;
 
-				&.logos {
+				&.logos,
+				&.codetv-logo {
 					inline-size: 80cqi;
 					max-inline-size: 80cqi !important;
 				}
