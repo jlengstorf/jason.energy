@@ -55,7 +55,7 @@
           'Segoe UI Symbol';
 
           background-color: var(--gray-700);
-          color-scheme: light dark;
+          color-scheme: dark;
           font-family: var(--font-body);
           interpolate-size: allow-keywords;
           line-height: 1.45;
