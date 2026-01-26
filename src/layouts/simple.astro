@@ -1,24 +1,30 @@
 ---
 import type { AboutPage, BlogPosting } from 'schema-dts';
 import SchemaOrg from '../components/head/schema-org.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
 
 export interface Props {
-  title: string;
-  description?: string;
-  image?: string;
-  imageAlt?: string;
-  simple?: boolean;
-  jsonld?: BlogPosting | AboutPage;
+  frontmatter: {
+    title: string;
+    description?: string;
+    image?: string;
+    imageAlt?: string;
+    simple?: boolean;
+    jsonld?: BlogPosting | AboutPage;
+  };
 }
+
+const { frontmatter } = Astro.props;
 
 const {
   title,
   description = 'Jason has 20+ years of developer experience, which he combines with stage and video production expertise to help companies tell better stories.',
   image = 'https://res.cloudinary.com/jlengstorf/image/upload/v1743895371/jason.energy/v2/jason.energy-social-card.png',
   imageAlt = 'Jason Lengstorf lit in purple hues. Text is overlaid that says, "Jason Lengstof makes tv for developers with his friends."',
-  simple = false,
+  simple = true,
   jsonld,
-} = Astro.props;
+} = frontmatter;
 ---
 
 <html lang="en">
@@ -86,9 +92,13 @@ const {
   </head>
 
   <body class:list={{ simple }}>
+    <Header />
+
     <main>
       <slot />
     </main>
+
+    <Footer />
   </body>
 </html>
 
@@ -181,6 +191,17 @@ const {
       margin-block-start: 12px;
     }
   }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    line-height: 1.1;
+  }
+
+  h2 {
+    color: var(--white);
+    font-family: var(--font-subheading);
+    font-size: clamp(1.5rem, 2cqi, 3rem);
+    margin-block-start: 40px;
+  }
 </style>
 
 <style>
@@ -198,6 +219,19 @@ const {
   }
 
   main {
+    color: var(--gray-100);
     container: main / inline-size;
+    margin-inline: auto;
+    max-inline-size: 54ch;
+  }
+
+  p {
+    color: var(--gray-200);
+    font-size: clamp(1rem, 2cqi, 1.75rem);
+    font-weight: 200;
+    line-height: 1.35;
+    margin: 0;
+    max-inline-size: 40ch;
+    text-wrap: pretty;
   }
 </style>

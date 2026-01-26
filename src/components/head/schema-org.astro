@@ -1,0 +1,71 @@
+---
+import type {
+  AboutPage,
+  BlogPosting,
+  Graph,
+  Person,
+  WebPage,
+} from 'schema-dts';
+
+export interface Props {
+  jsonld?: BlogPosting | AboutPage;
+}
+
+const { jsonld } = Astro.props;
+
+const jason: Person = {
+  '@type': 'Person',
+  '@id': 'https://jason.energy/#person',
+  name: 'Jason Lengstorf',
+  alternateName: 'jlengstorf',
+  url: 'https://jason.energy',
+  image: 'https://jason.energy/headshot.jpg',
+  jobTitle:
+    'TV Producer, Director, Creative Technologist, Software Developer, Developer Experience Expert',
+  description:
+    'Jason Lengstorf (@jlengstorf) makes tv for developers at CodeTV. He’s worked in tech for over 20 years, and has built a reputation for creating unique and ambitious projects with a community focus.',
+  sameAs: [
+    'https://twitter.com/jlengstorf',
+    'https://github.com/jlengstorf',
+    'https://www.linkedin.com/in/jlengstorf/',
+    'https://codepen.io/jlengstorf',
+    'https://bsky.app/profile/jason.energy',
+    'https://instagram.com/jlengstorf',
+  ],
+  knowsAbout: [
+    'Video production',
+    'Web development',
+    'JavaScript',
+    'Front-end development',
+    'Learning to code',
+    'Developer careers',
+    'Software engineering culture',
+    'Developer experience',
+    'Tech education',
+    'Tech leadership',
+    'Open source',
+    'Startups',
+  ],
+};
+
+const website: WebPage = {
+  '@type': 'WebPage',
+  '@id': 'https://jason.energy/#site',
+  url: 'https://jason.energy/',
+  name: 'Jason Lengstorf’s website',
+  inLanguage: 'en-US',
+  description: 'The personal website and blog of Jason Lengstorf.',
+  mainEntity: {
+    '@id': jason['@id'] as string,
+  },
+};
+
+const graphItems = [jason, website, jsonld].filter((item) => !!item);
+
+const graph: Graph = {
+  '@context': 'https://schema.org',
+  '@graph': graphItems,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />
