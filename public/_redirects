@@ -1,3 +1,6 @@
+https://jason-energy.netlify.app/*    https://www.jason.energy/
+https://jason.af/*                    https://www.jason.energy/:splat
+
 /posts  /blog  301!
 
 /api/stats/*                    /.netlify/functions/stats-:splat  200
@@ -96,6 +99,3 @@
 /news/wp-includes/wlwmanifest.xml               /404
 /2019/wp-includes/wlwmanifest.xml               /404
 //xmlrpc.php                                    /404
-
-https://jason-energy.netlify.app/*    https://www.jason.energy/
-https://jason.af/*                    https://www.jason.energy/:splat

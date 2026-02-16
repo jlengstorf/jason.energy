@@ -11,7 +11,7 @@ Jason Lengstorf, also known online as jlengstorf, is a tv producer, educator, ke
 
 He is best known for creating CodeTV and producing original, web-based tv series including _Web Dev Challenge_, _Leet Heat_, and _Learn With Jason_. He is also known for his weekly office hours live stream, where he talks live with the audience about the tech industry and growing both professionally and personally.
 
-Official website: https://jason.energy
+This is my official website, [jason.energy](https://jason.energy).
 
 ## What I do
 
